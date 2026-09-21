@@ -1,0 +1,52 @@
+/* Scoped compatibility for native blocks; shared chrome is owned by the theme. */
+.resource-page {min-width:0; overflow-wrap:break-word;}
+.resource-page .resource-breadcrumb {display:flex;flex-wrap:wrap;align-items:center;gap:0 10px;max-width:1240px;margin:0 auto;padding:12px 24px;font-size:14px;line-height:1.5;}
+.resource-page .resource-breadcrumb a {display:inline-flex;align-items:center;min-height:44px;color:#062b5b;}
+.resource-page .resource-breadcrumb span:last-child {flex-shrink:1;}
+.resource-page .resource-inline {display:contents;}
+.resource-page .wp-block-group {box-sizing:border-box;}
+.resource-page .wp-block-heading {font-family:inherit;}
+.resource-page p,.resource-page li,.resource-page td,.resource-page th,.resource-page summary {font-size:max(1em,16px);}
+.resource-page a {overflow-wrap:anywhere;}
+.resource-page summary {cursor:pointer;min-height:44px;}
+.resource-page a:focus-visible,.resource-page summary:focus-visible {outline:3px solid #008078;outline-offset:4px;}
+.resource-page .resource-process-pair {display:contents;}
+.resource-res-chemours .hero {background:none;border:0;overflow:visible;}
+.resource-res-chemours .hero::after {content:none;}
+.resource-res-proc {max-width:none;padding:0;}
+.resource-res-proc h1,.resource-res-proc h2,.resource-res-proc h3 {margin:0;font-weight:800;}
+.resource-res-proc p {margin-bottom:0;}
+.resource-res-proc ul,.resource-res-proc ol {padding:0;margin-bottom:0;list-style:none;}
+.resource-res-proc #answer p,.resource-res-proc #final-action h2 {color:inherit;}
+.resource-res-proc #answer .text-teal,.resource-res-proc #final-action .text-teal {color:#5de0d3!important;}
+.resource-res-proc #answer>div::before {display:none;}
+.resource-res-proc details summary {display:flex;justify-content:space-between;gap:20px;color:#062b5b;font-weight:800;padding:18px 0;}
+.resource-res-proc details summary::after {content:'+';font-size:24px;color:#008078;}
+.resource-res-proc details[open] summary::after {content:'−';}
+.resource-res-proc .resource-evidence-table {width:100%;table-layout:fixed;border-collapse:collapse;margin:40px 0 0;border:1px solid #cbd7e2;box-shadow:0 16px 36px #062b5b13;}
+.resource-res-proc .resource-evidence-table th,.resource-res-proc .resource-evidence-table td {text-align:left;vertical-align:top;padding:16px;border:1px solid #d9e2ec;}
+.resource-res-proc .resource-evidence-table thead th {background:#062b5b;color:#fff;text-transform:uppercase;border-bottom:4px solid #008078;}
+.resource-res-proc .resource-evidence-table thead th:first-child {width:23%;}
+.resource-res-proc .resource-evidence-table tbody th {color:#062b5b;font-weight:800;}
+.resource-res-proc .resource-evidence-table tbody tr:nth-child(even) {background:#f5f8fb;}
+@media(max-width:1023px){
+ .resource-res-proc .resource-evidence-table,.resource-res-proc .resource-evidence-table tbody {display:block;border:0;box-shadow:none;}
+ .resource-res-proc .resource-evidence-table thead {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+ .resource-res-proc .resource-evidence-table tbody {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+ .resource-res-proc .resource-evidence-table tr {display:block;padding:20px;background:#f7f9fb!important;border:1px solid #d9e2ec;border-left:4px solid #008078;border-radius:6px;}
+ .resource-res-proc .resource-evidence-table th,.resource-res-proc .resource-evidence-table td {display:block;width:auto;border:0;padding:0 0 12px;}
+ .resource-res-proc .resource-evidence-table td::before {content:attr(data-label) ': ';font-weight:700;color:#062b5b;}
+}
+@media(max-width:639px){
+ .resource-page .resource-breadcrumb{padding-inline:16px;}
+ .resource-res-proc .resource-evidence-table tbody {grid-template-columns:minmax(0,1fr);}
+ .resource-res-trade-eu table,.resource-res-trade-eu tbody {display:block;width:100%;}
+ .resource-res-trade-eu thead {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+ .resource-res-trade-eu tbody tr {display:block;margin-bottom:16px;border:1px solid #d9e2ec;border-radius:6px;padding:16px;}
+ .resource-res-trade-eu tbody td {display:block;width:100%;padding:10px 0;border:0;}
+ .resource-res-trade-eu tbody td::before {display:block;margin-bottom:6px;font-weight:700;color:#062b5b;}
+ .resource-res-trade-eu tbody td:nth-child(1)::before {content:'Exporting-producer category';}
+ .resource-res-trade-eu tbody td:nth-child(2)::before {content:'Fixed anti-dumping duty';}
+ .resource-res-trade-eu tbody td:nth-child(3)::before {content:'TARIC additional code';}
+}
+@media(prefers-reduced-motion:reduce){.resource-page,.resource-page *{scroll-behavior:auto!important;transition:none!important;animation:none!important;}}

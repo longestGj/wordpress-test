@@ -1,0 +1,145 @@
+
+.resource-res-trade-uk .header,.resource-res-trade-uk .footer,.resource-res-trade-uk .cookie-layer{font-family:Inter,Arial,sans-serif}
+.resource-res-trade-uk .header *,.resource-res-trade-uk .footer *,.resource-res-trade-uk .cookie-layer *{box-sizing:border-box}
+.resource-res-trade-uk .header{position:relative;z-index:20;height:84px;border-bottom:1px solid #d9e2ec;color:#062b5b;background:#fff}
+.resource-res-trade-uk .header a,.resource-res-trade-uk .footer a{text-decoration:none}
+.resource-res-trade-uk .headerInner{width:min(1200px,calc(100% - 64px));height:83px;margin:auto;display:flex;align-items:center;gap:24px}
+.resource-res-trade-uk .logoLink{min-width:180px;min-height:60px;margin-right:auto;display:inline-flex;align-items:center;line-height:0}
+.resource-res-trade-uk .logo{width:180px;height:60px;object-fit:contain}
+.resource-res-trade-uk .desktopNav{display:flex;align-self:stretch;align-items:stretch;gap:16px}
+.resource-res-trade-uk .desktopNav a{position:relative;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;color:#062b5b;font-size:14px;font-weight:500}
+.resource-res-trade-uk .desktopNav a[aria-current="page"]{font-weight:700}
+.resource-res-trade-uk .desktopNav a[aria-current="page"]::after{content:"";position:absolute;right:8%;bottom:0;left:8%;height:3px;background:#008078}
+.resource-res-trade-uk .headerRfq,.resource-res-trade-uk .footerRfq{min-width:44px;min-height:48px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #008078;border-radius:6px;color:#fff;background:#008078;font-size:14px;font-weight:600}
+.resource-res-trade-uk .rfqCompact,.resource-res-trade-uk .menuButton,.resource-res-trade-uk .mobileNav{display:none}
+.resource-res-trade-uk .header :is(a,.resource-res-trade-uk button):focus-visible{outline:3px solid #008078;outline-offset:3px}
+.resource-res-trade-uk .footer{padding:52px max(32px,calc((100% - 1200px)/2)) 28px;color:#fff;background:#031b3a}
+.resource-res-trade-uk .footerGrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px}
+.resource-res-trade-uk .footerGrid>:is(div,.resource-res-trade-uk nav){min-width:0;display:flex;align-items:flex-start;flex-direction:column;gap:12px}
+.resource-res-trade-uk .footerLogo{width:180px;height:60px;object-fit:contain}
+.resource-res-trade-uk .footer .brandColumn p,.resource-res-trade-uk .footer .copyright{max-width:295px;margin:0;color:#d4e0eb;font-size:14px;line-height:1.55}
+.resource-res-trade-uk .footer h2{margin:0 0 8px;color:#fff;font-size:14px;line-height:1.4;text-transform:uppercase;letter-spacing:.08em}
+.resource-res-trade-uk .footer .footerGrid a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;color:#fff;font-size:14px;font-weight:500}
+.resource-res-trade-uk .footer .footerRfq{font-weight:600}
+.resource-res-trade-uk .legalUtilities{margin-top:48px;padding-top:20px;display:flex;flex-wrap:wrap;gap:4px 18px;border-top:1px solid #21456c}
+.resource-res-trade-uk .footer .legalUtilities :is(a,.resource-res-trade-uk button){min-width:44px;min-height:44px;padding:0;border:0;color:#d4e0eb;background:transparent;font:500 14px/1.5 Inter,Arial,sans-serif;display:inline-flex;align-items:center;cursor:pointer}
+.resource-res-trade-uk .footer .copyright{max-width:none!important;margin-top:8px!important}
+.resource-res-trade-uk .footer :is(a,.resource-res-trade-uk button):focus-visible{outline:3px solid #fff;outline-offset:3px}
+.resource-res-trade-uk .cookie-layer{width:min(560px,calc(100% - 32px));max-height:calc(100% - 32px);padding:32px;border:1px solid #d9e2ec;border-radius:8px;background:#fff;color:#334155;overflow:auto}
+.resource-res-trade-uk .cookie-layer::backdrop{background:rgb(3 27 58 / 72%)}
+.resource-res-trade-uk .cookie-layer h2{margin:0 0 18px;color:#062b5b;font-size:30px;line-height:1.18}
+.resource-res-trade-uk .cookie-layer p{margin:0;font-size:16px;line-height:1.65}
+.resource-res-trade-uk .cookie-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.resource-res-trade-uk .cookie-actions>*{min-width:44px;min-height:48px;padding:12px 18px;border:1px solid #008078;border-radius:6px;background:#fff;color:#008078;font:600 14px/1.4 Inter,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.resource-res-trade-uk .cookie-layer :is(a,.resource-res-trade-uk button):focus-visible{outline:3px solid #008078;outline-offset:3px}
+@media (max-width:1100px){.resource-res-trade-uk .header{height:64px}
+.resource-res-trade-uk .headerInner{width:calc(100% - 32px);height:63px;gap:8px}
+.resource-res-trade-uk .logoLink{min-width:120px;min-height:44px}
+.resource-res-trade-uk .logo{width:120px;height:40px}
+.resource-res-trade-uk .desktopNav,.resource-res-trade-uk .rfqFull{display:none}
+.resource-res-trade-uk .rfqCompact,.resource-res-trade-uk .menuButton{display:inline}
+.resource-res-trade-uk .headerRfq{min-height:44px;padding:0 14px}
+.resource-res-trade-uk .menuButton{min-width:64px;min-height:44px;padding:0 12px;border:1px solid #008078;border-radius:6px;color:#062b5b;background:#fff;font:600 14px Inter,Arial,sans-serif}
+.resource-res-trade-uk .mobileNav{position:absolute;top:63px;right:0;left:0;display:grid;grid-template-columns:1fr;max-height:calc(100vh - 64px);overflow:auto;color:#fff;background:#031b3a}
+.resource-res-trade-uk .mobileNav[hidden]{display:none}
+.resource-res-trade-uk .header nav.mobileNav>a{position:relative;min-height:52px;padding:10px 24px;display:flex;align-items:center;justify-content:flex-start;border-bottom:1px solid #234665;color:#fff;font-size:16px;font-weight:500}
+.resource-res-trade-uk .header nav.mobileNav>a[aria-current="page"]{padding-left:32px;font-weight:700}
+.resource-res-trade-uk .mobileNav a[aria-current="page"]::before{content:"";position:absolute;top:8px;bottom:8px;left:16px;width:4px;background:#00a99d}
+.resource-res-trade-uk .mobileNav a:last-child{background:#008078;font-weight:600}
+.resource-res-trade-uk .mobileNav a:focus-visible{outline:3px solid #fff;outline-offset:-4px}
+.resource-res-trade-uk .footerGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 32px}
+.resource-res-trade-uk .brandColumn,.resource-res-trade-uk .conversionColumn{grid-column:1/-1}}
+@media (max-width:560px){.resource-res-trade-uk .footer{padding:36px 20px 24px}
+.resource-res-trade-uk .footerGrid{gap:32px 20px}
+.resource-res-trade-uk .cookie-layer{padding:26px 20px}
+.resource-res-trade-uk .cookie-layer h2{font-size:26px}
+.resource-res-trade-uk .cookie-actions>*{width:100%}}
+@media (prefers-reduced-motion:reduce){.resource-res-trade-uk .header *,.resource-res-trade-uk .footer *,.resource-res-trade-uk .cookie-layer *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+.resource-res-trade-uk *{box-sizing:border-box}
+.resource-res-trade-uk{margin:0;font-family:Inter,Arial,sans-serif;color:#102d46;background:white}
+.resource-res-trade-uk{max-width:1200px;margin:auto;padding:28px 40px 64px}
+.resource-res-trade-uk .module{max-width:960px;margin:auto;padding:38px 0;border-bottom:1px solid #d7e1e7}
+.resource-res-trade-uk .module:first-child{padding-top:12px}
+.resource-res-trade-uk .module:last-child{border:0;padding-bottom:0}
+.resource-res-trade-uk h1{font-size:46px;line-height:1.15;letter-spacing:-1.4px;margin:0 0 24px}
+.resource-res-trade-uk h2{font-size:30px;line-height:1.25;margin:0 0 24px;letter-spacing:-.5px}
+.resource-res-trade-uk h3{font-size:22px;margin:26px 0 18px}
+.resource-res-trade-uk p,.resource-res-trade-uk li{font-size:17px;line-height:1.65;margin:0 0 18px}
+.resource-res-trade-uk ul{padding-left:25px;margin:22px 0}
+.resource-res-trade-uk li{padding-left:6px}
+.resource-res-trade-uk code{font:inherit;font-variant-numeric:tabular-nums}
+.resource-res-trade-uk a{display:inline-flex;align-items:center;min-height:44px;min-width:44px;max-width:100%;color:#008078;text-underline-offset:4px;font-weight:600;overflow-wrap:anywhere}
+.resource-res-trade-uk a:focus-visible{outline:3px solid #008078;outline-offset:3px}
+.resource-res-trade-uk .module-1 p:nth-of-type(3) a,.resource-res-trade-uk .module-7 p:first-of-type a{padding:12px 20px;background:#008078;border:1px solid #008078;color:white;text-decoration:none}
+.resource-res-trade-uk .module-1 p:nth-of-type(5) a{padding:11px 20px;border:1px solid #008078;text-decoration:none}
+.resource-res-trade-uk table{width:100%;table-layout:fixed;border-collapse:collapse;margin:22px 0 26px;font-size:16px;line-height:1.6}
+.resource-res-trade-uk th,.resource-res-trade-uk td{border:1px solid #cbd8e0;padding:16px;text-align:left;vertical-align:top;overflow-wrap:break-word}
+.resource-res-trade-uk th{background:#eff4f6;font-weight:600}
+.resource-res-trade-uk .table-1 th:first-child{width:32%}
+.resource-res-trade-uk .table-2 th:first-child{width:25%}
+.resource-res-trade-uk .table-2 th:nth-child(2){width:23%}
+.resource-res-trade-uk .table-3 th:first-child{width:26%}
+.resource-res-trade-uk .table-3 th:nth-child(2){width:37%}
+@media (max-width:1100px){.resource-res-trade-uk{padding:24px 32px 48px}
+.resource-res-trade-uk .module{padding:32px 0}
+.resource-res-trade-uk h1{font-size:40px}
+.resource-res-trade-uk th,.resource-res-trade-uk td{padding:14px}}
+@media (max-width:600px){.resource-res-trade-uk{padding:20px 20px 40px}
+.resource-res-trade-uk .module{padding:30px 0}
+.resource-res-trade-uk h1{font-size:34px;letter-spacing:-.8px}
+.resource-res-trade-uk h2{font-size:27px}
+.resource-res-trade-uk p,.resource-res-trade-uk li{font-size:16px;line-height:1.65}
+.resource-res-trade-uk .module-1 a{width:100%;justify-content:center}
+.resource-res-trade-uk li{padding-left:1px}
+.resource-res-trade-uk table,.resource-res-trade-uk tbody,.resource-res-trade-uk tr,.resource-res-trade-uk td{display:block;width:100%}
+.resource-res-trade-uk thead{position:absolute;width:1px;height:1px;overflow:clip;clip-path:inset(50%)}
+.resource-res-trade-uk tbody tr{margin:0 0 20px;border:1px solid #cbd8e0;padding:4px 16px;background:#fff}
+.resource-res-trade-uk td{border:0;padding:12px 0}
+.resource-res-trade-uk td+td{border-top:1px solid #e0e7eb}
+.resource-res-trade-uk td::before{content:attr(data-label);display:block;font-size:14px;font-weight:700;line-height:1.4;margin-bottom:6px;color:#526673}
+.resource-res-trade-uk table{font-size:16px;line-height:1.65}}
+.resource-res-trade-uk{color:#334155}
+.resource-res-trade-uk{padding-top:40px;padding-bottom:72px}
+.resource-res-trade-uk .module{padding:44px 0;border-color:#D9E2EC}
+.resource-res-trade-uk h1,.resource-res-trade-uk h2,.resource-res-trade-uk h3{color:#062B5B}
+.resource-res-trade-uk h1{font-size:52px;line-height:1.13;letter-spacing:-1.5px;font-weight:700}
+.resource-res-trade-uk h2{font-size:36px;line-height:1.2;font-weight:700;margin-bottom:26px}
+.resource-res-trade-uk h3{font-size:26px;font-weight:600}
+.resource-res-trade-uk .module:first-child{padding:32px;background:#F5F8FB;border-top:4px solid #062B5B;border-bottom:1px solid #D9E2EC}
+.resource-res-trade-uk .module-1 p:first-of-type{font-size:18px;line-height:1.65}
+.resource-res-trade-uk .module-1 p:nth-of-type(2){border-left:3px solid #062B5B;padding-left:18px}
+.resource-res-trade-uk .module-1 p:nth-of-type(4),.resource-res-trade-uk .module-1 p:nth-of-type(6){font-size:16px}
+.resource-res-trade-uk .module-1 p:last-child{margin-bottom:0}
+.resource-res-trade-uk .module-1 p:nth-of-type(3) a,.resource-res-trade-uk .module-7 p:first-of-type a{border-radius:6px;font-size:16px}
+.resource-res-trade-uk .module-1 p:nth-of-type(5) a{border-radius:6px;color:#062B5B;border-color:#062B5B;background:#fff;font-size:16px}
+.resource-res-trade-uk th{background:#062B5B;color:#fff;font-weight:600}
+.resource-res-trade-uk td{border-color:#D9E2EC}
+.resource-res-trade-uk tbody tr:nth-child(even){background:#F5F8FB}
+.resource-res-trade-uk td:first-child{font-weight:600;color:#062B5B}
+.resource-res-trade-uk code{font-variant-numeric:tabular-nums;color:#062B5B;font-weight:500}
+.resource-res-trade-uk .module-3 p:nth-of-type(3){padding:20px;background:#F5F8FB;border:1px solid #D9E2EC;line-height:1.9}
+.resource-res-trade-uk .module-4 p:first-of-type{padding:20px;border-left:3px solid #062B5B;background:#F5F8FB}
+.resource-res-trade-uk li::marker{color:#062B5B}
+.resource-res-trade-uk a:hover{text-decoration-thickness:2px}
+.resource-res-trade-uk .module-1 p:nth-of-type(3) a:hover,.resource-res-trade-uk .module-7 p:first-of-type a:hover{background:#062B5B;border-color:#062B5B}
+.resource-res-trade-uk .module-7 h3{padding-top:28px;border-top:1px solid #D9E2EC}
+.resource-res-trade-uk .module-7>p:last-child{padding:20px;background:#F5F8FB;margin-bottom:0}
+@media (max-width:1100px){.resource-res-trade-uk{padding-top:28px;padding-bottom:56px}
+.resource-res-trade-uk .module{padding:36px 0}
+.resource-res-trade-uk h1{font-size:40px;letter-spacing:-1px}
+.resource-res-trade-uk h2{font-size:30px}
+.resource-res-trade-uk .module:first-child{padding:28px}}
+@media (max-width:600px){.resource-res-trade-uk{padding-top:20px;padding-bottom:40px}
+.resource-res-trade-uk h1{font-size:34px;letter-spacing:-.8px}
+.resource-res-trade-uk h2{font-size:28px}
+.resource-res-trade-uk h3{font-size:24px}
+.resource-res-trade-uk .module{padding:32px 0}
+.resource-res-trade-uk .module:first-child{padding:20px}
+.resource-res-trade-uk .module-1 p:first-of-type{font-size:17px}
+.resource-res-trade-uk .module-1 p:nth-of-type(3) a{padding:12px 10px}
+.resource-res-trade-uk td:first-child{font-weight:600}
+.resource-res-trade-uk tbody tr{border-top:3px solid #062B5B;border-radius:0 0 8px 8px;background:#fff}
+.resource-res-trade-uk tbody tr:nth-child(even){background:#F5F8FB}
+.resource-res-trade-uk td::before{color:#334155}
+.resource-res-trade-uk .module-3 p:nth-of-type(3){padding:16px}
+.resource-res-trade-uk .module-4 p:first-of-type{padding:16px}}

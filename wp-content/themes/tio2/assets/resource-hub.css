@@ -1,0 +1,5 @@
+/* Published article navigation within the three existing research-path cards. */
+.hub-resources .resource-hub-links {list-style:none;margin:24px 0 0;padding:0;border-top:1px solid #d9e2ec;}
+.hub-resources .resource-hub-links li {margin:0;border-bottom:1px solid #d9e2ec;}
+.hub-resources .resource-hub-links a {display:flex;align-items:center;min-height:44px;padding:12px 0;font-size:16px;line-height:1.55;font-weight:600;color:#008078;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;}
+.hub-resources .resource-hub-links a:focus-visible {outline:3px solid #008078;outline-offset:3px;}
