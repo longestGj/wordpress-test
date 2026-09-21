@@ -31,6 +31,25 @@ Observed upstream CLI warnings: initial `core install` emitted an undefined `HTT
 
 Original TiO₂ containers remain `653d527a9e04` and `4921069ffdc4`, on original `tio2-wordpress_*` volumes and port 8080. No original website database writes were performed.
 
-## Remaining verification
+## Planning and Skill observations
 
-Planning skeleton, Skill discovery/usage probes, final tracked-only packaging check and independent whole-branch review are pending. Do not treat this intermediate record as full plan completion.
+Neutral planning has only header rows in SITE_MAP/SEO_MAP, unconfirmed business inputs, and one current status per Page Spec. Markdown links and exact CSV headers checked. Project rules distinguish Theme presentation, optional domain plugins and runtime data without precreating a business model.
+
+Three SKILL.md files pass the skill-creator validator under Python UTF-8 mode. The host's default GBK decoding initially failed on a Unicode arrow; rerunning with `PYTHONUTF8=1` validated all three. No user/global config was changed.
+
+Fresh read-only Codex CLI sessions in copied project B used the desktop-bundled CLI **0.155.0-alpha.9.2**, model gpt-6-astra. The PATH CLI 0.142.0 could not use that model and was not used for the result. The successful session identified all three `wordpress-*` skills from its provided catalog before reading their files, then explicitly loaded them. Filesystem existence alone was not the discovery evidence.
+
+| Probe | Observed result | Limit |
+|---|---|---|
+| No candidate Skills baseline | Already distinguished equipment CPT/typed fields from service Pages; preserved editor changes and requested real outcome evidence | No demonstrated broad capability improvement |
+| Explicit three-Skill scenarios | Correctly differentiated equipment and service models; named ownership plus identity, no silent synchronization, actual revision/legacy missing-field checks, plugin-unavailable behavior and real form outcomes | Reasoning only; no domain implementation in this foundation |
+| Separate implicit link-only scenario | Loaded direct-build and runtime-verification, did not load content-modeling; chose saved href/render/destination checks without full research/import/revision suite | One observation; not deterministic automatic routing |
+| Author applied direct-build/runtime methods to actual fixture | C Page 13 link changed in editor from homepage to homepage `#main-content`; public href checked, then original body restored through editor save and rechecked | One scoped local reversible exercise, not proof across future projects |
+
+All three remain **DRAFT**. Baseline answers were already good; this is discovery/scope validation, not a proven RED→GREEN behavioral improvement. No skills installed globally, no custom agents introduced, no messages sent externally. Full second-site field modeling and recovery need later real-project trials.
+
+## Final validation status
+
+B fresh-copy Core fixture, HTTP smoke and 5 preflight unit tests pass. PHP lint passes all 9 PHP files across Theme, mu-plugin, initialization and fixture. A/C browser and backup evidence above remains applicable because subsequent changes only added documentation/Skills and checkout line-ending attributes.
+
+Independent whole-branch review and final packaging scan pending. Final conclusion will be limited to this technical foundation.
