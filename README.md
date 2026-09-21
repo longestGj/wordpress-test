@@ -10,6 +10,8 @@ The five `scripts/prepare-*.py` adapters read repository-local `planning/inputs`
 
 Past files in `docs/build-briefs` retain verification evidence and limitations, not a parallel current specification. New work updates `planning/pages/<ID>.md`.
 
+The [Agent/Skill migration proposal](docs/decisions/AGENT_SKILL_MIGRATION.md) inventories the old planning capabilities and proposes native Codex destinations. It is a decision document, not an installed agent/skill system.
+
 ## Access
 
 - Site: http://localhost:8080/
