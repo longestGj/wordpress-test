@@ -52,4 +52,27 @@ All three remain **DRAFT**. Baseline answers were already good; this is discover
 
 B fresh-copy Core fixture, HTTP smoke and 5 preflight unit tests pass. PHP lint passes all 9 PHP files across Theme, mu-plugin, initialization and fixture. A/C browser and backup evidence above remains applicable because subsequent changes only added documentation/Skills and checkout line-ending attributes.
 
-Independent whole-branch review and final packaging scan pending. Final conclusion will be limited to this technical foundation.
+Initial packaging scan: 32 tracked candidate files; no `.env`, backups, uploads or caches. A separate clean Git clone of B contained all 32 files, shell scripts retained LF on Windows, and all 5 preflight tests passed there. The only old-site strings occur in the HTTP test's **forbidden-output assertions**, not runtime dependencies. B/C installed from tracked runtime files; subsequent planning/Skill additions do not change that runtime. All starter Markdown links resolve and the root planning-integrity check still passes (59 specs, 36 locally accepted). Final package adds one checker-regression test file (33 files total).
+
+The original checkout's pre-existing untracked `docs/build-briefs/COMPLETE-SITE-PLAN.md` remains untracked and untouched. `main` remains `f624280`; this task has not merged, pushed or deployed.
+
+## Independent review and fixes
+
+One fresh-context gpt-6-astra reviewer inspected `7075312..b5b0b62` read-only, checked design/plan/evidence and independently ran the 5 preflight tests. It found no demonstrated data-loss, cross-copy adoption or business-binding defect. Its verdict was **with fixes**, not an unconditional approval of the later fix commit; fixes were verified by the author rather than a second review.
+
+1. **Important: missing saved-Page HTTP regression.** The original HTTP smoke only checked homepage shell; it would not detect omitted page content. Added required known Page path, expected H1 and body inputs. Four regression cases failed before implementation; after the fix they pass (entity/inline-markup handling, missing H1, missing body, script text not substituting for body). Combined unit suite: **9/9**. The fixed checker passes against actual saved Pages on A, B and C, including the recovered/independently edited Page. This is additional coverage, not a claim the original browser evidence failed.
+2. **Design/plan conflict: status vocabulary.** Reviewer classified this as minor; executor treated it as a concrete handoff ambiguity to resolve while reconciling approved documents. The design's `PLANNED / READY / BUILDING / REVIEW / ACCEPTED / RELEASED` is authoritative. README and WORKFLOW now use it; action labels remain PLAN/READY/BUILD/REVIEW/RELEASE. ACCEPTED does not authorize publication. The plan's wording is reconciled accordingly; no runtime behavior changes.
+
+No other findings remain deferred. Review exclusions were explicitly considered:
+
+- Production, SMTP, forms and domain models remain outside this foundation because those are separately authorized future work; the candidate does not prove a complete customer conversion path.
+- General Skill efficacy/deterministic routing remain unproven; keep DRAFT and validate on the next real site rather than infer effectiveness from one probe.
+- Other platforms and current image vulnerability status were not independently established; Windows behavior and actual image versions are the supported evidence, not a security certification.
+- Reviewer did not repeat mutating editor/restore/isolation experiments; it reviewed the implementation and recorded author evidence. Those runtime experiments are author-verified, not independently repeated.
+- Complete accessibility/performance remains unverified; responsive geometry, keyboard skip/focus and readable layout are narrower observations.
+
+Implementation decisions: one existing plan/ledger instead of extra per-task brief files (tradeoff: less separate handoff traceability); DRAFT despite a good no-Skill baseline (effectiveness remains unproven); status conflict resolved to the approved design (future integrations must use that vocabulary).
+
+Final rerun after fixes: 33-file clean Git checkout excludes secrets/backups and preserves LF shell files; all local Markdown links resolve; **9/9 Python tests**, actual B saved-Page HTTP check, A Core fixture, **9/9 PHP lint**, A saved-Page HTTP check and root planning-integrity check pass. Earlier final-checker runs also passed on C's recovered Page. Re-running A's initialization explicitly preserved the installation; its edited Page title and rendered body remained intact. Real HTTP checks on all three environments confirmed `X-Robots-Tag: noindex` and sitemap 404. No runtime code was changed by the review fixes.
+
+**Conclusion: the minimal technical candidate passes its scoped foundation checks after the fixes.** It is ready for review/integration as a candidate, not a mature universal template. Next phases remain new-site preparation methods, an approved business model with a real local conversion path, then a real second-site trial. No automatic merge, push, release or email work is included.

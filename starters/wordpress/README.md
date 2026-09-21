@@ -24,9 +24,10 @@ if ($LASTEXITCODE -ne 0) { throw 'Installation failed; inspect before retrying.'
 `install.sh` preserves an already installed database. If a first run installed Core but failed before activating the theme, inspect that this is **your newly created local database** and explicitly finish with `docker compose run --rm cli eval-file /workspace/scripts/install.php`. This changes initial theme/permalink settings once; it is not an import or migration for an existing site.
 
 ```powershell
-python -m unittest discover -s tests -p preflight_test.py
+python -m unittest discover -s tests -p '*_test.py'
 docker compose run --rm cli eval-file /workspace/tests/core-content.php
-python tests/http-smoke.py --base-url http://127.0.0.1:18081
+# Use a real saved Page and known copy (replace these sample values):
+python tests/http-smoke.py --base-url http://127.0.0.1:18081 --page-path /sample-page/ --expected-h1 'Sample Page' --expected-text 'This is an example page.'
 ```
 
 The PHP fixture creates and deletes its own local Page/revisions and attempts an intercepted mail. Browser checks are additional: edit a title, paragraph, image and link; save; view the real page at desktop/tablet/mobile widths and use the keyboard. HTTP 200 alone is not acceptance.
@@ -39,7 +40,7 @@ Create one `planning/pages/<PAGE_ID>.md` for each real page. The following field
 
 ```text
 Page ID: <stable identity>
-Status: PLAN | READY | BUILD | REVIEW | READY_TO_RELEASE | RELEASED
+Status: PLANNED | READY | BUILDING | REVIEW | ACCEPTED | RELEASED
 Purpose: <audience, problem and intended outcome>
 Map / SEO: <corresponding rows in SITE_MAP.csv and SEO_MAP.csv>
 Content source: <approved complete copy and exact source/version>
@@ -55,6 +56,8 @@ Page status lives only in that spec. Repository `.agents/skills` contains three 
 ## Data and boundaries
 
 Git stores code and planning. **Git push does not back up the live database or uploads.** Follow [RECOVERY](docs/RECOVERY.md); retain the matching code commit with each data backup. Schema changes may require a coordinated data restore when rolling code back.
+
+Foundation verification on Windows covered independent fresh installs, actual Core editor title/text/image/link saves, revision restore, loopback/noindex/mail protection, and database plus media recovery into a separate environment. It used a generated test page/image, not a real second business site. Skill discovery and limited usage scenarios were observed with Codex CLI 0.155.0-alpha.9.2; the three methods remain DRAFT. Real business data, enquiry handling, hosting, production performance and other operating systems are not validated by this candidate.
 
 This Compose setup is local only: loopback HTTP, forced noindex, disabled sitemap and intercepted `wp_mail` returning false. Those controls are not access control, do not prevent arbitrary external HTTP requests, and do not make a site production-ready. Do not add SMTP here. [RELEASE](docs/RELEASE.md) requires a separate production configuration and explicit publication approval.
 
