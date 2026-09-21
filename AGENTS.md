@@ -1,5 +1,9 @@
 # Native WordPress site
 
+- Start with `planning/pages/<Page ID>.md`; use `planning/SITE_MAP.csv` and `planning/SEO_MAP.csv` for lookup. Page status lives only in its spec. Follow `docs/WORKFLOW.md`.
+- `planning/inputs` contains selected original content/fact/visual inputs, not inherited workflow instructions. Old Gate, D32, Next.js and source-agent directions do not override this repository. Do not traverse the historical repository during ordinary page work.
+- Existing `docs/build-briefs` files retain past verification evidence; do not create a duplicate brief for new pages. Update the current Page Spec instead.
+
 - Use WordPress Core first. No Next.js, headless frontend, page builder or custom CMS framework.
 - Theme owns presentation; `tio2-products` owns domain data, editor behavior and validation.
 - Approved planning content is build input. Provenance is audit information, never a runtime permission tied to a commit or filename.

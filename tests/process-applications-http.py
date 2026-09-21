@@ -5,7 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[1]
 for file in (ROOT/'data/process-applications').glob('*.json'):
- d=json.loads(file.read_text(encoding='utf-8'));source=ROOT/'.local/batch-source'/d['source']
+ d=json.loads(file.read_text(encoding='utf-8'));source=ROOT/'planning/inputs'/d['source']
  if source.exists():
   original=BeautifulSoup(source.read_text(encoding='utf-8-sig'),'html.parser').find('main')
   seed=BeautifulSoup(d['content'],'html.parser')

@@ -2,7 +2,7 @@
 import json, re
 from pathlib import Path
 root = Path(__file__).resolve().parents[1]
-copy = (root / '.local/m350-source/GRADE-M350_GATE2_FULL_COPY_V0.1.md').read_text(encoding='utf-8')
+copy = (root / 'planning/inputs/pages/products/detail-template/04_planning/GRADE-M350_GATE2_FULL_COPY_V0.1.md').read_text(encoding='utf-8')
 parts = re.split(r'^### 2\.\d+ .*\n', copy, flags=re.M)[1:]
 parts[-1] = parts[-1].split('\n## 3.')[0]
 def clean(s): return s.replace('**','').strip()

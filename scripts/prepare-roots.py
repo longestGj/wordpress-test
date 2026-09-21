@@ -6,7 +6,7 @@ import csv,json,re,shutil,urllib.parse,urllib.request,hashlib
 from pathlib import Path
 from bs4 import BeautifulSoup,Comment
 import tinycss2
-ROOT=Path(__file__).resolve().parents[1];SOURCE=ROOT/'.local/batch-source'
+ROOT=Path(__file__).resolve().parents[1];SOURCE=ROOT/'planning/inputs'
 ASSETS=ROOT/'wp-content/themes/tio2/assets';OUT=ROOT/'data/pages';OUT.mkdir(exist_ok=True)
 PAGES={
  'home':('HOME-001','pages/home/04_planning/visual-designs/home-root-page-hero-v1.4/homepage-root-page-hero-preview-v1.4.html'),
@@ -16,7 +16,7 @@ PAGES={
  'documents':('DOC-000','pages/documents/04_planning/d32-gate4-v0.2/DOC-000_D32_structure.html'),
  'resources':('RES-000','pages/resources/04_planning/d32-gate4-v0.2/RES-000_D32_GATE4.html'),
  'about':('ABOUT-001','pages/about-contact/04_visual/d32-gate4-v0.1/ABOUT-001_D32_GATE4.html')}
-seo={r['page_id']:r for r in csv.DictReader((SOURCE/'docs/architecture/TIO2_MY_57_INDEXABLE_PAGE_SEO_DELIVERY_V1.0.csv').open(encoding='utf-8-sig'))}
+seo={r['page_id']:r for r in csv.DictReader((ROOT/'planning/SEO_MAP.csv').open(encoding='utf-8-sig'))}
 
 def scope_css(text,key):
     scope='.hub-'+key
@@ -88,9 +88,7 @@ for key,(identity,path) in PAGES.items():
         if embedded:
             relative=urllib.parse.urljoin(path,embedded.get('href',embedded.get('xlink:href','')))
             raster=SOURCE/relative
-            if not raster.exists():
-                raster.parent.mkdir(parents=True,exist_ok=True)
-                raster.write_bytes(urllib.request.urlopen('https://raw.githubusercontent.com/longestGj/tio2mydesign/765c66ed2b2d9d42cacab9009c7b17830cfdedf5/'+relative).read())
+            if not raster.exists():raise FileNotFoundError(f'Missing repository planning asset: {raster}')
             shutil.copy2(raster,ASSETS/raster.name)
             x,y,w,h=map(float,svg['viewbox'].split());iw=float(embedded['width']);ih=float(embedded['height'])
             crop=soup.new_tag('span',attrs={'class':svg.get('class',[])+['asset-crop'],'style':f'aspect-ratio:{w}/{h};'})
@@ -115,7 +113,7 @@ for key,(identity,path) in PAGES.items():
     # Set scope and skip-link identity consistently.
     main['id']='main';main['tabindex']='-1';main['class']=main.get('class',[])+['hub','hub-'+key]
     if key=='products':
-        discovery=json.loads((SOURCE/'product-discovery.json').read_text(encoding='utf-8'))
+        discovery=json.loads((ROOT/'data/product-discovery.json').read_text(encoding='utf-8'))
         results=main.select_one('#results');results.clear();results.append('[tio2_grade_results]')
         directory=main.select_one('.directory');directory.clear();directory.append('[tio2_grade_directory]')
         for r in discovery['rows']:r.pop('pageId',None)

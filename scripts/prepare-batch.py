@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / '.local/batch-source'
+SOURCE = ROOT / 'planning/inputs'
 APP = {'APP-COAT':'coatings','APP-PLAS':'plastics','APP-MB':'masterbatch','APP-INK':'printing-inks','APP-PAPER':'paper'}
 
 def prepare_products():

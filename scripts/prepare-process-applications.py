@@ -1,9 +1,9 @@
 """One-time adapter for seven explicitly approved visuals, never a runtime CMS."""
-import json,re,urllib.parse
+import csv,json,re,urllib.parse
 from pathlib import Path
 from bs4 import BeautifulSoup,Comment
 import tinycss2
-ROOT=Path(__file__).resolve().parents[1]; SOURCE=ROOT/'.local/batch-source'
+ROOT=Path(__file__).resolve().parents[1]; SOURCE=ROOT/'planning/inputs'
 MAP={
  'chloride':('PRODUCT-PROC-CL','pages/products/chloride-process/04_planning/gate5-v0.1/source/index.html'),
  'sulfate':('PRODUCT-PROC-SU','pages/products/sulfate-process/04_planning/gate4-v0.1/PRODUCT-PROC-SU_GATE4_COMPLETE_VISUAL_V0.1.html'),
@@ -12,7 +12,7 @@ MAP={
  'masterbatch':('APP-MB','pages/applications/masterbatch/04_planning/gate4-v0.1/APP-MB_GATE4_EDITABLE_SOURCE_V0.1.html'),
  'printing-inks':('APP-INK','pages/applications/printing-inks/04_planning/gate4-v0.1/APP-INK_GATE4_COMPLETE_VISUAL_V0.1.html'),
  'paper':('APP-PAPER','pages/applications/paper/04_planning/gate4-v0.1/APP-PAPER_GATE4_COMPLETE_VISUAL_V0.1.html')}
-seo={x['page_id']:x for x in json.loads((SOURCE/'remaining-inventory.json').read_text(encoding='utf-8'))}
+seo={x['page_id']:x for x in csv.DictReader((ROOT/'planning/SEO_MAP.csv').open(encoding='utf-8-sig'))}
 
 def scoped(css,scope):
  def walk(nodes):

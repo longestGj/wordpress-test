@@ -4,6 +4,7 @@ Not a runtime dependency. Reads audited inputs listed in data/resources/source.
 Run with Python requests/beautifulsoup4/tinycss2; Tailwind CLI is build-only for
 the approved RES-PROC utility styles. No prototype script is imported.
 """
+import csv
 import copy
 import hashlib
 import json
@@ -19,7 +20,7 @@ WORK = ROOT / '.local/resource-work'
 sys.path.insert(0, str(WORK / 'deps'))
 import tinycss2
 
-CACHE = ROOT / '.local/batch-source'
+CACHE = ROOT / 'planning/inputs'
 SEEDS = ROOT / 'data/resources'
 ASSETS = ROOT / 'wp-content/themes/tio2/assets'
 PIN = '765c66ed2b2d9d42cacab9009c7b17830cfdedf5'
@@ -216,6 +217,7 @@ def prepare(item):
     css = '\n'.join(style.get_text() for style in soup.find_all('style'))
     if identity == 'RES-PROC':
         css = css.replace('#g4-', '#')
+        WORK.mkdir(parents=True, exist_ok=True)
         config = WORK / 'tailwind.config.cjs'
         config.write_text('module.exports=' + json.dumps({
             'content': [str(visual).replace('\\', '/')], 'important': scope,
@@ -234,7 +236,7 @@ if __name__ == '__main__':
     items = []
     path = SEEDS / 'source/source-map.json'
     items.extend(json.loads(path.read_text(encoding='utf-8')))
-    inventory = json.loads((CACHE / 'remaining-inventory.json').read_text(encoding='utf-8-sig'))
+    inventory = list(csv.DictReader((ROOT / 'planning/SEO_MAP.csv').open(encoding='utf-8-sig')))
     proc = next(item for item in inventory if item['page_id'] == 'RES-PROC')
     proc.update(visual_path=str(CACHE/'pages/resources/04_planning/visual-designs/RES-PROC_GATE5_FULL_VISUAL_V0.1.html'), copy_path=str(CACHE/'pages/resources/04_planning/RES-PROC_GATE2_CONTENT_ARCHITECTURE_V0.3.md'))
     items.append(proc)

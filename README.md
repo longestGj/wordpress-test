@@ -1,6 +1,14 @@
-# TiO2 WordPress — local development
+# TiO2 Malaysia — planning and native WordPress
 
 Fresh standalone WordPress. No old site code, database or configuration is imported.
+
+Current planning and implementation now share this repository. Start with [planning](planning/README.md), find the page in [SITE_MAP](planning/SITE_MAP.csv), then read its Page Spec. Use [WORKFLOW](docs/WORKFLOW.md) for PLAN → READY → BUILD → REVIEW → RELEASE and [RELEASE](docs/RELEASE.md) for publication requirements.
+
+Selected source content, technical documents and visuals were copied from `longestGj/tio2mydesign@765c66ed2b2d9d42cacab9009c7b17830cfdedf5`; the original repository remains intact and is not yet archived. Its old workflow/Next.js instructions are not this project's rules. The remote repository name remains `wordpress-test` pending a separate rename decision.
+
+The five `scripts/prepare-*.py` adapters read repository-local `planning/inputs` and `planning/SEO_MAP.csv`; they no longer need the ignored D23 download caches. They write initialization seeds/assets, not WordPress content. Run in a scratch checkout and review generated diffs before importing. Python dependencies: beautifulsoup4 and tinycss2; Resources PROC additionally uses build-time Tailwind CSS 3.4.17 via npm. This npm dependency is not a remote planning-content dependency.
+
+Past files in `docs/build-briefs` retain verification evidence and limitations, not a parallel current specification. New work updates `planning/pages/<ID>.md`.
 
 ## Access
 
