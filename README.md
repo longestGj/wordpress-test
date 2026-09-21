@@ -12,6 +12,8 @@ Past files in `docs/build-briefs` retain verification evidence and limitations, 
 
 The [Agent/Skill migration proposal](docs/decisions/AGENT_SKILL_MIGRATION.md) inventories the old planning capabilities and proposes native Codex destinations. It is a decision document, not an installed agent/skill system.
 
+The [reusable WordPress website template design](docs/superpowers/specs/2026-09-21-wordpress-website-template-design.md) defines a proposed starter, optional business modules, a new-site workflow and cross-site validation. No starter package has been extracted or validated yet.
+
 ## Access
 
 - Site: http://localhost:8080/
