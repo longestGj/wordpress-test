@@ -56,7 +56,19 @@ docker compose run --rm cli eval-file /workspace/tests/product-model.php
 
 Home, Markets, Products, Applications, Documents, Resources and About now run in this local WordPress. The seven-item shared navigation links to these pages. Root copy is in Pages as an HTML block preserving the fixed approved layout; text/link changes currently use the native block's HTML editor. SEO has separate fields. Products Hub content is the private `Products` Page (`product-hub-content`), rendered only at the public Product archive route. Its directory, discovery relationships and Not Sure guidance have a separate editable field panel; these relationships do not overwrite technical product applications.
 
-RFQ, Sample and Request Documents receivers, child market/application/process/resource pages, legal and consent experiences remain later work. Fixed global/page RFQ links currently have no receiver; this blocks release. Other missing child destinations render as unavailable labels, and product-context form actions remain hidden. Documents selection works locally but explicitly reports the disconnected receiver. No analytics or nonessential tracking is added. Production SEO/schema expansion and indexing require release review. Large approved PNG assets still need delivery optimization before production performance acceptance.
+Two process, five application and eight resource pages are also implemented. RFQ, Sample and Request Documents receivers, child market/document pages, legal and consent experiences remain later work. Fixed global/page RFQ links currently have no receiver; this blocks release. Other missing child destinations render as unavailable labels, and product-context form actions remain hidden. Documents selection works locally but explicitly reports the disconnected receiver. No analytics or nonessential tracking is added. Production SEO/schema expansion and indexing require release review. Large approved PNG assets still need delivery optimization before production performance acceptance.
+
+## Upgrading an existing installation
+
+Before repeating page imports after the content-integrity update, run:
+
+```powershell
+docker compose run --rm cli eval-file /workspace/scripts/migrate-page-ownership.php
+```
+
+This explicit migration verifies all legacy identities and frozen source records before adding stable ownership markers. It never overwrites edited content or provenance. A mismatch stops migration for manual investigation; do not bypass it by adopting a slug. Fresh imports stamp their own identities. Resources Hub requires stable project ownership, parent and publication readiness, but does not depend on a planning commit or filename.
+
+New Product revisions include Application/Process term-ID snapshots. Renamed terms restore by ID; revisions without snapshots and snapshots referencing deleted terms retain current relationships and show an administrator warning. Page SEO and Products Hub Discovery use native revisioned metadata. Older revisions cannot recover metadata or relationships that were never recorded. Database-mutating tests are local-only and must run serially.
 
 Batch initialization is idempotent and preserves editor changes:
 

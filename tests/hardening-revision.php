@@ -1,4 +1,5 @@
 <?php
+require __DIR__.'/local-only.php';
 // Real M-350 save hooks and HTTP, always restore the original content.
 wp_set_current_user(1);
 $p=get_page_by_path('m-350',OBJECT,'product');$original=get_post($p->ID,ARRAY_A);$data=tio2_product_data($p->ID);

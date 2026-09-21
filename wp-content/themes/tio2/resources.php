@@ -33,9 +33,7 @@ add_filter('render_block_core/html', function ($html) {
         'numberposts'=>-1, 'meta_key'=>'_tio2_resource_id', 'orderby'=>'title', 'order'=>'ASC']) as $post) {
         if (!tio2_is_resource_page($post->ID) || post_password_required($post)) continue;
         $identity = get_post_meta($post->ID, '_tio2_resource_id', true);
-        $source = json_decode(get_post_meta($post->ID, '_tio2_source', true), true);
-        if (!is_array($source) || ($source['commit'] ?? '') !== '765c66ed2b2d9d42cacab9009c7b17830cfdedf5'
-            || !is_string($source['copy'] ?? null) || !str_starts_with(basename($source['copy']), $identity.'_')) continue;
+        if (!tio2_owns_page($post->ID,'_tio2_resource_id',$identity)) continue;
         $group = $identity === 'RES-ORIGIN' ? 0 : (str_starts_with($identity, 'RES-TRADE-') ? 2 : 1);
         $groups[$group][$order[$identity]] = $post;
     }

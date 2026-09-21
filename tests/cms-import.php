@@ -1,4 +1,5 @@
 <?php
+require __DIR__.'/local-only.php';
 function cms_check($ok,$message){if(!$ok)throw new RuntimeException($message);}
 wp_set_current_user(1);
 $home_id=(int)get_option('page_on_front');$home=get_post($home_id);$seo=get_post_meta($home_id,'_tio2_seo_title',true);$meta=get_post_meta($home_id,'_tio2_seo_description',true);

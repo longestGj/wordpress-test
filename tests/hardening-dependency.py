@@ -7,6 +7,8 @@ def wp(*args):
     if p.returncode: raise RuntimeError(p.stdout+p.stderr)
     return p.stdout
 
+wp('eval-file','/workspace/tests/local-only.php')
+
 assert 'tio2-products' in wp('plugin','list','--status=active','--field=name')
 try:
     wp('plugin','deactivate','tio2-products')

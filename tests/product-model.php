@@ -1,4 +1,5 @@
 <?php
+require __DIR__.'/local-only.php';
 // Run with wp eval-file; isolated test records are always removed.
 function check($condition, $message) { if (!$condition) { throw new RuntimeException($message); } }
 check(post_type_exists('product'), 'Product CPT must exist');

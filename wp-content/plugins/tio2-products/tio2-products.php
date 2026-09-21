@@ -8,6 +8,8 @@ defined('ABSPATH') || exit;
 function tio2_register_product_content() {
     register_post_type('product', ['labels'=>['name'=>'Products','singular_name'=>'Product','add_new_item'=>'Add Product','edit_item'=>'Edit Product'], 'public'=>true,'show_in_rest'=>false,'has_archive'=>'products','rewrite'=>['slug'=>'products','with_front'=>false],'menu_icon'=>'dashicons-products','supports'=>['title','excerpt','thumbnail','revisions']]);
     register_post_meta('product','_tio2_product',['type'=>'object','single'=>true,'show_in_rest'=>false,'revisions_enabled'=>true]);
+    foreach(['_tio2_seo_title','_tio2_seo_description'] as $key)register_post_meta('page',$key,['type'=>'string','single'=>true,'show_in_rest'=>false,'revisions_enabled'=>true]);
+    register_post_meta('page','_tio2_discovery',['type'=>'object','single'=>true,'show_in_rest'=>false,'revisions_enabled'=>true]);
     foreach (['product_application'=>'Applications','product_process'=>'Processes'] as $tax=>$label) {
         register_taxonomy($tax, 'product', ['label'=>$label,'public'=>false,'show_ui'=>true,'show_admin_column'=>true,'hierarchical'=>true,'rewrite'=>false]);
     }
@@ -42,6 +44,16 @@ function tio2_validate_product($data) {
     }
     foreach($base['rows'] as &$row){if(isset($row['test_method'])){if(!is_string($row['test_method']))return new WP_Error('invalid_method','Test method must be text.');unset($row['test_method']);}}unset($row);
     if(!$matches($base,$shape))return new WP_Error('invalid_shape','Product field structure is incomplete or invalid. Existing data was preserved.');
+    $required=['h1','seo_title','seo_description','category','summary_title','positioning_title','applications_title','evaluation_title','technical_title','markets_title'];
+    // Receiver-only sections may remain blank while the receiver is unavailable.
+    if(tio2_target_url('quote'))$required[]='quote_label';
+    if(tio2_target_url('sample'))$required=array_merge($required,['sample_label','sample_title']);
+    if(tio2_target_url('documents'))$required=array_merge($required,['documents_title','documents_label','tds_label']);
+    if(trim($data['process_key'])!=='')$required=array_merge($required,['process_label','process_link_label']);
+    foreach($required as $key)if(trim($data[$key])==='')return new WP_Error('required_product_field','Required product text is empty: '.$key);
+    foreach($data['applications'] as $app)if($app['enabled'])foreach(['relation','title','text'] as $key)if(trim($app[$key])==='')return new WP_Error('required_application','Each enabled application needs a relation, title and description.');
+    foreach($data['evaluation'] as $group)if(trim($group['title'])==='')return new WP_Error('required_evaluation','Evaluation groups need a title.');
+    foreach(['application_links','market_links'] as $group)foreach($data[$group] as $link)if(trim($link['relation'])!=='' && trim($link['label'])==='')return new WP_Error('required_link_label','Configured product links need a label.');
     foreach ($data['rows'] as $row) {
         foreach (['property','standard','typical_value'] as $key) if (!isset($row[$key]) || !is_string($row[$key]) || (!empty($row['enabled'])&&trim($row[$key])==='')) return new WP_Error('invalid_row','Each enabled technical row needs a property, standard and typical value. Use — for an explicitly absent value.');
     }
@@ -63,3 +75,5 @@ function tio2_table_columns($data){return $data['table_columns']??[['key'=>'prop
 require __DIR__.'/admin.php';
 require __DIR__.'/pages.php';
 require __DIR__.'/topics.php';
+require __DIR__.'/revisions.php';
+require __DIR__.'/ownership.php';

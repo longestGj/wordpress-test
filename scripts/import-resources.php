@@ -1,8 +1,7 @@
 <?php
 /** One-time native Page creation. All collisions fail before any writes. */
 $root = get_page_by_path('resources', OBJECT, 'page');
-$parent_seed = json_decode(file_get_contents('/workspace/data/pages/resources.json'), true, 512, JSON_THROW_ON_ERROR);
-if (!$root || get_post_status($root) !== 'publish' || get_post_meta($root->ID, '_tio2_hub_key', true) !== 'resources' || get_post_meta($root->ID, '_tio2_source', true) !== $parent_seed['source']) {
+if (!$root || get_post_status($root) !== 'publish' || !tio2_owns_page($root->ID,'_tio2_hub_key','resources')) {
     WP_CLI::error('Resources parent ownership is missing or mismatched; no changes made.');
 }
 $seeds = [];
@@ -15,7 +14,7 @@ foreach (glob('/workspace/data/resources/*.json') as $file) {
         || isset($paths[$s['path']])) WP_CLI::error('Invalid or duplicate resource seed; no changes made.');
     $paths[$s['path']] = true;
     $existing = get_page_by_path('resources/'.$s['slug'], OBJECT, 'page');
-    if ($existing && (get_post_meta($existing->ID, '_tio2_resource_id', true) !== $s['identity'] || get_post_meta($existing->ID, '_tio2_source', true) !== $s['source'])) {
+    if ($existing && !tio2_owns_page($existing->ID,'_tio2_resource_id',$s['identity'])) {
         WP_CLI::error('Resource ownership collision at '.$s['path'].'; no changes made.');
     }
     $seeds[] = [$s, $existing];
@@ -32,7 +31,7 @@ try {
         ], true);
         if (is_wp_error($id)) throw new RuntimeException($id->get_error_message());
         $created[] = $id;
-        foreach (['_tio2_resource_id'=>$s['identity'], '_tio2_resource_class'=>$s['main_class'],
+        foreach (['_tio2_owner'=>'tio2-wordpress','_tio2_resource_id'=>$s['identity'], '_tio2_resource_class'=>$s['main_class'],
             '_tio2_source'=>$s['source'], '_tio2_seo_title'=>$s['seo_title'], '_tio2_seo_description'=>$s['seo_description']] as $key=>$value) {
             if (!update_post_meta($id, $key, wp_slash($value))) throw new RuntimeException('Failed to save resource metadata: '.$key);
         }

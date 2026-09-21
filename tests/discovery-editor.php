@@ -1,4 +1,5 @@
 <?php
+require __DIR__.'/local-only.php';
 if(!function_exists('tio2_validate_discovery'))WP_CLI::error('Discovery editing validator missing.');
 $id=(int)get_option('tio2_product_hub');$original=tio2_discovery_data();$data=$original;
 $data['rows'][0]['summary']='Temporary editable directory description.';

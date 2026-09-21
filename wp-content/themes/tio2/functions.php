@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || exit;
 function tio2_theme_dependencies_ready(){
-    foreach(['tio2_product_data','tio2_target_url','tio2_hub_key','tio2_hub_id','tio2_hub_content','tio2_discovery_data','tio2_route_ready','tio2_product_schema','tio2_public_rows','tio2_public_applications','tio2_table_columns'] as $function)if(!function_exists($function))return false;
+    foreach(['tio2_product_data','tio2_target_url','tio2_hub_key','tio2_hub_id','tio2_hub_content','tio2_discovery_data','tio2_route_ready','tio2_product_schema','tio2_public_rows','tio2_public_applications','tio2_table_columns','tio2_owns_page'] as $function)if(!function_exists($function))return false;
     return true;
 }
 if(!tio2_theme_dependencies_ready()){
