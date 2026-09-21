@@ -19,9 +19,9 @@ try{
  cms_check(tio2_product_data($m350->ID)===$m350_before,'M350 changed across bulk imports');
  $changed=$discovery;$changed['not_sure'][0]='Edited through save hook';
  $_POST=['tio2_discovery_nonce'=>wp_create_nonce('tio2_discovery'),'tio2_discovery'=>$changed];
- wp_update_post(['ID'=>$hub_id,'post_title'=>get_the_title($hub_id)]);
+ wp_update_post(['ID'=>$hub_id,'post_title'=>get_post_field('post_title',$hub_id)]);
  cms_check(tio2_discovery_data()['not_sure'][0]==='Edited through save hook','Discovery admin save failed');
- $changed['applications']['Paper']=['UNKNOWN'];$_POST['tio2_discovery']=$changed;wp_update_post(['ID'=>$hub_id,'post_title'=>get_the_title($hub_id)]);
+ $changed['applications']['Paper']=['UNKNOWN'];$_POST['tio2_discovery']=$changed;wp_update_post(['ID'=>$hub_id,'post_title'=>get_post_field('post_title',$hub_id)]);
  cms_check(tio2_discovery_data()['applications']['Paper']===$discovery['applications']['Paper'],'Invalid discovery edit was not rejected');
 }finally{
  $_POST=[];wp_update_post(['ID'=>$home_id,'post_content'=>wp_slash($home->post_content)]);update_post_meta($home_id,'_tio2_seo_title',$seo);update_post_meta($home_id,'_tio2_seo_description',$meta);

@@ -1,5 +1,21 @@
 <?php
 defined('ABSPATH') || exit;
+// Read current saved data on every editor load, including after save/restore.
+// These warnings never alter approved relationships or presentation data.
+add_action('admin_notices',function(){
+    global $post;
+    if(!($post instanceof WP_Post)||$post->post_type!=='product'||!current_user_can('edit_post',$post->ID))return;
+    $terms=wp_get_object_terms($post->ID,'product_application',['fields'=>'slugs']);
+    if(is_wp_error($terms))return;
+    $enabled=[];$messages=[];
+    foreach(tio2_product_data($post->ID)['applications']??[] as $a){
+        $relation=$a['relation']??'';
+        if($relation && !in_array($relation,$terms,true))$messages[]=$relation.': application description has no taxonomy relationship.';
+        if(!empty($a['enabled'])&&trim($a['text']??'')!=='')$enabled[]=$relation;
+    }
+    foreach(array_diff($terms,$enabled) as $term)$messages[]=$term.': relationship exists but no enabled product-page application description is available.';
+    if($messages)echo '<div class="notice notice-warning"><p><strong>Application consistency</strong></p><p>'.implode('<br>',array_map('esc_html',array_unique($messages))).'</p><p>No relationships or copy were changed automatically.</p></div>';
+});
 function tio2_field_editor($value,$name,$label) {
     if(is_array($value)) {
         if(array_is_list($value) && $value) {

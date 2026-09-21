@@ -5,13 +5,15 @@
  * Version: 0.1.0
  */
 defined('ABSPATH') || exit;
-add_action('init', function () {
+function tio2_register_product_content() {
     register_post_type('product', ['labels'=>['name'=>'Products','singular_name'=>'Product','add_new_item'=>'Add Product','edit_item'=>'Edit Product'], 'public'=>true,'show_in_rest'=>false,'has_archive'=>'products','rewrite'=>['slug'=>'products','with_front'=>false],'menu_icon'=>'dashicons-products','supports'=>['title','excerpt','thumbnail','revisions']]);
+    register_post_meta('product','_tio2_product',['type'=>'object','single'=>true,'show_in_rest'=>false,'revisions_enabled'=>true]);
     foreach (['product_application'=>'Applications','product_process'=>'Processes'] as $tax=>$label) {
         register_taxonomy($tax, 'product', ['label'=>$label,'public'=>false,'show_ui'=>true,'show_admin_column'=>true,'hierarchical'=>true,'rewrite'=>false]);
     }
-});
-register_activation_hook(__FILE__, function () { do_action('init'); flush_rewrite_rules(); });
+}
+add_action('init','tio2_register_product_content');
+register_activation_hook(__FILE__, function () { tio2_register_product_content(); flush_rewrite_rules(); });
 function tio2_product_data($id) { $d=get_post_meta($id,'_tio2_product',true); return is_array($d)?$d:[]; }
 function tio2_public_rows($id) { return array_values(array_filter(tio2_product_data($id)['rows']??[],fn($r)=>!empty($r['enabled']))); }
 function tio2_public_applications($id) { return array_values(array_filter(tio2_product_data($id)['applications']??[],fn($a)=>!empty($a['enabled']) && has_term($a['relation'],'product_application',$id))); }

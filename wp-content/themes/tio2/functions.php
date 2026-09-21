@@ -1,5 +1,15 @@
 <?php
 defined('ABSPATH') || exit;
+function tio2_theme_dependencies_ready(){
+    foreach(['tio2_product_data','tio2_target_url','tio2_hub_key','tio2_hub_id','tio2_hub_content','tio2_discovery_data','tio2_route_ready','tio2_product_schema','tio2_public_rows','tio2_public_applications','tio2_table_columns'] as $function)if(!function_exists($function))return false;
+    return true;
+}
+if(!tio2_theme_dependencies_ready()){
+    add_action('admin_notices',function(){if(current_user_can('activate_plugins'))echo '<div class="notice notice-error"><p>The TiO2 theme requires the TiO2 Products plugin. Activate or restore it to display the website.</p></div>';});
+    add_action('template_redirect',function(){nocache_headers();wp_die('The website is temporarily unavailable. Please try again later.','Website temporarily unavailable',['response'=>503]);},0);
+    // Never load presentation callbacks that require the missing plugin.
+    return;
+}
 add_action('after_setup_theme',function(){add_theme_support('title-tag');add_theme_support('post-thumbnails');add_theme_support('html5',['search-form','gallery','caption','style','script']);register_nav_menus(['primary'=>'Primary navigation','footer'=>'Footer navigation']);});
 add_action('wp_enqueue_scripts',function(){wp_enqueue_style('tio2',get_template_directory_uri().'/assets/site.css',[],filemtime(__DIR__.'/assets/site.css'));wp_enqueue_script('tio2',get_template_directory_uri().'/assets/site.js',[],filemtime(__DIR__.'/assets/site.js'),true);});
 add_filter('pre_get_document_title',function($title){if(is_singular('product')&&function_exists('tio2_product_data')) return tio2_product_data(get_queried_object_id())['seo_title']??$title;return $title;});
