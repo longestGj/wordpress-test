@@ -1,0 +1,176 @@
+{
+  "rows": [
+    {
+      "grade": "M-350",
+      "url": "/products/m-350/",
+      "group": "Coatings Grades",
+      "summary": "Excellent hue and high gloss with strong hiding power."
+    },
+    {
+      "grade": "M-510",
+      "url": "/products/m-510/",
+      "group": "Coatings Grades",
+      "summary": "TMP/TME-free multi-application grade with high brightness and durability."
+    },
+    {
+      "grade": "M-896",
+      "url": "/products/m-896/",
+      "group": "Coatings Grades",
+      "summary": "Superior weather resistance with high gloss and excellent opacity for demanding exterior coatings."
+    },
+    {
+      "grade": "M-996",
+      "url": "/products/m-996/",
+      "group": "Coatings Grades",
+      "summary": "High-durability coatings grade with high opacity and good gloss."
+    },
+    {
+      "grade": "M-2196",
+      "url": "/products/m-2196/",
+      "group": "Coatings Grades",
+      "summary": "Highly durable coatings pigment with high opacity and easy dispersion."
+    },
+    {
+      "grade": "M-895",
+      "url": "/products/m-895/",
+      "group": "Coatings Grades",
+      "summary": "High-opacity, high-gloss coatings grade with good weather resistance."
+    },
+    {
+      "grade": "M-200",
+      "url": "/products/m-200/",
+      "group": "Plastics & Masterbatch Grades",
+      "summary": "High-durability exterior plastics grade with strong anti-chalking performance."
+    },
+    {
+      "grade": "M-108",
+      "url": "/products/m-108/",
+      "group": "Plastics & Masterbatch Grades",
+      "summary": "High-heat-stability plastics grade with low oil absorption and rapid dispersion."
+    },
+    {
+      "grade": "M-210",
+      "url": "/products/m-210/",
+      "group": "Plastics & Masterbatch Grades",
+      "summary": "High hiding power and easy dispersion for polyolefin masterbatch."
+    },
+    {
+      "grade": "M-340",
+      "url": "/products/m-340/",
+      "group": "Plastics & Masterbatch Grades",
+      "summary": "High whiteness with strong high-temperature anti-yellowing performance."
+    },
+    {
+      "grade": "M-886",
+      "url": "/products/m-886/",
+      "group": "Plastics & Masterbatch Grades",
+      "summary": "Bright-white plastics grade with excellent dispersion and processability."
+    },
+    {
+      "grade": "M-52",
+      "url": "/products/m-52/",
+      "group": "Inks & Multi-Application Grades",
+      "summary": "Very high gloss, high opacity and low abrasivity for printing inks."
+    },
+    {
+      "grade": "M-2377",
+      "url": "/products/m-2377/",
+      "group": "Inks & Multi-Application Grades",
+      "summary": "High gloss and brightness with good opacity and easy dispersion."
+    },
+    {
+      "grade": "CR-901",
+      "url": "/products/cr-901/",
+      "group": "Specialty Grade",
+      "summary": "High-purity grade with low impurities and stable batch-to-batch quality."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Define the application",
+      "body": "Record the resin or material system, end use, processing conditions and performance targets that the grade must be evaluated against."
+    },
+    {
+      "title": "Confirm whether process matters",
+      "body": "Identify whether chloride or sulfate production-process classification is a required sourcing parameter. Process classification does not determine application suitability."
+    },
+    {
+      "title": "Review applicable technical data",
+      "body": "Review information issued for the grade you are evaluating. Do not infer missing values from another grade, an older source or an unrelated TDS."
+    },
+    {
+      "title": "Identify destination and document needs",
+      "body": "Confirm the destination market and the technical, quality, compliance or origin documents required for the applicable request."
+    },
+    {
+      "title": "Validate in the buyer's system",
+      "body": "Confirm final suitability through the buyer's own formulation, processing conditions, performance requirements and qualification process."
+    }
+  ],
+  "faq": [
+    {
+      "question": "How do I choose a titanium dioxide pigment grade?",
+      "answer": "Start with the intended application, then use production-process classification if it is a required sourcing parameter. Review the relevant grade page and confirm the available product information against the formulation, processing conditions, destination and documentation requirements. A listed result is a starting point for evaluation, not a suitability guarantee."
+    },
+    {
+      "question": "Which grades are listed in this product center?",
+      "answer": "The product center lists 14 grades: M-350, M-510, M-896, M-996, M-2196, M-895, M-200, M-108, M-210, M-340, M-886, M-52, M-2377 and CR-901."
+    },
+    {
+      "question": "What is the difference between application and process selection?",
+      "answer": "Application selection groups grades by listed use-case relationships, while process selection groups grades by their production-process classification. A process classification does not determine application suitability on its own."
+    },
+    {
+      "question": "What if no grade is shown for my application?",
+      "answer": "A missing result means that the selector has no listed grade for that application. It should not automatically be interpreted as a technical rejection of every grade. Buyers can contact the team when a requirement is not represented in the selector."
+    },
+    {
+      "question": "Does a listed grade guarantee suitability?",
+      "answer": "No. A listed grade is a starting point for technical evaluation. Final suitability should be confirmed against the buyer's formulation, processing conditions, performance requirements, destination requirements and applicable documentation."
+    }
+  ],
+  "applications": {
+    "Coatings": [
+      "M-350",
+      "M-510",
+      "M-896",
+      "M-996",
+      "M-2196",
+      "M-895",
+      "M-52",
+      "M-2377"
+    ],
+    "Plastics": [
+      "M-350",
+      "M-510",
+      "M-200",
+      "M-108",
+      "M-210",
+      "M-340",
+      "M-886",
+      "M-2377"
+    ],
+    "Masterbatch": [
+      "M-510",
+      "M-200",
+      "M-108",
+      "M-210",
+      "M-340",
+      "M-886",
+      "M-2377"
+    ],
+    "Printing Inks": [
+      "M-350",
+      "M-510",
+      "M-52",
+      "M-2377"
+    ],
+    "Paper": [
+      "M-350",
+      "M-2377"
+    ],
+    "Specialty Materials": [
+      "CR-901"
+    ]
+  }
+}

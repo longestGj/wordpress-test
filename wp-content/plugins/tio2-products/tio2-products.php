@@ -1,0 +1,61 @@
+<?php
+/**
+ * Plugin Name: TiO2 Products
+ * Description: Product records, editable technical data and shared destination settings.
+ * Version: 0.1.0
+ */
+defined('ABSPATH') || exit;
+add_action('init', function () {
+    register_post_type('product', ['labels'=>['name'=>'Products','singular_name'=>'Product','add_new_item'=>'Add Product','edit_item'=>'Edit Product'], 'public'=>true,'show_in_rest'=>false,'has_archive'=>'products','rewrite'=>['slug'=>'products','with_front'=>false],'menu_icon'=>'dashicons-products','supports'=>['title','excerpt','thumbnail','revisions']]);
+    foreach (['product_application'=>'Applications','product_process'=>'Processes'] as $tax=>$label) {
+        register_taxonomy($tax, 'product', ['label'=>$label,'public'=>false,'show_ui'=>true,'show_admin_column'=>true,'hierarchical'=>true,'rewrite'=>false]);
+    }
+});
+register_activation_hook(__FILE__, function () { do_action('init'); flush_rewrite_rules(); });
+function tio2_product_data($id) { $d=get_post_meta($id,'_tio2_product',true); return is_array($d)?$d:[]; }
+function tio2_public_rows($id) { return array_values(array_filter(tio2_product_data($id)['rows']??[],fn($r)=>!empty($r['enabled']))); }
+function tio2_public_applications($id) { return array_values(array_filter(tio2_product_data($id)['applications']??[],fn($a)=>!empty($a['enabled']) && has_term($a['relation'],'product_application',$id))); }
+function tio2_validate_product($data) {
+    if (!is_array($data) || empty($data['h1']) || !is_string($data['h1']) || !isset($data['rows']) || !is_array($data['rows'])) return new WP_Error('invalid_product','Product heading and technical rows are required.');
+    $shape=json_decode(file_get_contents(__DIR__.'/blank.json'),true);
+    $matches=function($value,$expected) use (&$matches) {
+        if(is_array($expected)) {
+            if(!is_array($value)) return false;
+            if(array_is_list($expected)) { if(!array_is_list($value))return false; foreach($value as $v)if(!$matches($v,$expected[0]))return false; return true; }
+            if(array_diff(array_keys($expected),array_keys($value))||array_diff(array_keys($value),array_keys($expected)))return false;
+            foreach($expected as $k=>$v)if(!$matches($value[$k],$v))return false;
+            return true;
+        }
+        return is_bool($expected)?is_bool($value):is_string($value);
+    };
+    $base=$data;
+    foreach(['applications_intro','evaluation_intro','technical_intro'] as $optional){if(isset($base[$optional])){if(!is_string($base[$optional]))return new WP_Error('invalid_intro','Introduction must be text.');unset($base[$optional]);}}
+    if(isset($base['table_columns'])){
+        if(!is_array($base['table_columns']) || count($base['table_columns'])<2 || count($base['table_columns'])>4)return new WP_Error('invalid_columns','Two to four technical columns are required.');
+        $keys=[];
+        foreach($base['table_columns'] as $col){if(!is_array($col)||!in_array($col['key']??'', ['property','standard','typical_value','test_method'],true)||!is_string($col['label']??null)||trim($col['label'])===''||in_array($col['key'],$keys,true))return new WP_Error('invalid_columns','Invalid or duplicate technical column.');$keys[]=$col['key'];}
+        if($keys[0]!=='property')return new WP_Error('invalid_columns','Property must be the first column.');
+        unset($base['table_columns']);
+    }
+    foreach($base['rows'] as &$row){if(isset($row['test_method'])){if(!is_string($row['test_method']))return new WP_Error('invalid_method','Test method must be text.');unset($row['test_method']);}}unset($row);
+    if(!$matches($base,$shape))return new WP_Error('invalid_shape','Product field structure is incomplete or invalid. Existing data was preserved.');
+    foreach ($data['rows'] as $row) {
+        foreach (['property','standard','typical_value'] as $key) if (!isset($row[$key]) || !is_string($row[$key]) || (!empty($row['enabled'])&&trim($row[$key])==='')) return new WP_Error('invalid_row','Each enabled technical row needs a property, standard and typical value. Use — for an explicitly absent value.');
+    }
+    $walk=function($v) use (&$walk) { if(is_array($v)){ foreach($v as $x) if(!$walk($x)) return false; return true; } return is_string($v)||is_bool($v); };
+    return $walk($data)?$data:new WP_Error('invalid_field','Product fields must contain text or visibility values.');
+}
+function tio2_target_keys() { return ['quote','sample','documents','chloride','sulfate','coatings','printing-inks','plastics','masterbatch','paper','specialty','eu','uk','india','brazil']; }
+function tio2_target_url($key) {
+    $options=get_option('tio2_targets',[]); $id=absint($options[$key]??0);
+    if (!$id || get_post_type($id)!=='page' || get_post_status($id)!=='publish' || post_password_required($id)) return '';
+    if(in_array($key,['quote','sample','documents'],true) && empty($options[$key.'_ready'])) return '';
+    return get_permalink($id);
+}
+function tio2_product_schema($id) {
+    $d=tio2_product_data($id);
+    return ['@context'=>'https://schema.org','@type'=>'Product','@id'=>get_permalink($id).'#product','url'=>get_permalink($id),'name'=>get_the_title($id).' Titanium Dioxide','sku'=>get_the_title($id),'description'=>get_post_field('post_excerpt',$id),'additionalProperty'=>array_map(function($r)use($d){$values=[];foreach(array_slice(tio2_table_columns($d),1) as $c)$values[]=$c['label'].': '.($r[$c['key']]??'—');return ['@type'=>'PropertyValue','name'=>$r['property'],'value'=>implode('; ',$values)];},tio2_public_rows($id))];
+}
+function tio2_table_columns($data){return $data['table_columns']??[['key'=>'property','label'=>'Property'],['key'=>'standard','label'=>'Standard'],['key'=>'typical_value','label'=>'Typical Value']];}
+require __DIR__.'/admin.php';
+require __DIR__.'/pages.php';

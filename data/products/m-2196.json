@@ -1,0 +1,269 @@
+{
+  "title": "M-2196",
+  "slug": "m-2196",
+  "excerpt": "M-2196 is a rutile titanium dioxide pigment made by the sulfate process, with zirconia/alumina inorganic surface treatment and organic surface treatment, for solvent-based furniture- and industrial-paint evaluation.",
+  "applications": [
+    "coatings"
+  ],
+  "process": "sulfate",
+  "data": {
+    "h1": "M-2196 Titanium Dioxide for Solvent-Based Furniture and Industrial Paint",
+    "category": "COATINGS",
+    "process_label": "Sulfate process",
+    "hero_paragraphs": [
+      "Its current technical profile identifies gloss, whiteness with a blue undertone, and wetting and dispersing behavior as priorities for buyer testing. Review the typical data and confirm suitability in your own binder, solvent package, formulation, application, drying or cure, and end-use conditions."
+    ],
+    "summary_title": "M-2196 product file and technical-data visual",
+    "summary": [
+      "Product: M-2196",
+      "Type: Rutile titanium dioxide pigment",
+      "Process: Sulfate process",
+      "Surface treatment: Zirconia/alumina and organic treatment",
+      "Applications: Solvent-based furniture and industrial paint"
+    ],
+    "quote_label": "Request an M-2196 Quote",
+    "sample_label": "Request an M-2196 Sample",
+    "positioning_title": "Where M-2196 Fits in Coatings Evaluation",
+    "positioning_paragraphs": [
+      "M-2196 is a sulfate-process rutile titanium dioxide pigment with zirconia/alumina and organic surface treatment for solvent-based furniture- and industrial-paint evaluation.",
+      "Use M-2196 as a candidate when gloss, whiteness, undertone, wetting and dispersing behavior are relevant to the intended coating system. Final selection should account for binder and solvent system, pigment loading, additives, dispersion process, substrate, film build, application, drying or cure conditions, appearance and destination documents."
+    ],
+    "facts": [
+      "Sulfate-process rutile titanium dioxide pigment",
+      "Zirconia and alumina inorganic surface treatment",
+      "Organic surface treatment",
+      "Solvent-based furniture-paint direction",
+      "Solvent-based industrial-paint direction",
+      "Evaluation of gloss, whiteness, undertone, wetting and dispersing behavior"
+    ],
+    "process_link_label": "Learn about sulfate-process titanium dioxide",
+    "applications_title": "Coatings Directions to Evaluate",
+    "applications": [
+      {
+        "title": "Solvent-Based Furniture Paint",
+        "text": "Evaluate M-2196 in the intended resin and solvent system, pigment loading, additives, dispersion process, substrate, application and drying or cure conditions. Confirm gloss, whiteness, undertone, wetting, dispersion and finished appearance.",
+        "relation": "coatings",
+        "qualified": false,
+        "enabled": true
+      },
+      {
+        "title": "Solvent-Based Industrial Paint",
+        "text": "Test M-2196 in the selected industrial coating formulation, substrate preparation, film build, application and drying or cure conditions. Confirm gloss, whiteness, dispersion, coverage and finished-film performance for the intended end use.",
+        "relation": "coatings",
+        "qualified": false,
+        "enabled": true
+      }
+    ],
+    "evaluation_title": "What to Evaluate in Your Coating System",
+    "evaluation": [
+      {
+        "title": "Optical and Dispersion Review",
+        "items": [
+          "Gloss and finished appearance at the intended pigment loading and film build",
+          "Whiteness and undertone in the complete formulation",
+          "Wetting and dispersing behavior with the selected binder, solvent and process",
+          "Color, scattering and reducing-power results under the buyer's test method"
+        ]
+      },
+      {
+        "title": "Formulation and Qualification Review",
+        "items": [
+          "Binder, solvent package, additives and pigment loading",
+          "Substrate, surface preparation, application method and film build",
+          "Drying or cure conditions and finished-film performance",
+          "Destination needs, document scope and sample-validation results"
+        ]
+      }
+    ],
+    "evaluation_note": "These evaluation priorities identify what to check during buyer testing. They do not guarantee fixed results.",
+    "technical_title": "Typical Technical Data",
+    "technical_note": "Confirm suitability in your own formulation and processing conditions.",
+    "tds_label": "Request the M-2196 TDS",
+    "rows": [
+      {
+        "property": "Processing method",
+        "standard": "—",
+        "typical_value": "Sulfate",
+        "test_method": "-",
+        "enabled": true
+      },
+      {
+        "property": "Crystal form",
+        "standard": "—",
+        "typical_value": "Rutile",
+        "test_method": "-",
+        "enabled": true
+      },
+      {
+        "property": "Inorganic surface treatment",
+        "standard": "—",
+        "typical_value": "ZrO₂, Al₂O₃",
+        "test_method": "-",
+        "enabled": true
+      },
+      {
+        "property": "Organic surface treatment",
+        "standard": "—",
+        "typical_value": "Yes",
+        "test_method": "-",
+        "enabled": true
+      },
+      {
+        "property": "Classification",
+        "standard": "—",
+        "typical_value": "R2",
+        "test_method": "ISO 591-1",
+        "enabled": true
+      },
+      {
+        "property": "Color",
+        "standard": "—",
+        "typical_value": "ΔE ≤ 0.5",
+        "test_method": "ISO 787-25",
+        "enabled": true
+      },
+      {
+        "property": "Relative scattering power",
+        "standard": "—",
+        "typical_value": "95%-105%",
+        "test_method": "ISO 787-24",
+        "enabled": true
+      },
+      {
+        "property": "Density",
+        "standard": "—",
+        "typical_value": "4.0 g/cm³",
+        "test_method": "ISO 787-10",
+        "enabled": true
+      },
+      {
+        "property": "Dispersion in polyester system",
+        "standard": "—",
+        "typical_value": "≤27.5 μm",
+        "test_method": "GB/T 21868.3-2008",
+        "enabled": true
+      },
+      {
+        "property": "TiO₂ content",
+        "standard": "—",
+        "typical_value": "94%",
+        "test_method": "ISO 591-1",
+        "enabled": true
+      },
+      {
+        "property": "CIE L*",
+        "standard": "—",
+        "typical_value": "95.3",
+        "test_method": "GB/T 1864-2012",
+        "enabled": true
+      },
+      {
+        "property": "Reducing power (TCS)",
+        "standard": "—",
+        "typical_value": "1950",
+        "test_method": "-",
+        "enabled": true
+      },
+      {
+        "property": "pH",
+        "standard": "—",
+        "typical_value": "7.0",
+        "test_method": "ISO 787-9",
+        "enabled": true
+      },
+      {
+        "property": "Oil absorption",
+        "standard": "—",
+        "typical_value": "19 g/100 g",
+        "test_method": "ISO 787-5",
+        "enabled": true
+      },
+      {
+        "property": "Residue on 45 μm",
+        "standard": "—",
+        "typical_value": "0.01%",
+        "test_method": "ISO 787-18",
+        "enabled": true
+      },
+      {
+        "property": "Resistivity",
+        "standard": "—",
+        "typical_value": "100 Ω·m",
+        "test_method": "ISO 787-14",
+        "enabled": true
+      },
+      {
+        "property": "Volatiles at 105°C, at packaging",
+        "standard": "—",
+        "typical_value": "0.3%",
+        "test_method": "ISO 787-2",
+        "enabled": true
+      }
+    ],
+    "documents_title": "Request M-2196 Documents",
+    "documents_paragraphs": [
+      "Request the current M-2196 technical data and describe additional technical or export document needs. Our team will confirm the applicable scope.",
+      "Submitting a request does not confirm that every requested document is available or applicable."
+    ],
+    "documents_options": [
+      "Technical Data Sheet (TDS): Request the current M-2196 technical data for evaluation.",
+      "Additional document requirements: Describe type, destination and context. No availability is implied."
+    ],
+    "documents_label": "Request M-2196 Documents",
+    "markets_title": "Plan Evaluation for Your Destination Market",
+    "markets_paragraphs": [
+      "Continue to the relevant destination page for procurement, document and inquiry guidance.",
+      "These paths do not claim M-2196 registration, compliance, stock or local availability."
+    ],
+    "sample_title": "Request M-2196 for Your Own Evaluation",
+    "sample_paragraphs": [
+      "Share the coating system, binder, solvent package, additives, application or drying conditions, destination and evaluation objective. Submission does not approve quantity, freight or dispatch timing."
+    ],
+    "seo_title": "M-2196 Titanium Dioxide for Coatings | TiO2 Malaysia",
+    "seo_description": "Evaluate M-2196 titanium dioxide for solvent-based furniture and industrial paint. Review typical data, request a sample or RFQ.",
+    "keyword": "M-2196 titanium dioxide",
+    "source_note": "pages/products/detail-template/06_handoff/GRADE-M2196_PRODUCT_DETAIL_CONTENT_CONTRACT_V0.1.json",
+    "application_links": [
+      {
+        "relation": "coatings",
+        "label": "Coatings"
+      }
+    ],
+    "process_key": "sulfate",
+    "market_links": [
+      {
+        "relation": "eu",
+        "label": "European Union"
+      },
+      {
+        "relation": "uk",
+        "label": "United Kingdom"
+      },
+      {
+        "relation": "india",
+        "label": "India"
+      },
+      {
+        "relation": "brazil",
+        "label": "Brazil"
+      }
+    ],
+    "applications_intro": "Review each documented direction in your own binder, solvent package, formulation, application, drying or cure, and end-use conditions.",
+    "evaluation_intro": "Use the documented M-2196 profile and typical data to frame buyer testing.",
+    "technical_intro": "Review the source-backed values as an input to M-2196 product evaluation.",
+    "table_columns": [
+      {
+        "key": "property",
+        "label": "Parameter"
+      },
+      {
+        "key": "typical_value",
+        "label": "Value"
+      },
+      {
+        "key": "test_method",
+        "label": "Test method"
+      }
+    ]
+  }
+}

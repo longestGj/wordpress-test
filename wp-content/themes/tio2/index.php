@@ -1,0 +1,1 @@
+<?php get_header(); ?><main id="main" class="wrap section"><?php if(have_posts()):while(have_posts()):the_post(); ?><article><h1><?php the_title(); ?></h1><?php the_content(); ?></article><?php endwhile;else: ?><h1>Page not found</h1><a class="button" href="<?php echo esc_url(home_url('/products/')); ?>">Products</a><?php endif; ?></main><?php get_footer(); ?>

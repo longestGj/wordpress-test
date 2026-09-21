@@ -1,0 +1,86 @@
+{
+  "h1": "",
+  "category": "",
+  "process_label": "",
+  "hero_paragraphs": [
+    ""
+  ],
+  "summary_title": "",
+  "summary": [
+    ""
+  ],
+  "quote_label": "",
+  "sample_label": "",
+  "positioning_title": "",
+  "positioning_paragraphs": [
+    ""
+  ],
+  "facts": [
+    ""
+  ],
+  "process_link_label": "",
+  "applications_title": "",
+  "applications": [
+    {
+      "title": "",
+      "text": "",
+      "relation": "",
+      "qualified": false,
+      "enabled": true
+    }
+  ],
+  "evaluation_title": "",
+  "evaluation": [
+    {
+      "title": "",
+      "items": [
+        ""
+      ]
+    }
+  ],
+  "evaluation_note": "",
+  "technical_title": "",
+  "technical_note": "",
+  "tds_label": "",
+  "rows": [
+    {
+      "property": "",
+      "standard": "",
+      "typical_value": "",
+      "enabled": true
+    }
+  ],
+  "documents_title": "",
+  "documents_paragraphs": [
+    ""
+  ],
+  "documents_options": [
+    ""
+  ],
+  "documents_label": "",
+  "markets_title": "",
+  "markets_paragraphs": [
+    ""
+  ],
+  "sample_title": "",
+  "sample_paragraphs": [
+    ""
+  ],
+  "seo_title": "",
+  "seo_description": "",
+  "keyword": "",
+  "source_note": "",
+  "application_links": [
+    {
+      "relation": "",
+      "label": ""
+    }
+  ],
+  "process_key": "",
+  "market_links": [
+    {
+      "relation": "",
+      "label": ""
+    }
+  ]
+}

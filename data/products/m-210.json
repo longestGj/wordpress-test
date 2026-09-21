@@ -1,0 +1,242 @@
+{
+  "title": "M-210",
+  "slug": "m-210",
+  "excerpt": "A chloride-process rutile titanium dioxide pigment with inorganic and organic treatment, documented for polyolefin masterbatch, PE/PP/ABS engineering plastics, and PS/copolymer applications.",
+  "applications": [
+    "masterbatch",
+    "plastics"
+  ],
+  "process": "chloride",
+  "data": {
+    "h1": "M-210 Titanium Dioxide for Masterbatch and Plastics Evaluation",
+    "category": "PLASTICS & MASTERBATCH",
+    "process_label": "Chloride process",
+    "hero_paragraphs": [
+      "The current profile identifies hiding and tinting strength, dispersibility, dry-powder fluidity, processing behavior and bluish-undertone direction as evaluation priorities. Review the typical data and confirm suitability in your own polymer, formulation, processing and end-use conditions."
+    ],
+    "summary_title": "M-210 product file and current TDS visual",
+    "summary": [
+      "Product: M-210",
+      "Type: Rutile titanium dioxide pigment",
+      "Process: Chloride process",
+      "Grade positioning: Polyolefin masterbatch and plastics evaluation",
+      "Application category: Plastics and Masterbatch"
+    ],
+    "quote_label": "Request an M-210 Quote",
+    "sample_label": "Request an M-210 Sample",
+    "positioning_title": "Where M-210 Fits in Product Evaluation",
+    "positioning_paragraphs": [
+      "M-210 is a chloride-process rutile titanium dioxide pigment specially treated with inorganic and organic compounds for masterbatch and plastics evaluation.",
+      "Use M-210 as a candidate when hiding, tinting, dispersibility, powder handling and processing behavior are relevant. Final selection should account for polymer, carrier resin, additives, pigment loading, processing temperature, equipment, appearance and destination documents."
+    ],
+    "facts": [
+      "Chloride-process rutile titanium dioxide pigment",
+      "Alumina and organic-compound surface treatment",
+      "Polyolefin masterbatch direction",
+      "PE, PP and ABS engineering-plastics direction",
+      "PS and copolymer direction",
+      "Evaluation of color direction, hiding and tinting, dispersion, fluidity and processing"
+    ],
+    "process_link_label": "Learn about chloride-process titanium dioxide",
+    "applications_title": "Plastics and Masterbatch Directions to Evaluate",
+    "applications": [
+      {
+        "title": "Polyolefin Masterbatch",
+        "text": "Evaluate M-210 at the intended pigment loading and carrier resin. Confirm dispersion, hiding and tinting, color direction, powder handling, processing and dilution performance.",
+        "relation": "masterbatch",
+        "qualified": false,
+        "enabled": true
+      },
+      {
+        "title": "Engineering Plastics: PE, PP and ABS",
+        "text": "Test M-210 in the actual PE, PP or ABS formulation, additives, temperature and equipment. Confirm dispersion, appearance, processing behavior and end-use suitability.",
+        "relation": "plastics",
+        "qualified": false,
+        "enabled": true
+      },
+      {
+        "title": "PS and Its Copolymers",
+        "text": "Review M-210 in the intended PS or copolymer system. Confirm compatibility, color, hiding and tinting, dispersion and processing under actual conditions.",
+        "relation": "plastics",
+        "qualified": false,
+        "enabled": true
+      }
+    ],
+    "evaluation_title": "What to Evaluate in Your Plastics Formulation",
+    "evaluation": [
+      {
+        "title": "Optical and Dispersion Review",
+        "items": [
+          "Bluish-undertone direction in the complete formulation",
+          "Hiding power and tinting strength at intended loading",
+          "Dispersion in the selected polymer and carrier system",
+          "Finished appearance after downstream processing"
+        ]
+      },
+      {
+        "title": "Processing and Qualification Review",
+        "items": [
+          "Dry-powder fluidity in handling and feeding conditions",
+          "Processing behavior at actual temperature and equipment settings",
+          "Compatibility with resin and additive package",
+          "Application conditions, destination needs and sample-validation results"
+        ]
+      }
+    ],
+    "evaluation_note": "These evaluation priorities identify what to check during buyer testing. They do not guarantee fixed results.",
+    "technical_title": "Typical Technical Data",
+    "technical_note": "These values reproduce the M-210 TDS V3 2023 and do not constitute a product specification. Confirm suitability in your own formulation and processing conditions.",
+    "tds_label": "Request the M-210 TDS",
+    "rows": [
+      {
+        "property": "TiO₂ content, %",
+        "standard": "—",
+        "typical_value": "96.5",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Surface treatment",
+        "standard": "—",
+        "typical_value": "Alumina, organic compounds",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Identification",
+        "standard": "—",
+        "typical_value": "ISO 591: R2; ASTM D 476-84: II(IV)",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Rutile content, %",
+        "standard": "—",
+        "typical_value": "99.9",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "L*",
+        "standard": "—",
+        "typical_value": "98.2",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "b*",
+        "standard": "—",
+        "typical_value": "1.80",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Specific gravity, g/cm³",
+        "standard": "—",
+        "typical_value": "4.1",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Tinting strength, %",
+        "standard": "—",
+        "typical_value": "120",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "pH",
+        "standard": "—",
+        "typical_value": "7.2",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Oil absorption, g/100 g",
+        "standard": "—",
+        "typical_value": "14.5",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Volatile (during packing), %",
+        "standard": "—",
+        "typical_value": "0.2",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Carbon black undertone (CBU)",
+        "standard": "—",
+        "typical_value": "15",
+        "test_method": "—",
+        "enabled": true
+      }
+    ],
+    "documents_title": "Request M-210 Documents",
+    "documents_paragraphs": [
+      "Request the current M-210 TDS and describe additional technical or export document needs. Our team will confirm the applicable scope.",
+      "Submitting a request does not confirm that every requested document is available or applicable."
+    ],
+    "documents_options": [
+      "Technical Data Sheet (TDS): Request the current M-210 TDS for evaluation.",
+      "Additional document requirements: Describe type, destination and context. No availability is implied."
+    ],
+    "documents_label": "Request M-210 Documents",
+    "markets_title": "Plan Evaluation for Your Destination Market",
+    "markets_paragraphs": [
+      "Continue to the relevant destination page for procurement, document and inquiry guidance.",
+      "These paths do not claim M-210 registration, compliance, stock or local availability."
+    ],
+    "sample_title": "Request M-210 for Your Own Evaluation",
+    "sample_paragraphs": [
+      "Share the polymer system, additives, processing conditions, destination and evaluation objective. Submission does not approve quantity, freight or dispatch timing."
+    ],
+    "seo_title": "M-210 Titanium Dioxide for Masterbatch | TiO2 Malaysia",
+    "seo_description": "Evaluate M-210 titanium dioxide for polyolefin masterbatch, PE, PP, ABS, PS and copolymer applications. Review typical data, request a sample or RFQ.",
+    "keyword": "M-210 titanium dioxide",
+    "source_note": "pages/products/detail-template/06_handoff/GRADE-M210_PRODUCT_DETAIL_CONTENT_CONTRACT_V0.1.json",
+    "application_links": [
+      {
+        "relation": "masterbatch",
+        "label": "Masterbatch"
+      },
+      {
+        "relation": "plastics",
+        "label": "Plastics"
+      }
+    ],
+    "process_key": "chloride",
+    "market_links": [
+      {
+        "relation": "eu",
+        "label": "European Union"
+      },
+      {
+        "relation": "uk",
+        "label": "United Kingdom"
+      },
+      {
+        "relation": "india",
+        "label": "India"
+      },
+      {
+        "relation": "brazil",
+        "label": "Brazil"
+      }
+    ],
+    "applications_intro": "Review each documented direction in your own polymer system, processing and end-use conditions.",
+    "evaluation_intro": "Use the documented M-210 profile and typical data to frame buyer testing.",
+    "technical_intro": "Review the values reproduced from the current M-210 Technical Data Sheet as an input to product evaluation.",
+    "table_columns": [
+      {
+        "key": "property",
+        "label": "Property"
+      },
+      {
+        "key": "typical_value",
+        "label": "Typical value"
+      }
+    ]
+  }
+}

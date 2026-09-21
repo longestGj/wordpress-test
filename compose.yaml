@@ -1,0 +1,63 @@
+name: tio2-wordpress
+
+services:
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Set DB_ROOT_PASSWORD in .env}
+    volumes:
+      - database:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  wordpress:
+    image: wordpress:7.1.1-php8.3-apache
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:80"
+    environment: &wordpress-environment
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - wordpress:/var/www/html
+      - ./wp-content/plugins/tio2-products:/var/www/html/wp-content/plugins/tio2-products
+      - ./wp-content/themes/tio2:/var/www/html/wp-content/themes/tio2
+      - ./scripts:/workspace/scripts:ro
+      - ./tests:/workspace/tests:ro
+      - ./data:/workspace/data:ro
+    depends_on:
+      db:
+        condition: service_healthy
+
+  cli:
+    image: wordpress:cli-2.12.0-php8.3
+    profiles: [tools]
+    user: "33:33"
+    environment:
+      <<: *wordpress-environment
+      WP_ADMIN_USER: ${WP_ADMIN_USER}
+      WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD}
+      WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL}
+    volumes:
+      - wordpress:/var/www/html
+      - ./wp-content/plugins/tio2-products:/var/www/html/wp-content/plugins/tio2-products
+      - ./wp-content/themes/tio2:/var/www/html/wp-content/themes/tio2
+      - ./scripts:/workspace/scripts:ro
+      - ./tests:/workspace/tests:ro
+      - ./data:/workspace/data:ro
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  database:
+  wordpress:

@@ -1,0 +1,163 @@
+/* Approved visual adapted and scoped to this WordPress page. */
+.hub-markets .header,.hub-markets .footer,.hub-markets .cookie-layer{font-family:Inter,Arial,sans-serif}
+.hub-markets .header *,.hub-markets .footer *,.hub-markets .cookie-layer *{box-sizing:border-box}
+.hub-markets .header{position:relative;z-index:20;height:84px;border-bottom:1px solid #d9e2ec;color:#062b5b;background:#fff}
+.hub-markets .header a,.hub-markets .footer a{text-decoration:none}
+.hub-markets .headerInner{width:min(1200px,calc(100% - 64px));height:83px;margin:auto;display:flex;align-items:center;gap:24px}
+.hub-markets .logoLink{min-width:180px;min-height:60px;margin-right:auto;display:inline-flex;align-items:center;line-height:0}
+.hub-markets .logo{width:180px;height:60px;object-fit:contain}
+.hub-markets .desktopNav{display:flex;align-self:stretch;align-items:stretch;gap:16px}
+.hub-markets .desktopNav a{position:relative;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;color:#062b5b;font-size:14px;font-weight:500}
+.hub-markets .desktopNav a[aria-current="page"]{font-weight:700}
+.hub-markets .desktopNav a[aria-current="page"]::after{content:"";position:absolute;right:8%;bottom:0;left:8%;height:3px;background:#008078}
+.hub-markets .headerRfq,.hub-markets .footerRfq{min-width:44px;min-height:48px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #008078;border-radius:6px;color:#fff;background:#008078;font-size:14px;font-weight:600}
+.hub-markets .rfqCompact,.hub-markets .menuButton,.hub-markets .mobileNav{display:none}
+.hub-markets .header :is(a,button):focus-visible{outline:3px solid #008078;outline-offset:3px}
+.hub-markets .footer{padding:52px max(32px,calc((100% - 1200px)/2)) 28px;color:#fff;background:#031b3a}
+.hub-markets .footerGrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px}
+.hub-markets .footerGrid>:is(div,nav){min-width:0;display:flex;align-items:flex-start;flex-direction:column;gap:12px}
+.hub-markets .footerLogo{width:180px;height:60px;object-fit:contain}
+.hub-markets .footer .brandColumn p,.hub-markets .footer .copyright{max-width:295px;margin:0;color:#d4e0eb;font-size:14px;line-height:1.55}
+.hub-markets .footer h2{margin:0 0 8px;color:#fff;font-size:14px;line-height:1.4;text-transform:uppercase;letter-spacing:.08em}
+.hub-markets .footer .footerGrid a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;color:#fff;font-size:14px;font-weight:500}
+.hub-markets .footer .footerRfq{font-weight:600}
+.hub-markets .legalUtilities{margin-top:48px;padding-top:20px;display:flex;flex-wrap:wrap;gap:4px 18px;border-top:1px solid #21456c}
+.hub-markets .footer .legalUtilities :is(a,button){min-width:44px;min-height:44px;padding:0;border:0;color:#d4e0eb;background:transparent;font:500 14px/1.5 Inter,Arial,sans-serif;display:inline-flex;align-items:center;cursor:pointer}
+.hub-markets .footer .copyright{max-width:none!important;margin-top:8px!important}
+.hub-markets .footer :is(a,button):focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hub-markets .cookie-layer{width:min(560px,calc(100% - 32px));max-height:calc(100% - 32px);padding:32px;border:1px solid #d9e2ec;border-radius:8px;background:#fff;color:#334155;overflow:auto}
+.hub-markets .cookie-layer::backdrop{background:rgb(3 27 58 / 72%)}
+.hub-markets .cookie-layer h2{margin:0 0 18px;color:#062b5b;font-size:30px;line-height:1.18}
+.hub-markets .cookie-layer p{margin:0;font-size:16px;line-height:1.65}
+.hub-markets .cookie-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hub-markets .cookie-actions>*{min-width:44px;min-height:48px;padding:12px 18px;border:1px solid #008078;border-radius:6px;background:#fff;color:#008078;font:600 14px/1.4 Inter,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.hub-markets .cookie-layer :is(a,button):focus-visible{outline:3px solid #008078;outline-offset:3px}
+@media (max-width:1100px){.hub-markets .header{height:64px}
+.hub-markets .headerInner{width:calc(100% - 32px);height:63px;gap:8px}
+.hub-markets .logoLink{min-width:120px;min-height:44px}
+.hub-markets .logo{width:120px;height:40px}
+.hub-markets .desktopNav,.hub-markets .rfqFull{display:none}
+.hub-markets .rfqCompact,.hub-markets .menuButton{display:inline}
+.hub-markets .headerRfq{min-height:44px;padding:0 14px}
+.hub-markets .menuButton{min-width:64px;min-height:44px;padding:0 12px;border:1px solid #008078;border-radius:6px;color:#062b5b;background:#fff;font:600 14px Inter,Arial,sans-serif}
+.hub-markets .mobileNav{position:absolute;top:63px;right:0;left:0;display:grid;grid-template-columns:1fr;max-height:calc(100vh - 64px);overflow:auto;color:#fff;background:#031b3a}
+.hub-markets .mobileNav[hidden]{display:none}
+.hub-markets .header nav.mobileNav>a{position:relative;min-height:52px;padding:10px 24px;display:flex;align-items:center;justify-content:flex-start;border-bottom:1px solid #234665;color:#fff;font-size:16px;font-weight:500}
+.hub-markets .header nav.mobileNav>a[aria-current="page"]{padding-left:32px;font-weight:700}
+.hub-markets .mobileNav a[aria-current="page"]::before{content:"";position:absolute;top:8px;bottom:8px;left:16px;width:4px;background:#00a99d}
+.hub-markets .mobileNav a:last-child{background:#008078;font-weight:600}
+.hub-markets .mobileNav a:focus-visible{outline:3px solid #fff;outline-offset:-4px}
+.hub-markets .footerGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 32px}
+.hub-markets .brandColumn,.hub-markets .conversionColumn{grid-column:1/-1}}
+@media (max-width:560px){.hub-markets .footer{padding:36px 20px 24px}
+.hub-markets .footerGrid{gap:32px 20px}
+.hub-markets .cookie-layer{padding:26px 20px}
+.hub-markets .cookie-layer h2{font-size:26px}
+.hub-markets .cookie-actions>*{width:100%}}
+@media (prefers-reduced-motion:reduce){.hub-markets .header *,.hub-markets .footer *,.hub-markets .cookie-layer *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+.hub-markets *{box-sizing:border-box}
+.hub-markets{margin:0;font:16px/1.6 Inter,Arial,sans-serif;color:#334155;background:white}
+.hub-markets{--navy:#062b5b;--teal:#008078;--line:#d9e2ec}
+.hub-markets p{margin:0 0 18px}
+.hub-markets h1,.hub-markets h2,.hub-markets h3,.hub-markets h4{color:var(--navy);margin-top:0;line-height:1.2}
+.hub-markets h1{font-size:56px;letter-spacing:-.04em;font-weight:700;margin-bottom:22px}
+.hub-markets h2{font-size:36px;max-width:850px;margin-bottom:18px}
+.hub-markets h3{font-size:23px;margin-bottom:14px}
+.hub-markets h4{font-size:18px;margin:26px 0 14px}
+.hub-markets .wrap{width:min(1200px,calc(100% - 64px));margin:auto}
+.hub-markets .section{padding-block:64px}
+.hub-markets .section>p{max-width:850px}
+.hub-markets .eyebrow{font-size:14px!important;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.hub-markets .breadcrumb{display:flex;align-items:center;gap:12px;margin:18px 0;font-size:14px}
+.hub-markets .breadcrumb a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;color:var(--teal)}
+.hub-markets .rootHero{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.8fr);gap:40px;align-items:center;padding:56px;border:1px solid var(--line);border-radius:12px;background:#fff;margin-bottom:48px}
+.hub-markets .heroText>p:not(.eyebrow){font-size:18px}
+.hub-markets .heroIndex{border:1px solid var(--line);border-radius:8px;padding:24px;background:#f5f8fb}
+.hub-markets .heroIndex ul{margin:0;padding:0;list-style:none;color:var(--navy);font-size:20px;font-weight:600}
+.hub-markets .heroIndex li+li{margin-top:14px}
+.hub-markets .actions{margin-top:24px}
+.hub-markets .primary,.hub-markets .textAction,.hub-markets #eu-toggle{display:inline-flex;min-width:44px;min-height:48px;align-items:center;justify-content:center;padding:10px 18px;border:1px solid #008078;border-radius:6px;color:#008078;background:white;font:600 16px/1.4 Inter,Arial,sans-serif;text-decoration:none}
+.hub-markets .primary{background:#008078;color:white}
+.hub-markets .textAction:hover,.hub-markets #eu-toggle:hover{background:#eaf7f6}
+.hub-markets .primary:hover{background:#006c66}
+.hub-markets .band{background:#f5f8fb}
+.hub-markets .destinationGrid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px;margin-top:30px}
+.hub-markets .euPanel,.hub-markets .marketCard,.hub-markets .textCard{padding:28px;border:1px solid var(--line);border-radius:8px;background:white}
+.hub-markets .euPanel{border-color:var(--teal)}
+.hub-markets .marketRail{display:grid;gap:18px}
+.hub-markets .marketCard h3{margin-bottom:12px}
+.hub-markets .marketCard .textAction{width:100%}
+.hub-markets #eu-countries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0;list-style:none;margin:0}
+.hub-markets #eu-countries .textAction{width:100%;justify-content:flex-start}
+.hub-markets .threeColumns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:30px}
+.hub-markets .textCard{border-top:3px solid #008078}
+.hub-markets .directAnswer{margin-top:28px;border-left:3px solid #008078;padding:22px;background:#f5f8fb}
+.hub-markets .directAnswer p{margin:0}
+.hub-markets .questions{display:grid;gap:18px;margin-top:28px}
+.hub-markets .questions article{padding:28px;border:1px solid var(--line);border-radius:8px;background:white}
+.hub-markets .questions article p{margin:0;max-width:960px}
+.hub-markets .plainCountry{display:block;padding:12px 0;font-weight:600;color:#062b5b}
+.hub-markets .skip{position:absolute;top:8px;left:16px;padding:12px;background:white;color:#008078;z-index:100;transform:translateY(-200%)}
+.hub-markets .skip:focus{transform:none}
+.hub-markets :is(a,button):focus-visible,.hub-markets .skip:focus{outline:3px solid #008078;outline-offset:3px}
+.hub-markets [hidden]{display:none!important}
+@media (max-width:1023px){.hub-markets .wrap{width:calc(100% - 64px)}
+.hub-markets .rootHero{grid-template-columns:1fr;padding:40px;gap:28px}
+.hub-markets h1{font-size:44px}
+.hub-markets .destinationGrid,.hub-markets .threeColumns{grid-template-columns:1fr}
+.hub-markets .section{padding-block:48px}
+.hub-markets .heroIndex ul{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hub-markets .heroIndex li+li{margin:0}}
+@media (max-width:767px){.hub-markets .wrap{width:calc(100% - 40px)}
+.hub-markets .rootHero{padding:24px;border-radius:10px;margin-bottom:32px}
+.hub-markets h1{font-size:36px}
+.hub-markets h2{font-size:30px}
+.hub-markets .heroText>p:not(.eyebrow){font-size:16px}
+.hub-markets .heroIndex ul{grid-template-columns:1fr}
+.hub-markets .heroIndex{padding:18px}
+.hub-markets .actions .primary{width:100%}
+.hub-markets .euPanel,.hub-markets .marketCard,.hub-markets .textCard,.hub-markets .questions article{padding:22px}
+.hub-markets #eu-toggle{width:100%;margin-bottom:16px;text-align:left}
+.hub-markets #eu-countries{grid-template-columns:1fr}
+.hub-markets .section{padding-block:40px}
+.hub-markets .destinationGrid{gap:18px}}
+@media (prefers-reduced-motion:reduce){.hub-markets *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+.hub-markets .section{padding-block:72px}
+.hub-markets .section>p{max-width:74ch}
+.hub-markets .section h2{font-weight:700;letter-spacing:-.025em;max-width:900px}
+.hub-markets .destinationGrid{grid-template-columns:minmax(0,1fr);gap:24px;margin-top:32px}
+.hub-markets .euPanel{padding:32px;border-color:#008078;background:#fff}
+.hub-markets .euPanel>p{max-width:76ch}
+.hub-markets #eu-countries{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hub-markets .marketRail{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.hub-markets .marketCard{display:flex;flex-direction:column;padding:28px}
+.hub-markets .marketCard .textAction{margin-top:auto}
+.hub-markets .textCard{padding:28px;display:flex;flex-direction:column}
+.hub-markets .textCard .textAction{align-self:flex-start;margin-top:auto}
+.hub-markets .threeColumns{gap:24px;margin-top:32px}
+.hub-markets .directAnswer{max-width:960px;padding:24px 28px;margin-top:32px}
+.hub-markets .questions{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:32px}
+.hub-markets .questions article{padding:28px}
+.hub-markets .questions h3{font-size:22px;line-height:1.3;margin-bottom:16px}
+.hub-markets .questions p{line-height:1.65}
+.hub-markets .trade>p:not(.eyebrow){max-width:76ch}
+.hub-markets .textAction:hover,.hub-markets #eu-toggle:hover{color:#006c66;background:#eaf7f6;text-decoration:underline;text-underline-offset:3px}
+.hub-markets .textAction:focus-visible,.hub-markets #eu-toggle:focus-visible,.hub-markets .primary:focus-visible{outline:3px solid #008078;outline-offset:3px}
+@media (max-width:1023px){.hub-markets .section{padding-block:56px}
+.hub-markets .marketRail,.hub-markets .questions{grid-template-columns:minmax(0,1fr)}
+.hub-markets #eu-countries{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hub-markets .euPanel{padding:28px}
+.hub-markets .marketCard .textAction{align-self:flex-start;width:auto}}
+@media (max-width:767px){.hub-markets .section{padding-block:40px}
+.hub-markets .destinationGrid,.hub-markets .marketRail,.hub-markets .threeColumns,.hub-markets .questions{gap:18px;margin-top:24px}
+.hub-markets .euPanel,.hub-markets .marketCard,.hub-markets .textCard,.hub-markets .questions article{padding:20px}
+.hub-markets .questions h3{font-size:22px}
+.hub-markets #eu-countries{grid-template-columns:minmax(0,1fr)}
+.hub-markets .directAnswer{padding:20px;margin-top:24px}
+.hub-markets .textAction{max-width:100%;text-align:left}
+.hub-markets .marketCard .textAction{width:100%;align-self:stretch}
+.hub-markets .section h2{font-size:30px}}
+@media  (max-width:374px){.hub-markets [data-component="RootPageHero"]>div:first-child p[class$="eyebrow"]{font-size:12px!important}}
+@media  (max-width:340px){.hub-markets [data-component="RootPageHero"]>div:first-child p[class$="eyebrow"]{font-size:11px!important}}
+.hub-markets .languageAction{display:inline-flex;align-self:flex-start;align-items:center;min-width:44px;min-height:44px;margin-top:8px;padding:8px 0;color:#008078;font:600 16px/1.4 Inter,Arial,sans-serif;text-decoration:underline;text-underline-offset:3px;max-width:100%;overflow-wrap:anywhere}
+.hub-markets .languageAction:hover{color:#006c66}

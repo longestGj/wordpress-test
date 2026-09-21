@@ -1,0 +1,218 @@
+{
+  "title": "CR-901",
+  "slug": "cr-901",
+  "excerpt": "CR-901 is a high-purity rutile titanium dioxide produced by vapor-phase oxidation for evaluation in electronic ceramics, optical glass, battery materials and special metallurgy.",
+  "applications": [
+    "specialty"
+  ],
+  "process": "",
+  "data": {
+    "h1": "CR-901 High-Purity Rutile Titanium Dioxide for Specialty Materials",
+    "category": "SPECIALTY MATERIALS",
+    "process_label": "Vapor-phase oxidation",
+    "hero_paragraphs": [
+      "Its listed impurity values and specific-surface-area options support material screening across these specialty systems. Review the typical data and confirm suitability in the intended material, process and end-use conditions."
+    ],
+    "summary_title": "CR-901 product file and technical-data visual",
+    "summary": [
+      "Product: CR-901",
+      "Type: High-purity rutile titanium dioxide",
+      "Process: Vapor-phase oxidation",
+      "Specialty directions: Electronic ceramics, optical glass, battery materials and special metallurgy",
+      "Typical TiO₂ content: 99.97%"
+    ],
+    "quote_label": "Request a CR-901 Quote",
+    "sample_label": "Request a CR-901 Sample",
+    "positioning_title": "Where CR-901 Fits in Specialty-Material Evaluation",
+    "positioning_paragraphs": [
+      "CR-901 is a high-purity rutile titanium dioxide grade produced by vapor-phase oxidation. Its typical data includes TiO₂ and rutile content, three listed specific-surface-area bands, volatile matter and five elemental values.",
+      "Use CR-901 as a candidate when material composition, particle characteristics and electrical or process requirements must be evaluated together. Final selection should account for the intended formulation or material system, impurity limits, specific-surface-area requirement, processing conditions, finished performance and destination documents."
+    ],
+    "facts": [
+      "High-purity rutile titanium dioxide",
+      "Vapor-phase oxidation classification",
+      "Typical TiO₂ content of 99.97%",
+      "Specific surface area listed as <6, 6-8 or 8-10 m²/g",
+      "Electronic-ceramic, optical-glass and battery-material directions",
+      "Special-metallurgy direction"
+    ],
+    "process_link_label": "",
+    "applications_title": "Specialty Application Directions to Evaluate",
+    "applications": [
+      {
+        "title": "Electronic Ceramics",
+        "text": "Evaluate CR-901 in the intended electronic-ceramic composition and manufacturing process. The product data identifies MLCC, PTC, VDR and soft ferrites as evaluation directions. Confirm material compatibility, dielectric and electrical requirements, firing or processing conditions and finished-component performance.",
+        "relation": "specialty",
+        "qualified": false,
+        "enabled": true
+      },
+      {
+        "title": "Optical Glass",
+        "text": "Evaluate CR-901 in the intended optical-glass composition and process. Confirm impurity requirements, dispersion, optical response, processing conditions and the finished material specification.",
+        "relation": "specialty",
+        "qualified": false,
+        "enabled": true
+      },
+      {
+        "title": "Battery Materials",
+        "text": "Review CR-901 in the intended battery-material chemistry and process. Confirm composition, particle-related requirements, dispersion, processing conditions and qualification criteria in the buyer's system.",
+        "relation": "specialty",
+        "qualified": false,
+        "enabled": true
+      },
+      {
+        "title": "Special Metallurgy",
+        "text": "Evaluate CR-901 against the intended metallurgical material and process requirements. Confirm composition, impurity tolerance, thermal or process conditions and finished-material performance.",
+        "relation": "specialty",
+        "qualified": false,
+        "enabled": true
+      }
+    ],
+    "evaluation_title": "What to Evaluate in Your Material System",
+    "evaluation": [
+      {
+        "title": "Composition and Particle Review",
+        "items": [
+          "TiO₂ and rutile content against the intended material requirement",
+          "Which listed specific-surface-area band is required for qualification",
+          "Al, Fe, K, Na and P values against the buyer's impurity limits",
+          "Volatile matter and particle behavior under the selected process"
+        ]
+      },
+      {
+        "title": "Process and End-Use Qualification",
+        "items": [
+          "Electronic-ceramic composition, forming, firing and electrical requirements",
+          "Optical-glass composition, processing and finished optical response",
+          "Battery-material chemistry, dispersion, processing and qualification criteria",
+          "Special-metallurgy process conditions, destination needs and sample-validation results"
+        ]
+      }
+    ],
+    "evaluation_note": "These evaluation priorities identify what to check during buyer testing. They do not guarantee fixed results.",
+    "technical_title": "Typical Technical Data",
+    "technical_note": "Confirm suitability in the intended material and process conditions.",
+    "tds_label": "Request the CR-901 TDS",
+    "rows": [
+      {
+        "property": "TiO₂ content, %",
+        "standard": "—",
+        "typical_value": "99.97",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Rutile content, %",
+        "standard": "—",
+        "typical_value": "99",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Specific surface area, m²/g",
+        "standard": "—",
+        "typical_value": "<6 / 6-8 / 8-10",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Volatile matter, %",
+        "standard": "—",
+        "typical_value": "0.1",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Al, %",
+        "standard": "—",
+        "typical_value": "0.0020",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Fe, %",
+        "standard": "—",
+        "typical_value": "0.0010",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "K, %",
+        "standard": "—",
+        "typical_value": "0.0001",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "Na, %",
+        "standard": "—",
+        "typical_value": "0.0050",
+        "test_method": "—",
+        "enabled": true
+      },
+      {
+        "property": "P, %",
+        "standard": "—",
+        "typical_value": "0.0005",
+        "test_method": "—",
+        "enabled": true
+      }
+    ],
+    "documents_title": "Request CR-901 Documents",
+    "documents_paragraphs": [
+      "Request the current CR-901 technical data and describe additional technical or export document needs. Our team will confirm the applicable scope.",
+      "Submitting a request does not confirm that every requested document is available or applicable."
+    ],
+    "documents_options": [
+      "Technical Data Sheet (TDS): Request the current CR-901 technical data for evaluation.",
+      "Additional document requirements: Describe type, destination and context. No availability is implied."
+    ],
+    "documents_label": "Request CR-901 Documents",
+    "markets_title": "Plan Evaluation for Your Destination Market",
+    "markets_paragraphs": [
+      "Continue to the relevant destination page for procurement, document and inquiry guidance.",
+      "These paths do not claim CR-901 regulatory suitability, stock or local availability."
+    ],
+    "sample_title": "Request CR-901 for Your Own Evaluation",
+    "sample_paragraphs": [
+      "Share the intended material system, process conditions, destination and evaluation objective. Submission does not approve quantity, freight or dispatch timing."
+    ],
+    "seo_title": "CR-901 Titanium Dioxide Specialty Grade | TiO2 Malaysia",
+    "seo_description": "Evaluate CR-901 titanium dioxide for electronic ceramics, optical glass, battery materials and special metallurgy. Review typical data, request a sample or RFQ.",
+    "keyword": "CR-901 titanium dioxide",
+    "source_note": "pages/products/detail-template/06_handoff/GRADE-CR901_PRODUCT_DETAIL_CONTENT_CONTRACT_V0.1.json",
+    "application_links": [],
+    "process_key": "",
+    "market_links": [
+      {
+        "relation": "eu",
+        "label": "European Union"
+      },
+      {
+        "relation": "uk",
+        "label": "United Kingdom"
+      },
+      {
+        "relation": "india",
+        "label": "India"
+      },
+      {
+        "relation": "brazil",
+        "label": "Brazil"
+      }
+    ],
+    "applications_intro": "Review each CR-901 direction in the intended material, process and end-use conditions.",
+    "evaluation_intro": "Use the documented CR-901 profile and typical data to frame buyer testing.",
+    "technical_intro": "Review the listed typical values as an input to CR-901 product evaluation.",
+    "table_columns": [
+      {
+        "key": "property",
+        "label": "Specification"
+      },
+      {
+        "key": "typical_value",
+        "label": "Typical Value"
+      }
+    ]
+  }
+}
