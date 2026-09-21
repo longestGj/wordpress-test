@@ -1,0 +1,10 @@
+/* Integration boundaries: approved page rules must not affect shared chrome. */
+.topic-page{font-family:Inter,Arial,sans-serif;overflow-wrap:anywhere}
+.topic-page *{box-sizing:border-box}
+.topic-page [id]{scroll-margin-top:100px}
+.topic-page a:focus-visible,.topic-page [tabindex]:focus-visible{outline:3px solid #007f77;outline-offset:4px}
+.topic-page a[aria-disabled=true]{cursor:default;opacity:.65;text-decoration:none}
+.topic-page .wp-block-group{margin-block-start:0;margin-block-end:0}
+.topic-page table{max-width:100%}
+.topic-masterbatch .hero h1{color:inherit}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}

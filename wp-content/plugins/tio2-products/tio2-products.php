@@ -11,6 +11,7 @@ function tio2_register_product_content() {
     foreach (['product_application'=>'Applications','product_process'=>'Processes'] as $tax=>$label) {
         register_taxonomy($tax, 'product', ['label'=>$label,'public'=>false,'show_ui'=>true,'show_admin_column'=>true,'hierarchical'=>true,'rewrite'=>false]);
     }
+    tio2_register_topic_routes();
 }
 add_action('init','tio2_register_product_content');
 register_activation_hook(__FILE__, function () { tio2_register_product_content(); flush_rewrite_rules(); });
@@ -61,3 +62,4 @@ function tio2_product_schema($id) {
 function tio2_table_columns($data){return $data['table_columns']??[['key'=>'property','label'=>'Property'],['key'=>'standard','label'=>'Standard'],['key'=>'typical_value','label'=>'Typical Value']];}
 require __DIR__.'/admin.php';
 require __DIR__.'/pages.php';
+require __DIR__.'/topics.php';

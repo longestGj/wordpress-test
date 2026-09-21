@@ -35,3 +35,5 @@ function tio2_action($key,$label,$primary=false,$extra=[]){
 }
 
 require __DIR__.'/hubs.php';
+require __DIR__.'/topics.php';
+if(is_file(__DIR__.'/resources.php'))require __DIR__.'/resources.php';

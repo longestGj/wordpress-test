@@ -20,4 +20,6 @@ finally:
     wp('plugin','activate','tio2-products')
 assert requests.get('http://localhost:8080/',timeout=20).status_code==200
 assert requests.get('http://localhost:8080/products/',timeout=20).status_code==200
+if wp('post','list','--post_type=page','--name=chloride-process-titanium-dioxide','--field=ID').strip():
+    assert requests.get('http://localhost:8080/products/chloride-process-titanium-dioxide/',timeout=20).status_code==200,'Reactivation lost process rewrites'
 print('PASS: plugin deactivation -> safe HTTP 503 + admin notice; plugin reactivated and both routes restored.')

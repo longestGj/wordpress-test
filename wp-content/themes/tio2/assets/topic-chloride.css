@@ -1,0 +1,236 @@
+.topic-chloride .header{
+  position: relative;
+  z-index: 20;
+  border-bottom: 1px solid #d5e0e7;
+  color: #00244a;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.topic-chloride .header *,.topic-chloride .footer *{ box-sizing: border-box; }
+.topic-chloride .header a,.topic-chloride .footer a{ font-weight: 700; text-decoration: none; }
+.topic-chloride .header :is(a, button):focus-visible,.topic-chloride .footer :is(a, button):focus-visible{ outline: 3px solid #ffbf47; outline-offset: 3px; }
+.topic-chloride .headerInner{ width: min(1280px, calc(100% - 48px)); min-height: 84px; margin: auto; display: flex; align-items: center; gap: 28px; }
+.topic-chloride .logoLink{ min-width: 180px; min-height: 60px; margin-right: auto; display: inline-flex; align-items: center; line-height: 0; }
+.topic-chloride .logo{ width: 180px; height: 60px; object-fit: contain; }
+.topic-chloride .desktopNav{ display: flex; align-self: stretch; align-items: stretch; gap: 22px; }
+.topic-chloride .desktopNav a{ position: relative; min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #00244a; font-size: 13px; }
+.topic-chloride .desktopNav a[aria-current="page"]{ font-weight: 800; }
+.topic-chloride .desktopNav a[aria-current="page"]::after{ content: ""; position: absolute; right: 8%; bottom: 0; left: 8%; height: 3px; background: #006a63; }
+.topic-chloride .header .headerRfq,.topic-chloride .footer .footerRfq{ min-height: 46px; padding: 0 22px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #006a63; border-radius: 4px; color: #fff; background: #006a63; font-size: 13px; }
+.topic-chloride .rfqCompact,.topic-chloride .menuButton,.topic-chloride .mobileNav{ display: none; }
+.topic-chloride .footer{ padding: 64px max(48px, calc((100% - 1280px) / 2)) 28px; color: #fff; background: #031b3a; font-family: Arial, Helvetica, sans-serif; }
+.topic-chloride .footerGrid{ display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 70px; }
+.topic-chloride .footerGrid > :is(div, nav){ min-width: 0; display: flex; align-items: flex-start; flex-direction: column; gap: 12px; }
+.topic-chloride .footerLogo{ width: 180px; height: 60px; object-fit: contain; }
+.topic-chloride .footer .brandColumn p,.topic-chloride .footer .copyright{ max-width: 290px; margin: 0; color: #d4e0eb; font-size: 13px; line-height: 1.55; }
+.topic-chloride .footer h2{ margin: 0 0 8px; color: #fff; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+.topic-chloride .footer .footerGrid a{ min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; color: #fff; font-size: 13px; }
+.topic-chloride .legalUtilities{ margin-top: 48px; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 4px 18px; border-top: 1px solid #21456c; }
+.topic-chloride .footer .legalUtilities :is(a, button){ min-height: 44px; padding: 0; border: 0; color: #d4e0eb; background: transparent; font: 600 12px/1.3 Arial, Helvetica, sans-serif; cursor: pointer; }
+.topic-chloride .copyright{ max-width: none !important; margin-top: 8px !important; padding-top: 0; font-size: 12px !important; }
+@media  (max-width: 1199px) {.topic-chloride .desktopNav{ gap: 13px; }
+.topic-chloride .desktopNav a{ font-size: 11px; }
+.topic-chloride .headerInner{ gap: 14px; }}
+@media  (max-width: 900px) {.topic-chloride .headerInner{ width: calc(100% - 24px); min-height: 64px; gap: 8px; }
+.topic-chloride .logoLink{ min-width: 120px; min-height: 44px; }
+.topic-chloride .logo{ width: 120px; height: 40px; }
+.topic-chloride .desktopNav,.topic-chloride .rfqFull{ display: none; }
+.topic-chloride .rfqCompact,.topic-chloride .menuButton{ display: inline; }
+.topic-chloride .headerRfq{ min-height: 44px; margin-left: auto; padding: 0 13px; }
+.topic-chloride .menuButton{ min-height: 44px; padding: 0 13px; border: 1px solid #00244a; border-radius: 4px; color: #00244a; background: #fff; font-weight: 700; }
+.topic-chloride .mobileNav{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); color: #fff; background: #031b3a; }
+.topic-chloride .mobileNav[hidden]{ display: none; }
+.topic-chloride .header nav.mobileNav > a{ position: relative; min-height: 48px; padding: 10px 18px; display: flex; align-items: flex-start; justify-content: center; flex-direction: column; border-right: 1px solid #234665; border-bottom: 1px solid #234665; color: #fff; text-align: left; }
+.topic-chloride .mobileNav a[aria-current="page"]{ padding-left: 24px; font-weight: 800; }
+.topic-chloride .mobileNav a[aria-current="page"]::before{ content: ""; position: absolute; top: 8px; bottom: 8px; left: 8px; width: 4px; background: #14b8a6; }
+.topic-chloride .mobileNav a:last-child{ background: #006a63; }
+.topic-chloride .footerGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 28px; }
+.topic-chloride .brandColumn,.topic-chloride .conversionColumn{ grid-column: 1 / -1; }}
+@media  (max-width: 430px) {.topic-chloride .headerInner{ width: calc(100% - 20px); }
+.topic-chloride .logoLink{ min-width: 110px; }
+.topic-chloride .logo{ width: 110px; height: auto; }
+.topic-chloride .headerRfq,.topic-chloride .menuButton{ padding: 0 11px; font-size: 12px; }
+.topic-chloride .mobileNav{ grid-template-columns: 1fr; }
+.topic-chloride .footer{ padding: 45px 20px 20px; }
+.topic-chloride .footerGrid{ gap: 32px 20px; }
+.topic-chloride .footerLogo{ width: 150px; height: 50px; }
+.topic-chloride .footer h2{ font-size: 14px; }
+.topic-chloride .copyright{ margin-top: 35px !important; }
+.topic-chloride .legalUtilities{ margin-top: 34px; }
+.topic-chloride .copyright{ margin-top: 8px !important; }}
+@media  (prefers-reduced-motion: reduce) {.topic-chloride .header *,.topic-chloride .footer *{ scroll-behavior: auto !important; transition: none !important; animation: none !important; }}
+.topic-chloride *{box-sizing:border-box}
+.topic-chloride{scroll-behavior:auto}
+.topic-chloride{margin:0;color:#334155;background:#fff;font:17px/1.65 Inter,Arial,sans-serif}
+.topic-chloride button,.topic-chloride a{-webkit-tap-highlight-color:transparent}
+.topic-chloride button{cursor:pointer}
+.topic-chloride a{color:#008078}
+.topic-chloride a:visited{color:#062b5b}
+.topic-chloride a:focus-visible,.topic-chloride button:focus-visible{outline:3px solid #008078;outline-offset:3px}
+.topic-chloride a:hover{text-decoration:underline;text-underline-offset:5px}
+.topic-chloride h1,.topic-chloride h2,.topic-chloride h3,.topic-chloride p{margin:0}
+.topic-chloride h1,.topic-chloride h2,.topic-chloride h3{color:#062b5b;line-height:1.18}
+.topic-chloride h1{font-size:54px;letter-spacing:-.025em;max-width:930px;font-weight:700}
+.topic-chloride h2{font-size:34px;font-weight:700}
+.topic-chloride h3{font-size:24px;font-weight:600}
+.topic-chloride p{margin-bottom:20px}
+.topic-chloride p:last-child{margin-bottom:0}
+.topic-chloride .page-width{width:min(1200px,calc(100% - 64px));margin:auto}
+.topic-chloride .hero{padding:0 0 52px;background:#f5f8fb}
+.topic-chloride .breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;padding:22px 0 30px;font-size:14px}
+.topic-chloride .breadcrumb a{min-width:44px;min-height:44px;display:inline-flex;align-items:center;color:#334155;padding:0 4px}
+.topic-chloride .hero-copy{max-width:900px;margin-top:24px}
+.topic-chloride .hero-copy p{font-size:20px;line-height:1.65}
+.topic-chloride .body-action{display:inline-flex;margin-top:8px;margin-right:16px;max-width:100%}
+.topic-chloride .body-action a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:48px;padding:11px 18px;max-width:100%;text-align:center;border:1px solid #062b5b;border-radius:6px;color:#062b5b;font-size:16px;font-weight:600;text-decoration:none;line-height:1.45}
+.topic-chloride .body-action a:hover{background:#e8eef3}
+.topic-chloride .body-action+.body-action a{border-color:transparent;text-decoration:underline;text-underline-offset:5px;padding-left:0;padding-right:0}
+.topic-chloride .section-grid{display:grid;grid-template-columns:340px minmax(0,1fr);gap:72px}
+.topic-chloride .section-copy{max-width:790px}
+.topic-chloride .application-paths{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin:30px 0 20px}
+.topic-chloride .application-path{border-top:1px solid #a4b4c4;padding:22px 0 0}
+.topic-chloride .application-path h3{margin-bottom:16px}
+.topic-chloride a:focus-visible{outline:3px solid #008078;outline-offset:4px}
+.topic-chloride .header,.topic-chloride .footer{font-family:Inter,Arial,sans-serif}
+.topic-chloride .header{height:84px;border-color:#d9e2ec;color:#062b5b}
+.topic-chloride .headerInner{width:min(1200px,calc(100% - 64px));height:83px;min-height:0;gap:24px}
+.topic-chloride .logoLink{min-width:180px;min-height:60px}
+.topic-chloride .desktopNav{gap:16px}
+.topic-chloride .desktopNav a{font-size:14px;color:#062b5b;font-weight:500}
+.topic-chloride .desktopNav a[aria-current="page"]{font-weight:700}
+.topic-chloride .desktopNav a[aria-current="page"]::after{background:#008078}
+.topic-chloride .header .headerRfq,.topic-chloride .footer .footerRfq{font-size:14px;min-width:44px;min-height:48px;border-radius:6px;background:#008078;border-color:#008078;color:white;padding:0 18px}
+.topic-chloride .header :is(a,button):focus-visible{outline:3px solid #008078}
+.topic-chloride .footer{padding:52px max(32px,calc((100% - 1200px)/2)) 28px}
+.topic-chloride .footerGrid{gap:48px}
+.topic-chloride .footer .brandColumn p,.topic-chloride .footer .copyright{font-size:14px;max-width:295px}
+.topic-chloride .footer h2{font-size:14px;line-height:1.4}
+.topic-chloride .footer .footerGrid a{font-size:14px;font-weight:500;min-width:44px}
+.topic-chloride .footer .footerRfq{font-weight:600}
+.topic-chloride .footer .legalUtilities :is(a,button){font:500 14px/1.5 Inter,Arial,sans-serif;min-width:44px;min-height:44px;display:inline-flex;align-items:center}
+.topic-chloride .footer .copyright{font-size:14px!important}
+.topic-chloride .footer :is(a,button):focus-visible{outline:3px solid white}
+.topic-chloride .footerLogo{width:180px;height:60px}
+.topic-chloride .menuButton{font:600 14px Inter,Arial,sans-serif;border-radius:6px}
+.topic-chloride .header nav.mobileNav>a{font-size:16px}
+.topic-chloride .mobileNav a:last-child{background:#008078}
+.topic-chloride .mobileNav a[aria-current="page"]::before{background:#00a99d}
+.topic-chloride .mobileNav a:focus-visible{outline:3px solid white;outline-offset:-4px}
+.topic-chloride .cookie-layer{width:min(560px,calc(100% - 32px));max-height:calc(100% - 32px);padding:32px;border:1px solid #d9e2ec;border-radius:8px;background:white;color:#334155;overflow:auto}
+.topic-chloride .cookie-layer::backdrop{background:rgb(3 27 58 / 72%)}
+.topic-chloride .cookie-layer h2{font-size:30px;margin-bottom:18px}
+.topic-chloride .cookie-layer p{font-size:16px;line-height:1.65}
+.topic-chloride .cookie-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.topic-chloride .cookie-actions>*{font:600 14px/1.4 Inter,Arial,sans-serif;min-height:48px;min-width:44px;padding:12px 18px;border:1px solid #062b5b;border-radius:6px;background:white;color:#062b5b;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+@media (max-width:1100px){.topic-chloride .header{height:64px}
+.topic-chloride .headerInner{height:63px;gap:8px;width:calc(100% - 32px)}
+.topic-chloride .logoLink{min-width:120px;min-height:44px}
+.topic-chloride .logo{width:120px;height:40px}
+.topic-chloride .desktopNav,.topic-chloride .rfqFull{display:none}
+.topic-chloride .rfqCompact,.topic-chloride .menuButton{display:inline}
+.topic-chloride .header .headerRfq{min-height:44px;padding:0 14px}
+.topic-chloride .menuButton{min-height:44px;min-width:64px;padding:0 12px;border:1px solid #062b5b;background:white;color:#062b5b}
+.topic-chloride .mobileNav{position:absolute;top:63px;left:0;right:0;display:grid;grid-template-columns:1fr;color:white;background:#031b3a;max-height:calc(100vh - 64px);overflow:auto}
+.topic-chloride .mobileNav[hidden]{display:none}
+.topic-chloride .header nav.mobileNav>a{position:relative;min-height:52px;padding:10px 24px;display:flex;align-items:center;justify-content:flex-start;flex-direction:row;border-bottom:1px solid #234665;color:#fff;font-weight:500}
+.topic-chloride .header nav.mobileNav>a[aria-current="page"]{font-weight:700;padding-left:32px}
+.topic-chloride .mobileNav a[aria-current="page"]::before{content:"";position:absolute;top:8px;bottom:8px;left:16px;width:4px}
+.topic-chloride .mobileNav a:last-child{background:#008078;font-weight:600}
+.topic-chloride .page-width{width:calc(100% - 64px)}
+.topic-chloride h1{font-size:44px}
+.topic-chloride h2{font-size:31px}
+.topic-chloride .section-grid{grid-template-columns:1fr;gap:22px}
+.topic-chloride .hero{padding-top:0}
+.topic-chloride .application-paths{gap:32px}
+.topic-chloride .footerGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 32px}
+.topic-chloride .brandColumn,.topic-chloride .conversionColumn{grid-column:1/-1}
+.topic-chloride .footer .brandColumn p{max-width:420px}}
+@media (max-width:560px){.topic-chloride{font-size:17px}
+.topic-chloride .page-width{width:calc(100% - 40px)}
+.topic-chloride h1{font-size:36px;line-height:1.16}
+.topic-chloride h2{font-size:29px;line-height:1.22}
+.topic-chloride h3{font-size:23px}
+.topic-chloride .breadcrumb{padding:16px 0 22px;gap:2px 6px}
+.topic-chloride .hero-copy{margin-top:22px}
+.topic-chloride .hero-copy p{font-size:18px}
+.topic-chloride .hero{padding-top:0}
+.topic-chloride .section-grid{gap:20px}
+.topic-chloride .application-paths{grid-template-columns:1fr;gap:28px;margin:26px 0 18px}
+.topic-chloride .application-path{padding-top:20px}
+.topic-chloride .body-action{display:flex;margin-right:0;margin-top:12px}
+.topic-chloride .body-action a{width:100%;font-size:16px}
+.topic-chloride .body-action+.body-action a{justify-content:flex-start;text-align:left}
+.topic-chloride .footer{padding:36px 20px 24px}
+.topic-chloride .footerGrid{gap:32px 20px}
+.topic-chloride .footerLogo{width:180px;height:60px}
+.topic-chloride .footer .copyright{margin-top:16px!important}
+.topic-chloride .cookie-layer{padding:26px 20px}
+.topic-chloride .cookie-layer h2{font-size:26px}
+.topic-chloride .cookie-actions>*{width:100%}}
+@media (prefers-reduced-motion:reduce){.topic-chloride *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+.topic-chloride .cl-module{padding:52px 0;border-bottom:1px solid #d9e2ec}
+.topic-chloride .cl-module:last-child{border-bottom:0}
+.topic-chloride .page-width{width:min(1200px,calc(100% - 64px));margin:auto}
+.topic-chloride .cl-module h2{font-size:34px;line-height:1.2}
+.topic-chloride .cl-module h3{font-size:24px;line-height:1.3}
+.topic-chloride .cl-module p{font-size:17px;line-height:1.65;margin:0 0 20px}
+.topic-chloride .cl-module p:last-child{margin-bottom:0}
+.topic-chloride #cl-01{padding-top:0;background:#f5f8fb}
+.topic-chloride .cl-eyebrow{font-size:13px;font-weight:700;letter-spacing:.07em;color:#334155;margin-bottom:16px}
+.topic-chloride #cl-01 h1{max-width:1050px;font-size:54px}
+.topic-chloride .cl-hero-copy{max-width:935px;margin:24px 0}
+.topic-chloride .cl-hero-copy p{font-size:20px;line-height:1.65}
+.topic-chloride .cl-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.topic-chloride .cl-action{max-width:100%}
+.topic-chloride .cl-action a{display:inline-flex;align-items:center;min-height:48px;min-width:44px;max-width:100%;padding:10px 0;font-size:16px;line-height:1.45;font-weight:600;color:#008078;text-decoration:underline;text-underline-offset:5px}
+.topic-chloride .cl-action a:visited{color:#008078}
+.topic-chloride .cl-action a:hover{background:#e8f4f2}
+.topic-chloride .cl-action a:focus-visible,.topic-chloride .cl-module .breadcrumb a:focus-visible{outline:3px solid #008078;outline-offset:4px}
+.topic-chloride .cl-module .breadcrumb a{color:#008078}
+.topic-chloride .cl-actions .cl-action:first-child a{padding:12px 20px;border:1px solid #008078;border-radius:6px}
+.topic-chloride #cl-01 .cl-action:first-child a,.topic-chloride #cl-05 .cl-action a{background:#008078;color:#fff;border:1px solid #008078;padding:12px 20px;border-radius:6px;text-decoration:none}
+.topic-chloride #cl-01 .cl-action:first-child a:hover,.topic-chloride #cl-05 .cl-action a:hover{background:#006b65}
+.topic-chloride .cl-split{display:grid;grid-template-columns:340px minmax(0,1fr);gap:72px}
+.topic-chloride .cl-intro{max-width:920px;margin:20px 0 28px!important}
+.topic-chloride .cl-grades{list-style:none;padding:0;margin:0;border-top:1px solid #a4b4c4}
+.topic-chloride .cl-grade{display:grid;grid-template-columns:160px minmax(0,1fr) 150px;gap:32px;align-items:center;padding:20px 0;border-bottom:1px solid #d9e2ec}
+.topic-chloride .cl-grade p{margin:0}
+.topic-chloride .cl-grade .cl-action{justify-self:end}
+.topic-chloride .cl-grade .cl-action a{padding:10px 12px}
+.topic-chloride .cl-steps{margin:28px 0 24px}
+.topic-chloride .cl-step{display:grid;grid-template-columns:340px minmax(0,1fr);gap:72px;padding:26px 0;border-top:1px solid #d9e2ec}
+.topic-chloride .cl-step p{margin:0}
+.topic-chloride .cl-module h2[id]{scroll-margin-top:108px}
+.topic-chloride .cl-module h2[id]:focus{outline:3px solid #008078;outline-offset:7px}
+@media (max-width:1100px){.topic-chloride .cl-module{padding:42px 0}
+.topic-chloride #cl-01 h1{font-size:44px}
+.topic-chloride .cl-module h2{font-size:31px}
+.topic-chloride .cl-split,.topic-chloride .cl-step{grid-template-columns:1fr;gap:20px}
+.topic-chloride .cl-grade{grid-template-columns:116px minmax(0,1fr);gap:8px 24px;padding:22px 0}
+.topic-chloride .cl-grade h3{grid-column:1;grid-row:1}
+.topic-chloride .cl-grade p{grid-column:2;grid-row:1/3}
+.topic-chloride .cl-grade .cl-action{grid-column:1;grid-row:2;justify-self:start}
+.topic-chloride .cl-grade .cl-action a{padding:8px 0}
+.topic-chloride .cl-module h2[id]{scroll-margin-top:88px}}
+@media (max-width:560px){.topic-chloride .page-width{width:calc(100% - 40px)}
+.topic-chloride .cl-module{padding:34px 0}
+.topic-chloride #cl-01 h1{font-size:36px;line-height:1.16}
+.topic-chloride .cl-module h2{font-size:29px;line-height:1.22}
+.topic-chloride .cl-module h3{font-size:23px}
+.topic-chloride .cl-hero-copy p{font-size:18px}
+.topic-chloride .cl-actions{display:flex;flex-direction:column;align-items:stretch;gap:8px}
+.topic-chloride .cl-action a{justify-content:flex-start}
+.topic-chloride .cl-actions .cl-action:first-child a,.topic-chloride #cl-05 .cl-action a{width:100%;justify-content:center}
+.topic-chloride .cl-grade{display:block;padding:24px 0}
+.topic-chloride .cl-grade h3{margin-bottom:12px}
+.topic-chloride .cl-grade p{margin-bottom:8px}
+.topic-chloride .cl-grade .cl-action a{padding:8px 0}
+.topic-chloride .cl-step{gap:16px;padding:24px 0}
+.topic-chloride .cl-intro{margin:20px 0 24px!important}}
+.topic-chloride{--cl-navy:#062B5B;--cl-teal:#008078;--cl-soft:#F5F8FB;--cl-line:#D9E2EC}
+.topic-chloride .cl-action a:hover{background:var(--cl-soft)}
+.topic-chloride #cl-01 .cl-action:first-child a:hover,.topic-chloride #cl-05 .cl-action a:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}
+.topic-chloride .cl-grades{border-top-color:var(--cl-line)}
+.topic-chloride .menuButton,.topic-chloride .cookie-actions>*{border-color:var(--cl-teal)}
+.topic-chloride .cookie-actions a,.topic-chloride .cookie-actions a:visited{color:var(--cl-teal)}
+.topic-chloride .cookie-actions>*:hover{background:var(--cl-soft)}
