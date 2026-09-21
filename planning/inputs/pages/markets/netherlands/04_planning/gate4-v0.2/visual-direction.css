@@ -1,0 +1,42 @@
+/* Netherlands Gate4: preserve this page's five-module industrial editorial baseline. */
+main a:hover {
+  color: #008078;
+  background: #FFFFFF;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+main .action a[href="/request-a-quote/"]:hover {
+  color: #FFFFFF;
+  background: #008078;
+}
+
+/* Keep the original introductory "The" with the VVVF name, while the anchor
+   occupies one real rectangle. Nearby prose participates in normal line flow. */
+main .sourceReference {
+  display: inline-flex;
+  align-items: flex-start;
+  vertical-align: middle;
+  max-width: 100%;
+  gap: 8px;
+  margin: 8px 0;
+}
+main .sourceLead { flex: none; padding-top: 7px; }
+main .sourceReference { margin-right: 8px; }
+main [data-module="NL-04"] .reading > p:not(.action) > a {
+  margin: 1px 0;
+  padding-inline: 3px;
+  vertical-align: middle;
+  position: relative;
+  outline-offset: -3px;
+}
+main .sourceReference a[href^="https:"] {
+  display: block;
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 7px 0;
+  line-height: 1.7;
+  flex: 0 1 auto;
+}
+@media (max-width: 560px) { main .breadcrumbs { font-size: 14px; } }

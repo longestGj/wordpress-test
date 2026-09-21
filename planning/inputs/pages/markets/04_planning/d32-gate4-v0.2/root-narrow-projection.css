@@ -1,0 +1,6 @@
+/* PROTOTYPE_ONLY: common four-root design-result projection, not a production CSS prescription.
+   ROOT-NARROW-VISUAL-20260921 + controller shared-token coordination 2026-09-21.
+   Preserve complete text, existing 700/.08em, color and Hero geometry; no nowrap, clipping or scaling.
+   >=375 inherits each page's existing approved value. Shared owner files are not modified. */
+@media (max-width:374px){[data-component="RootPageHero"]>div:first-child p[class$="eyebrow"]{font-size:12px!important}}
+@media (max-width:340px){[data-component="RootPageHero"]>div:first-child p[class$="eyebrow"]{font-size:11px!important}}

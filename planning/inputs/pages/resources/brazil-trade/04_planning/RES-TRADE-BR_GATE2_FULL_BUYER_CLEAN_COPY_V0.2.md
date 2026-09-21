@@ -1,0 +1,125 @@
+# RES-TRADE-BR Full Buyer Clean Copy V0.2
+
+## SEO and page fields
+
+| Field | Buyer-facing value |
+|---|---|
+| H1 | Brazil Titanium Dioxide Anti-Dumping Duty: Current Measure, Scope and Rates |
+| SEO title | Brazil Titanium Dioxide Anti-Dumping Duty | TiO2 Malaysia |
+| Meta description | Check Brazil’s definitive TiO2 anti-dumping measure, China-origin scope, four USD/t bands, exclusions and shipment inputs to verify. |
+| Canonical | `/resources/brazil-titanium-dioxide-anti-dumping-duty/` |
+| Primary CTA | `Review Brazil Procurement Options` → `/markets/brazil/` |
+| Secondary CTA | `Check the Official Brazil Measure` → `https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/defesa-comercial-e-interesse-publico/medidas-em-vigor/medidas-em-vigor/pigmentos-dioxido-titanio-md` |
+| Last reviewed | 7 September 2026 |
+
+---
+
+# Brazil Titanium Dioxide Anti-Dumping Duty: Current Measure, Scope and Rates
+
+As checked on **7 September 2026**, Brazil’s MDIC measures-in-force index lists a definitive anti-dumping duty on the specified rutile titanium dioxide product originating in China. Resolution GECEX 802/2025 sets four producer/exporter bands, and the official index lists the measure through **24 October 2030**, subject to later official decisions.
+
+A separate public-interest evaluation is in progress. The checked MDIC and DECOM pages did not show a later final decision suspending, changing or ending this titanium dioxide measure. This is a dated official-source finding, not a duty or customs decision for a shipment.
+
+[**Review Brazil Procurement Options**](/markets/brazil/)
+
+The receiving page helps you review Malaysia-origin titanium dioxide by product, application and Brazil delivery context. It supports supplier and procurement evaluation; it does not determine classification, origin, anti-dumping treatment, tax or customs clearance.
+
+[Check the Official Brazil Measure](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/defesa-comercial-e-interesse-publico/medidas-em-vigor/medidas-em-vigor/pigmentos-dioxido-titanio-md)
+
+The MDIC measure page is the secondary path for the published definitive measure and rate table.
+
+## Current status and timeline
+
+| Date | Official event | What it means now |
+|---|---|---|
+| 30 April 2024 | The original anti-dumping investigation opened. | Historical investigation stage; it is not the current measure. |
+| 21 October 2024 | A provisional measure took effect. | Historical provisional stage; the official record marks it as ended. |
+| 24 October 2025 | Resolution GECEX 802/2025 was published. | It ended the investigation with a definitive specific duty for up to five years. |
+| 30 January 2026 | Resolution GECEX 850/2026 was adopted. | It removed Siegwerk Druckfarben AG & CO KGAA from the producer/exporter list in Resolution 802. |
+| 27 March 2026 | SECEX Circular 21 opened a public-interest evaluation. | The evaluation is a separate procedure; opening it did not itself suspend or change the duty. |
+| 21 August 2026 | SECEX Circular 82 extended the evidentiary and final-submission phases. | The MDIC proceeding page lists 4 September 2026 as the end of final submissions. A deadline is not a final decision. |
+
+When checked on 7 September, the MDIC in-force index still listed the definitive titanium dioxide measure for China through 24 October 2030. The current public-interest page still displayed Circulars 21 and 82, and no later final titanium dioxide public-interest decision was located in the MDIC, DECOM, GECEX and Diário Oficial entry points checked for this update.
+
+## Written product scope and exclusions
+
+The official product description covers **rutile titanium dioxide pigments and preparations containing at least 80% titanium dioxide by dry weight**, in the physical forms and particle sizes described in the proceeding, when originating in China.
+
+The measure commonly references NCM `3206.11.10`. Resolution 802 says that classification is indicative and does not bind the scope of the anti-dumping measure. A code alone cannot establish whether a shipment is covered.
+
+Two exclusions require separate checks:
+
+- **Anatase:** titanium dioxide of the anatase type, commonly classified under NCM `2823.00.10`, is outside the written rutile product scope.
+- **Ex-001:** Resolution 802 excludes the following narrow product under NCM `3206.11.10`: rutile pigment containing **82% to 94% TiO2 by weight**, surface treated, with **P2O5 at least 1.2%**, **SiO2 no more than 0.4%**, **ZrO2 no more than 0.1%**, an isoelectric point from **pH 6.5 to 8.1**, and intended specifically for base papers used to manufacture melamine decorative laminates.
+
+The Ex-001 exclusion depends on the complete technical description. It is not a general exclusion for all paper uses, all surface-treated rutile, all goods under NCM `3206.11.10` or all titanium dioxide with an ordinary-tariff concession.
+
+## Four definitive duty bands
+
+Resolution 802 expresses the duty as a specific amount in US dollars per tonne. All four bands below carry the written **China-origin** condition. The legal table uses a combined `Producer / Exporter` field, so the exact legal entity and its role in the transaction must be checked against the current Resolution 802/850 chain.
+
+| China-origin producer/exporter condition | Definitive amount published in Resolution 802 |
+|---|---:|
+| Anhui Gold Star Titanium Dioxide (Group) Co., Ltd | USD 1,148.72/t |
+| LB Group Co., Ltd; Henan Billions Advanced Material Co., Ltd.; LB Lufeng Titanium Industry Co., Ltd.; LB Xiangyang Titanium Industry Co., Ltd.; or LB Sichuan Titanium Industry Co., Ltd. | USD 1,159.18/t |
+| An exact legal entity remaining in Resolution 802’s named USD 1,223.92/t list after applying Resolution 850/2026 | USD 1,223.92/t |
+| `Demais empresas` — other companies under the measure | USD 1,267.74/t |
+
+Resolution 850 removed **Siegwerk Druckfarben AG & CO KGAA** from the named producer/exporter list. When checked on 7 September 2026, the MDIC measure detail page still displayed the older name, so do not use that page’s long list without the later resolution. Removal from the list does not, by itself, tell this page which band or treatment applies to a particular shipment.
+
+A group name, brand, supplier name, related-company relationship or rate amount alone is not enough to establish a band. This page does not identify the producer/exporter for a buyer, decide whether a name matches the current legal list or calculate a duty amount.
+
+## Public-interest evaluation: a separate open procedure
+
+The public-interest evaluation began on 27 March 2026. Circular 82 extended its phases, and the MDIC page lists 4 September 2026 as the final-submissions deadline.
+
+The deadline does not suspend, reduce, maintain or terminate the definitive duty. A later official decision would need to be read on its own terms. No such final titanium dioxide decision was located in the official MDIC/DECOM/GECEX/DOU entry points checked on 7 September 2026.
+
+[Check the Official Public-Interest Evaluation](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/defesa-comercial-e-interesse-publico/investigacoes/avaliacoes-de-interesse-publico/dioxido-de-titanio-ip)
+
+## Keep anti-dumping, ordinary import duty and taxes separate
+
+| Check | What it answers | Where to verify |
+|---|---|---|
+| Anti-dumping measure | Whether the written product, China-origin and current producer/exporter conditions apply, and which specific amount is assigned | Resolution 802 together with Resolution 850 and any later GECEX or public-interest decision |
+| Ordinary import duty | The current tariff treatment for the final NCM, origin and any valid Ex-tarifário or preference conditions | Current Siscomex/Receita tariff and import systems |
+| Import taxes and customs value | Which additional tax bases, rates and valuation inputs apply to the transaction | Current Receita Federal/Siscomex rules and the importer’s transaction records |
+
+The Ex-001 record has an ordinary import-tariff history and a separate anti-dumping exclusion. Those are different legal questions. This page does not state a current ordinary-duty percentage, confirm an Ex-tarifário entitlement or combine duty, tax, freight and customs value into landed cost.
+
+TiO2 Malaysia supplies Malaysia-origin titanium dioxide. That commercial origin statement does not, by itself, determine Brazilian customs origin, classification, preference, exemption, anti-dumping treatment, tax or a zero-duty result for a shipment.
+
+## Prepare shipment-specific inputs before checking treatment
+
+Ask the importer, broker, compliance, finance and product teams to assemble:
+
+- the exact product name, grade, rutile or anatase form, TiO2 content on a dry-weight basis, physical form, particle-size information, surface treatment and intended use;
+- the proposed NCM classification and the basis used for it;
+- non-preferential origin evidence and the basis for the origin declaration;
+- the manufacturer, producer and exporter’s exact legal names, addresses and roles;
+- country of manufacture, country of export and the supply-chain records connecting the parties;
+- technical evidence for every Ex-001 characteristic if that narrow exclusion is being considered;
+- commercial invoice, purchase, transport and import-declaration records;
+- quantity in tonnes, customs value, currency and relevant shipment/import dates; and
+- the current Resolution 802/850 text, any later GECEX or public-interest decision, and current ordinary tariff/tax entries.
+
+Use the complete facts with the current official texts. A supplier location, group name, NCM, product label, country of export or invoice statement in isolation does not determine the result.
+
+## Continue the right review
+
+[**Review Brazil Procurement Options**](/markets/brazil/) to compare the commercial product, application and Brazil delivery context for a Malaysia-origin supply route. The English Brazil procurement page supports supplier evaluation; it is not a customs ruling.
+
+For procurement information in Brazilian Portuguese, use [Opções de fornecimento para o Brasil](/pt-br/markets/brazil/). That page supports the same commercial evaluation in Portuguese and does not determine trade-remedy or customs treatment.
+
+If you first need to compare product families, use the [Product Hub](/products/). You can also [Request a Quote](/request-a-quote/) with a known Product / Grade or choose `Not sure / Need help`. Tell us your application, required or estimated quantity in metric tonnes, destination and any other context you already know. After submission, our team reviews your requirements and details, then contacts you using the information provided. This path does not recommend a Grade or determine technical suitability, classification, origin, duty, tax or clearance.
+
+### Official sources
+
+- [MDIC current definitive measure: titanium dioxide pigments](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/defesa-comercial-e-interesse-publico/medidas-em-vigor/medidas-em-vigor/pigmentos-dioxido-titanio-md) — current measure type, origin, rate table and listed validity.
+- [Resolution GECEX 802/2025 in the Diário Oficial da União](https://www.in.gov.br/en/web/dou/-/resolucao-gecex-n-802-de-23-de-outubro-de-2025-664870357) — definitive measure, specific amounts, classification caveat and Ex-001 exclusion.
+- [Official GECEX resolutions index: Resolution 850/2026](https://www.gov.br/mdic/pt-br/assuntos/camex/resolucoes/resolucoes?b_start:int=120) — the official index records Resolution 850’s removal of Siegwerk from the named producer/exporter list.
+- [MDIC public-interest evaluation: titanium dioxide](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/defesa-comercial-e-interesse-publico/investigacoes/avaliacoes-de-interesse-publico/dioxido-de-titanio-ip) — initiation, process numbers, Circulars 21/82 and deadline.
+- [MDIC DECOM publications in 2026](https://www.gov.br/mdic/pt-br/assuntos/comercio-exterior/defesa-comercial-e-interesse-publico/publicacoes-do-decom-no-diario-oficial-da-uniao/publicacoes-do-decom-em-2026) — current official publication trail.
+- [MDIC Technical Note SEI 786/2026](https://www.gov.br/mdic/pt-br/assuntos/camex/outros-documentos/notas/deferimentos/237a-reuniao-ordinaria-do-comite-executivo-de-gestao-gecex/extrato-publico-nt-786_2026-pigmento-rutilo.pdf/@@download/file) — Ex-001 description and confirmation that the narrow product is excluded from Resolution 802’s anti-dumping measure.
+
+**Last reviewed: 7 September 2026.** Recheck the official measure, Resolution 850, public-interest proceeding and current Brazilian tariff systems before shipment or whenever a later GECEX, SECEX, court, tariff or classification event changes the record.

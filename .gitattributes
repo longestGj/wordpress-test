@@ -1,0 +1,5 @@
+# Preserve the bytes of imported, provenance-tracked source documents.
+planning/inputs/** -text
+planning/products/tds/** -text
+planning/RELATIONSHIPS.csv -text
+planning/products/tds/*.pdf binary

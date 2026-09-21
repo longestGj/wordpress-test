@@ -1,0 +1,22 @@
+/* MARKET-EU-PL Gate 4 v0.1. Local planning samples only.
+   Content/structure and shared snapshot inherit the approved Gate 3 combination.
+   This layer records only visual role refinements; it creates no shared owner version. */
+:root{--pl-navy:#062B5B;--pl-teal:#008078;--pl-soft:#F5F8FB;--pl-border:#D9E2EC}
+/* Current functional-colour addendum: functional links/boundaries on light surfaces. */
+main .breadcrumb a,main .breadcrumb a:visited{color:var(--pl-teal)}
+main .body-action a{border-color:var(--pl-teal)}
+main .body-action+.body-action a,main .body-action+.body-action a:visited{color:var(--pl-teal)}
+/* Primary request actions retain their exact existing location, text and target. */
+main .body-action a[href='/request-a-quote/'],main .body-action a[href='/request-documents/']{background:var(--pl-teal);border-color:var(--pl-teal);color:#fff}
+main .body-action a[href='/request-a-quote/']:hover,main .body-action a[href='/request-documents/']:hover{background:var(--pl-navy);border-color:var(--pl-navy);color:#fff}
+main .body-action a[href='/products/']:hover{background:var(--pl-soft)}
+/* Preserve editorial parallel paths: no surface box, click cursor or differentiated rank. */
+.application-path{border-top-color:var(--pl-border)}
+/* Shared light-surface controls retain owner geometry and copy; use its current functional teal. */
+.menuButton,.cookie-actions>*{border-color:var(--pl-teal)}
+.cookie-actions a,.cookie-actions a:visited{color:var(--pl-teal)}
+.cookie-actions>*:hover{background:var(--pl-soft)}
+
+/* PL-G4-IR01: explicit compliant hover surface for the two affected supporting links. */
+#pl-04 .body-action+.body-action a:hover,
+#pl-05 .body-action+.body-action a:hover{background:var(--pl-soft)}

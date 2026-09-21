@@ -1,0 +1,171 @@
+/* APP-COAT Gate 4 V0.1 — page-only complete visual layer.
+   Approved G3 structure, B V0.2 copy and shared Consumer V0.2 remain authoritative. */
+
+:root{
+  --coat-navy:#062b5b;
+  --coat-deep:#031b3a;
+  --coat-teal:#007f77;
+  --coat-teal-bright:#00a99d;
+  --coat-soft:#f5f8fb;
+  --coat-line:#d9e2ec;
+  --coat-ink:#26384d;
+}
+
+body{color:var(--coat-ink);background:#fff}
+
+/* The long technical page needs a decisive opening and a stable reading rail. */
+.hero{
+  position:relative;
+  padding-top:40px;
+  padding-bottom:92px;
+  color:#fff;
+  background:
+    linear-gradient(90deg,rgb(0 169 157 / 18%) 1px,transparent 1px) 0 0/72px 72px,
+    linear-gradient(180deg,rgb(6 43 91 / 0%) 58%,rgb(3 27 58 / 34%)),
+    var(--coat-deep);
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-140px;
+  bottom:-190px;
+  width:520px;
+  height:520px;
+  border:1px solid rgb(20 184 166 / 36%);
+  border-radius:50%;
+  box-shadow:0 0 0 70px rgb(20 184 166 / 7%),0 0 0 140px rgb(20 184 166 / 4%);
+  pointer-events:none;
+}
+.heroInner{position:relative;z-index:1}
+.breadcrumb{color:#c9d9e8}
+.breadcrumb a{color:#fff}
+.eyebrow{color:#73e0d8}
+.hero h1{max-width:850px;color:#fff}
+.hero h1+p{max-width:920px;color:#e6edf5}
+.heroActions .primaryAction{color:#fff;background:var(--coat-teal);border-color:var(--coat-teal)}
+.heroActions .secondaryAction{color:var(--coat-navy);background:#fff;border-color:#fff}
+
+/* Alternating editorial bands distinguish decisions without adding content. */
+.contentSection{position:relative;padding-top:82px;padding-bottom:82px}
+.contentSection:nth-of-type(even){background:#fff}
+.contentSection:nth-of-type(odd){background:var(--coat-soft)}
+.contentSection::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:max(32px,calc((100% - 1120px)/2));
+  width:72px;
+  height:4px;
+  background:var(--coat-teal-bright);
+}
+.sectionInner>h2,.sectionInner>a+h2{margin-bottom:30px;color:var(--coat-navy)}
+.sectionInner>h2::after,.sectionInner>a+h2::after{
+  content:"";
+  display:block;
+  width:48px;
+  height:2px;
+  margin-top:18px;
+  background:var(--coat-teal);
+}
+.sectionInner>p:first-of-type{font-size:18px;line-height:1.72;color:#213a56}
+
+/* System definition becomes a scan-friendly specification field without changing items. */
+.definition ul{
+  columns:auto;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  max-width:1120px;
+  margin:32px 0;
+  padding:0;
+  border-top:1px solid var(--coat-line);
+  border-left:1px solid var(--coat-line);
+  list-style:none;
+}
+.definition li{
+  min-height:74px;
+  margin:0;
+  padding:18px 18px 18px 34px;
+  border-right:1px solid var(--coat-line);
+  border-bottom:1px solid var(--coat-line);
+  background:#fff;
+  position:relative;
+}
+.definition li::before{
+  content:"";
+  position:absolute;
+  top:26px;
+  left:17px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--coat-teal);
+}
+
+/* Dense evidence sections share a quiet reading rule. */
+.optical .sectionInner,.dispersion .sectionInner,.durability .sectionInner,.cost .sectionInner{position:relative}
+.optical .sectionInner>p,.dispersion .sectionInner>p,.durability .sectionInner>p,.cost .sectionInner>p{padding-left:22px;border-left:2px solid #dfe8ef}
+
+/* Table styling strengthens headers and row tracking while preserving equal objects. */
+table{border:1px solid var(--coat-line);box-shadow:0 14px 36px rgb(3 27 58 / 7%)}
+th{color:#fff;background:var(--coat-navy);border-color:#24476d;letter-spacing:.015em}
+tbody tr:nth-child(even) td{background:#f8fafc}
+tbody tr:hover td{background:#eef7f6}
+.endpoint-table td:first-child,.grades td:first-child{color:var(--coat-navy);font-weight:750}
+.grades table{max-width:100%}
+.grades td:nth-child(2){color:#4d6075;font-weight:650}
+.grades a{font-weight:700}
+
+/* All three request owners remain equal; none is featured or recommended. */
+.requestCards{gap:24px}
+.requestCard{
+  position:relative;
+  min-height:310px;
+  padding:30px 26px 26px;
+  display:flex;
+  flex-direction:column;
+  border:1px solid var(--coat-line);
+  border-radius:8px;
+  box-shadow:0 12px 28px rgb(3 27 58 / 6%);
+}
+.requestCard::before{content:"";position:absolute;top:-1px;right:-1px;left:-1px;height:5px;border-radius:8px 8px 0 0;background:var(--coat-teal)}
+.requestCard h3{font-size:22px}
+.requestCard a{margin-top:auto;align-self:flex-start;color:var(--coat-teal);background:#fff}
+
+.sources{background:#eef3f7!important}
+.sources ol{padding:26px 26px 10px 48px;border-left:4px solid var(--coat-navy);background:#fff}
+
+main a:hover{text-decoration-thickness:2px;text-underline-offset:4px}
+main a:not(.primaryAction):not(.secondaryAction):hover{color:var(--coat-teal);background:var(--coat-soft)}
+.primaryAction:hover{color:#fff;background:var(--coat-teal);text-decoration-line:underline}
+.secondaryAction:hover{color:var(--coat-navy);background:#fff;text-decoration-line:underline}
+main :is(a,button):focus-visible{outline:3px solid var(--coat-teal);outline-offset:3px}
+
+@media(max-width:1100px){
+  .hero{padding-top:30px;padding-bottom:70px}
+  .contentSection{padding-top:66px;padding-bottom:66px}
+  .contentSection::before{left:24px}
+  .definition ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .endpoint-table tbody,.grades tbody{gap:18px}
+  .endpoint-table tr,.grades tr{border-radius:6px;box-shadow:0 8px 22px rgb(3 27 58 / 6%)}
+  .endpoint-table td:first-child,.grades td:first-child{color:var(--coat-navy)}
+  .requestCard{min-height:0}
+}
+
+@media(max-width:560px){
+  .hero{padding-top:24px;padding-bottom:56px}
+  .hero::after{right:-230px;bottom:-260px}
+  .contentSection{padding-top:58px;padding-bottom:58px}
+  .contentSection::before{left:20px;width:54px}
+  .sectionInner>p:first-of-type{font-size:17px}
+  .definition ul{grid-template-columns:1fr}
+  .definition li{min-height:64px}
+  .optical .sectionInner>p,.dispersion .sectionInner>p,.durability .sectionInner>p,.cost .sectionInner>p{padding-left:16px}
+  .endpoint-table tbody,.grades tbody{gap:16px}
+  .requestCard{padding:26px 22px 22px}
+  .requestCard a{width:100%}
+  .sources ol{padding:22px 18px 8px 38px}
+}
+
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

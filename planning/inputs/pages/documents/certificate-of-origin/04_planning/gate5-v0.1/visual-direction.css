@@ -1,0 +1,36 @@
+/* DOC-COO Gate4 V0.2: page-only refinements; own approved G3 remains baseline.
+   Table/record bands #F0F5F8 -> exact brand Soft Background #F5F8FB.
+   All three evidence types receive the same neutral treatment. */
+main .evidenceTable thead th { background: #F5F8FB; }
+@media (max-width: 1000px) {
+  main .evidenceTable tbody th { background: #F5F8FB; }
+}
+
+/* Stable contrast on actual backgrounds, including both long official links.
+   IR01: official source link flow is repaired below; all other geometry retained. */
+main a:not(.primary):hover {
+  color: #008078;
+  background: #F5F8FB;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+main a.primary:hover {
+  color: #FFFFFF;
+  background: #008078;
+  text-decoration: underline 2px;
+  text-underline-offset: 4px;
+}
+
+/* COO-G4-REV-01 / IR01: one real rectangular target, no overlapping inline fragments.
+   Official Source sentence period remains with its link text, preserving B text order. */
+main a.officialSourceLink[href^="https:"] {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 8px 0;
+  padding: 8px 0;
+  line-height: 1.7;
+}

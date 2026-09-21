@@ -1,0 +1,86 @@
+/* APP-000 Gate 4 visual layer. Approved Gate 3 content/shared consumer remain exact. */
+main { overflow-wrap:anywhere; }
+.skip { top:-100px; transform:none; }
+.skip:focus { top:8px; }
+.wrap { width:min(1200px,calc(100% - 64px)); }
+.section { padding-block:88px; }
+h1 { font-size:56px; line-height:1.08; }
+h2 { font-size:38px; line-height:1.18; }
+h3 { font-weight:600; }
+.eyebrow,.gradeLabel { font-size:14px; font-weight:650; }
+.rootHero { grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:64px; padding:48px 0 80px; }
+.heroIndex { border-radius:10px; padding:28px; box-shadow:0 4px 14px rgba(6,43,91,.04); }
+.heroIndex h2 { font-size:22px; }
+.heroLinks { gap:8px; }
+.heroLinks a { border-radius:6px; font-weight:600; font-size:15px; }
+.heroLinks a:hover { background:#eaf7f6; color:#006c66; text-decoration:underline; }
+.primary,.secondary,.textAction { border-width:1px; border-radius:6px; font-weight:600; }
+.applicationGrid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start; }
+.applicationCard { padding:30px; border-color:#d9e2ec; border-radius:10px; box-shadow:0 3px 12px rgba(6,43,91,.035); }
+.applicationCard h3 { font-size:24px; margin-bottom:12px; }
+.applicationCard > p:not(.gradeLabel) { min-height:0; }
+.gradeLabel { margin-top:24px; margin-bottom:12px; text-transform:none; letter-spacing:0; color:#334155; }
+.gradeList { gap:8px; margin-bottom:16px; }
+.gradeChip { border-radius:6px; background:#fff; font-weight:600; }
+.gradeChipPlain { border:0; border-radius:0; background:transparent; padding:2px 0; font-weight:500; }
+.applicationAction { border:0; padding:10px 0; text-decoration:underline; text-underline-offset:4px; }
+.applicationAction:hover,.procurementCard .textAction:hover { color:#006c66; }
+.steps { grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px; }
+.step { min-height:0; padding:24px 0 0; box-shadow:none; border-top:1px solid #d9e2ec; }
+.stepNumber { font-size:20px; font-weight:600; margin-bottom:20px; }
+.step h3 { font-size:22px; }
+.step p { margin-bottom:0; }
+.procurementGrid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.procurementCard { min-height:0; padding:28px; border-radius:10px; box-shadow:0 3px 12px rgba(6,43,91,.035); }
+.procurementCard h3 { font-size:22px; }
+.procurementCard .textAction { text-decoration:underline; text-underline-offset:4px; }
+.finalBand { padding-block:80px; background:#fff; color:#334155; }
+.finalCta { gap:48px; }
+.finalCta h2 { color:#062b5b; }
+.finalCta p { color:#334155; margin-bottom:16px; }
+.finalCta p:last-child { margin-bottom:0; }
+@media (min-width:768px) and (max-width:1100px) {
+ .wrap { width:calc(100% - 48px); }
+ .rootHero { grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:32px; }
+ .heroIndex { padding:24px; }
+ .heroLinks { grid-template-columns:1fr; }
+ .section { padding-block:72px; }
+ .applicationCard { padding:24px; }
+ .steps,.procurementGrid { gap:24px; }
+ .procurementCard { padding:22px; }
+ .finalCta { grid-template-columns:1fr; gap:28px; }
+ .finalCta .primary { justify-self:start; }
+}
+@media (min-width:768px) and (max-width:1023px) {
+ h1 { font-size:44px; }
+ .rootHero { grid-template-columns:1fr; gap:32px; padding:40px 0 64px; }
+ .heroLinks { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ h2 { font-size:34px; }
+ .applicationGrid { gap:20px; }
+ .gradeList { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .gradeList li { min-width:0; }
+ .step h3 { font-size:20px; }
+ .procurementCard { padding:20px; }
+}
+@media (max-width:767px) {
+ .wrap { width:calc(100% - 32px); }
+ h1 { font-size:36px; }
+ h2 { font-size:30px; }
+ .rootHero,.applicationGrid,.steps,.procurementGrid,.finalCta { grid-template-columns:1fr; }
+ .rootHero { gap:28px; padding:32px 0 56px; }
+ .heroText > p:not(.eyebrow) { font-size:16px; }
+ .heroIndex,.applicationCard,.procurementCard { padding:24px; }
+ .heroLinks { grid-template-columns:1fr; }
+ .actions { display:grid; }
+ .actions > * { width:100%; }
+ .section { padding-block:56px; }
+ .applicationGrid { gap:16px; }
+ .gradeList { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .gradeList li { min-width:0; }
+ .steps { gap:28px; }
+ .step { padding:24px 0 0; }
+ .procurementGrid { gap:16px; }
+ .finalBand { padding-block:56px; }
+ .finalCta { gap:24px; }
+ .finalCta .primary { width:100%; }
+}

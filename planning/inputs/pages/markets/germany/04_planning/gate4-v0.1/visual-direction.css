@@ -1,0 +1,65 @@
+/* MARKET-EU-DE Gate 4 visual layer. Shared Header/Footer/Cookie selectors remain owner-controlled. */
+body{font-size:17px;line-height:1.7}
+main h1{max-width:900px;font-size:58px;line-height:1.08;letter-spacing:-1.25px}
+main h2{max-width:880px;font-size:38px;line-height:1.18;letter-spacing:-.65px}
+main h3{font-size:23px;line-height:1.28;letter-spacing:-.2px}
+main p,main li{max-width:74ch}
+main a{max-width:100%;border-radius:4px;overflow-wrap:anywhere;transition:color .15s ease,background-color .15s ease,border-color .15s ease,transform .15s ease}
+main a:hover{color:#062b5b;background:#f5f8fb;text-decoration-thickness:2px}
+main .prose a:not(.primaryAction){padding-right:3px;padding-left:3px;outline-offset:-3px}
+.hero{padding-top:48px;padding-bottom:72px;background:#031b3a}
+.hero .breadcrumb{margin-bottom:28px}
+.heroInner>p:not(.heroActions){max-width:760px;font-size:20px;line-height:1.65}
+.heroActions{margin-top:32px!important}
+.primaryAction,.secondaryAction{padding:12px 22px;border-radius:7px;font-weight:700}
+.primaryAction:hover{border-color:#062b5b;color:#fff!important;background:#062b5b;text-decoration:underline}
+.secondaryAction:hover{border-color:#fff;color:#062b5b!important;background:#fff;text-decoration:underline}
+.hero :is(a,button):focus-visible,.conversionPanel :is(a,button):focus-visible{outline-color:#fff}
+.module{padding-top:68px;padding-bottom:68px}
+.module>.shell>.prose>h2::after,.module>.shell.prose>h2::after,.destination h2::after{content:"";display:block;width:56px;height:4px;margin-top:18px;border-radius:2px;background:#008078}
+.applicationGrid{gap:24px}
+.applicationCard{display:flex;min-height:100%;flex-direction:column;padding:28px;border-top-width:5px;border-radius:10px;box-shadow:0 10px 28px rgb(3 27 58 / 7%)}
+.applicationCard p:last-child{margin-top:auto;margin-bottom:0;padding-top:8px}
+.applicationCard a{justify-content:flex-start;padding:4px 0}
+.applicationCard:focus-within{border-color:#008078;box-shadow:0 0 0 3px rgb(0 128 120 / 14%),0 10px 28px rgb(3 27 58 / 7%)}
+#de-03 .prose,#de-04 .prose,#de-06 .prose{max-width:940px}
+#de-06 .prose{padding-left:28px;border-left:4px solid #008078}
+.destinationGrid{gap:56px}
+.checklist{border-top:5px solid #008078;box-shadow:0 10px 28px rgb(3 27 58 / 7%)}
+.checklist p:first-child{max-width:28ch}
+.conversionPanel{padding:48px;border-radius:10px;background:#062b5b;box-shadow:0 16px 38px rgb(3 27 58 / 15%)}
+.conversionPanel p{max-width:70ch}
+.conversionPanel .primaryAction{background:#008078}
+.references{display:grid;grid-template-columns:minmax(250px,.34fr) minmax(0,.66fr);gap:24px 48px;align-items:start}
+.references h3,.references>p{grid-column:1}
+.references ul{grid-column:2;grid-row:1/4;margin-top:0}
+.references li{max-width:none;padding-bottom:14px;border-bottom:1px solid #d9e2ec}
+.references a{padding:4px 3px;outline-offset:-3px}
+@media(max-width:1100px){
+  main h1{font-size:46px;line-height:1.1}
+  main h2{font-size:34px}
+  .module{padding-top:56px;padding-bottom:56px}
+  .applicationGrid{gap:18px}
+  .applicationCard{padding:26px}
+  .destinationGrid{gap:30px}
+  .references{display:block}
+  .references h3,.references>p,.references ul{grid-column:auto;grid-row:auto}
+  .references ul{margin-top:22px}
+}
+@media(max-width:560px){
+  body{font-size:16px;line-height:1.7}
+  main h1{font-size:37px;line-height:1.1;letter-spacing:-.7px}
+  main h2{font-size:29px;line-height:1.2}
+  main h3{font-size:22px}
+  .hero{padding-top:28px;padding-bottom:48px}
+  .hero .breadcrumb{margin-bottom:22px}
+  .heroInner>p:not(.heroActions){font-size:18px;line-height:1.65}
+  .module{padding-top:46px;padding-bottom:46px}
+  .module>.shell>.prose>h2::after,.module>.shell.prose>h2::after,.destination h2::after{width:48px;margin-top:15px}
+  .applicationCard{padding:22px}
+  #de-06 .prose{padding-left:18px}
+  .checklist{padding:24px 22px}
+  .conversionPanel{padding:30px 22px}
+  .references li{padding-bottom:16px}
+}
+@media(prefers-reduced-motion:reduce){main a{transition:none}}

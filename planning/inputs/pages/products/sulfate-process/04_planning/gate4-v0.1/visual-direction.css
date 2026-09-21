@@ -1,0 +1,13 @@
+/* SU-G4-COMPLETE-V01. Local visual parameters only; shared owner styles unchanged. */
+main{color:#334155}
+main :is(h1,h2,h3){color:#062B5B}
+main h3{font-weight:600}
+main .m1,main .m5{background:#F5F8FB}
+main section,main .grades article,main .evaluation article{border-color:#D9E2EC}
+main .actions a{border-radius:6px;font-weight:600}
+main .actions strong{font-weight:600}
+main a:hover{background:#F5F8FB;text-decoration:underline}
+main .m1 .actions a:first-child:hover,main .m5 .actions a:hover{background:#062B5B;border-color:#062B5B;color:white}
+main .m1 .actions a:nth-child(2):hover{background:white}
+main .m2 p>a{display:inline;padding:12px 3px;position:relative;line-height:3.2;box-decoration-break:clone;-webkit-box-decoration-break:clone;outline-offset:-3px}
+main .m2 p>a:hover{background:#F5F8FB}

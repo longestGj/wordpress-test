@@ -1,0 +1,60 @@
+page_id,url,page_type,language,spec
+HOME-001,/,Homepage,EN,pages/HOME-001.md
+ABOUT-001,/about/,Trust / company page,EN,pages/ABOUT-001.md
+MARKET-000,/markets/,Navigation hub,EN,pages/MARKET-000.md
+MARKET-EU-001,/markets/european-union/,Market procurement landing page,EN,pages/MARKET-EU-001.md
+MARKET-EU-DE,/markets/germany/,Market procurement landing page,EN,pages/MARKET-EU-DE.md
+MARKET-EU-IT,/markets/italy/,Market procurement landing page,EN,pages/MARKET-EU-IT.md
+MARKET-EU-ES,/markets/spain/,Market procurement landing page,EN,pages/MARKET-EU-ES.md
+MARKET-EU-PL,/markets/poland/,Market procurement landing page,EN,pages/MARKET-EU-PL.md
+MARKET-EU-NL,/markets/netherlands/,Market procurement landing page,EN,pages/MARKET-EU-NL.md
+MARKET-EU-BE,/markets/belgium/,Market procurement landing page,EN,pages/MARKET-EU-BE.md
+MARKET-UK-001,/markets/united-kingdom/,Market procurement landing page,EN,pages/MARKET-UK-001.md
+MARKET-IN-001,/markets/india/,Market procurement landing page,EN,pages/MARKET-IN-001.md
+MARKET-BR-EN,/markets/brazil/,Market procurement landing page,EN,pages/MARKET-BR-EN.md
+MARKET-BR-PT,/pt-br/markets/brazil/,Localized market procurement landing page,PT-BR,pages/MARKET-BR-PT.md
+PRODUCT-000,/products/,Product hub,EN,pages/PRODUCT-000.md
+PRODUCT-PROC-CL,/products/chloride-process-titanium-dioxide/,Process aggregation page,EN,pages/PRODUCT-PROC-CL.md
+PRODUCT-PROC-SU,/products/sulfate-process-titanium-dioxide/,Process aggregation page,EN,pages/PRODUCT-PROC-SU.md
+GRADE-M350,/products/m-350/,Grade product page,EN,pages/GRADE-M350.md
+GRADE-M510,/products/m-510/,Grade product page,EN,pages/GRADE-M510.md
+GRADE-M896,/products/m-896/,Grade product page,EN,pages/GRADE-M896.md
+GRADE-M996,/products/m-996/,Grade product page,EN,pages/GRADE-M996.md
+GRADE-M2196,/products/m-2196/,Grade product page,EN,pages/GRADE-M2196.md
+GRADE-M895,/products/m-895/,Grade product page,EN,pages/GRADE-M895.md
+GRADE-M200,/products/m-200/,Grade product page,EN,pages/GRADE-M200.md
+GRADE-M108,/products/m-108/,Grade product page,EN,pages/GRADE-M108.md
+GRADE-M210,/products/m-210/,Grade product page,EN,pages/GRADE-M210.md
+GRADE-M340,/products/m-340/,Grade product page,EN,pages/GRADE-M340.md
+GRADE-M886,/products/m-886/,Grade product page,EN,pages/GRADE-M886.md
+GRADE-M52,/products/m-52/,Grade product page,EN,pages/GRADE-M52.md
+GRADE-M2377,/products/m-2377/,Grade product page,EN,pages/GRADE-M2377.md
+GRADE-CR901,/products/cr-901/,Grade product page,EN,pages/GRADE-CR901.md
+APP-000,/applications/,Navigation hub,EN,pages/APP-000.md
+APP-COAT,/applications/titanium-dioxide-for-coatings/,Application landing page,EN,pages/APP-COAT.md
+APP-PLAS,/applications/titanium-dioxide-for-plastics/,Application landing page,EN,pages/APP-PLAS.md
+APP-MB,/applications/titanium-dioxide-for-masterbatch/,Application landing page,EN,pages/APP-MB.md
+APP-INK,/applications/titanium-dioxide-for-printing-inks/,Application landing page,EN,pages/APP-INK.md
+APP-PAPER,/applications/titanium-dioxide-for-paper/,Application landing page,EN,pages/APP-PAPER.md
+DOC-000,/documents/,Navigation hub,EN,pages/DOC-000.md
+DOC-REACH,/documents/reach/,Document / compliance page,EN,pages/DOC-REACH.md
+DOC-TDS,/documents/tds-sds-coa/,Document / compliance page,EN,pages/DOC-TDS.md
+DOC-COO,/documents/certificate-of-origin/,Document / compliance page,EN,pages/DOC-COO.md
+CONV-DOC,/request-documents/,Utility conversion page,EN,pages/CONV-DOC.md
+RES-000,/resources/,Navigation hub,EN,pages/RES-000.md
+RES-ORIGIN,/resources/non-china-titanium-dioxide/,Buying guide,EN,pages/RES-ORIGIN.md
+RES-PROC,/resources/chloride-vs-sulfate-titanium-dioxide/,Buying guide,EN,pages/RES-PROC.md
+RES-CHEMOURS,/resources/chemours-titanium-dioxide-alternatives/,Technical guide,EN,pages/RES-CHEMOURS.md
+RES-R706,/resources/ti-pure-r-706-alternative/,Technical guide,EN,pages/RES-R706.md
+RES-TRADE-EU,/resources/eu-titanium-dioxide-anti-dumping-duty/,Market & trade update,EN,pages/RES-TRADE-EU.md
+RES-TRADE-UK,/resources/uk-titanium-dioxide-anti-dumping-investigation/,Market & trade update,EN,pages/RES-TRADE-UK.md
+RES-TRADE-IN,/resources/india-titanium-dioxide-anti-dumping-duty/,Market & trade update,EN,pages/RES-TRADE-IN.md
+RES-TRADE-BR,/resources/brazil-titanium-dioxide-anti-dumping-duty/,Market & trade update,EN,pages/RES-TRADE-BR.md
+CONV-RFQ,/request-a-quote/,RFQ conversion page,EN,pages/CONV-RFQ.md
+CONV-SAMPLE,/request-sample/,Sample conversion page,EN,pages/CONV-SAMPLE.md
+CONTACT-001,/contact/,Utility contact page,EN,pages/CONTACT-001.md
+LEGAL-PRIV-EN,/privacy-policy/,Legal / privacy page,EN,pages/LEGAL-PRIV-EN.md
+LEGAL-PRIV-MS,/ms/privacy-policy/,Legal / privacy page,MS-MY,pages/LEGAL-PRIV-MS.md
+LEGAL-COOKIE-EN,/cookie-policy/,Legal / cookie page,EN,pages/LEGAL-COOKIE-EN.md
+SYS-404,RUNTIME_FALLBACK,Global system recovery page,EN,pages/SYS-404.md
+CONV-THANK,/thank-you/,Shared form-result utility page,EN,pages/CONV-THANK.md

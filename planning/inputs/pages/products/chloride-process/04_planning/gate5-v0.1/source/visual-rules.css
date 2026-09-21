@@ -1,0 +1,12 @@
+/* PRODUCT-PROC-CL Gate 4 V0.1. Derived from this page's approved Gate 3 source.
+   Preserve its browse-first Hero, eight equal Grade rows, typography and geometry. */
+:root{--cl-navy:#062B5B;--cl-teal:#008078;--cl-soft:#F5F8FB;--cl-line:#D9E2EC}
+/* Every light-surface action has an explicit actual hover surface. */
+.cl-action a:hover{background:var(--cl-soft)}
+#cl-01 .cl-action:first-child a:hover,#cl-05 .cl-action a:hover{background:var(--cl-navy);border-color:var(--cl-navy);color:#fff}
+/* Neutral continuous list; no row highlight, rank or recommendation treatment. */
+.cl-grades{border-top-color:var(--cl-line)}
+/* Current functional-color adapter for the inherited shared light controls. */
+.menuButton,.cookie-actions>*{border-color:var(--cl-teal)}
+.cookie-actions a,.cookie-actions a:visited{color:var(--cl-teal)}
+.cookie-actions>*:hover{background:var(--cl-soft)}

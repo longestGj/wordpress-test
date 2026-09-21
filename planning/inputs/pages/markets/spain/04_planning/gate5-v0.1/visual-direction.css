@@ -1,0 +1,27 @@
+/* MARKET-EU-ES Gate 4 V0.1. Page-only visual refinement.
+   Inherit Spain's approved G3 typography, geometry, content and Consumer V0.2.
+   B V0.2 remains the only buyer-copy edit source. */
+
+/* A true hover must retain the approved functional Teal against its actual
+   surface. Soft Background #F5F8FB gives 4.5201:1 with #008078.
+   This includes Breadcrumb, application routes, common Products, Document
+   Hub and both subordinate EU routes; no padding or line-box change. */
+main a:not(.primary):hover {
+  color: #008078;
+  background: #F5F8FB;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Filled RFQ stays #008078 / white in every state; underline gives feedback
+   without inventing a lighter fill or moving the target. */
+main a.primary:hover {
+  color: #FFFFFF;
+  background: #008078;
+  text-decoration: underline 2px;
+  text-underline-offset: 4px;
+}
+
+/* Keyboard focus uses the approved existing 3px outer Teal ring, offset 3px.
+   Shared Header/Footer/Menu/Cookie remain byte-for-byte G3 Consumer V0.2. */
