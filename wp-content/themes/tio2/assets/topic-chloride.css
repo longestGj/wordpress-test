@@ -234,3 +234,19 @@
 .topic-chloride .menuButton,.topic-chloride .cookie-actions>*{border-color:var(--cl-teal)}
 .topic-chloride .cookie-actions a,.topic-chloride .cookie-actions a:visited{color:var(--cl-teal)}
 .topic-chloride .cookie-actions>*:hover{background:var(--cl-soft)}
+.topic-chloride #cl-glance{padding-block:36px;background:#fff}
+.topic-chloride #cl-glance h2{font-size:28px}
+.topic-chloride .cl-glance-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:24px 0 18px;border-top:1px solid var(--cl-line);border-bottom:1px solid var(--cl-line)}
+.topic-chloride .cl-glance-grid>div{min-width:0;padding:16px 18px;border-right:1px solid var(--cl-line)}
+.topic-chloride .cl-glance-grid>div:first-child{padding-left:0}
+.topic-chloride .cl-glance-grid>div:last-child{border-right:0}
+.topic-chloride .cl-glance-grid dt{margin-bottom:6px;color:var(--cl-navy);font-size:13px;font-weight:700}
+.topic-chloride .cl-glance-grid dd{margin:0;font-size:17px;line-height:1.5}
+.topic-chloride #cl-glance .cl-glance-note{max-width:920px;margin:0;font-size:15px}
+.topic-chloride #cl-sources{padding-block:36px;background:#f8fafb}
+.topic-chloride #cl-sources h2{font-size:26px}
+.topic-chloride #cl-sources p,.topic-chloride #cl-sources li{max-width:960px;font-size:15px;line-height:1.6}
+.topic-chloride #cl-sources ul{margin:12px 0 0;padding-left:22px}
+.topic-chloride #cl-sources li+li{margin-top:8px}
+@media(max-width:900px){.topic-chloride .cl-glance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topic-chloride .cl-glance-grid>div{border-bottom:1px solid var(--cl-line)}.topic-chloride .cl-glance-grid>div:nth-child(2){border-right:0}.topic-chloride .cl-glance-grid>div:nth-last-child(-n+2){border-bottom:0}}
+@media(max-width:560px){.topic-chloride .cl-glance-grid{grid-template-columns:1fr}.topic-chloride .cl-glance-grid>div,.topic-chloride .cl-glance-grid>div:first-child{padding:12px 0;border-right:0;border-bottom:1px solid var(--cl-line)}.topic-chloride .cl-glance-grid>div:last-child{border-bottom:0}.topic-chloride #cl-glance h2{font-size:25px}.topic-chloride #cl-sources h2{font-size:24px}}

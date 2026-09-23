@@ -1,0 +1,17 @@
+[
+  {
+    "id": "glance",
+    "old": "<!-- wp:group {\"className\": \"cl-module\", \"anchor\": \"cl-02\", \"tagName\": \"section\"} -->",
+    "new": "<!-- wp:group {\"className\": \"cl-module cl-glance\", \"anchor\": \"cl-glance\", \"tagName\": \"section\"} --><section class=\"wp-block-group cl-module cl-glance\" id=\"cl-glance\"><!-- wp:group {\"className\": \"page-width\", \"tagName\": \"div\"} --><div class=\"wp-block-group page-width\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Chloride Process at a Glance</h2><!-- /wp:heading --><!-- wp:html --><dl class=\"cl-glance-grid\"><div><dt>Process</dt><dd>Chloride</dd></div><div><dt>Meaning</dt><dd>Production-route classification</dd></div><div><dt>Portfolio</dt><dd>8 chloride-process grades</dd></div><div><dt>Evaluation principle</dt><dd>Process alone does not determine application performance</dd></div></dl><!-- /wp:html --><!-- wp:paragraph {\"className\":\"cl-glance-note\"} --><p class=\"cl-glance-note\">Review the individual Grade, its documented properties and application evidence before evaluation.</p><!-- /wp:paragraph --></div><!-- /wp:group --></section><!-- /wp:group -->\n\n<!-- wp:group {\"className\": \"cl-module\", \"anchor\": \"cl-02\", \"tagName\": \"section\"} -->"
+  },
+  {
+    "id": "technical-sources",
+    "old": "<!-- wp:group {\"className\": \"cl-module\", \"anchor\": \"cl-05\", \"tagName\": \"section\"} -->",
+    "new": "<!-- wp:group {\"className\": \"cl-module cl-sources\", \"anchor\": \"cl-sources\", \"tagName\": \"section\"} --><section class=\"wp-block-group cl-module cl-sources\" id=\"cl-sources\"><!-- wp:group {\"className\": \"page-width\", \"tagName\": \"div\"} --><div class=\"wp-block-group page-width\"><!-- wp:heading --><h2 class=\"wp-block-heading\">Technical Sources</h2><!-- /wp:heading --><!-- wp:paragraph --><p>The high-level production-route description above is supported by these public technical references. They do not establish properties or application suitability for any listed Grade.</p><!-- /wp:paragraph --><!-- wp:html --><ul><li><a href=\"https://www.epa.gov/sites/default/files/2015-07/documents/tsd_titanium_dioxide_epa_1-22-09.pdf\">U.S. EPA — Technical Support Document for the Titanium Dioxide Production Sector</a> (2009): chloride-route formation of TiCl4 and oxidation to TiO2.</li><li><a href=\"https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry\">European Commission JRC — Large Volume Inorganic Chemicals, Solids and Others Industry BREF</a> (2007): general industrial process and finishing context.</li></ul><!-- /wp:html --></div><!-- /wp:group --></section><!-- /wp:group -->\n\n<!-- wp:group {\"className\": \"cl-module\", \"anchor\": \"cl-05\", \"tagName\": \"section\"} -->"
+  },
+  {
+    "id": "rfq",
+    "old": "Ready to discuss a Grade, or still narrowing the list? Tell us the product or Grade you are evaluating—or choose Not sure / Need help—together with your application, quantity and destination. Our team will review your requirements and contact you using the details provided.",
+    "new": "Ready to discuss a Grade, or still narrowing the list? Share the product or Grade you are evaluating, if known, together with your application, quantity and destination. Our team will review your requirements and contact you using the details provided."
+  }
+]
