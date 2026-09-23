@@ -1,6 +1,6 @@
 # HOME-001 — Home
 
-Status: ACCEPTED
+Status: BUILDING
 
 URL: `/`
 Family: Homepage · EN
@@ -42,3 +42,9 @@ Review: approved content and facts; SEO; 1440/768/390; internal links; forms whe
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+## TiO2 Atlas 首页样板（2026-09-23）
+
+已批准的设计：[TiO2 Atlas 首页样板设计](../../docs/superpowers/specs/2026-09-23-tio2-atlas-home-design.md)。域名保持 tio2products.com，前台品牌采用 TiO2 Atlas，运营主体 IKHLAS TITANIUM (MALAYSIA) SDN. BHD. 不变。本轮仅重做首页样板；现有 source 字段保留历史输入路径作为审计线索，新 HTML 初始化内容来自 data/pages/home-atlas.html。
+
+验收前检查新 logo/favicon、页面结构与文案相对 tio2malaysia.com 的差异，14 个产品路由、1440/768/390 屏宽、键盘焦点、SEO 与本地 noindex。现有页面内容通过受保护的一次性迁移更新；重复导入仍保留后台编辑。
