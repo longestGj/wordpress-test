@@ -13,7 +13,7 @@ function sanitize_textarea_field($value) { return trim(strip_tags($value)); }
 function is_email($value) { return filter_var($value, FILTER_VALIDATE_EMAIL); }
 function wp_salt($scheme) { return 'test-salt'; }
 function get_transient($key) { global $transients; return $transients[$key] ?? false; }
-function set_transient($key, $value, $duration) { global $transients; $transients[$key] = $value; }
+function set_transient($key, $value, $duration) { global $transients, $transient_fail; if (!empty($transient_fail)) return false; $transients[$key] = $value; return true; }
 function home_url($path) { return 'http://localhost:8080'.$path; }
 function add_query_arg($key, $value, $url) { return $url.'?'.$key.'='.$value; }
 function is_ssl() { return false; }
@@ -35,5 +35,8 @@ parse_str(parse_url($url, PHP_URL_QUERY), $_GET);
 check(tio2_request_receipt_kind() === 'documents', 'acknowledged request rejected');
 $_COOKIE['tio2_flow'] = str_repeat('c', 64);
 check(tio2_request_receipt_kind() === '', 'different browser session accepted');
+$transient_fail = true;
+check(tio2_issue_request_receipt('documents') instanceof WP_Error, 'failed receipt storage reported success');
+$transient_fail = false;
 check(tio2_issue_request_receipt('contact') instanceof WP_Error, 'unsupported receipt kind accepted');
 echo "PASS: contact validation and browser-bound receipt checks\n";

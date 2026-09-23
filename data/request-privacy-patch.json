@@ -1,0 +1,56 @@
+{
+  "LEGAL-PRIV-EN": [
+    {
+      "old": "<p>Other request routes, including quotation, document and sample requests, may be linked on the site. Their collection and delivery arrangements must be confirmed separately before they are described as active here.</p>",
+      "new": "<p>The quotation, document and sample request forms collect the business contact details and request context shown in each form. This may include product grade, application, quantity, destination, requested document types and test objective. A successful submission creates a private request record on this WordPress site for staff review. The forms do not send an email, approve a quotation, release a document or approve a sample.</p><p>Request records are scheduled for deletion three years after submission. Validation entries and confirmation state may remain server-side for up to 10 minutes; a pseudonymous IP-based abuse counter expires after one hour.</p>"
+    },
+    {
+      "old": "<p>The local general inquiry record is scheduled for deletion three years after submission.",
+      "new": "<p>Local general inquiry and business request records are scheduled for deletion three years after submission."
+    },
+    {
+      "old": "<p>The general inquiry uses a necessary, random browser-session Cookie named <code>tio2_flow</code>",
+      "new": "<p>The inquiry and request forms use a necessary, random browser-session Cookie named <code>tio2_flow</code>"
+    },
+    {
+      "old": "The general inquiry service uses a short-lived, pseudonymous rate-limit counter",
+      "new": "The inquiry and request forms use short-lived, pseudonymous rate-limit counters"
+    }
+  ],
+  "LEGAL-PRIV-MS": [
+    {
+      "old": "<p>Laluan permintaan lain, termasuk sebut harga, dokumen dan sampel, mungkin dipautkan di laman ini. Pengumpulan dan penghantarannya perlu disahkan secara berasingan sebelum diterangkan sebagai aktif di sini.</p>",
+      "new": "<p>Borang permintaan sebut harga, dokumen dan sampel mengumpulkan butiran hubungan perniagaan dan konteks permintaan yang ditunjukkan dalam setiap borang. Ini mungkin termasuk gred produk, aplikasi, kuantiti, destinasi, jenis dokumen yang diminta dan tujuan ujian. Penghantaran yang berjaya mewujudkan rekod permintaan peribadi di laman WordPress ini untuk semakan kakitangan. Borang ini tidak menghantar e-mel, meluluskan sebut harga, menyerahkan dokumen atau meluluskan sampel.</p><p>Rekod permintaan dijadualkan untuk dipadam tiga tahun selepas penghantaran. Entri pengesahan dan keadaan penerimaan mungkin disimpan pada pelayan sehingga 10 minit; pembilang pencegahan penyalahgunaan berpseudonim berdasarkan alamat IP tamat selepas satu jam.</p>"
+    },
+    {
+      "old": "<p>Rekod pertanyaan umum setempat dijadualkan untuk dipadam tiga tahun selepas penghantaran.",
+      "new": "<p>Rekod pertanyaan umum dan permintaan perniagaan setempat dijadualkan untuk dipadam tiga tahun selepas penghantaran."
+    },
+    {
+      "old": "<p>Pertanyaan umum menggunakan Kuki sesi pelayar rawak yang diperlukan, bernama <code>tio2_flow</code>",
+      "new": "<p>Borang pertanyaan dan permintaan menggunakan Kuki sesi pelayar rawak yang diperlukan, bernama <code>tio2_flow</code>"
+    },
+    {
+      "old": "Perkhidmatan pertanyaan umum menggunakan pembilang had kadar sementara dan berpseudonim",
+      "new": "Borang pertanyaan dan permintaan menggunakan pembilang had kadar sementara dan berpseudonim"
+    }
+  ],
+  "LEGAL-COOKIE-EN": [
+    {
+      "old": "Necessary technologies support site delivery, security and the general inquiry workflow. The site sets a random session Cookie when the Contact page or its form is used.",
+      "new": "Necessary technologies support site delivery, security and the inquiry and request forms. The site sets a random session Cookie when the Contact page or a quotation, document or sample request form is used."
+    },
+    {
+      "old": "Binds Contact form errors or receipt state to one browser; also binds any future receiver-confirmed Thank You state",
+      "new": "Binds inquiry and request form errors or receipt state to one browser"
+    },
+    {
+      "old": "may prevent a Contact form result from being associated with your browser",
+      "new": "may prevent an inquiry or request form result from being associated with your browser"
+    },
+    {
+      "old": "Contact form validation and receipt data are held temporarily on the server for up to 10 minutes.",
+      "new": "Inquiry and request form validation and receipt data are held temporarily on the server for up to 10 minutes."
+    }
+  ]
+}

@@ -46,7 +46,15 @@ function tio2_document_content($id) {
         if ($path === '/request-documents/') {
             $receiver = tio2_target_url('documents');
             if (!$receiver) { $a->parentNode->removeChild($a); continue; }
-            $a->setAttribute('href', add_query_arg(['source_page'=>tio2_document_id($id)], $receiver));
+            $query=[];
+            if (isset($parts['query'])) wp_parse_str($parts['query'],$query);
+            // Keep only the request prefill keys; the receiver validates every value again.
+            $context=[];
+            foreach (['prefill_product_grade','prefill_document_types'] as $key) {
+                if (isset($query[$key])) $context[$key]=$query[$key];
+            }
+            $context['source_page']=tio2_document_id($id);
+            $a->setAttribute('href', add_query_arg($context,$receiver));
         } elseif (!tio2_route_ready($path)) {
             $a->parentNode->replaceChild($dom->createTextNode($a->textContent), $a);
         } else {

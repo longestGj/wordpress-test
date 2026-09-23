@@ -131,7 +131,7 @@ function tio2_issue_request_receipt($kind) {
     if (!in_array($kind, ['quote', 'documents', 'sample'], true)) return new WP_Error('invalid_receipt_kind', 'Invalid request kind.');
     $session = tio2_flow_session();
     $token = bin2hex(random_bytes(24));
-    set_transient('tio2_receipt_' . hash('sha256', $token), ['kind' => $kind, 'session' => hash_hmac('sha256', $session, wp_salt('auth'))], 10 * MINUTE_IN_SECONDS);
+    if (!set_transient('tio2_receipt_' . hash('sha256', $token), ['kind' => $kind, 'session' => hash_hmac('sha256', $session, wp_salt('auth'))], 10 * MINUTE_IN_SECONDS)) return new WP_Error('receipt_unavailable', 'Could not confirm the request receipt.');
     return add_query_arg('receipt', $token, home_url('/thank-you/'));
 }
 function tio2_request_receipt_kind() {

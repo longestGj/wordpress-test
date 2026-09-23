@@ -1,6 +1,6 @@
 # CONV-RFQ — Request a Quote
 
-Status: PLANNED
+Status: REVIEW
 
 URL: `/request-a-quote/`
 Family: RFQ conversion page · EN
@@ -41,7 +41,7 @@ Keyword boundary: RFQ page owns quotation and purchase-action intent; commercial
 
 ## 实现与验收
 
-当前 WordPress 尚未实现。本页迁入已有策划输入，不继承其他旧项目的开发/上线状态。进入 READY 时确认本页行为、视觉补充和相关目标已经清楚；不重新调查已批准产品事实。
+已在隔离的本地 WordPress 实例实现原生 Page 与报价申请表。已验证服务端必填值、正数 MT、存入私有记录、重复提交回执、错误后保留输入、1440/768/390 页面布局；产品页传入已发布 Grade。数据库测试使用合成资料并清理。邮件通知按用户要求暂缓；正式发布仍须单独授权。
 
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.

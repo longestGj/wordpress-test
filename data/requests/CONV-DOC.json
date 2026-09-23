@@ -1,0 +1,10 @@
+{
+  "page_id": "CONV-DOC",
+  "kind": "documents",
+  "slug": "request-documents",
+  "path": "/request-documents/",
+  "title": "Request Documents",
+  "seo_title": "Request Documents | TiO2 Malaysia",
+  "seo_description": "Submit a controlled request for titanium dioxide product, safety, quality, COA, origin or supplier-qualification documentation for human review.",
+  "content": "<!-- wp:html -->\n<nav class=\"wrap request-crumb\" aria-label=\"Breadcrumb\"><a href=\"/\">Home</a><span aria-hidden=\"true\">/</span><span aria-current=\"page\">Request Documents</span></nav><section class=\"request-hero\"><div class=\"wrap\"><p class=\"eyebrow\">DOCUMENT REQUEST</p><h1>Request Documents</h1><p class=\"lead\">Choose the Product Grade and document types your team needs. Add the company and product context so a person can review your request.</p></div></section>\n<!-- /wp:html -->\n<!-- wp:shortcode -->\n[tio2_request_form kind=\"documents\"]\n<!-- /wp:shortcode -->\n<!-- wp:html -->\n<section class=\"wrap request-information\"><h2>How requests work</h2><p>Choose the document types and one Product Grade relevant to your review. File availability and applicable scope are confirmed only during human review. A submission does not approve or release any document.</p></section>\n<!-- /wp:html -->\n<!-- wp:html -->\n<section class=\"wrap request-information\"><h2>Continue your review</h2><p><a href=\"/documents/\">View the Document Hub</a> or <a href=\"/products/\">explore Products</a>.</p></section>\n<!-- /wp:html -->\n"
+}

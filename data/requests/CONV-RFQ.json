@@ -1,0 +1,10 @@
+{
+  "page_id": "CONV-RFQ",
+  "kind": "quote",
+  "slug": "request-a-quote",
+  "path": "/request-a-quote/",
+  "title": "Request a Quote",
+  "seo_title": "Request a Titanium Dioxide Quote | TiO2 Malaysia",
+  "seo_description": "Request a titanium dioxide quotation from TiO2 Malaysia by providing your grade, application, quantity in metric tonnes and destination for review.",
+  "content": "<!-- wp:html -->\n<nav class=\"wrap request-crumb\" aria-label=\"Breadcrumb\"><a href=\"/\">Home</a><span aria-hidden=\"true\">/</span><span aria-current=\"page\">Request a Quote</span></nav><section class=\"request-hero\"><div class=\"wrap\"><p class=\"eyebrow\">B2B QUOTATION REQUEST</p><h1>Request a Titanium Dioxide Quote</h1><p class=\"lead\">Tell us the product, application, quantity and destination you are evaluating. Our team will review your requirements and prepare the appropriate commercial response.</p></div></section>\n<!-- /wp:html -->\n<!-- wp:shortcode -->\n[tio2_request_form kind=\"quote\"]\n<!-- /wp:shortcode -->\n<!-- wp:html -->\n<section class=\"wrap request-information\"><h2>Other request types</h2><p>Use the separate request form when you need a sample review or controlled document request instead of a quotation.</p><p><a href=\"/request-sample/\">Request a Sample</a> · <a href=\"/request-documents/\">Request Documents</a></p></section>\n<!-- /wp:html -->\n"
+}

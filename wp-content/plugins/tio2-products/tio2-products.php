@@ -64,7 +64,9 @@ function tio2_target_keys() { return ['quote','sample','documents','chloride','s
 function tio2_target_url($key) {
     $options=get_option('tio2_targets',[]); $id=absint($options[$key]??0);
     if (!$id || get_post_type($id)!=='page' || get_post_status($id)!=='publish' || post_password_required($id)) return '';
-    if(in_array($key,['quote','sample','documents'],true) && empty($options[$key.'_ready'])) return '';
+    if(in_array($key,['quote','sample','documents'],true)) {
+        if (empty($options[$key.'_ready']) || !function_exists('tio2_request_kind') || tio2_request_kind($id)!==$key) return '';
+    }
     return get_permalink($id);
 }
 function tio2_product_schema($id) {
@@ -80,3 +82,8 @@ require __DIR__.'/ownership.php';
 
 require_once __DIR__.'/documents.php';
 require_once __DIR__.'/utility.php';
+
+require_once __DIR__.'/requests.php';
+require_once __DIR__.'/request-receiver.php';
+
+require_once __DIR__.'/request-form.php';
