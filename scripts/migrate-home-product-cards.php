@@ -1,8 +1,12 @@
 <?php
 /** Explicit, one-time patch for the owned Home page; never overwrite other editor content. */
 $host = wp_parse_url(home_url('/'), PHP_URL_HOST);
-if (!in_array($host, ['localhost', '127.0.0.1'], true)) {
-    WP_CLI::error('Home card migration is restricted to local preview sites.');
+$local = in_array($host, ['localhost', '127.0.0.1'], true);
+$production = $host === 'tio2products.com'
+    && wp_get_environment_type() === 'production'
+    && getenv('TIO2_HOME_CARDS_PRODUCTION_MIGRATION') === '1';
+if (!$local && !$production) {
+    WP_CLI::error('Home card migration requires loopback or an explicitly authorized production run.');
 }
 
 $id = (int) get_option('page_on_front');
@@ -61,6 +65,10 @@ foreach ($rows as $row) {
 
 if ($changed === 0) {
     WP_CLI::success('Home grade links already present; editor content preserved.');
+    return;
+}
+if (getenv('TIO2_HOME_CARDS_DRY_RUN') === '1') {
+    WP_CLI::success("Dry run: would link {$changed} Home grade labels; no content modified.");
     return;
 }
 
