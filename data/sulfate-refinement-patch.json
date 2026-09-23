@@ -1,0 +1,27 @@
+[
+  {
+    "id": "glance",
+    "old": "</div><!-- /wp:group --></section><!-- /wp:group -->\n<!-- wp:group {\"className\": \"m2\", \"tagName\": \"section\"} -->",
+    "new": "</div><!-- /wp:group --></section><!-- /wp:group -->\n<!-- wp:group {\"className\": \"m-glance\", \"tagName\": \"section\"} --><section class=\"wp-block-group m-glance\"><!-- wp:group {\"className\": \"content\", \"tagName\": \"div\"} --><div class=\"wp-block-group content\"><!-- wp:heading {\"level\": 2} --><h2 class=\"wp-block-heading\">Sulfate Process at a Glance</h2><!-- /wp:heading --><!-- wp:html --><dl class=\"glance-grid\"><div><dt>Process</dt><dd>Sulfate</dd></div><div><dt>Also spelled</dt><dd>Sulphate</dd></div><div><dt>Portfolio</dt><dd>5 sulfate-process Grades</dd></div><div><dt>Evaluation principle</dt><dd>Process alone does not determine application performance</dd></div></dl><!-- /wp:html --><!-- wp:paragraph {} --><p>Review each Grade's documented properties and application evidence before evaluation.</p><!-- /wp:paragraph --></div><!-- /wp:group --></section><!-- /wp:group -->\n<!-- wp:group {\"className\": \"m2\", \"tagName\": \"section\"} -->"
+  },
+  {
+    "id": "source",
+    "old": "<p>General process reference: <a href=\"https://www.ftc.gov/system/files/documents/cases/docket_9377_tronox_et_al_initial_decision_redacted_public_version_0.pdf\">U.S. Federal Trade Commission public decision record</a>. This reference describes the route at a general level; product details for the five Grades are provided on their individual pages.</p>",
+    "new": "<p>General process reference: <a href=\"https://www.epa.gov/sites/default/files/2018-05/documents/2006_eg-plan-tsd_final_dec-2006.pdf\">U.S. EPA Technical Support Document for the 2006 Effluent Guidelines Program Plan, section 9.6.3</a>. This reference describes the route at a general level; product details for the five Grades are provided on their individual pages.</p>"
+  },
+  {
+    "id": "source_date",
+    "old": "<p><strong>Source last reviewed:</strong> 6 September 2026.</p>",
+    "new": "<p><strong>Source last reviewed:</strong> 24 September 2026.</p>"
+  },
+  {
+    "id": "documents",
+    "old": "<p>You can start a document request before deciding on a Grade, but choose one Product Grade before submitting. You may request several document types for that Grade.</p><!-- /wp:paragraph --><!-- wp:paragraph {} --><p>Evaluating more than one Grade? List the others in Additional Requirements for context. If you need different document types for each Grade, send a separate request for each one.</p>",
+    "new": "<p>Document requests are reviewed for a selected Grade. You may request several document types for that Grade.</p><!-- /wp:paragraph --><!-- wp:paragraph {} --><p>If you are evaluating multiple Grades, provide the relevant context with your request or submit separate requests where different document sets are needed.</p>"
+  },
+  {
+    "id": "rfq",
+    "old": "<p>If you have identified a Grade, select it on the quotation form. Otherwise, choose “Not sure / Need help”. Add other candidates and any non-confidential requirements in Additional Requirements, then provide your application, quantity in metric tonnes and destination.</p>",
+    "new": "<p>If you already have a Grade in mind, include it with your quotation request. If not, share your application, required quantity, destination and other relevant non-confidential requirements for review.</p>"
+  }
+]

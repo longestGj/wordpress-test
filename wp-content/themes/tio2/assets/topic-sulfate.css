@@ -114,3 +114,11 @@
 .topic-sulfate .m1 .actions a:nth-child(2):hover{background:white}
 .topic-sulfate .m2 p>a{display:inline;padding:12px 3px;position:relative;line-height:3.2;box-decoration-break:clone;-webkit-box-decoration-break:clone;outline-offset:-3px}
 .topic-sulfate .m2 p>a:hover{background:#F5F8FB}
+.topic-sulfate .m-glance{background:#fff}
+.topic-sulfate .m-glance .glance-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 20px}
+.topic-sulfate .m-glance .glance-grid>div{min-width:0;padding:18px 20px;border:1px solid #D9E2EC;border-radius:6px;background:#F5F8FB}
+.topic-sulfate .m-glance dt{margin:0 0 8px;color:#526378;font-size:14px;font-weight:600}
+.topic-sulfate .m-glance dd{margin:0;color:#062B5B;font-size:18px;font-weight:600;line-height:1.4}
+.topic-sulfate .m-glance p{margin:0}
+@media (max-width:800px){.topic-sulfate .m-glance .glance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.topic-sulfate .m-glance .glance-grid{grid-template-columns:1fr}}
