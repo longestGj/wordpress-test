@@ -51,7 +51,10 @@ add_filter('pre_get_document_title', function ($title) {
 }, 20);
 add_filter('language_attributes', function ($output) {
     $id = get_queried_object_id();
-    if (!is_page() || !(tio2_market_id($id) === 'MARKET-BR-PT'
+    if (!is_page()) return $output;
+    $identity = tio2_market_id($id);
+    if ($identity && $identity !== 'MARKET-BR-PT') return preg_replace('/lang="[^"]*"/', 'lang="en"', $output, 1);
+    if (!($identity === 'MARKET-BR-PT'
         || tio2_owns_page($id,'_tio2_market_id','MARKET-LOCALE-PT-BR')
         || tio2_owns_page($id,'_tio2_market_id','MARKET-LOCALE-PT-BR-MARKETS'))) return $output;
     return preg_replace('/lang="[^"]*"/', 'lang="pt-BR"', $output, 1);
