@@ -1,6 +1,16 @@
 (() => {
   const hub = document.querySelector('main.hub');
   if (!hub) return;
+  if (hub.classList.contains('hub-home')) {
+    const compact = window.matchMedia('(max-width: 560px)');
+    const groups = [...hub.querySelectorAll('.product-group')];
+    const syncGroups = () => groups.forEach(group => { group.open = !compact.matches; });
+    syncGroups();
+    compact.addEventListener('change', syncGroups);
+    groups.forEach(group => group.querySelector('summary').addEventListener('click', event => {
+      if (!compact.matches) event.preventDefault();
+    }));
+  }
   const buttons = [...hub.querySelectorAll('[data-app]')];
   const panels = [...hub.querySelectorAll('[data-result-app]')];
   const heading = hub.querySelector('#result-heading');
