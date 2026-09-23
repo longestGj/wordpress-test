@@ -26,7 +26,7 @@ Build the stage bundle from the reviewed code, containing `.dockerignore`, `depl
 ```bash
 docker compose --env-file .env -f deploy-next/compose.stage.yaml config --quiet
 docker compose --env-file .env -f deploy-next/compose.stage.yaml build wordpress
-docker compose --env-file .env -f deploy-next/compose.stage.yaml up -d --no-build db
+docker compose --env-file .env -f deploy-next/compose.stage.yaml up -d --wait --no-build db
 docker compose --env-file .env -f deploy-next/compose.stage.yaml up -d --no-build --no-deps --force-recreate --renew-anon-volumes wordpress
 bash deploy-next/bootstrap-stage.sh
 ```
