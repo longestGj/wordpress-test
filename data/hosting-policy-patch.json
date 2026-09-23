@@ -1,0 +1,30 @@
+{
+  "LEGAL-PRIV-EN": [
+    {
+      "old": "The site uses WordPress and its hosting infrastructure to deliver pages and hold private inquiry records.",
+      "new": "The public website uses WordPress and MariaDB on Oracle Cloud Infrastructure in its US West (Phoenix) region to deliver pages and hold private inquiry and request records."
+    },
+    {
+      "old": "The exact production provider locations and any international transfers must be verified before release; this local build does not establish them.",
+      "new": "Personal data submitted from Malaysia or other countries may therefore be transferred to and processed in the United States."
+    },
+    {
+      "old": "Hosting and security logs follow the applicable provider retention settings, which require verification before production release.",
+      "new": "Hosting and security logs are managed separately from inquiry and request records. Their retention depends on the applicable service and administrator settings."
+    }
+  ],
+  "LEGAL-PRIV-MS": [
+    {
+      "old": "Laman ini menggunakan WordPress dan infrastruktur pengehosannya untuk menyampaikan halaman dan menyimpan rekod pertanyaan peribadi.",
+      "new": "Laman web awam ini menggunakan WordPress dan MariaDB pada Oracle Cloud Infrastructure di rantau US West (Phoenix), Amerika Syarikat, untuk menyampaikan halaman dan menyimpan rekod pertanyaan serta permintaan peribadi."
+    },
+    {
+      "old": "Lokasi tepat penyedia produksi dan sebarang pemindahan antarabangsa perlu disahkan sebelum penerbitan; binaan setempat ini tidak menetapkannya.",
+      "new": "Oleh itu, data peribadi yang dihantar dari Malaysia atau negara lain boleh dipindahkan ke dan diproses di Amerika Syarikat."
+    },
+    {
+      "old": "Log pengehosan dan keselamatan mengikut tetapan penyimpanan penyedia yang berkenaan, yang perlu disahkan sebelum penerbitan produksi.",
+      "new": "Log pengehosan dan keselamatan diurus secara berasingan daripada rekod pertanyaan dan permintaan. Tempoh penyimpanannya bergantung pada tetapan perkhidmatan dan pentadbir yang berkenaan."
+    }
+  ]
+}

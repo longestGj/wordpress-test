@@ -44,6 +44,16 @@ add_action('wp_head', function () {
     $title = get_post_meta($id, '_tio2_seo_title', true);
     $description = get_post_meta($id, '_tio2_seo_description', true);
     if ($description) echo '<meta name="description" content="'.esc_attr($description).'">';
+    if (in_array($page_id, ['LEGAL-PRIV-EN', 'LEGAL-PRIV-MS'], true)) {
+        $english = get_page_by_path('privacy-policy', OBJECT, 'page');
+        $malay = get_page_by_path('ms/privacy-policy', OBJECT, 'page');
+        if ($english && $malay && $english->post_status === 'publish' && $malay->post_status === 'publish'
+            && tio2_owns_page($english->ID, '_tio2_page_id', 'LEGAL-PRIV-EN')
+            && tio2_owns_page($malay->ID, '_tio2_page_id', 'LEGAL-PRIV-MS')) {
+            echo '<link rel="alternate" hreflang="en" href="'.esc_url(get_permalink($english)).'">';
+            echo '<link rel="alternate" hreflang="ms-MY" href="'.esc_url(get_permalink($malay)).'">';
+        }
+    }
     if ($page_id === 'CONV-THANK') return;
     $url = get_permalink($id);
     $graph = [['@type'=>$page_id === 'CONTACT-001' ? 'ContactPage' : 'WebPage', '@id'=>$url.'#page', 'url'=>$url, 'name'=>$title, 'description'=>$description, 'inLanguage'=>$page_id === 'LEGAL-PRIV-MS' ? 'ms-MY' : 'en'], ['@type'=>'BreadcrumbList','itemListElement'=>[['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>home_url('/')],['@type'=>'ListItem','position'=>2,'name'=>get_the_title($id),'item'=>$url]]]];

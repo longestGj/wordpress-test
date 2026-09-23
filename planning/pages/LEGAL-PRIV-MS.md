@@ -1,6 +1,6 @@
 # LEGAL-PRIV-MS — Dasar Privasi / Notis Perlindungan Data Peribadi
 
-Status: REVIEW
+Status: ACCEPTED
 
 URL: `/ms/privacy-policy/`
 Family: Legal / privacy page · MS-MY
@@ -35,16 +35,16 @@ Keyword boundary: Bahasa Malaysia Privacy owns language-equivalent legal transpa
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
-Release: requires explicit user authorization. Local Contact and request notifications are implemented; qualified Malay and legal review remain open. Runtime does not consult this specification or planning source hashes.
+Release: requires explicit user authorization. The user confirmed review of the three policy Pages on 2026-09-23, including Malay equivalence; production deployment and release checks remain separate. Runtime does not consult this specification or planning source hashes.
 
 ## WordPress implementation (2026-09-23)
 
-Native page seed: `data/utility/LEGAL-PRIV-MS.json` under a structural `/ms/` parent. The changed data-flow passages correspond to the English policy's local Contact receiver and later optional GA4 measurement after consent. Reciprocal hreflang is withheld until a Bahasa Malaysia reviewer confirms final legal equivalence. Production hosting details and legal review remain open before release.
+Native page seed: `data/utility/LEGAL-PRIV-MS.json` under a structural `/ms/` parent. The changed data-flow passages correspond to the English policy's local Contact receiver and optional GA4 measurement after consent. The policy now names Oracle Cloud Infrastructure in US West (Phoenix) and the possible United States processing of submitted data. Reciprocal hreflang is active after the user's Malay equivalence signoff.
 
 Domain audit 2026-09-23: the privacy contact address is updated to `info@tio2products.com` in the seed and main local WordPress Page; a repeat exact migration changed zero Pages.
 
-GA4 review 2026-09-23: the Malay seed now explains optional GA4 measurement only after consent, the stored choice, and withdrawal. The policy migration updated the three owned main local policy Pages and changed zero on repeat; Contact/Gmail disclosures and other editor text were preserved. Production content is unchanged. Malay legal equivalence and production data-processing review remain open before release.
+GA4 review 2026-09-23: the Malay seed explains optional GA4 measurement only after consent, the stored choice, and withdrawal. The policy migration updated the three owned main local policy Pages and changed zero on repeat; Contact/Gmail disclosures and other editor text were preserved. Production content is unchanged.
 
-Local review 2026-09-23: `/ms/privacy-policy/` returns HTTP 200, has `lang="ms-MY"`, the expected SEO and one H1. The 1440/768/390 browser review and screenshots are in `.local/utility-http/`. A qualified Bahasa Malaysia/legal equivalence review is still required before hreflang or publication.
+Local review 2026-09-23: `/ms/privacy-policy/` returns HTTP 200, has `lang="ms-MY"`, the expected SEO and one H1. The 1440/768/390 browser review and screenshots are in `.local/utility-http/`. The user confirmed Malay/legal equivalence review passed; publication remains a separate release action.
 
-Integrated local review 2026-09-23: main WordPress ownership, SEO, internal links, 1440/768/390 layout, keyboard focus and local storage checks passed. Contact/Gmail and GA4 passages are present in the rendered Page, with no legacy contact email. Reciprocal hreflang remains withheld. Current production-host metadata was reported as Oracle `phx` (Phoenix, US), but the final data-processing map and qualified Malay/legal equivalence approval remain open. Status remains REVIEW.
+Integrated local review 2026-09-23: main WordPress ownership, SEO, internal links, 1440/768/390 layout, keyboard focus and local storage checks passed. Contact/Gmail and GA4 passages are present in the rendered Page, with no legacy contact email. The user confirmed that the English, Malay and Cookie policy reviews passed. Production-host metadata supplied by the primary task identified Oracle `phx`; [Oracle's region list](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm) maps that key to US West (Phoenix). `scripts/update-hosting-policy.php` updated the two owned local privacy Pages, preserved unrelated editor content, and changed zero Pages on repeat. The rendered Malay text describes possible United States processing without inventing a log or email retention period. Reciprocal `en`/`ms-MY` hreflang and canonical URLs passed HTTP checks. Local Page accepted; production release remains separately gated.

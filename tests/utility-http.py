@@ -30,7 +30,8 @@ for path, (identity, h1) in pages.items():
         assert response.cookies.get('tio2_flow'), 'Contact session Cookie missing'
     if path == '/ms/privacy-policy/': assert soup.html.get('lang') == 'ms-MY'
     if path in ('/privacy-policy/', '/ms/privacy-policy/'):
-        assert not soup.select('link[rel=alternate][hreflang]'), 'Language relationship needs human review'
+        alternates = {link['hreflang']: link['href'] for link in soup.select('link[rel=alternate][hreflang]')}
+        assert alternates == {'en': base + '/privacy-policy/', 'ms-MY': base + '/ms/privacy-policy/'}, (path, alternates)
     if path == '/thank-you/':
         assert 'noindex' in soup.select_one('meta[name=robots]')['content']
         assert 'received your' not in soup.get_text(' ', strip=True).lower()
