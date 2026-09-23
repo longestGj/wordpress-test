@@ -35,10 +35,12 @@ Keyword boundary: Contact is a utility page and must not be optimized as a comme
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
-Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+Release: requires explicit user authorization. Sending form notifications by email remains a later task. Runtime does not consult this specification or planning source hashes.
 
 ## WordPress implementation (2026-09-23)
 
 Native page seed: `data/utility/CONTACT-001.json`. The general form validates on the server and creates a private `tio2_inquiry` record in local WordPress. It does not send email; its success text confirms local receipt only. Errors and success state use a 10-minute server-side record bound to the `tio2_flow` session Cookie. The dedicated request links are disabled until their receivers are ready.
 
 Local review 2026-09-23: `/contact/` returns HTTP 200 with the expected title, description, canonical and one H1. `tests/utility-form-http.py` verified invalid-field and nonce rejection with retained entries, then saved one private local inquiry and removed that exact fixture. `tests/utility-import.php` verified repeat import preserves edited SEO and rejects a slug without project ownership, then restored the metadata fixture. `tests/utility-retention.php` verified three-year cleanup with a disposable fixture. `tests/utility-browser.py` checked 1440/768/390, keyboard menu and Cookie Settings focus, and saved screenshots under `.local/utility-http/`. The Quote, Documents and Sample routes remain unavailable pending their separate receivers; this prevents full page acceptance and release.
+
+Domain audit 2026-09-23: the displayed contact address is updated to `info@tio2products.com`, confirmed by the user as receiving mail. The owned Page in the isolated 18080 preview was migrated without replacing other editor content; a repeat migration changed zero Pages.

@@ -35,10 +35,12 @@ Keyword boundary: Bahasa Malaysia Privacy owns language-equivalent legal transpa
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
-Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+Release: requires explicit user authorization. Sending form notifications by email remains a later task. Runtime does not consult this specification or planning source hashes.
 
 ## WordPress implementation (2026-09-23)
 
 Native page seed: `data/utility/LEGAL-PRIV-MS.json` under a structural `/ms/` parent. The changed data-flow passages correspond to the English policy's local Contact receiver and inactive Analytics state. Reciprocal hreflang is withheld until a Bahasa Malaysia reviewer confirms final legal equivalence. Production hosting details and legal review remain open before release.
+
+Domain audit 2026-09-23: the privacy contact address is updated to `info@tio2products.com` in the seed and the isolated 18080 preview. GA4 is not configured; the present no-Analytics disclosure remains accurate until an opt-in implementation and Malay legal review are completed.
 
 Local review 2026-09-23: `/ms/privacy-policy/` returns HTTP 200, has `lang="ms-MY"`, the expected SEO and one H1. The 1440/768/390 browser review and screenshots are in `.local/utility-http/`. A qualified Bahasa Malaysia/legal equivalence review is still required before hreflang or publication.

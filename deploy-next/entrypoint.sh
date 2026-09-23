@@ -25,5 +25,7 @@ fi
 # Refresh code owned by this project; leave named uploads and database alone.
 sync_site_code /usr/src/wordpress/wp-content/themes/tio2 /var/www/html/wp-content/themes/tio2
 sync_site_code /usr/src/wordpress/wp-content/plugins/tio2-products /var/www/html/wp-content/plugins/tio2-products
+cp -f -- /usr/src/wordpress/googleaa2e91750b47f47a.html /var/www/html/googleaa2e91750b47f47a.html
+chown www-data:www-data /var/www/html/googleaa2e91750b47f47a.html
 
 exec /usr/local/bin/docker-entrypoint.sh "$@"

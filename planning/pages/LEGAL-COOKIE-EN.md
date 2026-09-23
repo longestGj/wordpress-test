@@ -35,10 +35,12 @@ Keyword boundary: Cookie Policy owns storage and consent transparency only; Cook
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
-Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+Release: requires explicit user authorization. Sending form notifications by email remains a later task. Runtime does not consult this specification or planning source hashes.
 
 ## WordPress implementation (2026-09-23)
 
 Native page seed: `data/utility/LEGAL-COOKIE-EN.json`. The actual inventory is the necessary `tio2_flow` browser-session Cookie, temporary server state, and WordPress administrator authentication where applicable. No consent Local Storage record or optional Analytics/advertising service is activated. Footer Cookie Settings is a read-only status dialog. Clean-browser production inventory remains a release check.
 
 Local review 2026-09-23: `/cookie-policy/` returns HTTP 200 with expected SEO and one H1. A clean browser retained no Cookie or Local Storage on the privacy page; visiting Contact set only the HttpOnly browser-session `tio2_flow` Cookie, with Local Storage still empty and network requests confined to localhost. Browser review at 1440/768/390 verified the mobile inventory cards and Cookie Settings focus; screenshots are in `.local/utility-http/`. Production inventory and legal review remain open.
+
+Domain audit 2026-09-23: the cookie contact address is updated to `info@tio2products.com` in the seed and the isolated 18080 preview. GA4 is not configured; the current no-Analytics inventory remains accurate until consent controls and measurement are actually enabled.
