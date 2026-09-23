@@ -14,8 +14,15 @@ sync_site_code() {
   mv -- "$staging" "$target"
 }
 
-# The WordPress image persists /var/www/html. Refresh only code owned by this
-# project when a new image starts; leave uploads and WordPress content alone.
+# The upstream image keeps WordPress core in an anonymous /var/www/html volume.
+# A new image must receive a fresh anonymous volume, or the old core survives.
+if [ -f /var/www/html/wp-includes/version.php ] &&
+   ! cmp -s /var/www/html/wp-includes/version.php /usr/src/wordpress/wp-includes/version.php; then
+  echo 'WordPress core differs from this image; recreate wordpress with --renew-anon-volumes' >&2
+  exit 1
+fi
+
+# Refresh code owned by this project; leave named uploads and database alone.
 sync_site_code /usr/src/wordpress/wp-content/themes/tio2 /var/www/html/wp-content/themes/tio2
 sync_site_code /usr/src/wordpress/wp-content/plugins/tio2-products /var/www/html/wp-content/plugins/tio2-products
 

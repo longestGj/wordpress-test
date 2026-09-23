@@ -4,15 +4,13 @@ set -Eeuo pipefail
 cd "$(dirname "$0")/.."
 env_file=${1:-.env}
 [[ -f "$env_file" ]] || { echo 'Stage environment file is missing' >&2; exit 66; }
-set -a
 # The file may arrive from Windows with CRLF; Bash does not strip the CR.
 # shellcheck disable=SC1090
 source <(sed 's/\r$//' "$env_file")
-set +a
 
 case "${PUBLIC_URL:-}" in
-  http://localhost:*|http://127.0.0.1:*) ;;
-  *) echo 'Stage URL must use loopback HTTP' >&2; exit 65 ;;
+  http://localhost:18080|http://127.0.0.1:18080) ;;
+  *) echo 'Stage URL must be loopback HTTP on port 18080' >&2; exit 65 ;;
 esac
 : "${WP_ADMIN_USER:?Set WP_ADMIN_USER}"
 : "${WP_ADMIN_PASSWORD:?Set WP_ADMIN_PASSWORD}"
@@ -29,9 +27,10 @@ done
 (( ready == 1 )) || { echo 'WordPress files did not become ready' >&2; exit 1; }
 
 if ! wp core is-installed >/dev/null 2>&1; then
-  wp core install --url="$PUBLIC_URL" --title='TiO2 Products Stage' \
-    --admin_user="$WP_ADMIN_USER" --admin_password="$WP_ADMIN_PASSWORD" \
-    --admin_email="$WP_ADMIN_EMAIL" --skip-email
+  # WP-CLI reads this value from stdin, so it never appears in process arguments.
+  printf '%s\n' "$WP_ADMIN_PASSWORD" | wp core install --url="$PUBLIC_URL" \
+    --title='TiO2 Products Stage' --admin_user="$WP_ADMIN_USER" \
+    --prompt=admin_password --admin_email="$WP_ADMIN_EMAIL" --skip-email
 fi
 
 wp plugin activate tio2-products
