@@ -39,3 +39,4 @@ require __DIR__.'/topics.php';
 if(is_file(__DIR__.'/resources.php'))require __DIR__.'/resources.php';
 
 require __DIR__.'/documents.php';
+require __DIR__.'/markets.php';

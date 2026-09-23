@@ -1,6 +1,6 @@
 # MARKET-EU-NL — Netherlands
 
-Status: PLANNED
+Status: BUILDING
 
 URL: `/markets/netherlands/`
 Family: Market procurement landing page · EN
@@ -30,7 +30,7 @@ Keyword boundary: Country page owns explicit country modifier; EU page owns Euro
 
 ## 实现与验收
 
-当前 WordPress 尚未实现。本页迁入已有策划输入，不继承其他旧项目的开发/上线状态。进入 READY 时确认本页行为、视觉补充和相关目标已经清楚；不重新调查已批准产品事实。
+本页已在隔离工作树实现原生 WordPress Page 种子、主题呈现和安全导入；静态内容与链接检查已通过。等待单一数据库写入者交接后，完成本地 HTTP、1440/768/390 视觉、语言版本、编辑保留与相关回归验收。
 
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
