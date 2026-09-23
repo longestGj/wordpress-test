@@ -72,7 +72,7 @@ Two process, five application, eight resource, eleven market and three document-
 
 ## Contact, legal and system pages
 
-Contact saves a validated general inquiry as a private local WordPress record for staff review. It does not send email. The Footer's Cookie Settings dialog reports the current necessary storage state; there is no optional Analytics choice or consent Local Storage record. Thank You shows a receipt only when a Quote, Documents or Sample receiver positively acknowledges a submission and issues a short-lived, browser-bound marker. Direct and forged visits show request choices, with unavailable routes clearly marked. An unknown URL uses the theme's actual HTTP 404 template.
+Contact saves a validated general inquiry as a private local WordPress record, then attempts a staff notification using the [shared Gmail configuration](docs/REQUEST-MAIL.md). Duplicate submissions do not resend; mail state and retry are administrator-only. The Footer's Cookie Settings dialog reports the current necessary storage state; there is no optional Analytics choice or consent Local Storage record. Thank You shows a receipt only when a Quote, Documents or Sample receiver positively acknowledges a submission and issues a short-lived, browser-bound marker. Direct and forged visits show request choices, with unavailable routes clearly marked. An unknown URL uses the theme's actual HTTP 404 template.
 
 For a fresh or existing local installation, verify `home` is localhost and back up the database before importing. Run the explicit legacy ownership migration, then preserve an untouched WordPress Core starter privacy draft if it occupies `/privacy-policy/`, then import the five owned Pages:
 

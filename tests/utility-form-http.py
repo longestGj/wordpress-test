@@ -5,6 +5,7 @@ Only localhost:8080 is accepted. A local-only WP-CLI guard runs before POST.
 from pathlib import Path
 from uuid import uuid4
 import subprocess
+import sys
 import requests
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
@@ -38,12 +39,20 @@ fields = {
     'subject': subject, 'message': 'Local fixture; remove after verification.',
 }
 successful_post = False
+real_mail = '--send-real-mail' in sys.argv
+fixture_plugin = None
 try:
+    if not real_mail:
+        fixture_plugin = OUT / ('tio2-contact-test-' + uuid4().hex + '.php')
+        fixture_plugin.write_text("<?php\nadd_filter('pre_wp_mail', static function ($result) { return ($_POST['subject'] ?? '') === '" + subject + "' ? false : $result; });\n", encoding='utf-8')
+        subprocess.run(['docker','compose','exec','-T','wordpress','mkdir','-p','/var/www/html/wp-content/mu-plugins'],cwd=ROOT,check=True,capture_output=True)
+        subprocess.run(['docker','compose','cp',str(fixture_plugin),'wordpress:/var/www/html/wp-content/mu-plugins/'+fixture_plugin.name],cwd=ROOT,check=True,capture_output=True)
     page = session.get(BASE + '/contact/', timeout=15)
     assert page.status_code == 200 and session.cookies.get('tio2_flow')
     soup = BeautifulSoup(page.text, 'html.parser')
     nonce = soup.select_one('form.contact-form input[name=tio2_nonce]')['value']
     fields['tio2_nonce'] = nonce
+    fields['contact_token'] = soup.select_one('form.contact-form input[name=contact_token]')['value']
     bad = dict(fields, business_email='invalid', message='')
     response = session.post(BASE + '/wp-admin/admin-post.php', data=bad, allow_redirects=False, timeout=15)
     assert response.status_code == 303
@@ -55,17 +64,25 @@ try:
     assert response.status_code == 303
     page = session.get(BASE + '/contact/', timeout=15)
     assert 'Please reload the form and try again.' in page.text
-    response = session.post(BASE + '/wp-admin/admin-post.php', data=fields, allow_redirects=False, timeout=15)
+    response = session.post(BASE + '/wp-admin/admin-post.php', data=fields, allow_redirects=False, timeout=45)
     assert response.status_code == 303
     successful_post = True
     page = session.get(BASE + '/contact/', timeout=15)
     soup = BeautifulSoup(page.text, 'html.parser')
     assert soup.select_one('.utility-notice[role=status]')
     assert 'Your inquiry has been received' in soup.select_one('.utility-notice').get_text(' ', strip=True)
-    assert 'This confirmation does not mean an email was sent.' in page.text
+    assert 'email' not in soup.select_one('.utility-notice').get_text(' ', strip=True).lower()
+    duplicate = session.post(BASE + '/wp-admin/admin-post.php', data=fields, allow_redirects=False, timeout=15)
+    assert duplicate.status_code == 303 and duplicate.headers['Location'] == response.headers['Location']
+    guest = requests.post(BASE + '/wp-admin/admin-post.php', data={'action':'tio2_contact_retry_notification','inquiry_id':'1'},allow_redirects=False,timeout=15)
+    assert guest.status_code in (302,400,403)
     capture('received')
 finally:
-    result = cli('-e', 'TIO2_TEST_SUBJECT=' + subject, 'cli', 'eval-file', '/workspace/tests/utility-form-fixture.php')
+    if fixture_plugin:
+        subprocess.run(['docker','compose','exec','-T','wordpress','rm','-f','/var/www/html/wp-content/mu-plugins/'+fixture_plugin.name],cwd=ROOT,check=True,capture_output=True)
+        fixture_plugin.unlink(missing_ok=True)
+    result = cli('-e', 'TIO2_TEST_SUBJECT=' + subject, '-e', 'TIO2_TEST_EXPECT_MAIL=' + ('accepted' if real_mail else 'failed'), 'cli', 'eval-file', '/workspace/tests/utility-form-fixture.php')
+    print(result.stdout.strip())
     assert 'No matching Contact test record' not in result.stdout if successful_post else True
     assert 'Verified and removed one private local inquiry' in result.stdout if successful_post else True
-print('PASS: invalid fields and nonce reject; valid POST creates private local receipt; fixture verified and removed')
+print('PASS: invalid fields/nonce rejected; private receipt; duplicate did not resend; guest retry blocked; mail=' + ('accepted by SMTP' if real_mail else 'failed without affecting receipt') + '; fixture removed')

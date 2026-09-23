@@ -1,0 +1,58 @@
+{
+  "LEGAL-PRIV-EN": [
+    {
+      "old": "No email is sent by this form.",
+      "new": "After saving the inquiry, the site attempts to email a copy to our designated staff mailbox for review."
+    },
+    {
+      "old": "It does not send email, approve a quotation, release a document or approve a sample.",
+      "new": "Submission does not approve a quotation, release a document or approve a sample."
+    },
+    {
+      "old": "When request email notifications are enabled, Google Gmail processes a copy of the submitted request details for delivery to our designated staff mailbox.",
+      "new": "When inquiry or request email notifications are enabled, Google Gmail processes a copy of the submitted contact details and message or request fields for delivery to our designated staff mailbox."
+    },
+    {
+      "old": "The abuse-prevention counter expires after one hour.",
+      "new": "The abuse-prevention counter expires after one hour. A server-side submission identifier linked to the saved inquiry or request is retained for up to one day to prevent duplicate processing; scheduled cleanup runs when WordPress processes its scheduled tasks."
+    }
+  ],
+  "LEGAL-PRIV-MS": [
+    {
+      "old": "Borang ini tidak menghantar e-mel.",
+      "new": "Selepas pertanyaan disimpan, laman cuba menghantar salinan melalui e-mel ke peti mel kakitangan kami yang ditetapkan untuk semakan."
+    },
+    {
+      "old": "Ia tidak menghantar e-mel, meluluskan sebut harga, menyerahkan dokumen atau meluluskan sampel.",
+      "new": "Penghantaran tidak meluluskan sebut harga, menyerahkan dokumen atau meluluskan sampel."
+    },
+    {
+      "old": "Apabila pemberitahuan e-mel permintaan diaktifkan, Google Gmail memproses salinan butiran permintaan yang dihantar untuk penghantaran ke peti mel kakitangan kami yang ditetapkan.",
+      "new": "Apabila pemberitahuan e-mel pertanyaan atau permintaan diaktifkan, Google Gmail memproses salinan butiran hubungan serta mesej atau medan permintaan yang dihantar untuk penghantaran ke peti mel kakitangan kami yang ditetapkan."
+    },
+    {
+      "old": "Pembilang pencegahan penyalahgunaan tamat selepas satu jam.",
+      "new": "Pembilang pencegahan penyalahgunaan tamat selepas satu jam. Pengecam penghantaran pada pelayan yang dikaitkan dengan rekod pertanyaan atau permintaan disimpan sehingga satu hari untuk mengelakkan pemprosesan berulang; pembersihan berjadual berlaku apabila WordPress memproses tugas berjadualnya."
+    }
+  ],
+  "LEGAL-COOKIE-EN": [
+    {
+      "old": [
+        "Necessary technologies support site delivery, security and the general inquiry workflow. The site sets a random session Cookie when the Contact page or its form is used.",
+        "Necessary technologies support site delivery, security and the inquiry and request forms. The site sets a random session Cookie when the Contact page or a quotation, document or sample request form is used."
+      ],
+      "new": "Necessary technologies support site delivery, security and the inquiry and request forms. The site sets a random session Cookie when Contact or a quotation, document or sample form is used, binding its validation, receipt and duplicate-submission checks to the same browser."
+    },
+    {
+      "old": [
+        "Binds Contact form errors or receipt state to one browser; also binds any future receiver-confirmed Thank You state",
+        "Binds inquiry and request form errors or receipt state to one browser"
+      ],
+      "new": "Binds inquiry and request form errors, receipts and duplicate-submission checks to one browser"
+    },
+    {
+      "old": "A pseudonymous rate-limit counter is held for one hour.",
+      "new": "A pseudonymous rate-limit counter is held for one hour. A server-side submission identifier linked to the saved record is scheduled for cleanup after one day to prevent duplicate processing. Staff email notifications are sent by the server and do not set additional browser Cookies."
+    }
+  ]
+}

@@ -4,7 +4,16 @@ from pathlib import Path
 
 root=Path(__file__).resolve().parents[1]
 patch=json.loads((root/'data/request-email-policy-patch.json').read_text(encoding='utf-8'))
+contact=json.loads((root/'data/contact-mail-policy-patch.json').read_text(encoding='utf-8'))
 for identity,entries in patch.items():
+    seed=json.loads((root/'data/utility'/f'{identity}.json').read_text(encoding='utf-8'))
+    for entry in entries:
+        expected=entry['new']
+        for change in contact.get(identity,[]):
+            for old in change['old'] if isinstance(change['old'],list) else [change['old']]:
+                expected=expected.replace(old,change['new'])
+        assert expected in seed['content'],identity
+for identity,entries in contact.items():
     seed=json.loads((root/'data/utility'/f'{identity}.json').read_text(encoding='utf-8'))
     for entry in entries:
         assert entry['new'] in seed['content'],identity

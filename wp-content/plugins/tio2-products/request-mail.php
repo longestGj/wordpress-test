@@ -28,26 +28,26 @@ function tio2_configure_gmail_smtp($mailer,$config) {
     $mailer->SMTPDebug=0;
 }
 function tio2_request_mail_body($id,$kind,$values) {
-    $names=['quote'=>'Quotation','documents'=>'Document','sample'=>'Sample'];
+    $names=['quote'=>'Quotation','documents'=>'Document','sample'=>'Sample','contact'=>'General inquiry'];
     $lines=['TiO2 Malaysia — '.($names[$kind]??'Business').' request #'.$id,'','A new business request was saved in WordPress.',''];
-    foreach (tio2_request_fields($kind) as $key=>$field) {
+    foreach (($kind==='contact'?tio2_contact_fields():tio2_request_fields($kind)) as $key=>$field) {
         $value=$values[$key]??'';
         $lines[]=$field[0].': '.(is_array($value)?implode(', ',$value):(string)$value);
     }
     $lines[]='';$lines[]='Review the private record:';
-    $lines[]=admin_url('admin.php?page=tio2-requests&request='.$id);
+    $lines[]=$kind==='contact'?admin_url('post.php?post='.$id.'&action=edit'):admin_url('admin.php?page=tio2-requests&request='.$id);
     return implode("\n",$lines);
 }
 function tio2_request_send_notification($id,$confirmed_retry=false) {
     $post=get_post($id);
-    if (!$post || $post->post_type!=='tio2_request' || $post->post_status!=='private') return 'invalid';
+    if (!$post || !in_array($post->post_type,['tio2_request','tio2_inquiry'],true) || $post->post_status!=='private') return 'invalid';
     $previous=get_post_meta($id,'_tio2_notification_status',true);
     if ($previous==='accepted') return 'accepted';
     if (in_array($previous,['sending','unknown'],true) && !$confirmed_retry) return 'unknown';
     $config=tio2_request_mail_settings();
     if (!$config) { update_post_meta($id,'_tio2_notification_status','not_configured');return 'not_configured'; }
-    $kind=get_post_meta($id,'_tio2_request_kind',true);
-    if (!in_array($kind,['quote','documents','sample'],true)) return 'invalid';
+    $kind=$post->post_type==='tio2_inquiry'?'contact':get_post_meta($id,'_tio2_request_kind',true);
+    if (!in_array($kind,['quote','documents','sample','contact'],true)) return 'invalid';
     $values=json_decode($post->post_content,true);
     if (!is_array($values)) return 'invalid';
     $lock='tio2_request_mail_lock_'.$id;
@@ -71,7 +71,7 @@ function tio2_request_send_notification($id,$confirmed_retry=false) {
         $previous_mailer=$GLOBALS['phpmailer']??null;
         unset($GLOBALS['phpmailer']);
         try {
-            $subject='TiO2 Malaysia: New '.($kind==='quote'?'quote':($kind==='documents'?'document':'sample')).' request #'.$id;
+            $subject=$kind==='contact'?'TiO2 Malaysia: New general inquiry #'.$id:'TiO2 Malaysia: New '.($kind==='quote'?'quote':($kind==='documents'?'document':'sample')).' request #'.$id;
             $sent=wp_mail($config['to'],$subject,tio2_request_mail_body($id,$kind,$values),['Content-Type: text/plain; charset=UTF-8']);
         } catch (Throwable $error) {
             $sent=false;

@@ -1,7 +1,7 @@
 <?php
 defined('ABSPATH') || exit;
 
-// General inquiries are local records. No mail transport or external form service is implied.
+// General inquiries are private records; staff mail is attempted after saving.
 add_action('init', function () {
     register_post_type('tio2_inquiry', [
         'labels' => ['name' => 'General inquiries', 'singular_name' => 'General inquiry'],
@@ -24,7 +24,8 @@ add_action('add_meta_boxes_tio2_inquiry', function () {
         if (!is_array($fields)) return;
         echo '<table class="widefat striped"><tbody>';
         foreach (tio2_contact_fields() as $key => $definition) echo '<tr><th scope="row">'.esc_html($definition[0]).'</th><td>'.nl2br(esc_html($fields[$key] ?? '')).'</td></tr>';
-        echo '</tbody></table><p>Saved on this WordPress site. No email delivery is performed by this form.</p>';
+        echo '</tbody></table><p>Saved on this WordPress site.</p>';
+        tio2_contact_mail_admin($post);
     }, 'tio2_inquiry', 'normal', 'high');
 });
 
@@ -75,19 +76,23 @@ function tio2_receive_contact() {
     [$values, $errors] = tio2_validate_contact($_POST);
     $nonce = isset($_POST['tio2_nonce']) && is_string($_POST['tio2_nonce']) ? sanitize_text_field(wp_unslash($_POST['tio2_nonce'])) : '';
     if (!wp_verify_nonce($nonce, 'tio2_general_inquiry')) $errors['form'] = 'Please reload the form and try again.';
+    $token=isset($_POST['contact_token']) && is_string($_POST['contact_token'])?$_POST['contact_token']:'';
+    if (!preg_match('/^[a-f0-9]{64}$/D',$token)) $errors['form']='Please reload the form and try again.';
     if (!empty($_POST['website'])) $errors['form'] = 'Please try again.';
     $address = isset($_SERVER['REMOTE_ADDR']) ? (string) $_SERVER['REMOTE_ADDR'] : '';
     $limit_key = 'tio2_inquiry_limit_' . hash_hmac('sha256', $address, wp_salt('auth'));
-    if ((int) get_transient($limit_key) >= 5) $errors['form'] = 'Please wait before submitting another inquiry.';
+    $previous=$errors?false:get_option(tio2_contact_claim_key($session,$token));
+    if (empty($previous['record_id']) && (int) get_transient($limit_key) >= 5) $errors['form'] = 'Please wait before submitting another inquiry.';
     if ($errors) {
         set_transient($key, ['status' => 'error', 'values' => $values, 'errors' => $errors], 10 * MINUTE_IN_SECONDS);
     } else {
-        $id = wp_insert_post(['post_type' => 'tio2_inquiry', 'post_status' => 'private', 'post_title' => $values['subject'], 'post_content' => wp_slash(wp_json_encode($values, JSON_UNESCAPED_UNICODE))], true);
-        if (is_wp_error($id) || !$id) {
-            set_transient($key, ['status' => 'failure', 'values' => $values], 10 * MINUTE_IN_SECONDS);
+        $saved=tio2_store_contact_once($values,$session,$token);
+        if (is_wp_error($saved)) {
+            set_transient($key, ['status' => 'error', 'values' => $values, 'errors'=>['form'=>$saved->get_error_message()]], 10 * MINUTE_IN_SECONDS);
         } else {
-            set_transient($limit_key, (int) get_transient($limit_key) + 1, HOUR_IN_SECONDS);
+            if ($saved['new']) set_transient($limit_key, (int) get_transient($limit_key) + 1, HOUR_IN_SECONDS);
             set_transient($key, ['status' => 'success'], 10 * MINUTE_IN_SECONDS);
+            if ($saved['new']) tio2_request_send_notification($saved['id']);
         }
     }
     nocache_headers();
@@ -99,7 +104,7 @@ add_shortcode('tio2_contact_form', function () {
     $session = tio2_flow_session();
     $result = get_transient(tio2_contact_result_key($session));
     $result = is_array($result) ? $result : [];
-    if (($result['status'] ?? '') === 'success') return '<div class="utility-notice" role="status" tabindex="-1"><h3>Your inquiry has been received</h3><p>Thank you. We have received your general inquiry for review. This confirmation does not mean an email was sent.</p></div>';
+    if (($result['status'] ?? '') === 'success') return '<div class="utility-notice" role="status" tabindex="-1"><h3>Your inquiry has been received</h3><p>Thank you. We have received your general inquiry for review.</p></div>';
     $errors = $result['errors'] ?? []; $values = $result['values'] ?? [];
     $html = '';
     if (($result['status'] ?? '') === 'failure') $html .= '<div class="utility-notice error" role="alert" tabindex="-1"><h3>Your inquiry was not received</h3><p>We could not save your inquiry. Your information has been kept in the form. Try again when you are ready.</p></div>';
@@ -110,6 +115,7 @@ add_shortcode('tio2_contact_form', function () {
     }
     $html .= '<form class="contact-form" method="post" action="' . esc_url(admin_url('admin-post.php')) . '" novalidate><input type="hidden" name="action" value="tio2_general_inquiry">';
     $html .= wp_nonce_field('tio2_general_inquiry', 'tio2_nonce', true, false);
+    $html .= '<input type="hidden" name="contact_token" value="'.esc_attr(bin2hex(random_bytes(32))).'">';
     $html .= '<div class="contact-honeypot" aria-hidden="true"><label>Leave this blank<input name="website" tabindex="-1" autocomplete="off"></label></div>';
     $help = ['full_name' => 'Enter the name we should use when replying.', 'company' => 'Enter the organisation you represent.', 'business_email' => 'We will use this address to reply to your inquiry.', 'country' => 'Enter the country or region where your company is based.', 'subject' => 'Summarise your question in a few words.', 'message' => 'Describe the general company or business matter you would like to discuss. Do not include passwords or payment details.'];
     foreach (tio2_contact_fields() as $key => $field) {
@@ -121,7 +127,7 @@ add_shortcode('tio2_contact_form', function () {
         if (isset($errors[$key])) $html .= '<strong class="field-error" id="' . esc_attr($id) . '-error">' . esc_html($errors[$key]) . '</strong>';
         $html .= '</div>';
     }
-    $html .= '<p>We use the information you provide to review and respond to this inquiry. Read our <a href="' . esc_url(home_url('/privacy-policy/')) . '">Privacy Policy</a> for details. After submission, this page confirms whether the inquiry was saved by this site. It does not send an email.</p><button class="button primary" type="submit">Send a General Inquiry</button></form>';
+    $html .= '<p>We use the information you provide to review and respond to this inquiry. Read our <a href="' . esc_url(home_url('/privacy-policy/')) . '">Privacy Policy</a> for details.</p><button class="button primary" type="submit">Send a General Inquiry</button></form>';
     return $html;
 });
 

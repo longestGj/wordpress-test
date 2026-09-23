@@ -1,6 +1,6 @@
 # Request email notifications
 
-Quote, document and sample requests are saved as private WordPress records before a staff notification is attempted. The public confirmation confirms the saved record only. Mail status is visible only under **Business requests** in WordPress admin. An administrator can retry a failed or unconfigured notification; a notification already accepted by the mail transport is not sent again.
+Contact inquiries and quote, document and sample requests are saved as private WordPress records before a staff notification is attempted. The public confirmation confirms the saved record only. Mail status is visible only to administrators under **Business requests**, or **General inquiries** for Contact, in WordPress admin. An administrator can retry a failed or unconfigured notification; a notification already accepted by the mail transport is not sent again.
 
 ## Local Gmail configuration
 
@@ -31,3 +31,11 @@ Production mail credentials and deployment are separate from this local setup.
 ## Local verification — 2026-09-23
 
 Gmail authentication over verified TLS passed. All three public request forms saved their synthetic records and Gmail accepted each notification exactly once. Duplicate submissions reused the receipt; invalid input retained its values. Test records and idempotency claims were removed. Both owned privacy Pages were updated, and a second migration made no changes. The user confirmed receipt of all three notifications (quote #332, document #333, sample #334). Production is not deployed.
+
+## Contact inquiries
+
+Contact reuses the same sender, recipient, TLS and notification-state handling. Its private `tio2_inquiry` record is saved before mail; duplicate submission tokens do not trigger another notification. General inquiries in WordPress admin shows the notification status and a protected retry control. An accepted notification cannot be resent through that control. Customers see only the saved inquiry confirmation.
+
+For existing local sites, run `docker compose run --rm cli eval-file /workspace/scripts/update-contact-mail-policy.php` to update the owned privacy and Cookie disclosures without replacing other editor content. The migration refuses altered target passages.
+
+`tests/contact-mail-runtime.php` intercepts mail and cleans fixtures. `python tests/utility-form-http.py` forces mail failure only for its unique local fixture and verifies the saved public receipt; its temporary mail filter is removed afterward. Only `python tests/utility-form-http.py --send-real-mail` sends one actual notification to the configured site mailbox. Both modes verify duplicate suppression and remove their exact inquiry and claim. On 2026-09-23, Gmail accepted Contact notification #352 once; the user confirmed receipt of that message. No production deployment was performed.

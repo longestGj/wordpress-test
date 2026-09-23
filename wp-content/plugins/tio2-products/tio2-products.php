@@ -85,6 +85,7 @@ require_once __DIR__.'/utility.php';
 
 require_once __DIR__.'/requests.php';
 require_once __DIR__.'/request-mail.php';
+require_once __DIR__.'/contact-mail.php';
 require_once __DIR__.'/request-receiver.php';
 
 require_once __DIR__.'/request-form.php';
