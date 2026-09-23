@@ -47,4 +47,4 @@ Release: requires explicit user authorization. Email remains a later task. Runti
 
 已批准的设计：[TiO2 Atlas 首页样板设计](../../docs/superpowers/specs/2026-09-23-tio2-atlas-home-design.md)。域名保持 tio2products.com，前台品牌采用 TiO2 Atlas，运营主体 IKHLAS TITANIUM (MALAYSIA) SDN. BHD. 不变。本轮仅重做首页样板；现有 source 字段保留历史输入路径作为审计线索，新 HTML 初始化内容来自 data/pages/home-atlas.html。
 
-验收前检查新 logo/favicon、页面结构与文案相对 tio2malaysia.com 的差异，14 个产品路由、1440/768/390 屏宽、键盘焦点、SEO 与本地 noindex。现有页面内容通过受保护的一次性迁移更新；重复导入仍保留后台编辑。
+验收前检查新 logo/favicon、页面结构与文案相对 tio2malaysia.com 的差异，14 个产品路由、1440/768/390 屏宽、键盘焦点、SEO 与本地 noindex。现有页面内容通过受保护的一次性迁移更新；重复导入仍保留后台编辑。本地独立预览的现有 Home 迁移命令：docker compose --env-file D:\33wordpress\.env -p tio2-atlas-home run --rm cli eval-file /workspace/scripts/migrate-atlas-home.php。脚本先核对本地地址、已发布且拥有 home 稳定身份的 Page、两种已知旧正文散列及旧 SEO；后台改动会被拒绝，重复执行不修改时间戳。数据库夹具测试恢复正文、SEO、所有权、修订和时间戳。
