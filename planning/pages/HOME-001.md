@@ -1,29 +1,29 @@
 # HOME-001 — Home
 
-Status: ACCEPTED
+Status: REVIEW
 
 URL: `/`
 Family: Homepage · EN
 
 ## 页面职责
 
-Own the broad Malaysia TiO2 and Malaysia supplier proposition; route buyers to markets, products, documents, and RFQ.
+Introduce industrial titanium dioxide products, the operating company, application and technical evaluation paths, documents and sourcing support. Route buyers to product and specialist pages before destination markets.
 
 ## 内容与事实
 
-- [Current content input](<../inputs/pages/home/04_planning/visual-designs/home-root-page-hero-v1.4/homepage-root-page-hero-preview-v1.4.html>)
+- [Earlier visual and content reference](<../inputs/pages/home/04_planning/visual-designs/home-root-page-hero-v1.4/homepage-root-page-hero-preview-v1.4.html>)
 - [WordPress initialization seed](../../data/pages/home.json) — initialization only; preserve live editor changes.
 - [Relationship boundaries](../RELATIONSHIPS.csv) — classification is not a performance or equivalence claim.
 - [Approved fact decisions](../inputs/docs/architecture/EVIDENCE_GAP_USER_DECISION_REGISTER_V1.8.md) — applies only within the approved scope.
 
 ## SEO
 
-Primary keyword: malaysia titanium dioxide
-Title: Malaysia Titanium Dioxide Supplier | TiO₂ Malaysia
-Meta: Explore titanium dioxide grades, applications, destination markets and document request paths through TiO₂ Malaysia for international industrial buyers.
-H1: Malaysia Titanium Dioxide for Industrial Buyers
+Primary keyword: titanium dioxide supplier
+Title: Titanium Dioxide Supplier & Products | TiO2Products
+Meta: Explore industrial titanium dioxide pigment grades for coatings, plastics, masterbatch and printing inks. Review technical information and request sourcing support.
+H1: Titanium Dioxide Products for Industrial Applications
 
-Keyword boundary: Home owns broad commercial Malaysia supply intent; About owns origin/manufacturing proof; Market pages own destination-country intent.
+Keyword boundary: Home owns broad industrial TiO₂ sourcing intent; Products owns grade and pigment selection; Application and Process pages own their specialist queries; About owns company and origin proof; Market pages own destination-country intent.
 
 ## 视觉与补充资料
 
@@ -31,7 +31,9 @@ Keyword boundary: Home owns broad commercial Malaysia supply intent; About owns 
 
 ## 实现与验收
 
-当前本地实现已完成并在对应批次验收；ACCEPTED 不代表正式上线或所有外部目标已连接。
+2026-09-23 homepage positioning update for review: the new source order is Hero → Company → Products → Applications → Technical Evaluation → Process → Resources → Documents → Markets → RFQ. The existing four groups and fourteen grade destinations remain. Application copy lists evaluation factors, not grade performance promises. Malaysia remains in the verified operating-company context. The Home-only schema graph relates WebPage, WebSite and Organization. A guarded one-time migration updates only an unchanged owned Home baseline; it refuses other editor edits and requires separate release authorization for production. No production update is part of this review.
+
+Earlier Home implementation was accepted and deployed; this positioning update remains in REVIEW until the new content and schema are approved.
 Native WordPress Page; Products Hub renders through the Product archive.
 
 2026-09-23 Home product cards: desktop headings keep all four cards expanded; at widths up to 560px the cards remain keyboard-operable accordions with matching expand/collapse symbols. All 14 grade labels link to their corresponding published product detail routes. Verified on an isolated local WordPress preview and the private server stage at `http://localhost:18080/` with desktop/mobile browser checks, all 14 destination pages, and visual screenshots. The server stage remained `noindex, nofollow`.
