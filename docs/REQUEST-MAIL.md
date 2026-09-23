@@ -27,3 +27,7 @@ An interrupted send or failed status write can leave an uncertain outcome. The a
 If the local network reaches Gmail only over IPv6, set `TIO2_MAIL_IPV6=1` and `TIO2_NETWORK_IPV6=true` in `.env`. Recreate the Compose network with `docker compose down` followed by `docker compose up -d`; retain all volumes (never use `-v`). Gmail addresses are resolved at send time and TLS still verifies the `smtp.gmail.com` certificate. `scripts/check-gmail-transport.php` verifies the TLS connection without authenticating or sending mail.
 
 Production mail credentials and deployment are separate from this local setup.
+
+## Local verification — 2026-09-23
+
+Gmail authentication over verified TLS passed. All three public request forms saved their synthetic records and Gmail accepted each notification exactly once. Duplicate submissions reused the receipt; invalid input retained its values. Test records and idempotency claims were removed. Both owned privacy Pages were updated, and a second migration made no changes. The user confirmed receipt of all three notifications (quote #332, document #333, sample #334). Production is not deployed.
