@@ -57,7 +57,7 @@
     const sync = () => {
       error.textContent = '';select.removeAttribute('aria-invalid');
       selected.textContent = valid() ? `Selected product grade: ${select.value}` : '';
-      actions.forEach(a => {a.href = receiver && valid() ? `${receiver}?product=${encodeURIComponent(select.value)}` : '#grade-selector';});
+      actions.forEach(a => {a.href = receiver && valid() ? `${receiver}?prefill.product_grade=${encodeURIComponent(select.value)}` : '#grade-selector';});
     };
     select.addEventListener('change', sync);
     actions.forEach(a => a.addEventListener('click', event => {
