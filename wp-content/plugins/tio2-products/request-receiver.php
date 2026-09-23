@@ -1,6 +1,6 @@
 <?php
 defined('ABSPATH') || exit;
-/** Private local request receiver. Mail notification is deliberately a separate integration. */
+/** Private request receiver; buyer confirmation depends on saving, not on mail. */
 add_action('init', function () {
     register_post_type('tio2_request', [
         'label'=>'Business requests', 'public'=>false, 'show_ui'=>false, 'show_in_rest'=>false,
@@ -91,6 +91,7 @@ function tio2_request_posted($kind) {
     }
     set_transient($rate_key,(int)get_transient($rate_key)+1,HOUR_IN_SECONDS);
     delete_transient($result_key);
+    tio2_request_send_notification($post);
     nocache_headers();wp_safe_redirect($receipt,303);exit;
 }
 add_action('tio2_request_expire_claim', function ($claim) {
@@ -116,7 +117,8 @@ function tio2_request_admin() {
     if ($id) {
         $post=get_post($id);
         if (!$post || $post->post_type!=='tio2_request') {echo '<p>Request not found.</p></div>';return;}
-        echo '<p><a href="'.esc_url(admin_url('admin.php?page=tio2-requests')).'">All requests</a></p><h2>'.esc_html($post->post_title).'</h2><p>Status: '.esc_html(get_post_meta($id,'_tio2_request_status',true)).'</p>';
+        $mail_status=get_post_meta($id,'_tio2_notification_status',true);
+        echo '<p><a href="'.esc_url(admin_url('admin.php?page=tio2-requests')).'">All requests</a></p><h2>'.esc_html($post->post_title).'</h2><p>Status: '.esc_html(get_post_meta($id,'_tio2_request_status',true)).'</p><p>Email notification: '.esc_html($mail_status?:'not_configured').'</p>';
         $values=json_decode($post->post_content,true);$kind=get_post_meta($id,'_tio2_request_kind',true);
         echo '<table class="widefat striped"><tbody>';
         foreach (tio2_request_fields($kind) as $key=>$field) {
@@ -126,12 +128,18 @@ function tio2_request_admin() {
         echo '</tbody></table>';
         if (get_post_meta($id,'_tio2_request_status',true)!=='reviewed')
             echo '<form method="post" action="'.esc_url(admin_url('admin-post.php')).'"><input type="hidden" name="action" value="tio2_request_mark_reviewed"><input type="hidden" name="request_id" value="'.esc_attr($id).'">'.wp_nonce_field('tio2_request_review_'.$id,'tio2_nonce',true,false).'<button class="button button-primary" type="submit">Mark reviewed</button></form>';
+        if ($mail_status!=='accepted') {
+            $uncertain=in_array($mail_status,['sending','unknown'],true);
+            echo '<form method="post" action="'.esc_url(admin_url('admin-post.php')).'"><input type="hidden" name="action" value="tio2_request_retry_notification"><input type="hidden" name="request_id" value="'.esc_attr($id).'">'.wp_nonce_field('tio2_request_retry_'.$id,'tio2_nonce',true,false);
+            if ($uncertain) echo '<p>The last delivery outcome is uncertain. Check the mailbox before retrying; a retry may send a duplicate.</p><p><label><input type="checkbox" name="confirmed_retry" value="1" required> I checked the mailbox and want to retry this notification.</label></p>';
+            echo '<button class="button" type="submit">Retry email notification</button></form>';
+        }
         echo '</div>';return;
     }
     $page=max(1,absint($_GET['paged']??1));
     $query=new WP_Query(['post_type'=>'tio2_request','post_status'=>'private','posts_per_page'=>50,'paged'=>$page,'orderby'=>'date','order'=>'DESC']);
-    echo '<table class="widefat striped"><thead><tr><th>Date</th><th>Type</th><th>Status</th><th>Details</th></tr></thead><tbody>';
-    foreach ($query->posts as $post) echo '<tr><td>'.esc_html(get_the_date('Y-m-d H:i',$post)).'</td><td>'.esc_html(get_post_meta($post->ID,'_tio2_request_kind',true)).'</td><td>'.esc_html(get_post_meta($post->ID,'_tio2_request_status',true)).'</td><td><a href="'.esc_url(admin_url('admin.php?page=tio2-requests&request='.$post->ID)).'">View</a></td></tr>';
+    echo '<table class="widefat striped"><thead><tr><th>Date</th><th>Type</th><th>Status</th><th>Email</th><th>Details</th></tr></thead><tbody>';
+    foreach ($query->posts as $post) echo '<tr><td>'.esc_html(get_the_date('Y-m-d H:i',$post)).'</td><td>'.esc_html(get_post_meta($post->ID,'_tio2_request_kind',true)).'</td><td>'.esc_html(get_post_meta($post->ID,'_tio2_request_status',true)).'</td><td>'.esc_html(get_post_meta($post->ID,'_tio2_notification_status',true)).'</td><td><a href="'.esc_url(admin_url('admin.php?page=tio2-requests&request='.$post->ID)).'">View</a></td></tr>';
     echo '</tbody></table>';
     if ($query->max_num_pages>1) echo '<div class="tablenav"><div class="tablenav-pages">'.wp_kses_post(paginate_links(['base'=>add_query_arg('paged','%#%',admin_url('admin.php?page=tio2-requests')),'total'=>$query->max_num_pages,'current'=>$page,'type'=>'plain'])).'</div></div>';
     echo '</div>';
@@ -141,5 +149,12 @@ add_action('admin_post_tio2_request_mark_reviewed',function () {
     $id=absint($_POST['request_id']??0);$post=get_post($id);
     if (!$post || $post->post_type!=='tio2_request' || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['tio2_nonce']??'')),'tio2_request_review_'.$id)) wp_die('Invalid request');
     update_post_meta($id,'_tio2_request_status','reviewed');
+    wp_safe_redirect(admin_url('admin.php?page=tio2-requests&request='.$id),303);exit;
+});
+add_action('admin_post_tio2_request_retry_notification',function () {
+    if (!current_user_can('manage_options')) wp_die('Not authorized');
+    $id=absint($_POST['request_id']??0);$post=get_post($id);
+    if (!$post || $post->post_type!=='tio2_request' || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['tio2_nonce']??'')),'tio2_request_retry_'.$id)) wp_die('Invalid request');
+    tio2_request_send_notification($id,isset($_POST['confirmed_retry']) && $_POST['confirmed_retry']==='1');
     wp_safe_redirect(admin_url('admin.php?page=tio2-requests&request='.$id),303);exit;
 });

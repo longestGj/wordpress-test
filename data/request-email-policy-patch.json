@@ -1,0 +1,22 @@
+{
+  "LEGAL-PRIV-EN": [
+    {
+      "old": "The forms do not send an email, approve a quotation, release a document or approve a sample.",
+      "new": "A copy of a request may be emailed to our designated business mailbox for staff review. Submission does not approve a quotation, release a document or approve a sample."
+    },
+    {
+      "old": "The site uses WordPress and its hosting infrastructure to deliver pages and hold private inquiry records.",
+      "new": "The site uses WordPress and its hosting infrastructure to deliver pages and hold private inquiry records. When request email notifications are enabled, Google Gmail processes a copy of the submitted request details for delivery to our designated staff mailbox. Email copies are managed separately as business correspondence; deleting a WordPress record does not automatically delete its email copy."
+    }
+  ],
+  "LEGAL-PRIV-MS": [
+    {
+      "old": "Borang ini tidak menghantar e-mel, meluluskan sebut harga, menyerahkan dokumen atau meluluskan sampel.",
+      "new": "Salinan permintaan boleh dihantar melalui e-mel ke peti mel perniagaan kami yang ditetapkan untuk semakan kakitangan. Penghantaran tidak meluluskan sebut harga, menyerahkan dokumen atau meluluskan sampel."
+    },
+    {
+      "old": "Laman ini menggunakan WordPress dan infrastruktur pengehosannya untuk menyampaikan halaman dan menyimpan rekod pertanyaan peribadi.",
+      "new": "Laman ini menggunakan WordPress dan infrastruktur pengehosannya untuk menyampaikan halaman dan menyimpan rekod pertanyaan peribadi. Apabila pemberitahuan e-mel permintaan diaktifkan, Google Gmail memproses salinan butiran permintaan yang dihantar untuk penghantaran ke peti mel kakitangan kami yang ditetapkan. Salinan e-mel diurus secara berasingan sebagai surat-menyurat perniagaan; pemadaman rekod WordPress tidak memadam salinan e-melnya secara automatik."
+    }
+  ]
+}

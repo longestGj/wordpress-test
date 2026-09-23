@@ -46,7 +46,7 @@ docker compose run --rm cli core version
 
 Docker volumes `tio2-wordpress_database` and `tio2-wordpress_wordpress` persist the database and site files, including uploads. Container recreation preserves them. Do not use `docker compose down -v` unless intentionally erasing this site. These volumes are persistence, not backups.
 
-The web port binds only to 127.0.0.1; the database has no host port. This is a local development site, not a deployed staging or production site. Search engine visibility is disabled. Outbound email is not configured.
+The web port binds only to 127.0.0.1; the database has no host port. This is a local development site, not a deployed staging or production site. Search engine visibility is disabled. Optional Gmail notifications for saved Quote, Documents and Sample requests are configured through ignored environment values; see [Request email notifications](docs/REQUEST-MAIL.md).
 
 `.env` contains generated local credentials and is excluded from Git. `.env.example` documents the required variables. Keep the actual `.env` when restarting this installation; changing its database password does not automatically change an initialized database user's password.
 
@@ -55,7 +55,7 @@ The web port binds only to 127.0.0.1; the database has no host port. This is a l
 - M-350: http://localhost:8080/products/m-350/
 - Product Hub and all 14 grades: http://localhost:8080/products/
 - Admin: Products → M-350 → Edit. Title and excerpt use WordPress fields; grouped text, parameters and SEO use the Product content panel. Lists support adding, removing and moving entries. Application/Process terms are in the sidebar.
-- Products → Destinations connects published pages to product links. Form destinations require an explicit “Receiving workflow tested” setting after functional acceptance. No receivers are configured yet.
+- Products → Destinations connects published pages to product links. Form destinations require an explicit “Receiving workflow tested” setting after functional acceptance. The three request receivers are available locally.
 
 The `tio2-products` plugin owns data. The `tio2` theme owns templates and styles. Both directories are bind-mounted from `wp-content/`, so local source changes are immediately available. Approved M-350 initialization data is `data/m350.json`; runtime content lives in WordPress. Import is one-time and preserves an existing product:
 
@@ -68,11 +68,11 @@ docker compose run --rm cli eval-file /workspace/tests/product-model.php
 
 Home, Markets, Products, Applications, Documents, Resources and About now run in this local WordPress. The seven-item shared navigation links to these pages. Root copy is in Pages as an HTML block preserving the fixed approved layout; text/link changes currently use the native block's HTML editor. SEO has separate fields. Products Hub content is the private `Products` Page (`product-hub-content`), rendered only at the public Product archive route. Its directory, discovery relationships and Not Sure guidance have a separate editable field panel; these relationships do not overwrite technical product applications.
 
-Two process, five application, eight resource, eleven market and three document-guide pages are also implemented. Contact, English and Bahasa Malaysia privacy pages, Cookie Policy, Thank You and the real 404 template run locally. RFQ, Sample and Request Documents receivers remain later work. Fixed global/page RFQ links currently have no receiver; this blocks release. Other missing request destinations render as unavailable labels, and product-context form actions remain hidden. Documents selection works locally but reports the disconnected receiver. No analytics or nonessential tracking is added. Production SEO/schema expansion and indexing require release review. Large approved PNG assets still need delivery optimization before production performance acceptance.
+Two process, five application, eight resource, eleven market and three document-guide pages are also implemented. Contact, English and Bahasa Malaysia privacy pages, Cookie Policy, Thank You and the real 404 template run locally. RFQ, Sample and Request Documents now save private request records locally and issue browser-bound receipts. Product and document-guide links carry validated, editable request context. Gmail notification is optional and runs only after the request is saved; mail status and retry controls are restricted to the WordPress administrator. No analytics or nonessential tracking is added. Production SEO/schema expansion and indexing require release review. Large approved PNG assets still need delivery optimization before production performance acceptance.
 
 ## Contact, legal and system pages
 
-Contact saves a validated general inquiry as a private local WordPress record for staff review. It does not send email. The Footer's Cookie Settings dialog reports the current necessary storage state; there is no optional Analytics choice or consent Local Storage record. Thank You shows a receipt only when a future Quote, Documents or Sample receiver positively acknowledges a submission and issues a short-lived, browser-bound marker. Direct and forged visits show request choices, with unavailable routes clearly marked. An unknown URL uses the theme's actual HTTP 404 template.
+Contact saves a validated general inquiry as a private local WordPress record for staff review. It does not send email. The Footer's Cookie Settings dialog reports the current necessary storage state; there is no optional Analytics choice or consent Local Storage record. Thank You shows a receipt only when a Quote, Documents or Sample receiver positively acknowledges a submission and issues a short-lived, browser-bound marker. Direct and forged visits show request choices, with unavailable routes clearly marked. An unknown URL uses the theme's actual HTTP 404 template.
 
 For a fresh or existing local installation, verify `home` is localhost and back up the database before importing. Run the explicit legacy ownership migration, then preserve an untouched WordPress Core starter privacy draft if it occupies `/privacy-policy/`, then import the five owned Pages:
 

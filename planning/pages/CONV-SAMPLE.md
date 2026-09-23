@@ -72,9 +72,9 @@ Source: [approved maximum-length contract §3](<https://github.com/longestGj/tio
 
 ## 实现与验收
 
-已在隔离的本地 WordPress 实例实现原生 Page 与样品申请表。已验证未知 Grade、Other 应用补充说明、字段长度服务端校验且保留输入、私有记录与回执、1440/768/390 页面布局；产品页可带入已发布 Grade。数据库测试使用合成资料并清理。邮件通知按用户要求暂缓；正式发布仍须单独授权。
+已在隔离的本地 WordPress 实例实现原生 Page 与样品申请表。已验证未知 Grade、Other 应用补充说明、字段长度服务端校验且保留输入、私有记录与回执、1440/768/390 页面布局；产品页可带入已发布 Grade。数据库测试使用合成资料并清理。Gmail 通知已实现为保存后的独立步骤，发送状态与重试只在管理后台显示；真实投递仍待本机凭据与收件验证。正式发布仍须单独授权。
 
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
-Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+Release: requires explicit user authorization. Gmail notification code is implemented; real authentication and Inbox receipt verification remain pending. Runtime does not consult this specification or planning source hashes.

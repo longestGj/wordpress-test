@@ -27,6 +27,10 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      TIO2_MAIL_USER: ${TIO2_MAIL_USER:-}
+      TIO2_MAIL_TO: ${TIO2_MAIL_TO:-}
+      TIO2_MAIL_APP_PASSWORD: ${TIO2_MAIL_APP_PASSWORD:-}
+      TIO2_MAIL_IPV6: ${TIO2_MAIL_IPV6:-0}
     volumes:
       - wordpress:/var/www/html
       - ./wp-content/plugins/tio2-products:/var/www/html/wp-content/plugins/tio2-products
@@ -61,3 +65,7 @@ services:
 volumes:
   database:
   wordpress:
+
+networks:
+  default:
+    enable_ipv6: ${TIO2_NETWORK_IPV6:-false}
