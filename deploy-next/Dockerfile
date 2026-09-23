@@ -5,6 +5,7 @@ FROM wordpress:7.1.1-php8.3-apache
 COPY --from=wpcli /usr/local/bin/wp /usr/local/bin/wp
 COPY wp-content/themes/tio2 /usr/src/wordpress/wp-content/themes/tio2
 COPY wp-content/plugins/tio2-products /usr/src/wordpress/wp-content/plugins/tio2-products
+COPY googleaa2e91750b47f47a.html /usr/src/wordpress/googleaa2e91750b47f47a.html
 COPY data /workspace/data
 COPY scripts /workspace/scripts
 COPY deploy-next/check-db.php /workspace/deploy-next/check-db.php
@@ -17,6 +18,7 @@ RUN chmod 0755 /usr/local/bin/tio2-next-entrypoint \
     && grep -q '<VirtualHost \*:80 \*:18080>' /etc/apache2/sites-available/000-default.conf \
     && test -f /usr/src/wordpress/wp-content/themes/tio2/style.css \
     && test -f /usr/src/wordpress/wp-content/plugins/tio2-products/tio2-products.php \
+    && test -f /usr/src/wordpress/googleaa2e91750b47f47a.html \
     && test -x /usr/local/bin/wp \
     && chown -R www-data:www-data /usr/src/wordpress/wp-content /workspace
 
