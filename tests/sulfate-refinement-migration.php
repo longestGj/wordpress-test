@@ -20,6 +20,14 @@ try {
     if ($applied->return_code!==0 || !str_contains($updated,'Sulfate Process at a Glance') || !str_contains($updated,'sulfate-editor-fixture')) throw new RuntimeException('Exact migration failed or lost editor content: '.$applied->stderr);
     $repeated=$run('apply');clean_post_cache($page->ID);
     if ($repeated->return_code!==0 || get_post_field('post_content',$page->ID,'raw')!==$updated) throw new RuntimeException('Repeat migration changed content: '.$repeated->stderr);
+    $with_extra_link=$updated.'<p><a href="/products/m-350/">Compare M-350</a></p>';
+    wp_update_post(['ID'=>$page->ID,'post_content'=>wp_slash($with_extra_link)]);
+    $response=wp_remote_get('http://wordpress/products/sulfate-process-titanium-dioxide/',['headers'=>['Host'=>'localhost:8080']]);
+    if (is_wp_error($response) || wp_remote_retrieve_response_code($response)!==200) throw new RuntimeException('Could not render Sulfate schema fixture.');
+    preg_match_all('~<script type="application/ld\+json">(.*?)</script>~s',wp_remote_retrieve_body($response),$scripts);
+    $listed=[];
+    foreach ($scripts[1] as $script) foreach ((json_decode($script,true)['@graph']??[]) as $node) if (($node['@type']??'')==='ItemList') $listed=array_column($node['itemListElement'],'name');
+    if ($listed!==['M-996','M-2196','M-108','M-52','M-2377']) throw new RuntimeException('Unrelated product link entered the Sulfate ItemList.');
     $edited=str_replace($patch[4]['old'],'Editor-supplied RFQ wording',$fixture);
     if ($edited===$fixture) throw new RuntimeException('RFQ fixture target missing.');
     wp_update_post(['ID'=>$page->ID,'post_content'=>wp_slash($edited)]);
@@ -32,4 +40,4 @@ finally {
     if (is_wp_error($restored) || get_post_field('post_content',$page->ID,'raw')!==$original) $failure=($failure??'').' Fixture restoration failed.';
 }
 if ($failure) WP_CLI::error($failure);
-WP_CLI::success('Sulfate dry run, exact migration, idempotence and editor protection verified; fixture restored.');
+WP_CLI::success('Sulfate dry run, exact migration, idempotence, process ItemList filtering and editor protection verified; fixture restored.');

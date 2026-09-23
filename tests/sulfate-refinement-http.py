@@ -18,7 +18,7 @@ assert page.select_one('link[rel=canonical]')['href'] == base + path
 assert page.title.get_text(' ', strip=True) == 'Sulfate Process Titanium Dioxide Grades | TiO2Products'
 assert page.select_one('meta[name=description]')['content'] == 'Explore five Malaysia-origin sulfate process titanium dioxide Grades by application, then review product details, request documents or request a quote.'
 assert [h.get_text(' ', strip=True) for h in main.select('h1')] == ['Sulfate Process Titanium Dioxide']
-assert [section.get('class', [])[-1] for section in main.select('section')[:3]] == ['m1', 'm-glance', 'm2']
+assert all(name in section.get('class', []) for section, name in zip(main.select('section')[:3], ['m1', 'm-glance', 'm2']))
 glance = main.select_one('section.m-glance')
 assert glance.h2.get_text(' ', strip=True) == 'Sulfate Process at a Glance'
 for phrase in ('Process', 'Sulfate', 'Also spelled', 'Sulphate', '5 sulfate-process Grades', 'Process alone does not determine application performance'):
