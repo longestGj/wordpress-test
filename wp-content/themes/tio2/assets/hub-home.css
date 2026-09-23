@@ -87,6 +87,7 @@
 body.home .header{background:#f7f4ec;border-bottom:1px solid #c8cec6}
 body.home .headerInner{width:min(1200px,calc(100% - 64px))}
 body.home .desktopNav a{color:#202b2b}
+body.home .desktopNav a[aria-current]{border-bottom-color:#9c3d22}
 body.home .headerRfq{background:#9c3d22;border-color:#9c3d22;color:#fff}
 body.home .headerRfq:hover{background:#783018}
 body.home .footer{background:#202b2b;color:#f7f4ec}
