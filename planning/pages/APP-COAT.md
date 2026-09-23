@@ -1,6 +1,6 @@
 # APP-COAT — TiO2 for Coatings
 
-Status: REVIEW
+Status: ACCEPTED
 
 URL: `/applications/titanium-dioxide-for-coatings/`
 Family: Application landing page · EN
@@ -31,7 +31,7 @@ Keyword boundary: Application page owns generic use-case intent; grade pages own
 
 ## 实现与验收
 
-当前精修进入本地验收；ACCEPTED 不代表正式上线或所有外部目标已连接。
+当前精修已在主本地站点验收；ACCEPTED 不代表正式上线或所有外部目标已连接。
 Native WordPress Page rendered by the topic template; editor content remains authoritative after the exact-copy migration.
 
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
@@ -50,3 +50,5 @@ The RFQ card asks buyers without a selected Grade for known application, formula
 The application-detail `ItemList` is derived from actual product links on each topic page and checks the product's live `product_application` taxonomy term before using the published, public Product permalink. This is shared across five application-detail pages; Coatings produces the eight unchanged Grade links. `WebPage`, `BreadcrumbList` and canonical remain. Taxonomy is authoritative; the Schema does not infer suitability or rank grades. Masterbatch's M-510 illustrates why the taxonomy, rather than the product-description list, must drive relationships: its approved public mapping and live taxonomy include Masterbatch, while the current product-description list does not include a Masterbatch paragraph.
 
 The exact-copy migration and seed change only four passages: Hero text, its secondary CTA, the inserted summary and the RFQ field-label passage. Sections 02–08 and 10 (technical method, endpoint/grade tables, sources) have unchanged HTML content. No new technical performance claim or source-verification issue was identified from the approved content.
+
+Validation: `tests/coatings-refinement-http.py` passes on both isolated preview and `http://localhost:8080`, covering the single H1, SEO/canonical, Hero intents, six summary categories, all eight unchanged Grade links and process classes, five application-detail ItemLists, RFQ wording, sources, endpoint table and 1440/768/390 layouts. An additional 320px keyboard check found no overflow and a visible focus outline on the Grade CTA. `tests/coatings-refinement-migration.php` passes against the isolated local database, including repeat-run preservation of unrelated editor content and rejection of mixed/edited Hero copy. After one main-local migration, a second run reported current content. Main-local `tests/process-applications-http.py`, `tests/batch-http.py` and `tests/planning-integrity.py` pass. Independent code review found migration and public-Schema edge cases; both were fixed and the recheck found no remaining Critical or Important issue.
