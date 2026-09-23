@@ -23,6 +23,10 @@ add_action('wp_head',function(){
     foreach([['Home',home_url('/')],['Products',get_post_type_archive_link('product')],[get_the_title($id),get_permalink($id)]] as $i=>$item)$crumb['itemListElement'][]=['@type'=>'ListItem','position'=>$i+1,'name'=>$item[0],'item'=>$item[1]];
     echo '<script type="application/ld+json">'.wp_json_encode([tio2_product_schema($id),$crumb],JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE).'</script>';
 });
+add_action('wp_head', function(){
+    if (!is_front_page()) return;
+    echo '<link rel="icon" type="image/svg+xml" href="'.esc_url(get_template_directory_uri().'/assets/atlas-mark.svg').'">';
+});
 function tio2_navigation(){
     if(has_nav_menu('primary')){wp_nav_menu(['theme_location'=>'primary','container'=>false,'depth'=>1]);return;}
     echo '<a href="'.esc_url(home_url('/')).'">Home</a><a href="'.esc_url(home_url('/products/')).'" '.(is_singular('product')||is_post_type_archive('product')?'aria-current="page"':'').'>Products</a>';
