@@ -1,0 +1,22 @@
+[
+  {
+    "name": "visible-breadcrumb",
+    "old": "<!-- wp:heading {\"level\": 1} -->",
+    "new": "<!-- wp:html --><nav aria-label=\"Breadcrumb\" class=\"breadcrumb\"><a href=\"/\">Home</a><span aria-hidden=\"true\">/</span><a href=\"/applications/\">Applications</a><span aria-hidden=\"true\">/</span><span aria-current=\"page\">Masterbatch</span></nav><!-- /wp:html --><!-- wp:heading {\"level\": 1} -->"
+  },
+  {
+    "name": "evaluation-glance",
+    "old": "<!-- wp:group {\"className\": \"bodySection topic-module-define-the-two-stage-system\", \"tagName\": \"section\"} -->",
+    "new": "<!-- wp:html --><div class=\"masterbatchGlance\" aria-labelledby=\"masterbatch-glance-title\"><div class=\"glanceInner\"><h2 id=\"masterbatch-glance-title\">Masterbatch Evaluation at a Glance</h2><div class=\"glanceGrid\"><div class=\"glanceItem\"><h3>Carrier system</h3><p>Carrier resin and receiving resin</p></div><div class=\"glanceItem\"><h3>Pigment loading</h3><p>TiO₂ fraction in the concentrate and final material</p></div><div class=\"glanceItem\"><h3>Concentrate processing</h3><p>Preparation, equipment and process conditions</p></div><div class=\"glanceItem\"><h3>Dispersion evidence</h3><p>FPV, flow, morphology and distribution observations</p></div><div class=\"glanceItem\"><h3>Let-down &amp; conversion</h3><p>Let-down and conversion route in the receiving resin</p></div><div class=\"glanceItem\"><h3>Final article</h3><p>Optical, colour, mechanical, ageing and retention endpoints</p></div><div class=\"glanceItem\"><h3>Grades to Review</h3><p><a href=\"#grades-to-review\">Seven candidate Grades across chloride and sulfate routes</a></p></div></div></div></div><!-- /wp:html -->\n<!-- wp:group {\"className\": \"bodySection topic-module-define-the-two-stage-system\", \"tagName\": \"section\"} -->"
+  },
+  {
+    "name": "manufacturer-example",
+    "old": "<p>Manufacturer product pages illustrate why these roles should remain separate. The current Chemours Ti-Pure R-350 page presents application positioning and links product information, SDS and TDS resources separately. The current KRONOS 2220 page marks some product-characteristic values as typical. A page position or one field's status does not turn every value into a lot result or an independent application comparison.</p>",
+    "new": "<p>Manufacturer product pages illustrate why product positioning, TDS, SDS and typical-value statements should be interpreted separately. A product-page claim or a typical characteristic does not become a lot result or an independent application comparison.</p>"
+  },
+  {
+    "name": "rfq-field-independent-copy",
+    "old": "<li><a href=\"/request-a-quote/\">Discuss Your Masterbatch Application</a> with a known lead Grade or <code>Not sure / Need help</code>. Tell us your masterbatch application, required or estimated quantity in metric tonnes, destination and any other context you already know. If several Grades are under consideration, list the others in <code>Additional Requirements</code>.</li>",
+    "new": "<li><a href=\"/request-a-quote/\">Discuss Your Masterbatch Application</a> even if no Grade has been selected. Share the carrier and receiving resin where known, concentrate and final TiO₂ fractions, preparation and conversion route, expected quantity, destination and evaluation requirements already known. If several Grades are under consideration, list all candidate Grades in the request. Unknown conditions can remain unknown; final suitability depends on technical evaluation in the stated system.</li>"
+  }
+]
