@@ -39,8 +39,10 @@ Release: requires explicit user authorization. Sending form notifications by ema
 
 ## WordPress implementation (2026-09-23)
 
-Native page seed: `data/utility/LEGAL-COOKIE-EN.json`. The actual inventory is the necessary `tio2_flow` browser-session Cookie, temporary server state, and WordPress administrator authentication where applicable. No consent Local Storage record or optional Analytics/advertising service is activated. Footer Cookie Settings is a read-only status dialog. Clean-browser production inventory remains a release check.
+Native page seed: `data/utility/LEGAL-COOKIE-EN.json`. The initial local review covered the necessary `tio2_flow` session Cookie, temporary server state, and WordPress administrator authentication. The later GA4 implementation adds an optional analytics choice and its disclosed storage only on the indexable production domain. Clean-browser production inventory remains a release check.
 
 Local review 2026-09-23: `/cookie-policy/` returns HTTP 200 with expected SEO and one H1. A clean browser retained no Cookie or Local Storage on the privacy page; visiting Contact set only the HttpOnly browser-session `tio2_flow` Cookie, with Local Storage still empty and network requests confined to localhost. Browser review at 1440/768/390 verified the mobile inventory cards and Cookie Settings focus; screenshots are in `.local/utility-http/`. Production inventory and legal review remain open.
 
-Domain audit 2026-09-23: the cookie contact address is updated to `info@tio2products.com` in the seed and the isolated 18080 preview. GA4 is not configured; the current no-Analytics inventory remains accurate until consent controls and measurement are actually enabled.
+Domain audit 2026-09-23: the cookie contact address is updated to `info@tio2products.com` in the seed and the isolated 18080 preview.
+
+GA4 review 2026-09-23: the seed now describes the confirmed `G-SY6PZPX0VR` stream, optional GA4 Cookies and Local Storage choice. The theme only renders consent controls on the indexable HTTPS production host; no Google tag is requested before consent or after rejection. A scoped Page migration passed dry-run preflight on the isolated 18080 preview without changing its database. Production publication, clean-browser inventory, and legal review remain open.

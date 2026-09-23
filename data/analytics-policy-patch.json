@@ -1,0 +1,61 @@
+{
+  "LEGAL-COOKIE-EN": [
+    {
+      "old": "<p>No optional Analytics technology is active. Google Analytics, Google Tag Manager and Vercel Web Analytics are not active in this implementation.</p>",
+      "new": "<p>Google Analytics 4 (GA4) runs only after you choose Allow analytics. Before that choice, or after you reject it, this site does not load Google's analytics script or send analytics requests. We do not use Google Tag Manager or Vercel Web Analytics.</p>"
+    },
+    {
+      "old": "</tbody></table></div>",
+      "marker": "<code>tio2_analytics_consent_v1</code>",
+      "new": "<tr><td data-label=\"Name\"><code>tio2_analytics_consent_v1</code></td><td data-label=\"Provider\">TiO2 Malaysia</td><td data-label=\"Type\">Local Storage</td><td data-label=\"Purpose\">Remembers whether you allowed or rejected analytics</td><td data-label=\"Duration\">Until you change the choice or clear site data</td><td data-label=\"Category\">Preference</td></tr>\n<tr><td data-label=\"Name\"><code>_ga</code></td><td data-label=\"Provider\">Google Analytics</td><td data-label=\"Type\">First-party Cookie</td><td data-label=\"Purpose\">Distinguishes visitors after analytics consent</td><td data-label=\"Duration\">Up to 2 years by default; browsers may shorten it</td><td data-label=\"Category\">Analytics</td></tr>\n<tr><td data-label=\"Name\"><code>_ga_SY6PZPX0VR</code></td><td data-label=\"Provider\">Google Analytics</td><td data-label=\"Type\">First-party Cookie</td><td data-label=\"Purpose\">Persists session state after analytics consent</td><td data-label=\"Duration\">Up to 2 years by default; browsers may shorten it</td><td data-label=\"Category\">Analytics</td></tr>\n</tbody></table></div>"
+    },
+    {
+      "old": "This site does not set a consent Local Storage record and does not set optional Analytics or advertising Cookies in the current implementation.",
+      "new": "Your analytics choice is kept in Local Storage under <code>tio2_analytics_consent_v1</code> until you change it or clear site data. GA4 Cookies are set only after you allow analytics; no advertising Cookies are enabled."
+    },
+    {
+      "old": "<h2>How Advanced Consent Mode Works</h2>",
+      "new": "<h2>How Analytics Consent Works</h2>"
+    },
+    {
+      "old": "<p>Google measurement and Advanced Consent Mode are not active in this WordPress implementation. No Google measurement transmission or consent state should be inferred from a future implementation direction. If optional measurement is introduced, this policy and the controls will be updated after the actual technology and network behaviour are verified.</p>",
+      "new": "<p>We use basic consent mode: the Google tag is blocked until you explicitly allow analytics. If you reject it, no analytics data or consent signal is sent to Google. Once allowed, GA4 can record page visits and related usage events. The website removes query strings and fragments from page and referrer URLs sent to GA4. Advertising consent remains denied.</p>"
+    },
+    {
+      "old": "<p>Use <strong>Cookie Settings</strong> in the Footer to review the current status. There is no optional Analytics or advertising category to accept or withdraw, so the interface does not show a first-visit consent request. You can remove the necessary <code>tio2_flow</code> Cookie through your browser&#x27;s site-data controls; doing so clears the browser link to a pending form result.</p>",
+      "new": "<p>On your first visit, choose Allow analytics or Reject analytics. You can change your choice at any time through <strong>Cookie Settings</strong> in the Footer. Withdrawing consent stops future analytics loading and removes accessible GA4 Cookies from this browser; it cannot reverse data already sent while consent was active. You can remove the necessary <code>tio2_flow</code> Cookie through your browser&#x27;s site-data controls; doing so clears the browser link to a pending form result.</p>"
+    },
+    {
+      "old": "Cookie Settings, which currently displays status only.",
+      "new": "Cookie Settings, which lets you change analytics consent."
+    }
+  ],
+  "LEGAL-PRIV-EN": [
+    {
+      "old": "No Web3Forms, Google Analytics, Google Tag Manager, Google Ads or Vercel Web Analytics integration is active in this WordPress implementation.",
+      "new": "Google Analytics 4 is used only after you allow analytics. Google may process the resulting usage data under its service terms. We do not use Web3Forms, Google Tag Manager, Google Ads or Vercel Web Analytics."
+    },
+    {
+      "old": "This site does not currently use Local Storage for consent choices or activate optional Analytics or advertising technology. Cookie Settings shows this status; there is no optional category to accept or withdraw.",
+      "new": "We store your analytics choice in Local Storage. Google Analytics 4 loads only after you allow it; rejecting analytics makes no Google analytics request. If enabled, GA4 may collect page visits and browser or device usage information. We remove query strings and fragments from page and referrer URLs before sending them. Advertising consent remains denied, and we do not deliberately send inquiry or request form field contents to GA4. You can change your choice in Cookie Settings."
+    },
+    {
+      "old": "There is currently no optional Analytics choice to change. You can review active storage through <strong>Cookie Settings</strong> and manage site data in your browser.",
+      "new": "You can allow or reject analytics and withdraw a prior choice through <strong>Cookie Settings</strong>. Withdrawing stops future analytics loading and clears accessible GA4 Cookies from this browser; it does not erase data already sent while consent was active. You can also manage site data in your browser."
+    }
+  ],
+  "LEGAL-PRIV-MS": [
+    {
+      "old": "Tiada integrasi Web3Forms, Google Analytics, Google Tag Manager, Google Ads atau Vercel Web Analytics yang aktif dalam pelaksanaan WordPress ini.",
+      "new": "Google Analytics 4 hanya digunakan selepas anda membenarkan analitik. Google mungkin memproses data penggunaan yang terhasil mengikut syarat perkhidmatannya. Kami tidak menggunakan Web3Forms, Google Tag Manager, Google Ads atau Vercel Web Analytics."
+    },
+    {
+      "old": "Laman ini pada masa ini tidak menggunakan Local Storage untuk pilihan persetujuan atau mengaktifkan teknologi Analitik atau pengiklanan pilihan. Cookie Settings menunjukkan keadaan ini; tiada kategori pilihan untuk diterima atau ditarik balik.",
+      "new": "Kami menyimpan pilihan analitik anda dalam Local Storage. Google Analytics 4 hanya dimuatkan selepas anda membenarkannya; jika anda menolak analitik, tiada permintaan analitik Google dibuat. Jika diaktifkan, GA4 mungkin mengumpul lawatan halaman serta maklumat penggunaan pelayar atau peranti. Kami membuang rentetan pertanyaan dan fragmen daripada URL halaman dan perujuk sebelum menghantarnya. Persetujuan pengiklanan kekal ditolak, dan kami tidak sengaja menghantar kandungan medan borang pertanyaan atau permintaan kepada GA4. Anda boleh mengubah pilihan melalui Tetapan Kuki."
+    },
+    {
+      "old": "Pada masa ini tiada pilihan Analitik untuk diubah. Anda boleh menyemak storan aktif melalui <strong>Cookie Settings</strong> dan mengurus data laman dalam pelayar anda.",
+      "new": "Anda boleh membenarkan atau menolak analitik serta menarik balik pilihan terdahulu melalui <strong>Tetapan Kuki</strong>. Penarikan balik menghentikan pemuatan analitik seterusnya dan memadam Kuki GA4 yang boleh dicapai daripada pelayar ini; tindakan itu tidak memadam data yang telah dihantar semasa persetujuan aktif. Anda juga boleh mengurus data laman dalam pelayar anda."
+    }
+  ]
+}

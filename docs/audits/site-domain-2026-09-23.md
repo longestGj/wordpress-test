@@ -18,5 +18,5 @@ The confirmed public domain is `https://tio2products.com/`; the user confirmed t
 ## Open release checks
 
 - The three request pages are being developed separately. Their content and receiver checks must be included in the final full-site acceptance.
-- The English and Malay privacy wording and production hosting details still require review. GA4 has no Measurement ID for this domain yet; the current no-Analytics policy statements remain accurate. The user selected analytics only after consent for the later GA4 implementation.
+- The English and Malay privacy wording and production hosting details still require review. GA4 had no Measurement ID at the time of this domain audit; the later `G-SY6PZPX0VR` opt-in implementation is recorded in `ga4-opt-in-2026-09-23.md`.
 - Production publication of the new site remains a separate release step under `docs/WORKFLOW.md` and `docs/RELEASE.md`.
