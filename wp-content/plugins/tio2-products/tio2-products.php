@@ -77,3 +77,5 @@ require __DIR__.'/pages.php';
 require __DIR__.'/topics.php';
 require __DIR__.'/revisions.php';
 require __DIR__.'/ownership.php';
+
+require_once __DIR__.'/documents.php';
