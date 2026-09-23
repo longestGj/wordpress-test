@@ -33,6 +33,12 @@ with sync_playwright() as playwright:
             assert page.locator('html').get_attribute('lang') == seed['language']
             assert page.locator('link[href*="markets.css"]').count() == 1
             assert not page.evaluate('document.documentElement.scrollWidth > window.innerWidth'), (seed['identity'], width)
+            if width == 1440:
+                local_links = {a.get_attribute('href').split('#',1)[0] for a in page.locator('main a[href^="/"]').all()}
+                for path in local_links:
+                    if not path or path.startswith('//'): continue
+                    target = page.request.get(BASE + path)
+                    assert target.status == 200, (seed['identity'], path, target.status)
             if seed['identity'] in ('MARKET-BR-EN','MARKET-BR-PT'):
                 alternates = {a.get_attribute('hreflang'):a.get_attribute('href') for a in page.locator('link[rel="alternate"][hreflang]').all()}
                 assert alternates == {'en':BASE+'/markets/brazil/', 'pt-BR':BASE+'/pt-br/markets/brazil/'}, seed['identity']
