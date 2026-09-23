@@ -23,7 +23,7 @@ if(!get_post_meta($ids['products'],'_tio2_discovery',true)){$d=get_option('tio2_
 if(get_option('show_on_front')!=='page'){update_option('show_on_front','page');update_option('page_on_front',$ids['home']);}
 if(!has_nav_menu('primary')){
  $menu=wp_create_nav_menu('Main navigation');if(is_wp_error($menu))WP_CLI::error($menu->get_error_message());
- foreach(['home','markets','products','applications','documents','resources','about'] as $i=>$key){$args=['menu-item-title'=>ucfirst($key),'menu-item-status'=>'publish','menu-item-position'=>$i+1];if($key==='products')$args+=['menu-item-type'=>'custom','menu-item-url'=>home_url('/products/')];else $args+=['menu-item-type'=>'post_type','menu-item-object'=>'page','menu-item-object-id'=>$ids[$key]];wp_update_nav_menu_item($menu,0,$args);}
+ foreach(['home','products','applications','resources','documents','markets','about'] as $i=>$key){$args=['menu-item-title'=>ucfirst($key),'menu-item-status'=>'publish','menu-item-position'=>$i+1];if($key==='products')$args+=['menu-item-type'=>'custom','menu-item-url'=>home_url('/products/')];else $args+=['menu-item-type'=>'post_type','menu-item-object'=>'page','menu-item-object-id'=>$ids[$key]];wp_update_nav_menu_item($menu,0,$args);}
  $locations=get_theme_mod('nav_menu_locations',[]);$locations['primary']=$menu;set_theme_mod('nav_menu_locations',$locations);
 }
 flush_rewrite_rules();WP_CLI::success('Root pages ready; existing content preserved.');

@@ -21,6 +21,8 @@ if (($target['key'] ?? '') !== 'home') {
 $current = get_post_field('post_content', $id, 'raw');
 $current_hash = hash('sha256', $current);
 $allowed_hashes = [
+    // First-round Home review content, before supplier-intent refinement.
+    '5b53df6211c1fa69d9a06587e2c64b163823b70e71a97b815041a3fe72236991',
     // Former approved Home seed with the 14 linked product grades.
     'e9c160c32e846e2196af266fd13129ad9d757046a0f7bfe245950ee38f5b7dd5',
     // Former Home seed before the one-time grade-link migration.
@@ -33,10 +35,12 @@ if ($current !== $target_content && !in_array($current_hash, $allowed_hashes, tr
 
 $old_title = 'Malaysia Titanium Dioxide Supplier | TiO₂ Malaysia';
 $old_description = 'Explore titanium dioxide grades, applications, destination markets and document request paths through TiO₂ Malaysia for international industrial buyers.';
+$review_title = 'Titanium Dioxide Supplier & Products | TiO2Products';
+$review_description = 'Explore industrial titanium dioxide pigment grades for coatings, plastics, masterbatch and printing inks. Review technical information and request sourcing support.';
 $title = get_post_meta($id, '_tio2_seo_title', true);
 $description = get_post_meta($id, '_tio2_seo_description', true);
-if (!in_array($title, [$old_title, $target['seo_title']], true)
-    || !in_array($description, [$old_description, $target['seo_description']], true)) {
+if (!in_array($title, [$old_title, $review_title, $target['seo_title']], true)
+    || !in_array($description, [$old_description, $review_description, $target['seo_description']], true)) {
     WP_CLI::error('Home SEO fields were edited; no content was changed.');
 }
 

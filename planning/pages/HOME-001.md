@@ -7,7 +7,7 @@ Family: Homepage · EN
 
 ## 页面职责
 
-Introduce industrial titanium dioxide products, the operating company, application and technical evaluation paths, documents and sourcing support. Route buyers to product and specialist pages before destination markets.
+Introduce industrial titanium dioxide supply and the operating company, then route buyers to grade, application, technical evaluation, document and destination-market pages.
 
 ## 内容与事实
 
@@ -19,9 +19,9 @@ Introduce industrial titanium dioxide products, the operating company, applicati
 ## SEO
 
 Primary keyword: titanium dioxide supplier
-Title: Titanium Dioxide Supplier & Products | TiO2Products
-Meta: Explore industrial titanium dioxide pigment grades for coatings, plastics, masterbatch and printing inks. Review technical information and request sourcing support.
-H1: Titanium Dioxide Products for Industrial Applications
+Title: Industrial Titanium Dioxide Supplier | TiO2Products
+Meta: Source industrial titanium dioxide with grade-specific product information, application guidance and document support for buyers worldwide.
+H1: Titanium Dioxide Supplier for Industrial Applications
 
 Keyword boundary: Home owns broad industrial TiO₂ sourcing intent; Products owns grade and pigment selection; Application and Process pages own their specialist queries; About owns company and origin proof; Market pages own destination-country intent.
 
@@ -30,6 +30,8 @@ Keyword boundary: Home owns broad industrial TiO₂ sourcing intent; Products ow
 - [Visual reference](<../inputs/pages/home/04_planning/visual-designs/home-root-page-hero-v1.4/homepage-root-page-hero-preview-v1.4.html>)
 
 ## 实现与验收
+
+2026-09-23 second-round Home review: the section order and visual system remain unchanged. Hero now owns supplier intent; the existing Products hub keeps grade and pigment selection intent. The Company section names the operator, Taiping location, rutile TiO₂ scope, 14 listed grades and Port Klang export coordination as stated on the existing About/Home pages. It does not repeat the About page's volume, country or customer counts without underlying evidence. Documents names TDS, SDS, COA and COO as requestable categories with availability and scope confirmed during review. The process module keeps the two product routes; a separate existing Ti-Pure alternative guide replaces the repeated process resource card. The seven-link header/footer order is changed by an explicit, guarded menu migration; RFQ remains the separate final action. The shared TiO2 Malaysia logo asset is retained; the Footer tagline clarifies the TiO2Products site identity. Production content and menus remain unchanged pending release approval.
 
 2026-09-23 homepage positioning update for review: the new source order is Hero → Company → Products → Applications → Technical Evaluation → Process → Resources → Documents → Markets → RFQ. The existing four groups and fourteen grade destinations remain. Application copy lists evaluation factors, not grade performance promises. Malaysia remains in the verified operating-company context. The Home-only schema graph relates WebPage, WebSite and Organization. A guarded one-time migration updates only an unchanged owned Home baseline; it refuses other editor edits and requires separate release authorization for production. No production update is part of this review.
 
