@@ -15,6 +15,14 @@ add_action('wp_enqueue_scripts',function(){wp_enqueue_style('tio2',get_template_
 add_filter('pre_get_document_title',function($title){if(is_singular('product')&&function_exists('tio2_product_data')) return tio2_product_data(get_queried_object_id())['seo_title']??$title;return $title;});
 add_filter('wp_robots',function($robots){if(!get_option('blog_public')){$robots=['noindex'=>true,'nofollow'=>true];}return $robots;});
 add_filter('wp_sitemaps_enabled',fn($enabled)=>get_option('blog_public')?$enabled:false);
+add_filter('wp_sitemaps_add_provider',fn($provider,$name)=>$name==='users'?false:$provider,10,2);
+add_action('template_redirect',function(){
+    if(!is_author())return;
+    global $wp_query;
+    $wp_query->set_404();
+    status_header(404);
+    nocache_headers();
+},0);
 add_action('wp_head',function(){
     if(!is_singular('product')||!function_exists('tio2_product_data'))return;
     $id=get_queried_object_id();$d=tio2_product_data($id);if(!$d)return;
