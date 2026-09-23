@@ -28,5 +28,8 @@ foreach ($seeds as [$seed, $path, $existing]) {
     foreach (['_tio2_owner'=>'tio2-wordpress','_tio2_page_id'=>$seed['page_id'],'_tio2_seo_title'=>$seed['seo_title'],'_tio2_seo_description'=>$seed['seo_description'],'_tio2_source'=>'data/utility/'.$seed['page_id'].'.json'] as $key=>$value) update_post_meta($id, $key, $value);
     WP_CLI::log('Imported '.$seed['page_id'].' at /'.$path.'/');
 }
+$privacy = get_page_by_path('privacy-policy', OBJECT, 'page');
+$current_privacy = (int) get_option('wp_page_for_privacy_policy');
+if ($privacy && tio2_owns_page($privacy->ID, '_tio2_page_id', 'LEGAL-PRIV-EN') && (!$current_privacy || get_post_meta($current_privacy, '_tio2_core_privacy_draft_relocated', true) === '1')) update_option('wp_page_for_privacy_policy', $privacy->ID);
 flush_rewrite_rules();
 WP_CLI::success('Utility pages ready; existing editor content preserved.');

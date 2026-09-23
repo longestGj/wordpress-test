@@ -13,8 +13,12 @@ add_filter('pre_get_document_title', function ($title) {
     return tio2_is_utility_page($id) ? (get_post_meta($id, '_tio2_seo_title', true) ?: $title) : $title;
 }, 30);
 add_filter('wp_robots', function ($robots) {
-    if (is_404()) { $robots['noindex'] = true; $robots['follow'] = true; }
-    if (is_page() && tio2_utility_id() === 'CONV-THANK') { $robots['noindex'] = true; $robots['nofollow'] = true; }
+    if (is_404()) {
+        $robots['noindex'] = true;
+        if (get_option('blog_public')) { unset($robots['nofollow']); $robots['follow'] = true; }
+        else unset($robots['follow']);
+    }
+    if (is_page() && tio2_utility_id() === 'CONV-THANK') { $robots['noindex'] = true; $robots['nofollow'] = true; unset($robots['follow']); }
     return $robots;
 }, 30);
 add_filter('wp_sitemaps_posts_query_args', function ($args, $post_type) {
@@ -92,6 +96,7 @@ function tio2_render_utility_page($id) {
             }
         }
         echo $processor->get_updated_html();
+        if ($page_id === 'CONV-THANK' && !tio2_request_receipt_kind() && !tio2_route_ready('/request-a-quote/') && !tio2_route_ready('/request-documents/') && !tio2_route_ready('/request-sample/')) echo '<div class="wrap utility-fallback"><p>These request forms are not available yet. For a general business question, <a href="'.esc_url(home_url('/contact/')).'">contact our team</a>.</p></div>';
         echo '</div>';
     }
     echo '</main>';

@@ -1,30 +1,36 @@
 """HTTP checks with no test fixtures for an integrated local WordPress instance."""
 from urllib.parse import urljoin
+from pathlib import Path
+import json
 import os
 import requests
 from bs4 import BeautifulSoup
 
 base = os.environ.get('TIO2_BASE_URL', 'http://localhost:8080').rstrip('/')
 assert base.startswith(('http://localhost:', 'http://127.0.0.1:')), 'Local site only'
+root = Path(__file__).resolve().parents[1]
 pages = {
-    '/contact/': ('Contact TiO2 Malaysia | General Inquiries', 'Contact TiO2 Malaysia'),
-    '/privacy-policy/': ('Privacy Policy | TiO2 Malaysia', 'Privacy Policy'),
-    '/ms/privacy-policy/': ('Dasar Privasi | TiO2 Malaysia', 'Dasar Privasi'),
-    '/cookie-policy/': ('Cookie Policy | TiO2 Malaysia', 'Cookie Policy'),
-    '/thank-you/': ('Thank You | TiO2 Malaysia', 'How can we help?'),
+    '/contact/': ('CONTACT-001', 'Contact TiO2 Malaysia'),
+    '/privacy-policy/': ('LEGAL-PRIV-EN', 'Privacy Policy'),
+    '/ms/privacy-policy/': ('LEGAL-PRIV-MS', 'Dasar Privasi'),
+    '/cookie-policy/': ('LEGAL-COOKIE-EN', 'Cookie Policy'),
+    '/thank-you/': ('CONV-THANK', 'How can we help?'),
 }
-for path, (title, h1) in pages.items():
+for path, (identity, h1) in pages.items():
+    seed = json.loads((root / 'data' / 'utility' / (identity + '.json')).read_text(encoding='utf-8'))
     response = requests.get(base + path, timeout=15)
     assert response.status_code == 200, (path, response.status_code)
     soup = BeautifulSoup(response.text, 'html.parser')
-    assert soup.title and soup.title.get_text(strip=True) == title, path
+    assert soup.title and soup.title.get_text(strip=True) == seed['seo_title'], path
     assert len(soup.select('main h1')) == 1 and soup.select_one('main h1').get_text(strip=True) == h1, path
     assert soup.select_one('link[rel=canonical]')['href'] == base + path, path
-    assert soup.select_one('meta[name=description]'), path
+    assert soup.select_one('meta[name=description]')['content'] == seed['seo_description'], path
     if path == '/contact/':
         assert soup.select_one('form[action$="admin-post.php"]'), 'Contact receiver missing'
         assert response.cookies.get('tio2_flow'), 'Contact session Cookie missing'
     if path == '/ms/privacy-policy/': assert soup.html.get('lang') == 'ms-MY'
+    if path in ('/privacy-policy/', '/ms/privacy-policy/'):
+        assert not soup.select('link[rel=alternate][hreflang]'), 'Language relationship needs human review'
     if path == '/thank-you/':
         assert 'noindex' in soup.select_one('meta[name=robots]')['content']
         assert 'received your' not in soup.get_text(' ', strip=True).lower()

@@ -12,8 +12,11 @@ add_action('init', function () {
     if (!wp_next_scheduled('tio2_expire_inquiries')) wp_schedule_event(time() + DAY_IN_SECONDS, 'daily', 'tio2_expire_inquiries');
 });
 add_action('tio2_expire_inquiries', function () {
-    $old = get_posts(['post_type' => 'tio2_inquiry', 'post_status' => 'private', 'date_query' => [['before' => '3 years ago']], 'posts_per_page' => 100, 'fields' => 'ids']);
-    foreach ($old as $id) wp_delete_post($id, true);
+    do {
+        $old = get_posts(['post_type' => 'tio2_inquiry', 'post_status' => 'private', 'date_query' => [['before' => '3 years ago']], 'posts_per_page' => 100, 'fields' => 'ids']);
+        $removed = 0;
+        foreach ($old as $id) if (wp_delete_post($id, true)) $removed++;
+    } while (count($old) === 100 && $removed > 0);
 });
 add_action('add_meta_boxes_tio2_inquiry', function () {
     add_meta_box('tio2_inquiry_details', 'Inquiry details', function ($post) {
