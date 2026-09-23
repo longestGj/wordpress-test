@@ -1,0 +1,22 @@
+[
+  {
+    "name": "hero",
+    "old": "<p>Compare a candidate titanium dioxide Grade with the incumbent in the coating system that will actually use it. Keep the formulation basis, dispersion route, application and cure, substrate and film, exposure and endpoint methods comparable. Similar technical-data-sheet fields, nominal TiO2 content or one favourable result do not establish equivalence.</p>",
+    "new": "<p>Evaluate titanium dioxide for paints and coatings in the intended formulation, dispersion process and prepared film. For new formulation work, define optical, gloss, rheology and exposure endpoints before screening Grades. When replacing an incumbent, compare candidates under matched formulation, process, film and test conditions. Similar TDS fields or one favourable result do not establish product equivalence.</p>"
+  },
+  {
+    "name": "hero-action",
+    "old": "<a class=\"secondaryAction\" href=\"#define-the-coating\">Build Your Comparison Basis</a>",
+    "new": "<a class=\"secondaryAction\" href=\"#define-the-coating\">Define Your Coating System</a>"
+  },
+  {
+    "name": "glance",
+    "old": "<!-- wp:html --><section class=\"contentSection definition topic-module-coat-02\"",
+    "new": "<!-- wp:html --><div class=\"coatingsGlance\" aria-labelledby=\"coatings-glance-title\"><div class=\"glanceInner\">\n<h2 id=\"coatings-glance-title\">Coatings Evaluation at a Glance</h2>\n<div class=\"glanceGrid\">\n<div class=\"glanceItem\"><h3>Formulation</h3><p>Binder, vehicle, pigment loading and additives</p></div>\n<div class=\"glanceItem\"><h3>Dispersion</h3><p>Incorporation route and process history</p></div>\n<div class=\"glanceItem\"><h3>Optical</h3><p>Hiding, opacity, colour, undertone and gloss</p></div>\n<div class=\"glanceItem\"><h3>Film</h3><p>Substrate, film build, application and cure</p></div>\n<div class=\"glanceItem\"><h3>Durability</h3><p>Exposure, weathering and test method</p></div>\n<div class=\"glanceItem\"><h3>Grades to Review</h3><p><a href=\"#grades-to-review\">Eight candidate Grades across chloride and sulfate routes</a></p></div>\n</div></div></div><!-- /wp:html -->\n\n<!-- wp:html --><section class=\"contentSection definition topic-module-coat-02\""
+  },
+  {
+    "name": "rfq",
+    "old": "<p>If you have not selected a Grade, choose <code>Not sure / Need help</code>. Tell us your application, required or estimated quantity in metric tonnes, destination and any other context you already know. If you are comparing several Grades, choose one lead Grade or <code>Not sure / Need help</code> and list the other candidates in <code>Additional Requirements</code>.</p>",
+    "new": "<p>If you have not selected a Grade, submit the application and the formulation, quantity, destination and evaluation requirements you already know. If several Grades are under review, list the candidate Grades in the request.</p>"
+  }
+]

@@ -271,3 +271,13 @@
 .topic-coatings .requestCard a{width:100%}
 .topic-coatings .sources ol{padding:22px 18px 8px 38px}}
 @media (prefers-reduced-motion:reduce){.topic-coatings *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+.topic-coatings .coatingsGlance{padding:38px 32px 44px;background:var(--coat-soft);border-bottom:1px solid var(--coat-line)}
+.topic-coatings .glanceInner{width:min(1120px,100%);margin:auto}
+.topic-coatings .coatingsGlance h2{margin:0 0 22px;color:var(--coat-navy);font-size:clamp(26px,2.7vw,32px);line-height:1.2}
+.topic-coatings .glanceGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.topic-coatings .glanceItem{min-width:0;padding:16px 18px;background:#fff;border:1px solid var(--coat-line);border-radius:6px}
+.topic-coatings .glanceItem h3{margin:0 0 6px;color:var(--coat-navy);font-size:16px;line-height:1.3}
+.topic-coatings .glanceItem p{margin:0;font-size:15px;line-height:1.5}
+@media (max-width:800px){.topic-coatings .coatingsGlance{padding-inline:24px}.topic-coatings .glanceGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.topic-coatings .coatingsGlance{padding:30px 20px 34px}}
+@media (max-width:360px){.topic-coatings .glanceGrid{grid-template-columns:1fr}}
