@@ -67,6 +67,20 @@ add_filter('wp_robots', function ($robots) {
     }
     return $robots;
 });
+add_filter('wp_sitemaps_posts_query_args', function ($args, $post_type) {
+    if ($post_type !== 'page') return $args;
+    foreach (['MARKET-LOCALE-PT-BR', 'MARKET-LOCALE-PT-BR-MARKETS'] as $identity) {
+        $ids = get_posts([
+            'post_type' => 'page', 'post_status' => 'publish', 'fields' => 'ids', 'posts_per_page' => -1,
+            'meta_query' => [
+                ['key' => '_tio2_owner', 'value' => 'tio2-wordpress'],
+                ['key' => '_tio2_market_id', 'value' => $identity],
+            ],
+        ]);
+        if ($ids) $args['post__not_in'] = array_merge($args['post__not_in'] ?? [], $ids);
+    }
+    return $args;
+}, 20, 2);
 add_filter('nav_menu_link_attributes', function ($atts, $item) {
     if (is_page() && tio2_market_id(get_queried_object_id())
         && untrailingslashit($item->url) === untrailingslashit(home_url('/markets/'))) $atts['aria-current'] = 'true';
