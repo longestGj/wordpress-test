@@ -1,6 +1,6 @@
 # HOME-001 — Home
 
-Status: REVIEW
+Status: ACCEPTED
 
 URL: `/`
 Family: Homepage · EN
@@ -35,7 +35,7 @@ Keyword boundary: Home owns broad industrial TiO₂ sourcing intent; Products ow
 
 2026-09-23 homepage positioning update for review: the new source order is Hero → Company → Products → Applications → Technical Evaluation → Process → Resources → Documents → Markets → RFQ. The existing four groups and fourteen grade destinations remain. Application copy lists evaluation factors, not grade performance promises. Malaysia remains in the verified operating-company context. The Home-only schema graph relates WebPage, WebSite and Organization. A guarded one-time migration updates only an unchanged owned Home baseline; it refuses other editor edits and requires separate release authorization for production. No production update is part of this review.
 
-Earlier Home implementation was accepted and deployed; this positioning update remains in REVIEW until the new content and schema are approved.
+The earlier Home implementation was accepted and deployed. The updated Home passed local migration, route, SEO, schema, navigation, 14-grade-link, and 1440/768/390 browser checks on 2026-09-23. The user then requested republication of the updated main branch; production migration and public checks remain part of this release.
 Native WordPress Page; Products Hub renders through the Product archive.
 
 2026-09-23 Home product cards: desktop headings keep all four cards expanded; at widths up to 560px the cards remain keyboard-operable accordions with matching expand/collapse symbols. All 14 grade labels link to their corresponding published product detail routes. Verified on an isolated local WordPress preview and the private server stage at `http://localhost:18080/` with desktop/mobile browser checks, all 14 destination pages, and visual screenshots. The server stage remained `noindex, nofollow`.
