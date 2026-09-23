@@ -92,12 +92,16 @@ def visible_modules(text, kind):
         number, module_name, body = int(parts[i]), parts[i + 1], parts[i + 2]
         if number not in allowed:
             continue
-        lines, pending, skip = [], '', False
+        lines, pending, skip, conditional_block = [], '', False, False
         for raw in body.splitlines():
             line = raw.strip()
             if not line:
                 continue
+            if conditional_block:
+                continue
             if line.startswith('#### '):
+                if kind == 'uk' and line.startswith('#### Conditional '):
+                    conditional_block = True;continue
                 lines.append('### ' + line[5:]); pending = ''; skip = False; continue
             inline = re.match(r'^([A-Za-z][A-Za-z0-9 /&-]*):\s+(.+)$', line)
             if inline and '`' in inline.group(2):

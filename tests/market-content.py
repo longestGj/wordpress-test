@@ -45,6 +45,8 @@ assert len(uk.select('details')) == 6
 assert len({a['href'] for a in uk.select('a[href^="/products/"]') if a['href'] != '/products/'}) == 6
 assert uk.select('a[href="#application-paths"]') and uk.select('a[href="#representative-grades"]')
 assert 'Great Britain' in pages['MARKET-UK-001'][2] and 'Northern Ireland' in pages['MARKET-UK-001'][2]
+assert 'Trade context checked 5 September 2026' not in pages['MARKET-UK-001'][2]
+assert 'Conditional current-status paragraph' not in pages['MARKET-UK-001'][2]
 assert pages['MARKET-BR-EN'][0]['path'] == '/markets/brazil/'
 assert pages['MARKET-BR-PT'][0]['path'] == '/pt-br/markets/brazil/'
 assert pages['MARKET-BR-EN'][2] != pages['MARKET-BR-PT'][2]

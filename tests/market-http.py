@@ -30,9 +30,11 @@ with sync_playwright() as playwright:
             assert page.title() == seed['seo_title'], seed['identity']
             assert page.locator('meta[name="description"]').get_attribute('content') == seed['seo_description']
             assert page.locator('link[rel="canonical"]').get_attribute('href') == BASE + seed['path']
+            assert 'noindex' in page.locator('meta[name="robots"]').get_attribute('content')
             assert page.locator('html').get_attribute('lang') == seed['language']
             assert page.locator('link[href*="markets.css"]').count() == 1
             assert not page.evaluate('document.documentElement.scrollWidth > window.innerWidth'), (seed['identity'], width)
+            assert all(not action.is_visible() for action in page.locator('main a.market-action[aria-disabled="true"]').all())
             if width == 1440:
                 local_links = {a.get_attribute('href').split('#',1)[0] for a in page.locator('main a[href^="/"]').all()}
                 for path in local_links:
@@ -50,8 +52,23 @@ with sync_playwright() as playwright:
                 assert button.is_visible()
                 button.click(); assert page.locator('#site-menu').is_visible()
                 page.keyboard.press('Escape'); assert not page.locator('#site-menu').is_visible()
+                page.wait_for_function('document.activeElement === document.querySelector(".menuButton")')
+                if page.locator('main details').count():
+                    summary = page.locator('main details summary').first
+                    summary.focus(); assert summary.evaluate('(element) => document.activeElement === element')
+                    page.keyboard.press('Enter')
+                    assert page.locator('main details').first.get_attribute('open') is not None, seed['identity']
+                    assert summary.evaluate('(element) => parseFloat(getComputedStyle(element).outlineWidth) >= 3')
+                    page.keyboard.press('Enter')
+                    assert page.locator('main details').first.get_attribute('open') is None
             page.screenshot(path=str(OUT/(seed['identity']+'-'+str(width)+'.png')),full_page=True)
             page.close()
+    hub = browser.new_page()
+    response = hub.goto(BASE + '/markets/', wait_until='networkidle')
+    assert response and response.status == 200
+    hub_links = {a.get_attribute('href') for a in hub.locator('main a[href^="/"]').all()}
+    assert {seed['path'] for seed in seeds}.issubset(hub_links), 'Markets Hub is missing a live destination link'
+    hub.close()
     browser.close()
-print('PASS: 11 local market Pages × 3 widths; HTTP, SEO, hreflang, language, menu and overflow')
+print('PASS: 11 local market Pages × 3 widths; HTTP, SEO, hreflang, language, hub links, menu and overflow')
 print('Screenshots:', OUT)
