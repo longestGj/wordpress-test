@@ -26,11 +26,12 @@ Build the stage bundle from the reviewed code, containing `.dockerignore`, `depl
 ```bash
 docker compose --env-file .env -f deploy-next/compose.stage.yaml config --quiet
 docker compose --env-file .env -f deploy-next/compose.stage.yaml build wordpress
+docker compose --env-file .env -f deploy-next/compose.stage.yaml up -d --no-build db
 docker compose --env-file .env -f deploy-next/compose.stage.yaml up -d --no-build --no-deps --force-recreate --renew-anon-volumes wordpress
 bash deploy-next/bootstrap-stage.sh
 ```
 
-For the first installation, start `db` before `wordpress`. On an update, `--renew-anon-volumes` gives WordPress the core files from the new image; the named database and uploads volumes remain. The entrypoint refuses to start if retained core files differ from the image. `bootstrap-stage.sh` accepts CRLF or LF environment files, requires a loopback URL on port 18080, and preserves existing imported pages on repeat runs. It must remain a stage-only operation. Do not run database-mutating test fixtures against this server.
+On an update, `--renew-anon-volumes` gives WordPress the core files from the new image; the named database and uploads volumes remain. The entrypoint refuses to start if retained core files differ from the image. `bootstrap-stage.sh` accepts CRLF or LF environment files, requires a loopback URL on port 18080, sets the initial admin password through standard input, and preserves existing imported pages on repeat runs. It must remain a stage-only operation. Do not run database-mutating test fixtures against this server.
 
 ## Cutover gates
 

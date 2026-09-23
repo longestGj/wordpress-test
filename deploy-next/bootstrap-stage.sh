@@ -27,10 +27,24 @@ done
 (( ready == 1 )) || { echo 'WordPress files did not become ready' >&2; exit 1; }
 
 if ! wp core is-installed >/dev/null 2>&1; then
-  # WP-CLI reads this value from stdin, so it never appears in process arguments.
-  printf '%s\n' "$WP_ADMIN_PASSWORD" | wp core install --url="$PUBLIC_URL" \
-    --title='TiO2 Products Stage' --admin_user="$WP_ADMIN_USER" \
-    --prompt=admin_password --admin_email="$WP_ADMIN_EMAIL" --skip-email
+  # WP-CLI generates a temporary password here. Suppress its output so it
+  # cannot appear in deployment logs; the next step sets our secret via stdin.
+  if ! wp core install --url="$PUBLIC_URL" --title='TiO2 Products Stage' \
+    --admin_user="$WP_ADMIN_USER" --admin_email="$WP_ADMIN_EMAIL" \
+    --skip-email --quiet >/dev/null 2>&1; then
+    echo 'WordPress core installation failed' >&2
+    exit 1
+  fi
+  # These are created by a fresh WordPress install, before any editor can edit them.
+  if [[ "$(wp post get 1 --field=post_name)" == hello-world ]]; then wp post delete 1 --force --quiet; fi
+  if [[ "$(wp post get 2 --field=post_name)" == sample-page ]]; then wp post delete 2 --force --quiet; fi
+fi
+
+# A marker makes this step retryable if installation succeeded but bootstrap
+# stopped before setting the intended password. Later runs preserve changes.
+if ! wp option get tio2_stage_admin_ready >/dev/null 2>&1; then
+  printf '%s\n' "$WP_ADMIN_PASSWORD" | wp eval-file /workspace/deploy-next/set-admin-password.php "$WP_ADMIN_USER"
+  wp option add tio2_stage_admin_ready 1 --quiet
 fi
 
 wp plugin activate tio2-products
