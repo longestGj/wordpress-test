@@ -1,0 +1,9 @@
+.git
+.local
+.worktrees
+backups
+docs
+planning
+tests
+.env
+*.md

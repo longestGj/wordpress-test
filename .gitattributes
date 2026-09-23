@@ -3,3 +3,4 @@ planning/inputs/** -text
 planning/products/tds/** -text
 planning/RELATIONSHIPS.csv -text
 planning/products/tds/*.pdf binary
+deploy-next/*.sh text eol=lf
