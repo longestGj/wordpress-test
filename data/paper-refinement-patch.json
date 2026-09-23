@@ -1,0 +1,18 @@
+[
+  {
+    "old": "<div class=\"wp-block-group heroInner\"><!-- wp:heading",
+    "new": "<div class=\"wp-block-group heroInner\"><!-- wp:html --><nav aria-label=\"Breadcrumb\" class=\"breadcrumb\"><a href=\"/\">Home</a><span aria-hidden=\"true\">/</span><a href=\"/applications/\">Applications</a><span aria-hidden=\"true\">/</span><span aria-current=\"page\">Paper</span></nav><!-- /wp:html --><!-- wp:heading"
+  },
+  {
+    "old": "Evaluate a TiO2 candidate against the paper result you need, using an identified baseline, the actual paper system and method-matched finished-paper data.",
+    "new": "Evaluate a TiO2 candidate against the paper result you need, whether screening a new Grade or comparing it with an existing baseline, using the actual paper system and method-matched finished-paper data."
+  },
+  {
+    "old": "<!-- wp:html --><section class=\"contentSection system-definition",
+    "new": "<!-- wp:html --><div class=\"paperGlance\"><div class=\"sectionInner\"><h2>Paper Evaluation at a Glance</h2><div class=\"paperGlanceGrid\">\n<div class=\"paperGlanceCard\"><h3>Paper system</h3><p>Paper type, end use, furnish and construction.</p></div>\n<div class=\"paperGlanceCard\"><h3>Addition route</h3><p>Wet-end, coating or another buyer-defined route.</p></div>\n<div class=\"paperGlanceCard\"><h3>Optical properties</h3><p>Brightness, whiteness, colour and opacity, each with its own method.</p></div>\n<div class=\"paperGlanceCard\"><h3>System observations</h3><p>Dispersion, agglomeration and retention-related observations in the declared system.</p></div>\n<div class=\"paperGlanceCard\"><h3>Evidence identity</h3><p>Document, lot, sample, method and applicable test conditions.</p></div>\n<div class=\"paperGlanceCard\"><h3>Validation</h3><p>Laboratory sheet work, more representative trials and finished-paper results remain distinct evidence.</p></div>\n<div class=\"paperGlanceCard\"><h3>Grades to Review</h3><p><a href=\"#grades-to-review\">Review two candidate Grades</a> against your paper system.</p></div>\n</div></div></div><!-- /wp:html -->\n\n<!-- wp:html --><section class=\"contentSection system-definition"
+  },
+  {
+    "old": "<li><a href=\"/request-a-quote/\">Discuss Your Paper Application</a> with a known lead Grade or <code>Not sure / Need help</code>. Tell us your application, required or estimated quantity in metric tonnes, destination and any other context you already know. If several Grades are under consideration, list the others in <code>Additional Requirements</code>.</li>",
+    "new": "<li><a href=\"/request-a-quote/\">Discuss Your Paper Application</a> even if no Grade has been selected. Share the paper type, furnish, addition route, intended end use, required or estimated quantity in metric tonnes, destination and evaluation requirements already known. If several Grades are under consideration, list all candidate Grades in the request. Unknown details may remain unknown.</li>"
+  }
+]

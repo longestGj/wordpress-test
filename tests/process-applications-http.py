@@ -1,9 +1,12 @@
 """End-to-end page contract; source adapter supplies independent frozen-source text."""
-import json,re
+import json,re,sys
 from pathlib import Path
+from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[1]
+BASE=(sys.argv[1] if len(sys.argv)>1 else 'http://localhost:8080').rstrip('/')
+assert urlparse(BASE).hostname in {'localhost','127.0.0.1'}
 for file in (ROOT/'data/process-applications').glob('*.json'):
  d=json.loads(file.read_text(encoding='utf-8'));source=ROOT/'planning/inputs'/d['source']
  if source.exists():
@@ -14,12 +17,12 @@ paths=['/products/chloride-process-titanium-dioxide/','/products/sulfate-process
 seeds={d['url']:d for d in (json.loads(p.read_text(encoding='utf-8')) for p in (ROOT/'data/process-applications').glob('*.json'))}
 normalize=lambda text: re.sub(r'\s+','',text)
 for path in paths:
- r=requests.get('http://localhost:8080'+path,timeout=20)
+ r=requests.get(BASE+path,timeout=20)
  assert r.status_code==200,(path,r.status_code)
  s=BeautifulSoup(r.text,'html.parser')
  assert len(s.select('main'))==1 and len(s.select('h1'))==1,path
  assert 'noindex' in s.select_one('meta[name=robots]')['content']
- assert s.select_one('link[rel=canonical]')['href']=='http://localhost:8080'+path
+ assert s.select_one('link[rel=canonical]')['href']==BASE+path
  assert not s.select('main script:not([type="application/ld+json"])')
  d=seeds[path];expected=BeautifulSoup(d['content'],'html.parser');main=s.select_one('main')
  assert not main.select('.wp-block-group__inner-container'),(path,'Legacy group wrapper breaks approved grid/flex children')
@@ -28,13 +31,13 @@ for path in paths:
  assert s.title.get_text()==d['seo_title'] and s.select_one('meta[name=description]')['content']==d['seo_description']
  assert len(s.select('meta[name=description]'))==1 and len(s.select('link[rel=canonical]'))==1
  if path.startswith('/products/'):
-  alias=requests.get('http://localhost:8080/'+path.split('/')[-2]+'/',allow_redirects=False,timeout=20)
-  assert alias.status_code==301 and alias.headers['Location']=='http://localhost:8080'+path,(path,'Process alias not canonicalized')
+  alias=requests.get(BASE+'/'+path.split('/')[-2]+'/',allow_redirects=False,timeout=20)
+  assert alias.status_code==301 and alias.headers['Location']==BASE+path,(path,'Process alias not canonicalized')
  for a in main.select('a[href]'):
   href=a['href']
   if href.startswith('#'):assert main.find(id=href[1:]),(path,'Missing anchor',href)
   elif href.startswith('/'):
-   assert requests.get('http://localhost:8080'+href,timeout=20).status_code==200,(path,'Broken link',href)
+   assert requests.get(BASE+href,timeout=20).status_code==200,(path,'Broken link',href)
  graphs=[json.loads(x.string) for x in s.select('script[type="application/ld+json"]')]
  assert not any(x.get('@type') in ('Product','Offer','FAQPage') for g in graphs if isinstance(g,dict) for x in g.get('@graph',[]))
  print('PASS',path)
