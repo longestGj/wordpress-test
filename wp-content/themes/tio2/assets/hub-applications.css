@@ -234,3 +234,12 @@
 .hub-applications .finalBand{ padding-block:56px; }
 .hub-applications .finalCta{ gap:24px; }
 .hub-applications .finalCta .primary{ width:100%; }}
+.hub-applications .applicationCard .evaluationFactors{margin:20px 0 8px}
+.hub-applications .applicationCard .evaluationFactors strong{display:block;margin-bottom:10px;color:#062b5b;font-size:15px}
+.hub-applications .applicationCard .evaluationFactors ul{display:flex;flex-wrap:wrap;gap:7px 14px;margin:0;padding:0;list-style:none}
+.hub-applications .applicationCard .evaluationFactors li{position:relative;padding-left:13px;font-size:14px;line-height:1.45;color:#334155}
+.hub-applications .applicationCard .evaluationFactors li::before{content:"•";position:absolute;left:0;color:#008078}
+.hub-applications .applicationCard .applicationAction{display:inline-flex;margin:16px 0 0}
+.hub-applications .applicationCard .gradeLabel{margin-top:24px;color:#526174}
+.hub-applications .applicationCard .gradeChip{min-height:38px;border-color:#d9e2ec;background:#f8fafc;color:#334155;font-weight:500}
+.hub-applications .applicationCard .gradeChip:hover{border-color:#008078;color:#006c66;background:#eaf7f6}
