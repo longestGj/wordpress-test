@@ -4,12 +4,32 @@
   if (hub.classList.contains('hub-home')) {
     const compact = window.matchMedia('(max-width: 560px)');
     const groups = [...hub.querySelectorAll('.product-group')];
-    const syncGroups = () => groups.forEach(group => { group.open = !compact.matches; });
+    const syncSymbol = group => {
+      const symbol = group.querySelector('summary span[aria-hidden]');
+      if (symbol) symbol.textContent = group.open ? '−' : '+';
+    };
+    const syncGroups = () => groups.forEach(group => {
+      group.open = !compact.matches;
+      const summary = group.querySelector('summary');
+      if (compact.matches) {
+        summary.removeAttribute('role');
+        summary.removeAttribute('aria-level');
+        summary.removeAttribute('tabindex');
+      } else {
+        summary.setAttribute('role', 'heading');
+        summary.setAttribute('aria-level', '3');
+        summary.setAttribute('tabindex', '-1');
+      }
+      syncSymbol(group);
+    });
     syncGroups();
     compact.addEventListener('change', syncGroups);
-    groups.forEach(group => group.querySelector('summary').addEventListener('click', event => {
-      if (!compact.matches) event.preventDefault();
-    }));
+    groups.forEach(group => {
+      group.addEventListener('toggle', () => syncSymbol(group));
+      group.querySelector('summary').addEventListener('click', event => {
+        if (!compact.matches) event.preventDefault();
+      });
+    });
   }
   const buttons = [...hub.querySelectorAll('[data-app]')];
   const panels = [...hub.querySelectorAll('[data-result-app]')];

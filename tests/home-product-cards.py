@@ -3,7 +3,7 @@ import json
 import unittest
 from pathlib import Path
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import expect, sync_playwright
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,6 +42,9 @@ class HomeProductCardsTest(unittest.TestCase):
             group.locator('summary').click()
             self.assertTrue(group.locator('.product-body').is_visible())
             self.assertIsNotNone(group.get_attribute('open'))
+            self.assertEqual(group.locator('summary').get_attribute('role'), 'heading')
+            self.assertEqual(group.locator('summary').get_attribute('aria-level'), '3')
+            self.assertEqual(group.locator('summary').get_attribute('tabindex'), '-1')
         finally:
             page.close()
 
@@ -50,10 +53,15 @@ class HomeProductCardsTest(unittest.TestCase):
         try:
             group = page.locator('.product-group').first
             self.assertFalse(group.locator('.product-body').is_visible())
+            self.assertIsNone(group.locator('summary').get_attribute('role'))
+            self.assertIsNone(group.locator('summary').get_attribute('tabindex'))
+            self.assertEqual(group.locator('summary span').inner_text(), '+')
             group.locator('summary').click()
             self.assertTrue(group.locator('.product-body').is_visible())
+            expect(group.locator('summary span')).to_have_text('−')
             group.locator('summary').click()
             self.assertFalse(group.locator('.product-body').is_visible())
+            expect(group.locator('summary span')).to_have_text('+')
         finally:
             page.close()
 
