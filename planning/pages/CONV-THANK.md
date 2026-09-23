@@ -1,6 +1,6 @@
 # CONV-THANK — Thank You
 
-Status: PLANNED
+Status: REVIEW
 
 URL: `/thank-you/`
 Family: Shared form-result utility page · EN
@@ -30,9 +30,15 @@ Keyword boundary: No search ownership; RFQ Documents and Sample source pages ret
 
 ## 实现与验收
 
-当前 WordPress 尚未实现。本页迁入已有策划输入，不继承其他旧项目的开发/上线状态。进入 READY 时确认本页行为、视觉补充和相关目标已经清楚；不重新调查已批准产品事实。
+本页已在本地 WordPress 实现，运行态验收结果与待解决依赖记录于下方；不继承旧项目的开发或上线状态。
 
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+## WordPress implementation (2026-09-23)
+
+Native page seed: `data/utility/CONV-THANK.json`. Default and forged-parameter visits show only request choices. A Quote, Documents or Sample receiver must explicitly call `tio2_issue_request_receipt()` after positive acknowledgement; a ten-minute opaque token bound to the `tio2_flow` browser session selects its success text. No active receiver calls this yet, so no current request can show a false success state. Keep `noindex,nofollow` and sitemap exclusion. Runtime receiver integration remains dependent on the separate request-page work.
+
+Local review 2026-09-23: direct and forged-parameter HTTP visits returned the neutral H1 with no success text; `tests/utility-receipt-runtime.php` verified a short-lived test token worked only in its issuing browser session and deleted the transient fixture. The page is `noindex,nofollow` and excluded from the sitemap query. Browser review at 1440/768/390 saved screenshots in `.local/utility-http/`. The three request receivers remain unavailable; the page labels their choices as unavailable and links to Contact for a general inquiry. Success states cannot be fully accepted until real receivers provide positive acknowledgement.

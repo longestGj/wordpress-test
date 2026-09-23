@@ -1,6 +1,6 @@
 # LEGAL-COOKIE-EN — Cookie Policy
 
-Status: PLANNED
+Status: REVIEW
 
 URL: `/cookie-policy/`
 Family: Legal / cookie page · EN
@@ -19,7 +19,7 @@ Explain verified Cookies, Local Storage, consent categories, providers, duration
 
 Primary keyword: NO_PRIMARY_KEYWORD
 Title: Cookie Policy | TiO2 Malaysia
-Meta: Learn which Cookies and similar technologies TiO2 Malaysia uses and how to review or change available Analytics preferences.
+Meta: Learn which necessary Cookies TiO2 Malaysia uses for its contact form and how to review browser storage.
 H1: Cookie Policy
 
 Keyword boundary: Cookie Policy owns storage and consent transparency only; Cookie Settings remains a non-page functional control.
@@ -30,9 +30,15 @@ Keyword boundary: Cookie Policy owns storage and consent transparency only; Cook
 
 ## 实现与验收
 
-当前 WordPress 尚未实现。本页迁入已有策划输入，不继承其他旧项目的开发/上线状态。进入 READY 时确认本页行为、视觉补充和相关目标已经清楚；不重新调查已批准产品事实。
+本页已在本地 WordPress 实现，运行态验收结果与待解决依赖记录于下方；不继承旧项目的开发或上线状态。
 
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+## WordPress implementation (2026-09-23)
+
+Native page seed: `data/utility/LEGAL-COOKIE-EN.json`. The actual inventory is the necessary `tio2_flow` browser-session Cookie, temporary server state, and WordPress administrator authentication where applicable. No consent Local Storage record or optional Analytics/advertising service is activated. Footer Cookie Settings is a read-only status dialog. Clean-browser production inventory remains a release check.
+
+Local review 2026-09-23: `/cookie-policy/` returns HTTP 200 with expected SEO and one H1. A clean browser retained no Cookie or Local Storage on the privacy page; visiting Contact set only the HttpOnly browser-session `tio2_flow` Cookie, with Local Storage still empty and network requests confined to localhost. Browser review at 1440/768/390 verified the mobile inventory cards and Cookie Settings focus; screenshots are in `.local/utility-http/`. Production inventory and legal review remain open.

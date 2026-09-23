@@ -68,7 +68,22 @@ docker compose run --rm cli eval-file /workspace/tests/product-model.php
 
 Home, Markets, Products, Applications, Documents, Resources and About now run in this local WordPress. The seven-item shared navigation links to these pages. Root copy is in Pages as an HTML block preserving the fixed approved layout; text/link changes currently use the native block's HTML editor. SEO has separate fields. Products Hub content is the private `Products` Page (`product-hub-content`), rendered only at the public Product archive route. Its directory, discovery relationships and Not Sure guidance have a separate editable field panel; these relationships do not overwrite technical product applications.
 
-Two process, five application and eight resource pages are also implemented. RFQ, Sample and Request Documents receivers, child market/document pages, legal and consent experiences remain later work. Fixed global/page RFQ links currently have no receiver; this blocks release. Other missing child destinations render as unavailable labels, and product-context form actions remain hidden. Documents selection works locally but explicitly reports the disconnected receiver. No analytics or nonessential tracking is added. Production SEO/schema expansion and indexing require release review. Large approved PNG assets still need delivery optimization before production performance acceptance.
+Two process, five application, eight resource, eleven market and three document-guide pages are also implemented. Contact, English and Bahasa Malaysia privacy pages, Cookie Policy, Thank You and the real 404 template run locally. RFQ, Sample and Request Documents receivers remain later work. Fixed global/page RFQ links currently have no receiver; this blocks release. Other missing request destinations render as unavailable labels, and product-context form actions remain hidden. Documents selection works locally but reports the disconnected receiver. No analytics or nonessential tracking is added. Production SEO/schema expansion and indexing require release review. Large approved PNG assets still need delivery optimization before production performance acceptance.
+
+## Contact, legal and system pages
+
+Contact saves a validated general inquiry as a private local WordPress record for staff review. It does not send email. The Footer's Cookie Settings dialog reports the current necessary storage state; there is no optional Analytics choice or consent Local Storage record. Thank You shows a receipt only when a future Quote, Documents or Sample receiver positively acknowledges a submission and issues a short-lived, browser-bound marker. Direct and forged visits show request choices, with unavailable routes clearly marked. An unknown URL uses the theme's actual HTTP 404 template.
+
+For a fresh or existing local installation, verify `home` is localhost and back up the database before importing. Run the explicit legacy ownership migration, then preserve an untouched WordPress Core starter privacy draft if it occupies `/privacy-policy/`, then import the five owned Pages:
+
+```powershell
+docker compose run --rm cli eval-file /workspace/scripts/migrate-page-ownership.php
+# Run the next command only if the untouched Core starter draft occupies /privacy-policy/.
+docker compose run --rm cli eval-file /workspace/scripts/relocate-core-privacy-draft.php
+docker compose run --rm cli eval-file /workspace/scripts/import-utility-pages.php
+```
+
+The draft relocation refuses edited or unrelated content and does not adopt it. Repeat imports preserve page content and SEO edits. Local checks are `tests/utility-http.py`, `tests/utility-browser.py`, `tests/utility-form-http.py`, `tests/utility-import.php`, `tests/utility-receipt-runtime.php` and `tests/utility-retention.php`. Database-mutating tests refuse non-local sites and remove their fixtures. Screenshots are saved under ignored `.local/utility-http/`. The six Page Specs hold their review status and remaining legal/receiver dependencies.
 
 ## Upgrading an existing installation
 

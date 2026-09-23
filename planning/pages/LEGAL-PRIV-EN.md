@@ -1,6 +1,6 @@
 # LEGAL-PRIV-EN — Privacy Policy / Privacy Notice
 
-Status: PLANNED
+Status: REVIEW
 
 URL: `/privacy-policy/`
 Family: Legal / privacy page · EN
@@ -19,7 +19,7 @@ Explain verified personal-data processing, recipients, retention, rights, transf
 
 Primary keyword: NO_PRIMARY_KEYWORD
 Title: Privacy Policy | TiO2 Malaysia
-Meta: Learn how TiO2 Malaysia handles business inquiry data, service providers, retention, Cookies and applicable privacy choices.
+Meta: Learn how TiO2 Malaysia handles general business inquiry data, retention, necessary Cookies and privacy requests.
 H1: Privacy Policy
 
 Keyword boundary: Privacy owns legal transparency only and must not compete with commercial or informational landing pages.
@@ -30,9 +30,17 @@ Keyword boundary: Privacy owns legal transparency only and must not compete with
 
 ## 实现与验收
 
-当前 WordPress 尚未实现。本页迁入已有策划输入，不继承其他旧项目的开发/上线状态。进入 READY 时确认本页行为、视觉补充和相关目标已经清楚；不重新调查已批准产品事实。
+本页已在本地 WordPress 实现，运行态验收结果与待解决依赖记录于下方；不继承旧项目的开发或上线状态。
 
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+## WordPress implementation (2026-09-23)
+
+Native page seed: `data/utility/LEGAL-PRIV-EN.json`. The prior Web3Forms/Analytics disclosures were adapted to the actual WordPress Contact receiver, temporary session state and no active optional measurement. Production hosting details and legal review remain open before release. The original source is retained as an approved planning input, not rendered verbatim where its old data flow conflicts with this build.
+
+Local integration found the untouched WordPress Core starter privacy draft at `/privacy-policy/`. `scripts/relocate-core-privacy-draft.php` strictly verifies and preserves that unpublished draft under a separate slug before this owned page is imported. The import then points WordPress's privacy-page option to this owned English page, without adopting the starter draft.
+
+Local review 2026-09-23: `/privacy-policy/` returns HTTP 200 with the expected SEO and one H1. The WordPress starter draft remains unpublished; the owned page is selected as the Core privacy page. Browser review at 1440/768/390 and screenshots are in `.local/utility-http/`. Fresh browser inspection found no Cookie or Local Storage item on this page and no non-local requests. Production host/provider disclosures and legal approval remain open; local review is not publication approval.
