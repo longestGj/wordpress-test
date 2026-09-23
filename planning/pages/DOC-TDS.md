@@ -1,6 +1,6 @@
 # DOC-TDS — TDS, SDS & COA
 
-Status: REVIEW
+Status: ACCEPTED
 
 URL: `/documents/tds-sds-coa/`
 Family: Document / compliance page · EN
@@ -30,7 +30,7 @@ Keyword boundary: Document page owns document/compliance intent; product pages o
 
 ## 实现与验收
 
-已完成可审查的原生 WordPress Page 内容种子、主题展示与本地导入入口。当前环境尚未导入数据库；REVIEW 表示代码与独立预览待审查，不表示 WordPress 运行态验收通过。
+已完成原生 WordPress Page、本地导入与运行态验收。ACCEPTED 仅指本地页面验收，不代表生产发布或文件申请接收流程已上线。
 
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
@@ -47,5 +47,6 @@ Release: requires explicit user authorization. Email remains a later task. Runti
 - 已通过：`python tests/document-content.py`；独立 PHP 8.3.35 `tests/document-render.php`（无数据库，WP 接口 stub）；本次变更 PHP lint；`node --check wp-content/themes/tio2/assets/documents.js`；`python tests/planning-integrity.py`。
 - 已通过：`python tests/document-browser.py` 的独立 seed 预览 1440/768/390 页面宽度、FAQ 键盘/焦点、TDS 多选/Grade 清除/详情链接，无浏览器脚本错误。截图在未提交的 `.local/document-preview/`。此检查不覆盖真实 WordPress chrome、编辑器或数据库。
 - 独立代码审核已修复密码保护正文泄露及绝对站内链接绕过目标可用性检查，并补入无数据库回归。
-- 未通过运行态入口：Docker Desktop Linux 引擎管道不存在；实际 `python tests/document-http.py` 对 localhost:8080 返回 HTTP 502。未执行数据库写入、迁移、导入或生产发布。
-- 待环境恢复后，由单一数据库写入者依次运行 ownership migration → document import → `tests/document-import.php`（local-only，finally 恢复正文/SEO/归属和本次新增回修夹具）→ `tests/document-http.py`，然后真实 WordPress 1440/768/390、后台编辑/回修及接收表单联调。上述待验项目完成前不得标记 ACCEPTED。
+- 2026-09-23 本地运行态：先备份数据库，再执行显式 ownership migration（0 页需变更）与三页导入；`tests/document-import.php` 验证重复导入保留正文和 SEO、拒绝无归属页面并恢复夹具；`tests/document-http.py` 验证三页 200、标题、SEO、canonical、noindex 及展示的站内链接。
+- 真实 WordPress 浏览器检查覆盖三页 1440/768/390，无整页横向溢出及脚本错误；FAQ 可用键盘展开，TDS Grade 可选择、清空并显示对应详情链接。后台实际保存 DOC-REACH 标题、重复导入后保留编辑，再恢复原值并清理新增测试修订。截图位于忽略的 `.local/document-runtime/`。
+- Request Documents 接收页尚未实现，页面因此隐藏申请动作；与接收表单的联调属于后续转化页面任务。未执行生产发布。
