@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">TiO2Products social square</title>
+  <desc id="desc">TiO2Products symbol centered on Deep Navy.</desc>
+  <path fill="#0B2D5B" d="M0 36Q0 0 36 0H476Q512 0 512 36V476Q512 512 476 512H36Q0 512 0 476Z"/><g transform="translate(96 66) scale(2)"><defs><clipPath id="symbol-geometry"><path d="M80 0L3 46L1 51L2 94L50 65L79 42L85 39L90 41L110 55L121 66L121 116L118 120L87 141L124 165L153 148L159 142L159 49L154 43Z"/><path d="M48 76L1 105L1 141L5 147L74 188L82 190L113 172L114 170L74 143L50 120L50 76Z"/></clipPath></defs><path fill="#FFFFFF" d="M80 0L3 46L1 51L2 94L50 65L79 42L85 39L90 41L110 55L121 66L121 116L118 120L87 141L124 165L153 148L159 142L159 49L154 43Z"/><path fill="#DDF7FA" d="M48 76L1 105L1 141L5 147L74 188L82 190L113 172L114 170L74 143L50 120L50 76Z"/><g clip-path="url(#symbol-geometry)"><path fill="#0EA5A0" d="M80 0 L165 42 L165 190 L105 190 L105 73 L80 50 L115 24 Z"/><path fill="#45C4C4" opacity=".28" d="M117 110 L165 78 L165 190 L105 190 Z"/></g></g>
+</svg>
