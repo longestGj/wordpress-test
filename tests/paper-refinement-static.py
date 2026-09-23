@@ -4,8 +4,10 @@ import subprocess
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
+# Fixed pre-refinement seed, independent of the current branch HEAD.
+base_commit = '3c8e63ab1041a112f1be6efe3786fd34d5d9eb2d'
 old = json.loads(subprocess.check_output(
-    ['git', 'show', 'HEAD:data/process-applications/paper.json'],
+    ['git', 'show', f'{base_commit}:data/process-applications/paper.json'],
     cwd=root, text=True, encoding='utf-8'))
 new = json.loads((root / 'data/process-applications/paper.json').read_text(encoding='utf-8'))
 patch = json.loads((root / 'data/paper-refinement-patch.json').read_text(encoding='utf-8'))
