@@ -1,5 +1,7 @@
 # Domain and site route audit — 2026-09-23
 
+This is the pre-release snapshot. For the subsequently published new site, see [Production acceptance release](production-release-2026-09-23.md).
+
 The confirmed public domain is `https://tio2products.com/`; the user confirmed that `info@tio2products.com` receives mail. The company brand name “TiO2 Malaysia” remains in titles and copy. Historical artifacts under `planning/inputs` are retained as source evidence rather than edited as live pages.
 
 ## Local WordPress review
