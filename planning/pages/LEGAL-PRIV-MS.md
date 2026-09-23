@@ -1,6 +1,6 @@
 # LEGAL-PRIV-MS — Dasar Privasi / Notis Perlindungan Data Peribadi
 
-Status: PLANNED
+Status: BUILDING
 
 URL: `/ms/privacy-policy/`
 Family: Legal / privacy page · MS-MY
@@ -19,7 +19,7 @@ Provide the approved Bahasa Malaysia counterpart to the verified English privacy
 
 Primary keyword: NO_PRIMARY_KEYWORD
 Title: Dasar Privasi | TiO2 Malaysia
-Meta: Ketahui cara TiO2 Malaysia mengendalikan data pertanyaan perniagaan, penyedia perkhidmatan, tempoh penyimpanan, Kuki dan pilihan privasi.
+Meta: Ketahui cara TiO2 Malaysia mengendalikan data pertanyaan perniagaan umum, tempoh penyimpanan, Kuki yang diperlukan dan permintaan privasi.
 H1: Dasar Privasi
 
 Keyword boundary: Bahasa Malaysia Privacy owns language-equivalent legal transparency only and must not target commercial queries.
@@ -36,3 +36,7 @@ Review: approved content and facts; SEO; 1440/768/390; internal links; forms whe
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+## WordPress implementation (2026-09-23)
+
+Native page seed: `data/utility/LEGAL-PRIV-MS.json` under a structural `/ms/` parent. The changed data-flow passages correspond to the English policy's local Contact receiver and inactive Analytics state. Reciprocal hreflang is withheld until a Bahasa Malaysia reviewer confirms final legal equivalence. Production hosting details and legal review remain open before release.

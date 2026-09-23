@@ -1,6 +1,6 @@
 # LEGAL-PRIV-EN — Privacy Policy / Privacy Notice
 
-Status: PLANNED
+Status: BUILDING
 
 URL: `/privacy-policy/`
 Family: Legal / privacy page · EN
@@ -19,7 +19,7 @@ Explain verified personal-data processing, recipients, retention, rights, transf
 
 Primary keyword: NO_PRIMARY_KEYWORD
 Title: Privacy Policy | TiO2 Malaysia
-Meta: Learn how TiO2 Malaysia handles business inquiry data, service providers, retention, Cookies and applicable privacy choices.
+Meta: Learn how TiO2 Malaysia handles general business inquiry data, retention, necessary Cookies and privacy requests.
 H1: Privacy Policy
 
 Keyword boundary: Privacy owns legal transparency only and must not compete with commercial or informational landing pages.
@@ -36,3 +36,7 @@ Review: approved content and facts; SEO; 1440/768/390; internal links; forms whe
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+## WordPress implementation (2026-09-23)
+
+Native page seed: `data/utility/LEGAL-PRIV-EN.json`. The prior Web3Forms/Analytics disclosures were adapted to the actual WordPress Contact receiver, temporary session state and no active optional measurement. Production hosting details and legal review remain open before release. The original source is retained as an approved planning input, not rendered verbatim where its old data flow conflicts with this build.

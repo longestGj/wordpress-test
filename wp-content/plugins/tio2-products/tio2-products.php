@@ -79,3 +79,4 @@ require __DIR__.'/revisions.php';
 require __DIR__.'/ownership.php';
 
 require_once __DIR__.'/documents.php';
+require_once __DIR__.'/utility.php';

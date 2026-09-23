@@ -1,6 +1,6 @@
 # CONTACT-001 — Contact
 
-Status: PLANNED
+Status: BUILDING
 
 URL: `/contact/`
 Family: Utility contact page · EN
@@ -36,3 +36,7 @@ Review: approved content and facts; SEO; 1440/768/390; internal links; forms whe
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+## WordPress implementation (2026-09-23)
+
+Native page seed: `data/utility/CONTACT-001.json`. The general form validates on the server and creates a private `tio2_inquiry` record in local WordPress. It does not send email; its success text confirms local receipt only. Errors and success state use a 10-minute server-side record bound to the `tio2_flow` session Cookie. The dedicated request links are disabled until their receivers are ready. Local HTTP, desktop/tablet/mobile, keyboard and database restoration checks remain for the single database writer's integration pass.

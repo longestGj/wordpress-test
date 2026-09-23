@@ -1,6 +1,6 @@
 # LEGAL-COOKIE-EN — Cookie Policy
 
-Status: PLANNED
+Status: BUILDING
 
 URL: `/cookie-policy/`
 Family: Legal / cookie page · EN
@@ -19,7 +19,7 @@ Explain verified Cookies, Local Storage, consent categories, providers, duration
 
 Primary keyword: NO_PRIMARY_KEYWORD
 Title: Cookie Policy | TiO2 Malaysia
-Meta: Learn which Cookies and similar technologies TiO2 Malaysia uses and how to review or change available Analytics preferences.
+Meta: Learn which necessary Cookies TiO2 Malaysia uses for its contact form and how to review browser storage.
 H1: Cookie Policy
 
 Keyword boundary: Cookie Policy owns storage and consent transparency only; Cookie Settings remains a non-page functional control.
@@ -36,3 +36,7 @@ Review: approved content and facts; SEO; 1440/768/390; internal links; forms whe
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+## WordPress implementation (2026-09-23)
+
+Native page seed: `data/utility/LEGAL-COOKIE-EN.json`. The actual inventory is the necessary `tio2_flow` browser-session Cookie, temporary server state, and WordPress administrator authentication where applicable. No consent Local Storage record or optional Analytics/advertising service is activated. Footer Cookie Settings is a read-only status dialog. Clean-browser production inventory remains a release check.
