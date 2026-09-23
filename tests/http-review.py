@@ -9,7 +9,10 @@ base='http://localhost:8080'
 def page():
     r=requests.get(base+'/products/m-350/',timeout=20);r.raise_for_status()
     return BeautifulSoup(r.text,'html.parser')
-def schema(soup): return json.loads(soup.select_one('script[type="application/ld+json"]').string)[0]
+def schema(soup):
+    value=json.loads(soup.select_one('script[type="application/ld+json"]').string)
+    nodes=value if isinstance(value,list) else value.get('@graph',[value])
+    return next(node for node in nodes if node.get('@type')=='Product')
 soup=page()
 assert len(soup.select('h1'))==1
 assert soup.title.string==seed['data']['seo_title']
