@@ -17,8 +17,8 @@ add_filter('wp_robots',function($robots){if(!get_option('blog_public')){$robots=
 add_filter('wp_sitemaps_enabled',fn($enabled)=>get_option('blog_public')?$enabled:false);
 add_filter('wp_sitemaps_add_provider',fn($provider,$name)=>$name==='users'?false:$provider,10,2);
 add_action('wp_sitemaps_init',function($sitemaps){
-    $sitemaps->registry->add_provider('product-archive',new class extends WP_Sitemaps_Provider {
-        public function __construct(){ $this->name='product-archive';$this->object_type='product-archive'; }
+    $sitemaps->registry->add_provider('productarchives',new class extends WP_Sitemaps_Provider {
+        public function __construct(){ $this->name='productarchives';$this->object_type='productarchive'; }
         public function get_max_num_pages($object_subtype=''){ return tio2_route_ready('/products/')?1:0; }
         public function get_url_list($page_num,$object_subtype=''){
             if($page_num!==1||!$this->get_max_num_pages())return [];
