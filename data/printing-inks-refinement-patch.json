@@ -1,0 +1,17 @@
+[
+  {
+    "name": "hero-scope",
+    "old": "<p>Compare a TiO2 candidate in the white ink and print you actually need. Define the vehicle, printing process, substrate, deposited film, drying or cure, end use, incumbent and rejection conditions before interpreting opacity, dispersion or cost.</p>",
+    "new": "<p>Evaluate a TiO2 pigment candidate in the white printing-ink system and printed white layer you actually use, whether screening a new Grade or comparing it with an incumbent. Define the vehicle, printing process, substrate, deposited layer, drying or cure, end use, measurement basis and acceptance or rejection conditions before interpreting opacity, dispersion or cost. Final suitability depends on the stated ink and print system and its acceptance method.</p>"
+  },
+  {
+    "name": "evaluation-glance",
+    "old": "<!-- wp:html --><section class=\"contentSection system-definition topic-module-INK-02\"",
+    "new": "<!-- wp:html --><div class=\"inksGlance\" aria-labelledby=\"inks-glance-title\"><div class=\"glanceInner\"><h2 id=\"inks-glance-title\">Printing Inks Evaluation at a Glance</h2><div class=\"glanceGrid\"><div class=\"glanceItem\"><h3>Ink system</h3><p>Vehicle, formulation and pigment state</p></div><div class=\"glanceItem\"><h3>Printing process</h3><p>Print route, equipment and stated process conditions</p></div><div class=\"glanceItem\"><h3>Substrate &amp; printed layer</h3><p>Substrate, surface treatment, deposited white layer and drying or cure</p></div><div class=\"glanceItem\"><h3>Optical result</h3><p>Opacity, coverage, colour and pinholes</p></div><div class=\"glanceItem\"><h3>Dispersion &amp; rheology</h3><p>Dispersion state, viscosity and storage stability</p></div><div class=\"glanceItem\"><h3>Grind</h3><p>Fineness-of-grind reading within the stated method</p></div><div class=\"glanceItem\"><h3>Grades to Review</h3><p><a href=\"#grades-to-review\">Four candidate Grades</a></p></div></div></div></div><!-- /wp:html -->\n<!-- wp:html --><section class=\"contentSection system-definition topic-module-INK-02\""
+  },
+  {
+    "name": "rfq-field-independent-copy",
+    "old": "<article class=\"requestCard\"><a href=\"/request-a-quote/\">Discuss Your Printing Inks Application</a> with a known lead Grade or <code>Not sure / Need help</code>. Tell us your application, required or estimated quantity in metric tonnes, destination and any other context you already know. If several Grades are under consideration, list the others in <code>Additional Requirements</code>.</article>",
+    "new": "<article class=\"requestCard\"><a href=\"/request-a-quote/\">Discuss Your Printing Inks Application</a> even if no Grade has been selected. Share the white printing-ink application, ink vehicle, printing process, substrate, expected quantity, destination and evaluation requirements already known. If several Grades are under consideration, list all candidate Grades in the request. Unknown details may remain unknown; final suitability is assessed against the intended ink and printed layer.</article>"
+  }
+]
