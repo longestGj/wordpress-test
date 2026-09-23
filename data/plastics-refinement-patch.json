@@ -1,0 +1,17 @@
+[
+  {
+    "name": "visible-breadcrumb",
+    "old": "<!-- wp:heading {\"anchor\": \"page-title\", \"level\": 1} -->",
+    "new": "<!-- wp:html --><nav aria-label=\"Breadcrumb\" class=\"breadcrumb\"><a href=\"/\">Home</a><span aria-hidden=\"true\">/</span><a href=\"/applications/\">Applications</a><span aria-hidden=\"true\">/</span><span aria-current=\"page\">Plastics</span></nav><!-- /wp:html --><!-- wp:heading {\"anchor\": \"page-title\", \"level\": 1} -->"
+  },
+  {
+    "name": "evaluation-glance",
+    "old": "<!-- wp:group {\"className\": \"content-section module-plas-02\", \"tagName\": \"section\"} -->",
+    "new": "<!-- wp:html --><div class=\"plasticsGlance\" aria-labelledby=\"plastics-glance-title\"><div class=\"glanceInner\"><h2 id=\"plastics-glance-title\">Plastics Evaluation at a Glance</h2><div class=\"glanceGrid\"><div class=\"glanceItem\"><h3>Material system</h3><p>Resin; virgin, recycled, blended, filled or reinforced where relevant</p></div><div class=\"glanceItem\"><h3>TiO₂ introduction route</h3><p>Direct powder, compound or masterbatch</p></div><div class=\"glanceItem\"><h3>Processing</h3><p>Conversion process, process window and finished specimen</p></div><div class=\"glanceItem\"><h3>Optical</h3><p>Whiteness, opacity and surface condition in the finished system</p></div><div class=\"glanceItem\"><h3>Dispersion &amp; defects</h3><p>FPV, film test, gels, black specks, holes and other line defects</p></div><div class=\"glanceItem\"><h3>Exposure</h3><p>Indoor, outdoor, warm, wet or chemical conditions; stated test methods</p></div><div class=\"glanceItem\"><h3>Grades to Review</h3><p><a href=\"#grades-to-review\">Eight candidate Grades across chloride and sulfate routes</a></p></div></div></div></div><!-- /wp:html --><!-- wp:group {\"className\": \"content-section module-plas-02\", \"tagName\": \"section\"} -->"
+  },
+  {
+    "name": "rfq-field-independent-copy",
+    "old": "<li><a href=\"/request-a-quote/\">Request a Quote</a> with a known lead Grade or <code>Not sure / Need help</code>. Tell us your plastics application, required or estimated quantity in metric tonnes, destination and any other context you already know. If several Grades are under consideration, list the others in <code>Additional Requirements</code>.</li>",
+    "new": "<li><a href=\"/request-a-quote/\">Request a Quote</a> for your plastics application. If no Grade has been selected, share the resin or material, TiO₂ introduction route, conversion process, expected quantity, destination and evaluation requirements already known. If several Grades are under consideration, list the candidate Grades in the request. Final Grade selection and suitability remain subject to technical evaluation.</li>"
+  }
+]

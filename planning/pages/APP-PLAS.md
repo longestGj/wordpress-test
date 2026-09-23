@@ -34,6 +34,8 @@ Keyword boundary: Application page owns generic use-case intent; grade pages own
 当前本地实现已完成并在对应批次验收；ACCEPTED 不代表正式上线或所有外部目标已连接。
 Native WordPress Page; Products Hub renders through the Product archive.
 
+2026-09-23 定向精修验收：Hero 增加可见面包屑，Hero 后增加仅概括现有正文的七项速览，RFQ 文案去除表单字段名依赖。8 个 Grade、主体技术章节、Plastics / Masterbatch 边界、技术来源与 SEO Title 保持不变。通用 application-detail `ItemList` 已依据公开产品链接、`product_application` 分类和 published 状态输出 8 项；本地验证覆盖链接、Schema、1440/768/390 视口和移动端表格。正式站点尚未发布。
+
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
