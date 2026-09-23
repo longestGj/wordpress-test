@@ -54,3 +54,5 @@ Review: approved content and facts; SEO; 1440/768/390; internal links; forms whe
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+2026-09-24 navigation refinement release: source `8ab2bbb102c12e36d73bf9d03a7ff16e1a700528` removed four Home-only header overrides, leaving the shared site header dimensions, spacing and RFQ button style in control. After a verified production backup and image switch, public browser checks confirmed Home and Products header parity at 1440/1024/768/390/320px with no overflow or JavaScript errors. The 58-route domain audit and exact 57-URL sitemap check passed. See the [production release record](../../docs/audits/production-release-2026-09-23.md).
