@@ -1,6 +1,6 @@
 # HOME-001 — Home
 
-Status: REVIEW
+Status: RELEASED
 
 URL: `/`
 Family: Homepage · EN
@@ -32,6 +32,8 @@ Keyword boundary: Home owns broad industrial TiO₂ sourcing intent; Products ow
 ## 实现与验收
 
 2026-09-23 visual-only Home refinement candidate: the current WordPress Home body, wording, links, heading levels and ten-section order stay unchanged. Home-scoped CSS integrates the existing TiO₂ material image into a dark full-width Hero; uses unboxed company data rows, a technical product index, numbered application typography, editorial resource rows, document rules and a minimal market grid; and makes the RFQ closing section visible at mobile widths. The existing blue/teal palette, Inter font, brand assets, menu behavior and product accordions remain. Browser review at 1440, 1024, 768, 390 and 320 pixels checked image loading, no horizontal overflow, the mobile RFQ and three-line small-phone Hero heading. An independent review found and the subsequent browser regression resolved a 1024px Hero image height gap. The visual candidate is in a separate worktree and has not been published.
+
+2026-09-23 Home visual refinement release: source `dfa483fd3b70ea33f47b62ed0552aae422b8636b` is live at `https://tio2products.com/` after a verified production backup. The public page passed Home title/H1/meta, menus, schema, 14 grade links and 1440/1024/768/390/320 browser checks, including the 1024px Hero image edge, mobile RFQ, 320px heading, no horizontal overflow and no browser errors. All 58 mapped routes and the 57 expected sitemap URLs passed. See the [production release record](../../docs/audits/production-release-2026-09-23.md).
 
 2026-09-23 second-round Home review: the section order and visual system remain unchanged. Hero now owns supplier intent; the existing Products hub keeps grade and pigment selection intent. The Company section names the operator, Taiping location, rutile TiO₂ scope, 14 listed grades and Port Klang export coordination as stated on the existing About/Home pages. It does not repeat the About page's volume, country or customer counts without underlying evidence. Documents names TDS, SDS, COA and COO as requestable categories with availability and scope confirmed during review. The process module keeps the two product routes; a separate existing Ti-Pure alternative guide replaces the repeated process resource card. The seven-link header/footer order is changed by an explicit, guarded menu migration; RFQ remains the separate final action. The shared TiO2 Malaysia logo asset is retained; the Footer tagline clarifies the TiO2Products site identity. Production content and menus remain unchanged pending release approval.
 
