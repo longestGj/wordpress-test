@@ -1,6 +1,6 @@
 # APP-COAT — TiO2 for Coatings
 
-Status: ACCEPTED
+Status: RELEASED
 
 URL: `/applications/titanium-dioxide-for-coatings/`
 Family: Application landing page · EN
@@ -52,3 +52,5 @@ The application-detail `ItemList` is derived from actual product links on each t
 The exact-copy migration and seed change only four passages: Hero text, its secondary CTA, the inserted summary and the RFQ field-label passage. Sections 02–08 and 10 (technical method, endpoint/grade tables, sources) have unchanged HTML content. No new technical performance claim or source-verification issue was identified from the approved content.
 
 Validation: `tests/coatings-refinement-http.py` passes on both isolated preview and `http://localhost:8080`, covering the single H1, SEO/canonical, Hero intents, six summary categories, all eight unchanged Grade links and process classes, five application-detail ItemLists, RFQ wording, sources, endpoint table and 1440/768/390 layouts. An additional 320px keyboard check found no overflow and a visible focus outline on the Grade CTA. `tests/coatings-refinement-migration.php` passes against the isolated local database, including repeat-run preservation of unrelated editor content and rejection of mixed/edited Hero copy. After one main-local migration, a second run reported current content. Main-local `tests/process-applications-http.py`, `tests/batch-http.py` and `tests/planning-integrity.py` pass. Independent code review found migration and public-Schema edge cases; both were fixed and the recheck found no remaining Critical or Important issue.
+
+Production release on 2026-09-23: the guarded detail migration and subsequent sitewide brand migration applied after a verified backup. Public detail-page SEO, content, links, schema and 1440/768/390 layout checks passed. See the [release record](../../docs/audits/production-release-2026-09-23.md).

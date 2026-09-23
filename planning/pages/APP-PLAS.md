@@ -1,6 +1,6 @@
 # APP-PLAS — TiO2 for Plastics
 
-Status: ACCEPTED
+Status: RELEASED
 
 URL: `/applications/titanium-dioxide-for-plastics/`
 Family: Application landing page · EN
@@ -40,3 +40,5 @@ Review: approved content and facts; SEO; 1440/768/390; internal links; forms whe
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+Production release on 2026-09-23: the guarded detail migration and subsequent sitewide brand migration applied after a verified backup. Public detail-page SEO, content, grade links, schema and 1440/768/390 layout checks passed. See the [release record](../../docs/audits/production-release-2026-09-23.md).
