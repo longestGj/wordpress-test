@@ -6,8 +6,11 @@ if (!$page || $page->post_status!=='publish' || !tio2_owns_page($page->ID,'_tio2
 $patch=json_decode(file_get_contents('/workspace/data/coatings-refinement-patch.json'),true,512,JSON_THROW_ON_ERROR);
 $content=$page->post_content;
 foreach ($patch as $entry) {
-    if (str_contains($content,$entry['new'])) continue;
-    if (substr_count($content,$entry['old'])!==1) WP_CLI::error('Coatings passage was edited; review manually. No content changed.');
+    $old_count=substr_count($content,$entry['old']);
+    $new_count=substr_count($content,$entry['new']);
+    $old_within_new=str_contains($entry['new'],$entry['old']);
+    if ($new_count===1 && $old_count===($old_within_new?1:0)) continue;
+    if ($old_count!==1 || $new_count!==0) WP_CLI::error('Coatings passage was edited or duplicated; review manually. No content changed.');
     $content=str_replace($entry['old'],$entry['new'],$content);
 }
 $old_title='Titanium Dioxide for Coatings | Grade Evaluation';

@@ -1,6 +1,7 @@
 """Read-only, local end-to-end contract for the Coatings evaluation page."""
 import json
 import sys
+from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
@@ -10,6 +11,8 @@ from playwright.sync_api import sync_playwright
 
 base = (sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:8085').rstrip('/')
 assert urlparse(base).hostname in {'localhost', '127.0.0.1'}
+seed = json.loads((Path(__file__).resolve().parents[1] / 'data/process-applications/coatings.json').read_text(encoding='utf-8'))
+assert seed['expected_text'] == BeautifulSoup(seed['content'], 'html.parser').get_text(' ', strip=True)
 path = '/applications/titanium-dioxide-for-coatings/'
 response = requests.get(base + path, timeout=20)
 response.raise_for_status()
@@ -38,6 +41,10 @@ assert glance.select_one('a[href="#grades-to-review"]')
 grades = main.select('#grades-to-review tbody tr')
 expected = ['M-350', 'M-510', 'M-896', 'M-996', 'M-2196', 'M-895', 'M-52', 'M-2377']
 assert [row.select_one('td').get_text(strip=True) for row in grades] == expected
+assert [row.select('td')[1].get_text(' ', strip=True) for row in grades] == [
+    'Chloride process', 'Chloride process', 'Chloride process', 'Sulfate process',
+    'Sulfate process', 'Chloride process', 'Sulfate process', 'Sulfate process'
+]
 for row, grade in zip(grades, expected, strict=True):
     assert row.select_one('a')['href'] == '/products/' + grade.lower() + '/'
 

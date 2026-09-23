@@ -16,6 +16,12 @@ try {
     if (get_post_meta($page->ID,'_tio2_seo_title',true)!=='Titanium Dioxide for Paints & Coatings | Grade Evaluation') throw new RuntimeException('SEO title was not updated.');
     $result=$run();clean_post_cache($page->ID);
     if ($result->return_code!==0 || get_post_field('post_content',$page->ID,'raw')!==$updated) throw new RuntimeException('Repeat migration changed page content.');
+    $patch=json_decode(file_get_contents('/workspace/data/coatings-refinement-patch.json'),true,512,JSON_THROW_ON_ERROR);
+    $both=$updated.$patch[0]['old'];
+    wp_update_post(['ID'=>$page->ID,'post_content'=>wp_slash($both)]);
+    $result=$run();clean_post_cache($page->ID);
+    if ($result->return_code===0 || get_post_field('post_content',$page->ID,'raw')!==$both) throw new RuntimeException('Mixed old/new Hero was silently accepted.');
+    wp_update_post(['ID'=>$page->ID,'post_content'=>wp_slash($updated)]);
     $edited=str_replace('For new formulation work','Editor changed formulation copy',$updated);
     if ($edited===$updated) throw new RuntimeException('Hero fixture target is missing.');
     wp_update_post(['ID'=>$page->ID,'post_content'=>wp_slash($edited)]);

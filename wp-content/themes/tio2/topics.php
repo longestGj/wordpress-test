@@ -35,8 +35,9 @@ add_action('wp_head',function(){
         $p=new WP_HTML_Tag_Processor(tio2_topic_content($id));$items=[];
         while($p->next_tag('a')){
             $href=$p->get_attribute('href');if(!is_string($href)||!preg_match('~^/products/([a-z0-9-]+)/$~',$href,$m))continue;
-            $product=get_page_by_path($m[1],OBJECT,'product');if(!$product||$product->post_status!=='publish'||post_password_required($product))continue;
+            $product=get_page_by_path($m[1],OBJECT,'product');if(!$product||$product->post_status!=='publish'||$product->post_password!=='')continue;
             if(!$process&&!has_term($key,'product_application',$product->ID))continue;
+            if(isset($items[$product->ID]))continue;
             $items[$product->ID]=['@type'=>'ListItem','position'=>count($items)+1,'name'=>$product->post_title,'url'=>get_permalink($product)];
         }
         if($items)$graph[]=['@type'=>'ItemList','itemListOrder'=>'https://schema.org/ItemListUnordered','itemListElement'=>array_values($items)];
