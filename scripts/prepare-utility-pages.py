@@ -145,6 +145,12 @@ cookie = section(cookie, 'Browser Controls', '''Most browsers allow you to view,
 def save(page_id, slug, title, seo_title, seo_description, content, parent=''):
     # The approved legacy copy predates the confirmed public mailbox domain.
     content = content.replace('info@tio2malaysia.com', 'info@tio2products.com')
+    # GA4 disclosure is maintained as a narrow patch so the historic source stays intact.
+    policy_patch = json.loads((ROOT / 'data' / 'analytics-policy-patch.json').read_text(encoding='utf-8'))
+    for entry in policy_patch.get(page_id, []):
+        if content.count(entry['old']) != 1:
+            raise ValueError(f'Analytics policy source changed: {page_id}')
+        content = content.replace(entry['old'], entry['new'], 1)
     data = dict(page_id=page_id, slug=slug, parent=parent, title=title, seo_title=seo_title,
                 seo_description=seo_description, content=content)
     (OUT / (page_id + '.json')).write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

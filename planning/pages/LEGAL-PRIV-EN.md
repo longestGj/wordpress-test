@@ -39,10 +39,12 @@ Release: requires explicit user authorization. Sending form notifications by ema
 
 ## WordPress implementation (2026-09-23)
 
-Native page seed: `data/utility/LEGAL-PRIV-EN.json`. The prior Web3Forms/Analytics disclosures were adapted to the actual WordPress Contact receiver, temporary session state and no active optional measurement. Production hosting details and legal review remain open before release. The original source is retained as an approved planning input, not rendered verbatim where its old data flow conflicts with this build.
+Native page seed: `data/utility/LEGAL-PRIV-EN.json`. The prior Web3Forms disclosures were adapted to the actual WordPress Contact receiver and temporary session state. The later GA4 update discloses optional measurement after consent. Production hosting details and legal review remain open before release. The original source is retained as an approved planning input, not rendered verbatim where its old data flow conflicts with this build.
 
 Local integration found the untouched WordPress Core starter privacy draft at `/privacy-policy/`. `scripts/relocate-core-privacy-draft.php` strictly verifies and preserves that unpublished draft under a separate slug before this owned page is imported. The import then points WordPress's privacy-page option to this owned English page, without adopting the starter draft.
 
 Local review 2026-09-23: `/privacy-policy/` returns HTTP 200 with the expected SEO and one H1. The WordPress starter draft remains unpublished; the owned page is selected as the Core privacy page. Browser review at 1440/768/390 and screenshots are in `.local/utility-http/`. Fresh browser inspection found no Cookie or Local Storage item on this page and no non-local requests. Production host/provider disclosures and legal approval remain open; local review is not publication approval.
 
-Domain audit 2026-09-23: the privacy contact address is updated to `info@tio2products.com` in the seed and the isolated 18080 preview. GA4 is not configured; the present no-Analytics disclosure remains accurate until an opt-in implementation and legal review are completed.
+Domain audit 2026-09-23: the privacy contact address is updated to `info@tio2products.com` in the seed and the isolated 18080 preview.
+
+GA4 review 2026-09-23: the seed now discloses optional GA4 page and usage measurement only after explicit consent, the stored choice, and withdrawal. The policy migration passed read-only preflight on the isolated preview; production content is unchanged. Legal and production data-processing review remain open before release.
