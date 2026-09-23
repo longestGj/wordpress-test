@@ -18,7 +18,7 @@ Own Germany-specific supplier and procurement intent; link to EU-level complianc
 ## SEO
 
 Primary keyword: titanium dioxide supplier germany
-Title: Titanium Dioxide Supplier for Germany | TiO2 Malaysia
+Title: Titanium Dioxide Supplier for Germany | TiO2Products
 Meta: Evaluate Malaysia-origin titanium dioxide for coatings, plastics and masterbatch procurement in Germany. Review products, documents, samples and quote inputs.
 H1: Titanium Dioxide Supplier for Germany
 

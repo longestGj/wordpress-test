@@ -212,6 +212,8 @@ def prepare(item):
         'main_class': 'resource-page resource-' + key + ' ' + ' '.join(main.get('class', [])),
         'content': content, 'required_text': required_text,
     }
+    from brand_seed_patch import apply_brand_patch
+    seed = apply_brand_patch('resources/' + slug + '.json', seed)
     SEEDS.mkdir(parents=True, exist_ok=True)
     (SEEDS / (slug + '.json')).write_text(json.dumps(seed, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     css = '\n'.join(style.get_text() for style in soup.find_all('style'))

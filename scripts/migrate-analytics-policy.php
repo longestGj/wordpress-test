@@ -18,7 +18,9 @@ foreach ($paths as $identity=>$path) {
     $before = get_post_field('post_content', $page->ID, 'raw');
     $after = $before;
     foreach ($patch[$identity] as $entry) {
-        if (str_contains($after, $entry['new'])) continue;
+        // Accept the pre-brand GA4 disclosure as a historical completed state.
+        $legacy_new = str_replace('TiO2Products', 'TiO2 Malaysia', $entry['new']);
+        if (str_contains($after, $entry['new']) || str_contains($after, $legacy_new)) continue;
         if (isset($entry['marker']) && str_contains($after, $entry['marker'])) {
             WP_CLI::error('Existing analytics policy passage was edited; review manually: '.$identity);
         }

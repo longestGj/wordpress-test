@@ -19,7 +19,7 @@ Explain chloride-process selection and aggregate verified chloride grades.
 ## SEO
 
 Primary keyword: chloride process titanium dioxide
-Title: Chloride Process Titanium Dioxide | TiO2 Malaysia
+Title: Chloride Process Titanium Dioxide | TiO2Products
 Meta: Explore eight Malaysia-origin chloride-process titanium dioxide grades, understand what the process label means, and review product information or request a quote.
 H1: Chloride Process Titanium Dioxide
 

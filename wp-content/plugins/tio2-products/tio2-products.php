@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: TiO2 Products
+ * Plugin Name: TiO2Products
  * Description: Product records, editable technical data and shared destination settings.
  * Version: 0.1.0
  */
@@ -71,7 +71,7 @@ function tio2_target_url($key) {
 }
 function tio2_product_schema($id) {
     $d=tio2_product_data($id);
-    return ['@context'=>'https://schema.org','@type'=>'Product','@id'=>get_permalink($id).'#product','url'=>get_permalink($id),'name'=>get_the_title($id).' Titanium Dioxide','sku'=>get_the_title($id),'description'=>get_post_field('post_excerpt',$id),'additionalProperty'=>array_map(function($r)use($d){$values=[];foreach(array_slice(tio2_table_columns($d),1) as $c)$values[]=$c['label'].': '.($r[$c['key']]??'—');return ['@type'=>'PropertyValue','name'=>$r['property'],'value'=>implode('; ',$values)];},tio2_public_rows($id))];
+    return ['@context'=>'https://schema.org','@type'=>'Product','@id'=>get_permalink($id).'#product','url'=>get_permalink($id),'name'=>get_the_title($id).' Titanium Dioxide','sku'=>get_the_title($id),'description'=>get_post_field('post_excerpt',$id),'manufacturer'=>['@id'=>home_url('/').'#organization'],'additionalProperty'=>array_map(function($r)use($d){$values=[];foreach(array_slice(tio2_table_columns($d),1) as $c)$values[]=$c['label'].': '.($r[$c['key']]??'—');return ['@type'=>'PropertyValue','name'=>$r['property'],'value'=>implode('; ',$values)];},tio2_public_rows($id))];
 }
 function tio2_table_columns($data){return $data['table_columns']??[['key'=>'property','label'=>'Property'],['key'=>'standard','label'=>'Standard'],['key'=>'typical_value','label'=>'Typical Value']];}
 require __DIR__.'/admin.php';

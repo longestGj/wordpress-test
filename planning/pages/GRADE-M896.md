@@ -20,7 +20,7 @@ Industrial and weather-resistant coatings grade.
 ## SEO
 
 Primary keyword: M-896 titanium dioxide
-Title: M-896 Titanium Dioxide for Industrial Coatings | TiO2 Malaysia
+Title: M-896 Titanium Dioxide for Industrial Coatings | TiO2Products
 Meta: Evaluate M-896 titanium dioxide for industrial and weather-resistant coatings. Review typical data, request documents or a sample, and submit an RFQ.
 H1: M-896 Titanium Dioxide for Industrial Coating Evaluation
 

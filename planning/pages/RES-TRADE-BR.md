@@ -19,7 +19,7 @@ Own detailed Brazil trade-policy query and link to the Brazil procurement page.
 ## SEO
 
 Primary keyword: brazil titanium dioxide anti dumping duty
-Title: Brazil Titanium Dioxide Anti-Dumping Duty | TiO2 Malaysia
+Title: Brazil Titanium Dioxide Anti-Dumping Duty | TiO2Products
 Meta: Check Brazil’s definitive TiO2 anti-dumping measure, China-origin scope, four USD/t bands, exclusions and shipment inputs to verify.
 H1: Brazil Titanium Dioxide Anti-Dumping Duty: Current Measure, Scope and Rates
 

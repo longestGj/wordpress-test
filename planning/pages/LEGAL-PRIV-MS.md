@@ -18,8 +18,8 @@ Provide the approved Bahasa Malaysia counterpart to the verified English privacy
 ## SEO
 
 Primary keyword: NO_PRIMARY_KEYWORD
-Title: Dasar Privasi | TiO2 Malaysia
-Meta: Ketahui cara TiO2 Malaysia mengendalikan data pertanyaan perniagaan umum, tempoh penyimpanan, Kuki yang diperlukan dan permintaan privasi.
+Title: Dasar Privasi | TiO2Products
+Meta: Ketahui cara TiO2Products mengendalikan data pertanyaan perniagaan umum, tempoh penyimpanan, Kuki yang diperlukan dan permintaan privasi.
 H1: Dasar Privasi
 
 Keyword boundary: Bahasa Malaysia Privacy owns language-equivalent legal transparency only and must not target commercial queries.

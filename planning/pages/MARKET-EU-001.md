@@ -18,8 +18,8 @@ Own Europe/EU supplier intent, EU compliance context, origin documentation, appl
 ## SEO
 
 Primary keyword: titanium dioxide supplier europe
-Title: Malaysia Titanium Dioxide Supplier for EU Buyers | TiO2 Malaysia
-Meta: Evaluate titanium dioxide supply for EU procurement by application, grade, documents, origin and import requirements. Request a quote from TiO2 Malaysia.
+Title: Malaysia Titanium Dioxide Supplier for EU Buyers | TiO2Products
+Meta: Evaluate titanium dioxide supply for EU procurement by application, grade, documents, origin and import requirements. Request a quote through TiO2Products.
 H1: Malaysia-Origin Titanium Dioxide for European Union Buyers
 
 Keyword boundary: Country page owns explicit country modifier; EU page owns Europe/EU modifier; Resources owns detailed trade-policy queries.

@@ -20,7 +20,7 @@ Sulfate durable industrial, powder, and architectural coatings grade.
 ## SEO
 
 Primary keyword: M-996 titanium dioxide
-Title: M-996 Titanium Dioxide for Coatings | TiO2 Malaysia
+Title: M-996 Titanium Dioxide for Coatings | TiO2Products
 Meta: Evaluate M-996 titanium dioxide for industrial, powder, and exterior or interior architectural coatings. Review typical data, request a sample or RFQ.
 H1: M-996 Titanium Dioxide for Industrial, Powder and Architectural Coatings
 

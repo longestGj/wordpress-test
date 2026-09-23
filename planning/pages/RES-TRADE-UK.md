@@ -19,7 +19,7 @@ Own detailed UK trade-policy query and link to the UK procurement page.
 ## SEO
 
 Primary keyword: uk titanium dioxide anti dumping investigation
-Title: UK Titanium Dioxide Anti-Dumping Investigation | TiO2 Malaysia
+Title: UK Titanium Dioxide Anti-Dumping Investigation | TiO2Products
 Meta: Check the active UK AD0086 investigation, rutile titanium dioxide import registration, written scope, key dates and shipment inputs to verify.
 H1: UK Rutile Titanium Dioxide: Active AD0086 Investigation and Import Registration
 

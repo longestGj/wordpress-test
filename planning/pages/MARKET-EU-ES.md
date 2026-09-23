@@ -18,7 +18,7 @@ Own Spain-specific supplier and procurement intent; link to EU-level compliance 
 ## SEO
 
 Primary keyword: titanium dioxide supplier spain
-Title: Titanium Dioxide Supplier for Spain | TiO2 Malaysia
+Title: Titanium Dioxide Supplier for Spain | TiO2Products
 Meta: Explore Malaysia-origin titanium dioxide for your project in Spain. Review product grades and document needs, then request a quote for your requirements.
 H1: Titanium Dioxide Supplier for Spain
 

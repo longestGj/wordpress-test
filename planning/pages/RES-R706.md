@@ -19,7 +19,7 @@ Address R-706 comparison intent with evidence-gated, non-equivalence language.
 ## SEO
 
 Primary keyword: ti-pure r-706 alternative equivalent
-Title: Ti-Pure R-706 Qualification Guide | TiO2 Malaysia
+Title: Ti-Pure R-706 Qualification Guide | TiO2Products
 Meta: Use Ti-Pure R-706 product facts, document labels and coating test dimensions to prepare an independent titanium dioxide qualification brief.
 H1: Qualify Another TiO2 Supply When Ti-Pure R-706 Is Your Reference
 

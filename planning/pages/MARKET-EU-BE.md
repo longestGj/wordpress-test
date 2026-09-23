@@ -18,7 +18,7 @@ Own Belgium-specific supplier and procurement intent; link to EU-level complianc
 ## SEO
 
 Primary keyword: titanium dioxide supplier belgium
-Title: Titanium Dioxide Supplier Belgium | TiO2 Malaysia
+Title: Titanium Dioxide Supplier Belgium | TiO2Products
 Meta: Source Malaysia-origin industrial titanium dioxide for coatings and plastics projects in Belgium. Review product information and documents, or request a quote.
 H1: Titanium Dioxide Supplier for Belgium
 

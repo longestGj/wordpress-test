@@ -1,0 +1,859 @@
+[
+  {
+    "post_type": "product",
+    "path": "/products/m-350/",
+    "slug": "m-350",
+    "title": "M-350",
+    "seed": "m350.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-350 Titanium Dioxide for Coatings and Inks | TiO2 Malaysia",
+        "new": "M-350 Titanium Dioxide for Coatings and Inks | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/about/",
+    "owner_key": "_tio2_hub_key",
+    "owner": "about",
+    "seed": "pages/about.json",
+    "changes": {
+      "seo_title": {
+        "old": "Malaysia Titanium Dioxide Manufacturer | TiO2 Malaysia",
+        "new": "Malaysia Titanium Dioxide Manufacturer | TiO2Products"
+      },
+      "content": [
+        {
+          "old": "<p class=\"about-intro claim\">IKHLAS TITANIUM (MALAYSIA) SDN. BHD. is a Malaysia-based rutile TiO2 manufacturer located in Taiping, Perak.</p>",
+          "new": "<p class=\"about-intro claim\">IKHLAS TITANIUM (MALAYSIA) SDN. BHD. is a Malaysia-based rutile TiO2 manufacturer located in Taiping, Perak.</p><p class=\"about-intro\">TiO2Products is the commercial website for industrial titanium dioxide products, technical information and sourcing support, operated by IKHLAS TITANIUM (MALAYSIA) SDN. BHD.</p>",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/documents/",
+    "owner_key": "_tio2_hub_key",
+    "owner": "documents",
+    "seed": "pages/documents.json",
+    "changes": {
+      "seo_title": {
+        "old": "Documents for Product Qualification | TiO2 Malaysia",
+        "new": "Documents for Product Qualification | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/",
+    "owner_key": "_tio2_hub_key",
+    "owner": "markets",
+    "seed": "pages/markets.json",
+    "changes": {
+      "seo_title": {
+        "old": "Markets for Titanium Dioxide Procurement | TiO2 Malaysia",
+        "new": "Markets for Titanium Dioxide Procurement | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/product-hub-content/",
+    "owner_key": "_tio2_hub_key",
+    "owner": "products",
+    "seed": "pages/products.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide Pigment Grades | TiO2 Malaysia",
+        "new": "Titanium Dioxide Pigment Grades | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/resources/",
+    "owner_key": "_tio2_hub_key",
+    "owner": "resources",
+    "seed": "pages/resources.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide Procurement Resources | TiO2 Malaysia",
+        "new": "Titanium Dioxide Procurement Resources | TiO2Products"
+      },
+      "content": [
+        {
+          "old": "TiO2 Malaysia market page",
+          "new": "TiO2Products market page",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/products/chloride-process-titanium-dioxide/",
+    "owner_key": "_tio2_page_id",
+    "owner": "PRODUCT-PROC-CL",
+    "seed": "process-applications/chloride.json",
+    "changes": {
+      "seo_title": {
+        "old": "Chloride Process Titanium Dioxide | TiO2 Malaysia",
+        "new": "Chloride Process Titanium Dioxide | TiO2Products"
+      },
+      "content": [
+        {
+          "old": "These eight TiO2 Malaysia grades",
+          "new": "These eight listed grades",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/applications/titanium-dioxide-for-coatings/",
+    "owner_key": "_tio2_page_id",
+    "owner": "APP-COAT",
+    "seed": "process-applications/coatings.json",
+    "changes": {
+      "content": [
+        {
+          "old": "The following eight TiO2 Malaysia Grades",
+          "new": "The following eight listed Grades",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/applications/titanium-dioxide-for-paper/",
+    "owner_key": "_tio2_page_id",
+    "owner": "APP-PAPER",
+    "seed": "process-applications/paper.json",
+    "changes": {
+      "content": [
+        {
+          "old": "the result of a TiO2 Malaysia Grade",
+          "new": "the result of a candidate Grade",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/products/sulfate-process-titanium-dioxide/",
+    "owner_key": "_tio2_page_id",
+    "owner": "PRODUCT-PROC-SU",
+    "seed": "process-applications/sulfate.json",
+    "changes": {
+      "seo_title": {
+        "old": "Sulfate Process Titanium Dioxide Grades | TiO2 Malaysia",
+        "new": "Sulfate Process Titanium Dioxide Grades | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/brazil/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-BR-EN",
+    "seed": "markets/MARKET-BR-EN.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide Supplier Brazil | TiO2 Malaysia",
+        "new": "Titanium Dioxide Supplier Brazil | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/pt-br/markets/brazil/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-BR-PT",
+    "seed": "markets/MARKET-BR-PT.json",
+    "changes": {
+      "seo_title": {
+        "old": "Fornecedor de dióxido de titânio para o Brasil | TiO2 Malaysia",
+        "new": "Fornecedor de dióxido de titânio para o Brasil | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/european-union/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-EU-001",
+    "seed": "markets/MARKET-EU-001.json",
+    "changes": {
+      "seo_title": {
+        "old": "Malaysia Titanium Dioxide Supplier for EU Buyers | TiO2 Malaysia",
+        "new": "Malaysia Titanium Dioxide Supplier for EU Buyers | TiO2Products"
+      },
+      "seo_description": {
+        "old": "Evaluate titanium dioxide supply for EU procurement by application, grade, documents, origin and import requirements. Request a quote from TiO2 Malaysia.",
+        "new": "Evaluate titanium dioxide supply for EU procurement by application, grade, documents, origin and import requirements. Request a quote through TiO2Products."
+      },
+      "content": [
+        {
+          "old": "TiO2 Malaysia, operated by IKHLAS TITANIUM (MALAYSIA) SDN. BHD., supplies",
+          "new": "IKHLAS TITANIUM (MALAYSIA) SDN. BHD., operating TiO2Products, supplies",
+          "count": 1
+        },
+        {
+          "old": "TiO2 Malaysia is the international-facing supply platform operated by IKHLAS TITANIUM (MALAYSIA) SDN. BHD.",
+          "new": "TiO2Products is the commercial website operated by IKHLAS TITANIUM (MALAYSIA) SDN. BHD.",
+          "count": 1
+        },
+        {
+          "old": "About TiO2 Malaysia",
+          "new": "About TiO2Products",
+          "count": 2
+        },
+        {
+          "old": "TiO2 Malaysia is operated by IKHLAS TITANIUM (MALAYSIA) SDN. BHD.",
+          "new": "TiO2Products is operated by IKHLAS TITANIUM (MALAYSIA) SDN. BHD.",
+          "count": 2
+        },
+        {
+          "old": "Can TiO2 Malaysia supply titanium dioxide to EU buyers?",
+          "new": "Can EU buyers request titanium dioxide supply through TiO2Products?",
+          "count": 1
+        },
+        {
+          "old": "Yes. TiO2 Malaysia supports EU industrial buyers",
+          "new": "Yes. TiO2Products supports EU industrial buyers",
+          "count": 1
+        },
+        {
+          "old": "Is TiO2 Malaysia an EU-based supplier?",
+          "new": "Is IKHLAS TITANIUM an EU-based supplier?",
+          "count": 1
+        },
+        {
+          "old": "No EU establishment is claimed. TiO2 Malaysia is a Malaysia-based supply platform for industrial buyers, including procurement teams in the European Union.",
+          "new": "No EU establishment is claimed. IKHLAS TITANIUM (MALAYSIA) SDN. BHD. is based in Malaysia; TiO2Products is its commercial website for industrial buyers, including procurement teams in the European Union.",
+          "count": 1
+        },
+        {
+          "old": "What applications are TiO2 Malaysia titanium dioxide grades intended for?",
+          "new": "What applications are the listed titanium dioxide grades intended for?",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/belgium/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-EU-BE",
+    "seed": "markets/MARKET-EU-BE.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide Supplier Belgium | TiO2 Malaysia",
+        "new": "Titanium Dioxide Supplier Belgium | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/germany/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-EU-DE",
+    "seed": "markets/MARKET-EU-DE.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide Supplier for Germany | TiO2 Malaysia",
+        "new": "Titanium Dioxide Supplier for Germany | TiO2Products"
+      },
+      "content": [
+        {
+          "old": "a TiO2 Malaysia route, transport mode, cost or lead time",
+          "new": "a route offered by IKHLAS TITANIUM, transport mode, cost or lead time",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/spain/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-EU-ES",
+    "seed": "markets/MARKET-EU-ES.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide Supplier for Spain | TiO2 Malaysia",
+        "new": "Titanium Dioxide Supplier for Spain | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/italy/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-EU-IT",
+    "seed": "markets/MARKET-EU-IT.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide Supplier for Italy | TiO2 Malaysia",
+        "new": "Titanium Dioxide Supplier for Italy | TiO2Products"
+      },
+      "content": [
+        {
+          "old": "a TiO2 Malaysia Grade",
+          "new": "a listed Grade",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/netherlands/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-EU-NL",
+    "seed": "markets/MARKET-EU-NL.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide Supplier Netherlands | TiO2 Malaysia",
+        "new": "Titanium Dioxide Supplier Netherlands | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/poland/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-EU-PL",
+    "seed": "markets/MARKET-EU-PL.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide Supplier for Poland | TiO2 Malaysia",
+        "new": "Titanium Dioxide Supplier for Poland | TiO2Products"
+      },
+      "content": [
+        {
+          "old": "products presented by TiO2 Malaysia",
+          "new": "products presented on TiO2Products",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/india/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-IN-001",
+    "seed": "markets/MARKET-IN-001.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide Supplier India | TiO2 Malaysia",
+        "new": "Titanium Dioxide Supplier India | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/markets/united-kingdom/",
+    "owner_key": "_tio2_market_id",
+    "owner": "MARKET-UK-001",
+    "seed": "markets/MARKET-UK-001.json",
+    "changes": {
+      "seo_title": {
+        "old": "Malaysia Titanium Dioxide Supplier for UK Buyers | TiO2 Malaysia",
+        "new": "Malaysia Titanium Dioxide Supplier for UK Buyers | TiO2Products"
+      },
+      "content": [
+        {
+          "old": "TiO2 Malaysia is operated by IKHLAS TITANIUM (MALAYSIA) SDN. BHD. and presents",
+          "new": "TiO2Products is operated by IKHLAS TITANIUM (MALAYSIA) SDN. BHD. and presents",
+          "count": 1
+        },
+        {
+          "old": "About TiO2 Malaysia",
+          "new": "About TiO2Products",
+          "count": 1
+        },
+        {
+          "old": "How does TiO2 Malaysia support UK procurement?",
+          "new": "How does TiO2Products support UK procurement?",
+          "count": 1
+        },
+        {
+          "old": "TiO2 Malaysia provides Malaysia-origin titanium dioxide product information",
+          "new": "TiO2Products provides Malaysia-origin titanium dioxide product information",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/documents/certificate-of-origin/",
+    "owner_key": "_tio2_document_id",
+    "owner": "DOC-COO",
+    "seed": "documents/DOC-COO.json",
+    "changes": {
+      "seo_title": {
+        "old": "Certificate of Origin for Titanium Dioxide | TiO2 Malaysia",
+        "new": "Certificate of Origin for Titanium Dioxide | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/documents/reach/",
+    "owner_key": "_tio2_document_id",
+    "owner": "DOC-REACH",
+    "seed": "documents/DOC-REACH.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide REACH Registration: What to Verify | TiO2 Malaysia",
+        "new": "Titanium Dioxide REACH Registration: What to Verify | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/documents/tds-sds-coa/",
+    "owner_key": "_tio2_document_id",
+    "owner": "DOC-TDS",
+    "seed": "documents/DOC-TDS.json",
+    "changes": {
+      "seo_title": {
+        "old": "Titanium Dioxide TDS, SDS & COA: What to Request | TiO2 Malaysia",
+        "new": "Titanium Dioxide TDS, SDS & COA: What to Request | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/resources/brazil-titanium-dioxide-anti-dumping-duty/",
+    "owner_key": "_tio2_resource_id",
+    "owner": "RES-TRADE-BR",
+    "seed": "resources/brazil-titanium-dioxide-anti-dumping-duty.json",
+    "changes": {
+      "seo_title": {
+        "old": "Brazil Titanium Dioxide Anti-Dumping Duty | TiO2 Malaysia",
+        "new": "Brazil Titanium Dioxide Anti-Dumping Duty | TiO2Products"
+      },
+      "content": [
+        {
+          "old": "TiO2 Malaysia supplies Malaysia-origin titanium dioxide.",
+          "new": "IKHLAS TITANIUM (MALAYSIA) SDN. BHD. supplies Malaysia-origin titanium dioxide.",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/resources/eu-titanium-dioxide-anti-dumping-duty/",
+    "owner_key": "_tio2_resource_id",
+    "owner": "RES-TRADE-EU",
+    "seed": "resources/eu-titanium-dioxide-anti-dumping-duty.json",
+    "changes": {
+      "seo_title": {
+        "old": "EU Titanium Dioxide Anti-Dumping Duty Update | TiO2 Malaysia",
+        "new": "EU Titanium Dioxide Anti-Dumping Duty Update | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/resources/india-titanium-dioxide-anti-dumping-duty/",
+    "owner_key": "_tio2_resource_id",
+    "owner": "RES-TRADE-IN",
+    "seed": "resources/india-titanium-dioxide-anti-dumping-duty.json",
+    "changes": {
+      "seo_title": {
+        "old": "India Titanium Dioxide Anti-Dumping Duty Status | TiO2 Malaysia",
+        "new": "India Titanium Dioxide Anti-Dumping Duty Status | TiO2Products"
+      },
+      "content": [
+        {
+          "old": "TiO2 Malaysia supplies Malaysia-origin titanium dioxide,",
+          "new": "IKHLAS TITANIUM (MALAYSIA) SDN. BHD. supplies Malaysia-origin titanium dioxide,",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/resources/non-china-titanium-dioxide/",
+    "owner_key": "_tio2_resource_id",
+    "owner": "RES-ORIGIN",
+    "seed": "resources/non-china-titanium-dioxide.json",
+    "changes": {
+      "seo_title": {
+        "old": "Non-China Titanium Dioxide Supply Guide | TiO2 Malaysia",
+        "new": "Non-China Titanium Dioxide Supply Guide | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/resources/ti-pure-r-706-alternative/",
+    "owner_key": "_tio2_resource_id",
+    "owner": "RES-R706",
+    "seed": "resources/ti-pure-r-706-alternative.json",
+    "changes": {
+      "seo_title": {
+        "old": "Ti-Pure R-706 Qualification Guide | TiO2 Malaysia",
+        "new": "Ti-Pure R-706 Qualification Guide | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/resources/uk-titanium-dioxide-anti-dumping-investigation/",
+    "owner_key": "_tio2_resource_id",
+    "owner": "RES-TRADE-UK",
+    "seed": "resources/uk-titanium-dioxide-anti-dumping-investigation.json",
+    "changes": {
+      "seo_title": {
+        "old": "UK Titanium Dioxide Anti-Dumping Investigation | TiO2 Malaysia",
+        "new": "UK Titanium Dioxide Anti-Dumping Investigation | TiO2Products"
+      },
+      "content": [
+        {
+          "old": "TiO2 Malaysia supplies Malaysia-origin titanium dioxide,",
+          "new": "IKHLAS TITANIUM (MALAYSIA) SDN. BHD. supplies Malaysia-origin titanium dioxide,",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/request-documents/",
+    "owner_key": "_tio2_page_id",
+    "owner": "CONV-DOC",
+    "seed": "requests/CONV-DOC.json",
+    "changes": {
+      "seo_title": {
+        "old": "Request Documents | TiO2 Malaysia",
+        "new": "Request Documents | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/request-a-quote/",
+    "owner_key": "_tio2_page_id",
+    "owner": "CONV-RFQ",
+    "seed": "requests/CONV-RFQ.json",
+    "changes": {
+      "seo_title": {
+        "old": "Request a Titanium Dioxide Quote | TiO2 Malaysia",
+        "new": "Request a Titanium Dioxide Quote | TiO2Products"
+      },
+      "seo_description": {
+        "old": "Request a titanium dioxide quotation from TiO2 Malaysia by providing your grade, application, quantity in metric tonnes and destination for review.",
+        "new": "Request a titanium dioxide quotation through TiO2Products by providing your grade, application, quantity in metric tonnes and destination for review."
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/request-sample/",
+    "owner_key": "_tio2_page_id",
+    "owner": "CONV-SAMPLE",
+    "seed": "requests/CONV-SAMPLE.json",
+    "changes": {
+      "seo_title": {
+        "old": "Request a Titanium Dioxide Sample | TiO2 Malaysia",
+        "new": "Request a Titanium Dioxide Sample | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/contact/",
+    "owner_key": "_tio2_page_id",
+    "owner": "CONTACT-001",
+    "seed": "utility/CONTACT-001.json",
+    "changes": {
+      "seo_title": {
+        "old": "Contact TiO2 Malaysia | General Inquiries",
+        "new": "Contact TiO2Products | General Inquiries"
+      },
+      "seo_description": {
+        "old": "Contact TiO2 Malaysia with a general company or business inquiry, or use the dedicated pages to request a quote, product documents or a sample.",
+        "new": "Contact TiO2Products with a general company or business inquiry, or use the dedicated pages to request a quote, product documents or a sample."
+      },
+      "content": [
+        {
+          "old": "Contact TiO2 Malaysia",
+          "new": "Contact TiO2Products",
+          "count": 1
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/thank-you/",
+    "owner_key": "_tio2_page_id",
+    "owner": "CONV-THANK",
+    "seed": "utility/CONV-THANK.json",
+    "changes": {
+      "seo_title": {
+        "old": "Thank You | TiO2 Malaysia",
+        "new": "Thank You | TiO2Products"
+      },
+      "seo_description": {
+        "old": "View confirmation and next steps for a TiO2 Malaysia request, or choose the request you would like to make.",
+        "new": "View confirmation and next steps for a TiO2Products request, or choose the request you would like to make."
+      }
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/cookie-policy/",
+    "owner_key": "_tio2_page_id",
+    "owner": "LEGAL-COOKIE-EN",
+    "seed": "utility/LEGAL-COOKIE-EN.json",
+    "changes": {
+      "seo_title": {
+        "old": "Cookie Policy | TiO2 Malaysia",
+        "new": "Cookie Policy | TiO2Products"
+      },
+      "seo_description": {
+        "old": "Learn which necessary Cookies TiO2 Malaysia uses for its contact form and how to review browser storage.",
+        "new": "Learn which necessary Cookies TiO2Products uses for its contact form and how to review browser storage."
+      },
+      "content": [
+        {
+          "old": "TiO2 Malaysia",
+          "new": "TiO2Products",
+          "count": 4
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/privacy-policy/",
+    "owner_key": "_tio2_page_id",
+    "owner": "LEGAL-PRIV-EN",
+    "seed": "utility/LEGAL-PRIV-EN.json",
+    "changes": {
+      "seo_title": {
+        "old": "Privacy Policy | TiO2 Malaysia",
+        "new": "Privacy Policy | TiO2Products"
+      },
+      "seo_description": {
+        "old": "Learn how TiO2 Malaysia handles general business inquiry data, retention, necessary Cookies and privacy requests.",
+        "new": "Learn how TiO2Products handles general business inquiry data, retention, necessary Cookies and privacy requests."
+      },
+      "content": [
+        {
+          "old": "TiO2 Malaysia",
+          "new": "TiO2Products",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "page",
+    "path": "/ms/privacy-policy/",
+    "owner_key": "_tio2_page_id",
+    "owner": "LEGAL-PRIV-MS",
+    "seed": "utility/LEGAL-PRIV-MS.json",
+    "changes": {
+      "seo_title": {
+        "old": "Dasar Privasi | TiO2 Malaysia",
+        "new": "Dasar Privasi | TiO2Products"
+      },
+      "seo_description": {
+        "old": "Ketahui cara TiO2 Malaysia mengendalikan data pertanyaan perniagaan umum, tempoh penyimpanan, Kuki yang diperlukan dan permintaan privasi.",
+        "new": "Ketahui cara TiO2Products mengendalikan data pertanyaan perniagaan umum, tempoh penyimpanan, Kuki yang diperlukan dan permintaan privasi."
+      },
+      "content": [
+        {
+          "old": "TiO2 Malaysia",
+          "new": "TiO2Products",
+          "count": 2
+        }
+      ]
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/cr-901/",
+    "slug": "cr-901",
+    "title": "CR-901",
+    "seed": "products/cr-901.json",
+    "changes": {
+      "seo_title": {
+        "old": "CR-901 Titanium Dioxide Specialty Grade | TiO2 Malaysia",
+        "new": "CR-901 Titanium Dioxide Specialty Grade | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-108/",
+    "slug": "m-108",
+    "title": "M-108",
+    "seed": "products/m-108.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-108 Titanium Dioxide for Plastics | TiO2 Malaysia",
+        "new": "M-108 Titanium Dioxide for Plastics | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-200/",
+    "slug": "m-200",
+    "title": "M-200",
+    "seed": "products/m-200.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-200 Titanium Dioxide for Exterior Plastics | TiO2 Malaysia",
+        "new": "M-200 Titanium Dioxide for Exterior Plastics | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-210/",
+    "slug": "m-210",
+    "title": "M-210",
+    "seed": "products/m-210.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-210 Titanium Dioxide for Masterbatch | TiO2 Malaysia",
+        "new": "M-210 Titanium Dioxide for Masterbatch | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-2196/",
+    "slug": "m-2196",
+    "title": "M-2196",
+    "seed": "products/m-2196.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-2196 Titanium Dioxide for Coatings | TiO2 Malaysia",
+        "new": "M-2196 Titanium Dioxide for Coatings | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-2377/",
+    "slug": "m-2377",
+    "title": "M-2377",
+    "seed": "products/m-2377.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-2377 Titanium Dioxide | TiO2 Malaysia",
+        "new": "M-2377 Titanium Dioxide | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-340/",
+    "slug": "m-340",
+    "title": "M-340",
+    "seed": "products/m-340.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-340 Titanium Dioxide for Plastics | TiO2 Malaysia",
+        "new": "M-340 Titanium Dioxide for Plastics | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-510/",
+    "slug": "m-510",
+    "title": "M-510",
+    "seed": "products/m-510.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-510 Titanium Dioxide for Coatings | TiO2 Malaysia",
+        "new": "M-510 Titanium Dioxide for Coatings | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-52/",
+    "slug": "m-52",
+    "title": "M-52",
+    "seed": "products/m-52.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-52 Titanium Dioxide for Printing Inks | TiO2 Malaysia",
+        "new": "M-52 Titanium Dioxide for Printing Inks | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-886/",
+    "slug": "m-886",
+    "title": "M-886",
+    "seed": "products/m-886.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-886 Titanium Dioxide for Plastics | TiO2 Malaysia",
+        "new": "M-886 Titanium Dioxide for Plastics | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-895/",
+    "slug": "m-895",
+    "title": "M-895",
+    "seed": "products/m-895.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-895 Titanium Dioxide for Coatings | TiO2 Malaysia",
+        "new": "M-895 Titanium Dioxide for Coatings | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-896/",
+    "slug": "m-896",
+    "title": "M-896",
+    "seed": "products/m-896.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-896 Titanium Dioxide for Industrial Coatings | TiO2 Malaysia",
+        "new": "M-896 Titanium Dioxide for Industrial Coatings | TiO2Products"
+      }
+    }
+  },
+  {
+    "post_type": "product",
+    "path": "/products/m-996/",
+    "slug": "m-996",
+    "title": "M-996",
+    "seed": "products/m-996.json",
+    "changes": {
+      "seo_title": {
+        "old": "M-996 Titanium Dioxide for Coatings | TiO2 Malaysia",
+        "new": "M-996 Titanium Dioxide for Coatings | TiO2Products"
+      }
+    }
+  }
+]

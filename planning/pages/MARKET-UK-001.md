@@ -18,7 +18,7 @@ Own UK supplier intent, local procurement context, applications, documentation, 
 ## SEO
 
 Primary keyword: titanium dioxide supplier uk
-Title: Malaysia Titanium Dioxide Supplier for UK Buyers | TiO2 Malaysia
+Title: Malaysia Titanium Dioxide Supplier for UK Buyers | TiO2Products
 Meta: Explore Malaysia-origin titanium dioxide for UK industrial applications, representative grades, GB or NI review paths, documents and RFQ steps.
 H1: Malaysia-Origin Titanium Dioxide for United Kingdom Buyers
 

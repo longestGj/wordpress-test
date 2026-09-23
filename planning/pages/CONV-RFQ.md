@@ -18,8 +18,8 @@ Capture destination, application, grade/specification, quantity, packaging, docu
 ## SEO
 
 Primary keyword: titanium dioxide quote supplier
-Title: Request a Titanium Dioxide Quote | TiO2 Malaysia
-Meta: Request a titanium dioxide quotation from TiO2 Malaysia by providing your grade, application, quantity in metric tonnes and destination for review.
+Title: Request a Titanium Dioxide Quote | TiO2Products
+Meta: Request a titanium dioxide quotation through TiO2Products by providing your grade, application, quantity in metric tonnes and destination for review.
 H1: Request a Titanium Dioxide Quote
 
 Keyword boundary: RFQ page owns quotation and purchase-action intent; commercial landing pages link here and retain supplier/product intent.

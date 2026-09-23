@@ -1,10 +1,13 @@
 """Read-only checks against actual WordPress responses and approved seeds."""
 import json
+import sys
 from pathlib import Path
+from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parents[1]
-base='http://localhost:8080'
+base=(sys.argv[1] if len(sys.argv)>1 else 'http://localhost:8080').rstrip('/')
+assert urlparse(base).hostname in {'localhost','127.0.0.1'}
 seeds=list((ROOT/'data/products').glob('*.json'))
 for p in seeds:
  s=json.loads(p.read_text(encoding='utf-8'));r=requests.get(base+'/products/'+s['slug']+'/',timeout=15);r.raise_for_status();h=BeautifulSoup(r.text,'html.parser')

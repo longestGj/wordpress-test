@@ -18,9 +18,9 @@ Provide verified company contact channels and route commercial users to RFQ.
 ## SEO
 
 Primary keyword: NO_PRIMARY_KEYWORD
-Title: Contact TiO2 Malaysia | General Inquiries
-Meta: Contact TiO2 Malaysia with a general company or business inquiry, or use the dedicated pages to request a quote, product documents or a sample.
-H1: Contact TiO2 Malaysia
+Title: Contact TiO2Products | General Inquiries
+Meta: Contact TiO2Products with a general company or business inquiry, or use the dedicated pages to request a quote, product documents or a sample.
+H1: Contact TiO2Products
 
 Keyword boundary: Contact is a utility page and must not be optimized as a commercial supplier landing page.
 

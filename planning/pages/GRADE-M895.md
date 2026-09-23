@@ -20,7 +20,7 @@ Architectural and industrial coatings grade.
 ## SEO
 
 Primary keyword: M-895 titanium dioxide
-Title: M-895 Titanium Dioxide for Coatings | TiO2 Malaysia
+Title: M-895 Titanium Dioxide for Coatings | TiO2Products
 Meta: Evaluate M-895 titanium dioxide for architectural and industrial coatings. Review typical data, request documents or a sample, and submit an RFQ.
 H1: M-895 Titanium Dioxide for Architectural and Industrial Coatings
 

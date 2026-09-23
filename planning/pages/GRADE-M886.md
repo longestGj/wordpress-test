@@ -20,7 +20,7 @@ Bright-white plastics and high-temperature processing grade.
 ## SEO
 
 Primary keyword: M-886 titanium dioxide
-Title: M-886 Titanium Dioxide for Plastics | TiO2 Malaysia
+Title: M-886 Titanium Dioxide for Plastics | TiO2Products
 Meta: Evaluate M-886 titanium dioxide for polyolefin masterbatch, cast-film processing and engineering plastics. Review typical data, request a sample or RFQ.
 H1: M-886 Titanium Dioxide for Plastics and Masterbatch Evaluation
 

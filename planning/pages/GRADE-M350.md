@@ -20,7 +20,7 @@ General chloride grade for decorative, industrial, automotive coatings and inks.
 ## SEO
 
 Primary keyword: M-350 titanium dioxide
-Title: M-350 Titanium Dioxide for Coatings and Inks | TiO2 Malaysia
+Title: M-350 Titanium Dioxide for Coatings and Inks | TiO2Products
 Meta: Evaluate M-350 titanium dioxide for coatings, printing inks and plastics. Review application directions, formulation priorities and 15-row technical data.
 H1: M-350 Titanium Dioxide for Multi-Application Evaluation
 

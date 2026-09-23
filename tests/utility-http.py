@@ -10,7 +10,7 @@ base = os.environ.get('TIO2_BASE_URL', 'http://localhost:8080').rstrip('/')
 assert base.startswith(('http://localhost:', 'http://127.0.0.1:')), 'Local site only'
 root = Path(__file__).resolve().parents[1]
 pages = {
-    '/contact/': ('CONTACT-001', 'Contact TiO2 Malaysia'),
+    '/contact/': ('CONTACT-001', 'Contact TiO2Products'),
     '/privacy-policy/': ('LEGAL-PRIV-EN', 'Privacy Policy'),
     '/ms/privacy-policy/': ('LEGAL-PRIV-MS', 'Dasar Privasi'),
     '/cookie-policy/': ('LEGAL-COOKIE-EN', 'Cookie Policy'),

@@ -18,7 +18,7 @@ Capture qualified sample requests and application context.
 ## SEO
 
 Primary keyword: titanium dioxide sample supplier
-Title: Request a Titanium Dioxide Sample | TiO2 Malaysia
+Title: Request a Titanium Dioxide Sample | TiO2Products
 Meta: Request a Malaysia-origin titanium dioxide sample for technical evaluation by sharing the grade, application, destination and test objective for human review.
 H1: Request a Titanium Dioxide Sample for Technical Evaluation
 

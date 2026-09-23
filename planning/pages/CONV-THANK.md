@@ -18,8 +18,8 @@ Show approved Quote Documents or Sample receipt only after receiver positive ack
 ## SEO
 
 Primary keyword: NO_PRIMARY_KEYWORD
-Title: Thank You | TiO2 Malaysia
-Meta: View confirmation and next steps for a TiO2 Malaysia quotation, document or sample request, or choose the request you would like to make.
+Title: Thank You | TiO2Products
+Meta: View confirmation and next steps for a TiO2Products request, or choose the request you would like to make.
 H1: How can we help?
 
 Keyword boundary: No search ownership; RFQ Documents and Sample source pages retain collection and action intent; query variants are one utility page.

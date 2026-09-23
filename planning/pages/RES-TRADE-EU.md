@@ -19,7 +19,7 @@ Own detailed EU trade-policy query and link to the EU procurement page.
 ## SEO
 
 Primary keyword: eu titanium dioxide anti dumping duty
-Title: EU Titanium Dioxide Anti-Dumping Duty Update | TiO2 Malaysia
+Title: EU Titanium Dioxide Anti-Dumping Duty Update | TiO2Products
 Meta: Check the current EU anti-dumping measure for specified China-origin titanium dioxide, the 2026 reinvestigation and shipment inputs to verify.
 H1: EU Titanium Dioxide Anti-Dumping Duty: Current Measure and 2026 Review
 

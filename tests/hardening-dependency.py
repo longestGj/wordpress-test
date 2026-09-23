@@ -17,7 +17,7 @@ try:
         assert r.status_code==503 and 'temporarily unavailable' in r.text.lower(),(path,r.status_code,'Safe dependency page missing')
         assert 'Fatal error' not in r.text and 'undefined function' not in r.text
     notice=wp('eval',"wp_set_current_user(1); do_action('admin_notices');")
-    assert 'TiO2 Products' in notice and 'notice-error' in notice
+    assert 'TiO2Products' in notice and 'notice-error' in notice
 finally:
     wp('plugin','activate','tio2-products')
 assert requests.get('http://localhost:8080/',timeout=20).status_code==200

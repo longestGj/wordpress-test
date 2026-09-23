@@ -18,7 +18,7 @@ Own Portuguese-language Brazil supplier, price, coatings, and plastics intent.
 ## SEO
 
 Primary keyword: fornecedor de dióxido de titânio
-Title: Fornecedor de dióxido de titânio para o Brasil | TiO2 Malaysia
+Title: Fornecedor de dióxido de titânio para o Brasil | TiO2Products
 Meta: Dióxido de titânio originário da Malásia para compradores no Brasil. Conheça grades para tintas, plásticos e masterbatch. Solicite documentos ou uma cotação.
 H1: Dióxido de titânio originário da Malásia para compradores no Brasil
 

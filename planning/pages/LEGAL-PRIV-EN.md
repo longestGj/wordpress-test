@@ -18,8 +18,8 @@ Explain verified personal-data processing, recipients, retention, rights, transf
 ## SEO
 
 Primary keyword: NO_PRIMARY_KEYWORD
-Title: Privacy Policy | TiO2 Malaysia
-Meta: Learn how TiO2 Malaysia handles general business inquiry data, retention, necessary Cookies and privacy requests.
+Title: Privacy Policy | TiO2Products
+Meta: Learn how TiO2Products handles general business inquiry data, retention, necessary Cookies and privacy requests.
 H1: Privacy Policy
 
 Keyword boundary: Privacy owns legal transparency only and must not compete with commercial or informational landing pages.

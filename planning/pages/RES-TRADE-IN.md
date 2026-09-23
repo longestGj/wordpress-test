@@ -19,7 +19,7 @@ Own detailed India trade-policy query and link to the India procurement page.
 ## SEO
 
 Primary keyword: india titanium dioxide anti dumping duty
-Title: India Titanium Dioxide Anti-Dumping Duty Status | TiO2 Malaysia
+Title: India Titanium Dioxide Anti-Dumping Duty Status | TiO2Products
 Meta: Check the quashed 2025 India TiO2 levy, DGTR’s 2026 recommendation, product scope, producer paths and shipment inputs to verify.
 H1: India Titanium Dioxide Anti-Dumping Duty: 2025 Levy Quashed, 2026 Recommendation Explained
 

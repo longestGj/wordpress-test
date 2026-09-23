@@ -18,7 +18,7 @@ Explain verified REACH-related coverage and route qualified document requests.
 ## SEO
 
 Primary keyword: titanium dioxide reach registration
-Title: Titanium Dioxide REACH Registration: What to Verify | TiO2 Malaysia
+Title: Titanium Dioxide REACH Registration: What to Verify | TiO2Products
 Meta: Understand which EU REACH information titanium dioxide buyers should verify across substance identity, legal-entity scope, supply-chain role, source and review date.
 H1: Titanium Dioxide REACH Registration: What Procurement Teams Should Verify
 

@@ -20,7 +20,7 @@ Multi-application page; process and application claims remain restricted to veri
 ## SEO
 
 Primary keyword: M-2377 titanium dioxide
-Title: M-2377 Titanium Dioxide | TiO2 Malaysia
+Title: M-2377 Titanium Dioxide | TiO2Products
 Meta: Evaluate M-2377 titanium dioxide for coatings, plastics, masterbatch, printing inks and paper. Review typical data, request a sample or RFQ.
 H1: M-2377 Titanium Dioxide for Coatings, Plastics, Masterbatch, Inks and Paper
 

@@ -18,7 +18,7 @@ Own India supplier, price, paints, plastics, and masterbatch procurement intent.
 ## SEO
 
 Primary keyword: titanium dioxide supplier india
-Title: Titanium Dioxide Supplier India | TiO2 Malaysia
+Title: Titanium Dioxide Supplier India | TiO2Products
 Meta: Explore Malaysia-origin industrial titanium dioxide Grades for coatings, plastics and masterbatch production in India. Request documents or request a quote.
 H1: Titanium Dioxide Supplier for India
 

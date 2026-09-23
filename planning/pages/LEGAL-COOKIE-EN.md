@@ -18,8 +18,8 @@ Explain verified Cookies, Local Storage, consent categories, providers, duration
 ## SEO
 
 Primary keyword: NO_PRIMARY_KEYWORD
-Title: Cookie Policy | TiO2 Malaysia
-Meta: Learn which necessary Cookies TiO2 Malaysia uses for its contact form and how to review browser storage.
+Title: Cookie Policy | TiO2Products
+Meta: Learn which necessary Cookies TiO2Products uses for its contact form and how to review browser storage.
 H1: Cookie Policy
 
 Keyword boundary: Cookie Policy owns storage and consent transparency only; Cookie Settings remains a non-page functional control.

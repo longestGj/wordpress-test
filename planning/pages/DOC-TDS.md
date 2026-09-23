@@ -18,7 +18,7 @@ Explain TDS, SDS, COA availability, grade applicability, and controlled request 
 ## SEO
 
 Primary keyword: titanium dioxide tds
-Title: Titanium Dioxide TDS, SDS & COA: What to Request | TiO2 Malaysia
+Title: Titanium Dioxide TDS, SDS & COA: What to Request | TiO2Products
 Meta: Understand the difference between titanium dioxide TDS, SDS and COA, add the relevant product or batch context, and request the documents needed for review.
 H1: Titanium Dioxide TDS, SDS & COA: What to Request
 

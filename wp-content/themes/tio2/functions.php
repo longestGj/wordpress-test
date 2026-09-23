@@ -5,7 +5,7 @@ function tio2_theme_dependencies_ready(){
     return true;
 }
 if(!tio2_theme_dependencies_ready()){
-    add_action('admin_notices',function(){if(current_user_can('activate_plugins'))echo '<div class="notice notice-error"><p>The TiO2 theme requires the TiO2 Products plugin. Activate or restore it to display the website.</p></div>';});
+    add_action('admin_notices',function(){if(current_user_can('activate_plugins'))echo '<div class="notice notice-error"><p>The TiO2Products theme requires the TiO2Products plugin. Activate or restore it to display the website.</p></div>';});
     add_action('template_redirect',function(){nocache_headers();wp_die('The website is temporarily unavailable. Please try again later.','Website temporarily unavailable',['response'=>503]);},0);
     // Never load presentation callbacks that require the missing plugin.
     return;

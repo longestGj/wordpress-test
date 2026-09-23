@@ -15,13 +15,18 @@ add_action('wp_head',function(){
  if($key==='products')echo '<link rel="canonical" href="'.esc_url($url).'">';
  foreach(['og:title'=>$title,'og:description'=>$description,'og:url'=>$url,'og:type'=>'website'] as $property=>$value)echo '<meta property="'.esc_attr($property).'" content="'.esc_attr($value).'">';
  $graph=[['@type'=>in_array($key,['products','applications','markets','resources'],true)?'CollectionPage':'WebPage','@id'=>$url.'#page','url'=>$url,'name'=>$title,'description'=>$description]];
+ if($key==='about'){
+  $graph[0]['isPartOf']=['@id'=>home_url('/').'#website'];
+  $graph[0]['about']=['@id'=>home_url('/').'#organization'];
+ }
  if($key==='home'){
   $site=home_url('/');
   $graph[0]['inLanguage']='en';
   $graph[0]['isPartOf']=['@id'=>$site.'#website'];
   $graph[0]['publisher']=['@id'=>$site.'#organization'];
   $graph[]=['@type'=>'WebSite','@id'=>$site.'#website','url'=>$site,'name'=>'TiO2Products','publisher'=>['@id'=>$site.'#organization']];
-  $graph[]=['@type'=>'Organization','@id'=>$site.'#organization','name'=>'IKHLAS TITANIUM (MALAYSIA) SDN. BHD.','url'=>$site];
+  $graph[]=['@type'=>'Organization','@id'=>$site.'#organization','name'=>'IKHLAS TITANIUM (MALAYSIA) SDN. BHD.','legalName'=>'IKHLAS TITANIUM (MALAYSIA) SDN. BHD.','url'=>$site,'brand'=>['@id'=>$site.'#brand']];
+  $graph[]=['@type'=>'Brand','@id'=>$site.'#brand','name'=>'TiO2Products'];
  }
  if($key!=='home')$graph[]=['@type'=>'BreadcrumbList','itemListElement'=>[['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>home_url('/')],['@type'=>'ListItem','position'=>2,'name'=>get_the_title($id),'item'=>$url]]];
  if($key==='products'){$list=[];foreach((tio2_discovery_data()['rows']??[]) as $i=>$r){$item=['@type'=>'ListItem','position'=>$i+1,'name'=>$r['grade']];if(tio2_route_ready($r['url']))$item['url']=home_url($r['url']);$list[]=$item;}$graph[]=['@type'=>'ItemList','itemListElement'=>$list];}

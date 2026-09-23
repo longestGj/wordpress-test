@@ -1,4 +1,4 @@
-# ABOUT-001 — About TiO2 Malaysia
+# ABOUT-001 — About TiO2Products
 
 Status: ACCEPTED
 
@@ -19,7 +19,7 @@ Prove operating entity, Malaysia manufacturing/origin, quality, traceability, an
 ## SEO
 
 Primary keyword: malaysia titanium dioxide manufacturer
-Title: Malaysia Titanium Dioxide Manufacturer | TiO2 Malaysia
+Title: Malaysia Titanium Dioxide Manufacturer | TiO2Products
 Meta: Learn about IKHLAS TITANIUM (MALAYSIA) SDN. BHD., a Malaysia-based rutile TiO2 manufacturer with product documentation and export coordination through Port Klang.
 H1: Malaysia-Based Titanium Dioxide Supply for Global Markets
 

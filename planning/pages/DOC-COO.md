@@ -18,7 +18,7 @@ Explain Malaysia COO and traceability evidence without making unverified shipmen
 ## SEO
 
 Primary keyword: titanium dioxide country of origin certificate
-Title: Certificate of Origin for Titanium Dioxide | TiO2 Malaysia
+Title: Certificate of Origin for Titanium Dioxide | TiO2Products
 Meta: Understand when a titanium dioxide country of origin certificate or other proof may be relevant and what details to provide with a document request.
 H1: Certificate of Origin for Titanium Dioxide: What Buyers Should Verify
 

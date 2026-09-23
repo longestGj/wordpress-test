@@ -20,7 +20,7 @@ High-thermal-stability masterbatch and plastics grade.
 ## SEO
 
 Primary keyword: M-108 titanium dioxide
-Title: M-108 Titanium Dioxide for Plastics | TiO2 Malaysia
+Title: M-108 Titanium Dioxide for Plastics | TiO2Products
 Meta: Evaluate M-108 titanium dioxide for masterbatch, compounds, polyolefin and PVC film, and high-thermal-stability plastics. Review data, sample or RFQ.
 H1: M-108 Titanium Dioxide for Plastics and Masterbatch Evaluation
 

@@ -20,7 +20,7 @@ Polyolefin masterbatch and engineering plastics grade.
 ## SEO
 
 Primary keyword: M-210 titanium dioxide
-Title: M-210 Titanium Dioxide for Masterbatch | TiO2 Malaysia
+Title: M-210 Titanium Dioxide for Masterbatch | TiO2Products
 Meta: Evaluate M-210 titanium dioxide for polyolefin masterbatch, PE, PP, ABS, PS and copolymer applications. Review typical data, request a sample or RFQ.
 H1: M-210 Titanium Dioxide for Masterbatch and Plastics Evaluation
 

@@ -18,7 +18,7 @@ Own Poland-specific supplier and procurement intent; link to EU-level compliance
 ## SEO
 
 Primary keyword: titanium dioxide supplier poland
-Title: Titanium Dioxide Supplier for Poland | TiO2 Malaysia
+Title: Titanium Dioxide Supplier for Poland | TiO2Products
 Meta: Compare Malaysia-origin titanium dioxide grades for coatings, plastics and masterbatch in Poland. Request product documents or submit a quotation request.
 H1: Titanium Dioxide Supplier for Poland
 

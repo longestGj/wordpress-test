@@ -20,7 +20,7 @@ Printing-ink grade with can-coating and high-gloss interior support use.
 ## SEO
 
 Primary keyword: M-52 titanium dioxide
-Title: M-52 Titanium Dioxide for Printing Inks | TiO2 Malaysia
+Title: M-52 Titanium Dioxide for Printing Inks | TiO2Products
 Meta: Evaluate M-52 titanium dioxide for printing inks, can coatings and high-gloss interior architectural coatings. Review typical data, sample or RFQ.
 H1: M-52 Titanium Dioxide for Printing Inks and Coatings Evaluation
 

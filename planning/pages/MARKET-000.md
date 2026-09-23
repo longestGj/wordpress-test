@@ -19,7 +19,7 @@ Route buyers to the four approved market systems.
 ## SEO
 
 Primary keyword: NO_PRIMARY_KEYWORD
-Title: Markets for Titanium Dioxide Procurement | TiO2 Malaysia
+Title: Markets for Titanium Dioxide Procurement | TiO2Products
 Meta: Navigate titanium dioxide procurement information for the European Union, United Kingdom, India, and Brazil, with clear guidance on the next review step.
 H1: Choose Your Destination Market
 

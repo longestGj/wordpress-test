@@ -19,7 +19,7 @@ Explain sulfate-process selection, include sulphate spelling, and aggregate veri
 ## SEO
 
 Primary keyword: sulfate process titanium dioxide
-Title: Sulfate Process Titanium Dioxide Grades | TiO2 Malaysia
+Title: Sulfate Process Titanium Dioxide Grades | TiO2Products
 Meta: Explore five Malaysia-origin sulfate process titanium dioxide Grades by application, then review product details, request documents or request a quote.
 H1: Sulfate Process Titanium Dioxide
 

@@ -29,7 +29,7 @@ function tio2_configure_gmail_smtp($mailer,$config) {
 }
 function tio2_request_mail_body($id,$kind,$values) {
     $names=['quote'=>'Quotation','documents'=>'Document','sample'=>'Sample','contact'=>'General inquiry'];
-    $lines=['TiO2 Malaysia — '.($names[$kind]??'Business').' request #'.$id,'','A new business request was saved in WordPress.',''];
+    $lines=['TiO2Products — '.($names[$kind]??'Business').' request #'.$id,'','A new business request was saved in WordPress.',''];
     foreach (($kind==='contact'?tio2_contact_fields():tio2_request_fields($kind)) as $key=>$field) {
         $value=$values[$key]??'';
         $lines[]=$field[0].': '.(is_array($value)?implode(', ',$value):(string)$value);
@@ -62,7 +62,7 @@ function tio2_request_send_notification($id,$confirmed_retry=false) {
         update_post_meta($id,'_tio2_notification_attempts',(int)get_post_meta($id,'_tio2_notification_attempts',true)+1);
         update_post_meta($id,'_tio2_notification_last_attempt_at',gmdate('Y-m-d H:i:s'));
         $from=static fn()=> $config['user'];
-        $name=static fn()=> 'TiO2 Malaysia';
+        $name=static fn()=> 'TiO2Products';
         $smtp=static function ($mailer) use ($config) { tio2_configure_gmail_smtp($mailer,$config); };
         add_filter('wp_mail_from',$from);
         add_filter('wp_mail_from_name',$name);
@@ -71,7 +71,7 @@ function tio2_request_send_notification($id,$confirmed_retry=false) {
         $previous_mailer=$GLOBALS['phpmailer']??null;
         unset($GLOBALS['phpmailer']);
         try {
-            $subject=$kind==='contact'?'TiO2 Malaysia: New general inquiry #'.$id:'TiO2 Malaysia: New '.($kind==='quote'?'quote':($kind==='documents'?'document':'sample')).' request #'.$id;
+            $subject=$kind==='contact'?'TiO2Products: New general inquiry #'.$id:'TiO2Products: New '.($kind==='quote'?'quote':($kind==='documents'?'document':'sample')).' request #'.$id;
             $sent=wp_mail($config['to'],$subject,tio2_request_mail_body($id,$kind,$values),['Content-Type: text/plain; charset=UTF-8']);
         } catch (Throwable $error) {
             $sent=false;

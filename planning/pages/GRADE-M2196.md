@@ -20,7 +20,7 @@ Sulfate industrial and powder coatings grade; publish differentiation from M-996
 ## SEO
 
 Primary keyword: M-2196 titanium dioxide
-Title: M-2196 Titanium Dioxide for Coatings | TiO2 Malaysia
+Title: M-2196 Titanium Dioxide for Coatings | TiO2Products
 Meta: Evaluate M-2196 titanium dioxide for solvent-based furniture and industrial paint. Review typical data, request a sample or RFQ.
 H1: M-2196 Titanium Dioxide for Solvent-Based Furniture and Industrial Paint
 

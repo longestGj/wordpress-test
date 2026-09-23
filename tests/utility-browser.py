@@ -12,7 +12,7 @@ assert urlparse(BASE).hostname in ('localhost', '127.0.0.1')
 OUT = ROOT / '.local' / 'utility-http'
 OUT.mkdir(parents=True, exist_ok=True)
 PAGES = {
-    'CONTACT-001': ('/contact/', 'Contact TiO2 Malaysia', 200),
+    'CONTACT-001': ('/contact/', 'Contact TiO2Products', 200),
     'LEGAL-PRIV-EN': ('/privacy-policy/', 'Privacy Policy', 200),
     'LEGAL-PRIV-MS': ('/ms/privacy-policy/', 'Dasar Privasi', 200),
     'LEGAL-COOKIE-EN': ('/cookie-policy/', 'Cookie Policy', 200),

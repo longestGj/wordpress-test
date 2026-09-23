@@ -19,7 +19,7 @@ Own generic pigment, rutile, grade-list, and grade-selection intent; route to pr
 ## SEO
 
 Primary keyword: titanium dioxide pigment
-Title: Titanium Dioxide Pigment Grades | TiO2 Malaysia
+Title: Titanium Dioxide Pigment Grades | TiO2Products
 Meta: Explore 14 titanium dioxide pigment grades by application, production process and portfolio group, then continue to grade pages for technical evaluation.
 H1: Titanium Dioxide Pigment Grades for Industrial Applications
 

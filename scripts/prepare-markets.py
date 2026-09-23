@@ -27,7 +27,7 @@ ROUTES = {
     'View the Documents Process': '/documents/', 'Explore Documents and Compliance': '/documents/',
     'Explore Titanium Dioxide Grades': '/products/', 'View All Titanium Dioxide Grades': '/products/',
     'Explore All Titanium Dioxide Grades': '/products/', 'Explore Products': '/products/',
-    'Explore All Applications': '/applications/', 'About TiO2 Malaysia': '/about/',
+    'Explore All Applications': '/applications/', 'About TiO2Products': '/about/',
     'Explore Applications': '#application-paths',
     'Explore Representative Grades': '#representative-grades',
     'Explore Coatings': '/applications/titanium-dioxide-for-coatings/',
@@ -252,5 +252,7 @@ for identity in IDS:
             'title': fields['h1'], 'seo_title': fields['seo_title'], 'seo_description': fields['seo_description'],
             'language': 'pt-BR' if identity == 'MARKET-BR-PT' else 'en', 'main_class': 'market-page market-' + identity.lower(),
             'source': str(source.relative_to(ROOT)).replace('\\', '/'), 'content': content}
+    from brand_seed_patch import apply_brand_patch
+    seed = apply_brand_patch('markets/' + identity + '.json', seed)
     (out / (identity + '.json')).write_text(json.dumps(seed, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(identity, len(sections), 'modules', len(content), 'chars')

@@ -20,7 +20,7 @@ Durable exterior plastics grade for uPVC and PVC film applications.
 ## SEO
 
 Primary keyword: M-200 titanium dioxide
-Title: M-200 Titanium Dioxide for Exterior Plastics | TiO2 Malaysia
+Title: M-200 Titanium Dioxide for Exterior Plastics | TiO2Products
 Meta: Evaluate M-200 titanium dioxide for uPVC profiles, exterior plastics, PVC calendered films and durable plastic masterbatch. Review data, samples and RFQ.
 H1: M-200 Titanium Dioxide for Exterior Plastics and Masterbatch Evaluation
 

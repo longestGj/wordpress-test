@@ -18,7 +18,7 @@ Own Italy-specific supplier and procurement intent; link to EU-level compliance 
 ## SEO
 
 Primary keyword: titanium dioxide supplier italy
-Title: Titanium Dioxide Supplier for Italy | TiO2 Malaysia
+Title: Titanium Dioxide Supplier for Italy | TiO2Products
 Meta: Evaluate Malaysia-origin titanium dioxide for coatings, compound, masterbatch and packaging-printing projects in Italy. Review products, documents and quote inputs.
 H1: Titanium Dioxide Supplier for Italy
 

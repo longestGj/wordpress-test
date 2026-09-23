@@ -14,6 +14,8 @@ finally:
     for path, original in original_seeds.items():
         path.write_bytes(original)
 assert set(seeds) == {'CONTACT-001', 'LEGAL-PRIV-EN', 'LEGAL-PRIV-MS', 'LEGAL-COOKIE-EN', 'CONV-THANK'}
+for page_id, seed in seeds.items():
+    assert 'TiO2 Malaysia' not in json.dumps(seed, ensure_ascii=False), page_id
 assert all('<h1>' in item['content'] for key, item in seeds.items() if key != 'CONV-THANK')
 assert seeds['LEGAL-PRIV-MS']['parent'] == 'ms'
 assert '23 September 2026' in seeds['LEGAL-PRIV-EN']['content']

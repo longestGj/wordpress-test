@@ -18,7 +18,7 @@ Own English-language Brazil supplier and importer intent.
 ## SEO
 
 Primary keyword: titanium dioxide supplier brazil
-Title: Titanium Dioxide Supplier Brazil | TiO2 Malaysia
+Title: Titanium Dioxide Supplier Brazil | TiO2Products
 Meta: Explore Malaysia-origin industrial titanium dioxide Grades for coatings, plastics and masterbatch production in Brazil. Request documents or request a quote.
 H1: Titanium Dioxide Supplier for Brazil
 

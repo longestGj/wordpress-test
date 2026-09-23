@@ -7,11 +7,14 @@ patch=json.loads((root/'data/request-email-policy-patch.json').read_text(encodin
 contact=json.loads((root/'data/contact-mail-policy-patch.json').read_text(encoding='utf-8'))
 for identity,entries in patch.items():
     seed=json.loads((root/'data/utility'/f'{identity}.json').read_text(encoding='utf-8'))
-    for entry in entries:
+    for index,entry in enumerate(entries):
         expected=entry['new']
         for change in contact.get(identity,[]):
             for old in change['old'] if isinstance(change['old'],list) else [change['old']]:
                 expected=expected.replace(old,change['new'])
+        # The hosting-policy migration replaced the older opening sentence;
+        # the Gmail processing and retention disclosure must still survive.
+        if index==1:expected=expected.split('. ',1)[1]
         assert expected in seed['content'],identity
 for identity,entries in contact.items():
     seed=json.loads((root/'data/utility'/f'{identity}.json').read_text(encoding='utf-8'))

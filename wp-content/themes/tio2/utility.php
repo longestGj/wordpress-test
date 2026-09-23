@@ -8,7 +8,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('tio2-utility', get_template_directory_uri().'/assets/utility.css', ['tio2'], filemtime(__DIR__.'/assets/utility.css'));
 });
 add_filter('pre_get_document_title', function ($title) {
-    if (is_404()) return 'Page Not Found | TiO2 Malaysia';
+    if (is_404()) return 'Page Not Found | TiO2Products';
     $id = get_queried_object_id();
     return tio2_is_utility_page($id) ? (get_post_meta($id, '_tio2_seo_title', true) ?: $title) : $title;
 }, 30);

@@ -135,7 +135,7 @@ No optional Analytics technology is active. Google Analytics, Google Tag Manager
 No advertising or advertising-personalisation technology is active. Google Ads is not enabled.''')
 cookie = section(cookie, 'Current Cookie and Storage Inventory', '''| Name | Provider | Type | Purpose | Duration | Category |
 |---|---|---|---|---|---|
-| `tio2_flow` | TiO2 Malaysia | First-party HttpOnly Cookie | Binds Contact form errors or receipt state to one browser; also binds any future receiver-confirmed Thank You state | Browser session | Necessary |
+| `tio2_flow` | TiO2Products | First-party HttpOnly Cookie | Binds Contact form errors or receipt state to one browser; also binds any future receiver-confirmed Thank You state | Browser session | Necessary |
 
 The Cookie contains a random value, not a name, email address or inquiry text. Contact form validation and receipt data are held temporarily on the server for up to 10 minutes. A pseudonymous rate-limit counter is held for one hour. This site does not set a consent Local Storage record and does not set optional Analytics or advertising Cookies in the current implementation. WordPress administrator login may use separate authentication Cookies.''')
 cookie = section(cookie, 'How Advanced Consent Mode Works', '''Google measurement and Advanced Consent Mode are not active in this WordPress implementation. No Google measurement transmission or consent state should be inferred from a future implementation direction. If optional measurement is introduced, this policy and the controls will be updated after the actual technology and network behaviour are verified.''')
@@ -145,28 +145,36 @@ cookie = section(cookie, 'Browser Controls', '''Most browsers allow you to view,
 def save(page_id, slug, title, seo_title, seo_description, content, parent=''):
     # The approved legacy copy predates the confirmed public mailbox domain.
     content = content.replace('info@tio2malaysia.com', 'info@tio2products.com')
+    # The two remaining legacy mentions in each legal page name this website,
+    # not the company or Malaysia as a place. Fail if the source changes.
+    if page_id in {'LEGAL-PRIV-EN', 'LEGAL-PRIV-MS', 'LEGAL-COOKIE-EN'}:
+        if content.count('TiO2 Malaysia') != 2:
+            raise ValueError(f'Legal brand source changed: {page_id}')
+        content = content.replace('TiO2 Malaysia', 'TiO2Products')
     # GA4 disclosure is maintained as a narrow patch so the historic source stays intact.
     policy_patch = json.loads((ROOT / 'data' / 'analytics-policy-patch.json').read_text(encoding='utf-8'))
     for entry in policy_patch.get(page_id, []):
         if content.count(entry['old']) != 1:
             raise ValueError(f'Analytics policy source changed: {page_id}')
         content = content.replace(entry['old'], entry['new'], 1)
+    if 'TiO2 Malaysia' in content:
+        raise ValueError(f'Legacy website brand in generated page: {page_id}')
     data = dict(page_id=page_id, slug=slug, parent=parent, title=title, seo_title=seo_title,
                 seo_description=seo_description, content=content)
     (OUT / (page_id + '.json')).write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
-save('LEGAL-PRIV-EN','privacy-policy','Privacy Policy','Privacy Policy | TiO2 Malaysia','Learn how TiO2 Malaysia handles general business inquiry data, retention, necessary Cookies and privacy requests.', markdown(en))
-save('LEGAL-PRIV-MS','privacy-policy','Dasar Privasi','Dasar Privasi | TiO2 Malaysia','Ketahui cara TiO2 Malaysia mengendalikan data pertanyaan perniagaan umum, tempoh penyimpanan, Kuki yang diperlukan dan permintaan privasi.', markdown(ms), 'ms')
-save('LEGAL-COOKIE-EN','cookie-policy','Cookie Policy','Cookie Policy | TiO2 Malaysia','Learn which necessary Cookies TiO2 Malaysia uses for its contact form and how to review browser storage.', markdown(cookie))
+save('LEGAL-PRIV-EN','privacy-policy','Privacy Policy','Privacy Policy | TiO2Products','Learn how TiO2Products handles general business inquiry data, retention, necessary Cookies and privacy requests.', markdown(en))
+save('LEGAL-PRIV-MS','privacy-policy','Dasar Privasi','Dasar Privasi | TiO2Products','Ketahui cara TiO2Products mengendalikan data pertanyaan perniagaan umum, tempoh penyimpanan, Kuki yang diperlukan dan permintaan privasi.', markdown(ms), 'ms')
+save('LEGAL-COOKIE-EN','cookie-policy','Cookie Policy','Cookie Policy | TiO2Products','Learn which necessary Cookies TiO2Products uses for its contact form and how to review browser storage.', markdown(cookie))
 
-contact = '''<section class="utility-hero"><div class="wrap utility-hero-inner"><p class="eyebrow">General contact</p><h1>Contact TiO2 Malaysia</h1><p class="lead">Use this page for a general question about the company, a partnership or another business matter. For a quotation, product documents or a sample, choose the relevant dedicated request route below.</p><a class="button primary" href="#general-inquiry">Send a General Inquiry</a></div></section>
+contact = '''<section class="utility-hero"><div class="wrap utility-hero-inner"><p class="eyebrow">General contact</p><h1>Contact TiO2Products</h1><p class="lead">Use this page for a general question about the company, a partnership or another business matter. For a quotation, product documents or a sample, choose the relevant dedicated request route below.</p><a class="button primary" href="#general-inquiry">Send a General Inquiry</a></div></section>
 <section class="wrap"><h2>General contact details</h2><p>For a general question about the company or another business matter, use the form on this page. You can also find the General Inquiries email, Operating Company and Manufacturing Site below.</p><div class="utility-card-grid"><div class="utility-card"><h3>General Inquiries</h3><a href="mailto:info@tio2products.com">info@tio2products.com</a></div><div class="utility-card"><h3>Operating Company</h3><p>IKHLAS TITANIUM (MALAYSIA) SDN. BHD.</p></div><div class="utility-card"><h3>Manufacturing Site</h3><p>NO.33 Industrial Perusahaan Ringan Tupai, 34000 Taiping, Perak, Malaysia</p></div></div></section>
 <section class="wrap"><h2>Choose a dedicated request when you need one</h2><p>Requests for quotations, product documents and samples have their own routes. Choose the option that matches your task.</p><div class="utility-card-grid"><div class="utility-card"><h3>Request a Quote</h3><p>Share the commercial and product information needed to review a quotation request.</p><a href="/request-a-quote/">Request a Quote</a></div><div class="utility-card"><h3>Request Documents</h3><p>Identify the product documents you need and provide the context for your request.</p><a href="/request-documents/">Request Documents</a></div><div class="utility-card"><h3>Request a Sample</h3><p>Share your product and application context for a sample request.</p><a href="/request-sample/">Request a Sample</a></div></div></section>
 <section class="wrap" id="general-inquiry"><h2>Send a general inquiry</h2><p>Use this form for a question about the company, a partnership or another general business matter. Please use the dedicated routes above for quotations, product documents or samples.</p>[tio2_contact_form]</section>'''
-save('CONTACT-001','contact','Contact','Contact TiO2 Malaysia | General Inquiries','Contact TiO2 Malaysia with a general company or business inquiry, or use the dedicated pages to request a quote, product documents or a sample.',contact)
+save('CONTACT-001','contact','Contact','Contact TiO2Products | General Inquiries','Contact TiO2Products with a general company or business inquiry, or use the dedicated pages to request a quote, product documents or a sample.',contact)
 
 thank = '''[tio2_thank_state kind="quote"]<section class="utility-hero"><div class="wrap utility-hero-inner"><p class="eyebrow">Request received</p><h1>Thank you. We’ve received your quotation request.</h1><p class="lead">Our team will review the details and contact you using the information provided.</p><div class="utility-actions"><a class="button primary" href="/products/">Explore Products</a><a class="button" href="/">Go to Homepage</a></div></div></section>[/tio2_thank_state]
 [tio2_thank_state kind="documents"]<section class="utility-hero"><div class="wrap utility-hero-inner"><p class="eyebrow">Request received</p><h1>Thank you. We’ve received your document request.</h1><p class="lead">Our team will review the requested documents and contact you using the information provided.</p><div class="utility-actions"><a class="button primary" href="/documents/">Return to Documents</a><a class="button" href="/products/">Explore Products</a></div></div></section>[/tio2_thank_state]
 [tio2_thank_state kind="sample"]<section class="utility-hero"><div class="wrap utility-hero-inner"><p class="eyebrow">Request received</p><h1>Thank you. We’ve received your sample request.</h1><p class="lead">Our team will review your application and sample requirements and contact you using the information provided.</p><div class="utility-actions"><a class="button primary" href="/products/">Explore Products</a><a class="button" href="/applications/">View Applications</a></div></div></section>[/tio2_thank_state]
 [tio2_thank_state kind="invalid"]<section class="utility-hero"><div class="wrap utility-hero-inner"><h1>How can we help?</h1><p class="lead">Choose the request you’d like to make, and our team will guide you through the next step.</p><div class="utility-actions"><a class="button primary" href="/request-a-quote/">Request a Quote</a><a class="button" href="/request-documents/">Request Documents</a><a class="button" href="/request-sample/">Request a Sample</a></div></div></section>[/tio2_thank_state]'''
-save('CONV-THANK','thank-you','Thank You','Thank You | TiO2 Malaysia','View confirmation and next steps for a TiO2 Malaysia request, or choose the request you would like to make.',thank)
+save('CONV-THANK','thank-you','Thank You','Thank You | TiO2Products','View confirmation and next steps for a TiO2Products request, or choose the request you would like to make.',thank)

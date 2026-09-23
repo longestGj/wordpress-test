@@ -20,7 +20,7 @@ High-concentration masterbatch and film grade.
 ## SEO
 
 Primary keyword: M-340 titanium dioxide
-Title: M-340 Titanium Dioxide for Plastics | TiO2 Malaysia
+Title: M-340 Titanium Dioxide for Plastics | TiO2Products
 Meta: Evaluate M-340 titanium dioxide for masterbatch, films, injection plastics and other documented uses. Review technical data, request a sample or RFQ.
 H1: M-340 Titanium Dioxide for Plastics and Masterbatch Evaluation
 

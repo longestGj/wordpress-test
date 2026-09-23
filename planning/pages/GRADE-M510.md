@@ -20,7 +20,7 @@ Multi-application grade for architectural and automotive coating evaluation.
 ## SEO
 
 Primary keyword: M-510 titanium dioxide
-Title: M-510 Titanium Dioxide for Coatings | TiO2 Malaysia
+Title: M-510 Titanium Dioxide for Coatings | TiO2Products
 Meta: Evaluate M-510 titanium dioxide for architectural and automotive coatings, then review secondary application paths or request documents, a sample or RFQ.
 H1: M-510 Titanium Dioxide for Coating Evaluation
 

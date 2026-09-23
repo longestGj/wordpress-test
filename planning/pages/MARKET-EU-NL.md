@@ -18,7 +18,7 @@ Own Netherlands-specific supplier and procurement intent; link to EU-level compl
 ## SEO
 
 Primary keyword: titanium dioxide supplier netherlands
-Title: Titanium Dioxide Supplier Netherlands | TiO2 Malaysia
+Title: Titanium Dioxide Supplier Netherlands | TiO2Products
 Meta: Explore Malaysia-origin titanium dioxide for coatings, printing inks, plastics and masterbatch projects in the Netherlands, then request documents or a quote.
 H1: Titanium Dioxide Supplier for the Netherlands
 

@@ -19,7 +19,7 @@ Explain legitimate supply diversification and Malaysia-origin alternatives witho
 ## SEO
 
 Primary keyword: non china titanium dioxide
-Title: Non-China Titanium Dioxide Supply Guide | TiO2 Malaysia
+Title: Non-China Titanium Dioxide Supply Guide | TiO2Products
 Meta: Evaluate non-China titanium dioxide supply using checks for origin evidence, technical documents, application fit and destination-market requirements.
 H1: Non-China Titanium Dioxide: A Procurement Evaluation Guide
 
