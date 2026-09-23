@@ -1,6 +1,6 @@
 # CONV-RFQ — Request a Quote
 
-Status: REVIEW
+Status: ACCEPTED
 
 URL: `/request-a-quote/`
 Family: RFQ conversion page · EN
@@ -47,3 +47,5 @@ Review: approved content and facts; SEO; 1440/768/390; internal links; forms whe
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Gmail notification code is implemented; local authentication and one SMTP-accepted notification per form passed on 2026-09-23; the user confirmed receipt of all three notifications. Runtime does not consult this specification or planning source hashes.
+
+Integrated local acceptance 2026-09-23: the main `/request-a-quote/` Page passed SEO, owned-Page, link and 1440/768/390 browser checks. A new synthetic HTTP submission reached the browser-bound Thank You receipt; repeat POST reused that receipt, and invalid email retained the input with an error. Test mail was intercepted, and the private record and duplicate claim were removed. The earlier real quote notification was confirmed received by the user. Local Page accepted; production publication still needs separate authorization.

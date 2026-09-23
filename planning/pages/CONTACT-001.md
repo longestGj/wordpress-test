@@ -1,6 +1,6 @@
 # CONTACT-001 — Contact
 
-Status: REVIEW
+Status: ACCEPTED
 
 URL: `/contact/`
 Family: Utility contact page · EN
@@ -43,7 +43,7 @@ Native page seed: `data/utility/CONTACT-001.json`. The general form validates on
 
 Local review 2026-09-23: `/contact/` returns HTTP 200 with the expected title, description, canonical and one H1. `tests/utility-form-http.py` verified invalid-field and nonce rejection with retained entries, then saved one private local inquiry and removed that exact fixture. `tests/utility-import.php` verified repeat import preserves edited SEO and rejects a slug without project ownership, then restored the metadata fixture. `tests/utility-retention.php` verified three-year cleanup with a disposable fixture. `tests/utility-browser.py` checked 1440/768/390, keyboard menu and Cookie Settings focus, and saved screenshots under `.local/utility-http/`. Those route limitations were subsequently resolved by the three request receivers; production publication still needs separate authorization.
 
-Domain audit 2026-09-23: the displayed contact address is updated to `info@tio2products.com`, confirmed by the user as receiving mail. The owned Page in the isolated 18080 preview was migrated without replacing other editor content; a repeat migration changed zero Pages.
+Domain audit 2026-09-23: the displayed contact address is updated to `info@tio2products.com`, confirmed by the user as receiving mail. The four owned Contact and policy Pages on the main local site were migrated without replacing other editor content; a repeat migration changed zero Pages. Live HTTP now shows no `info@tio2malaysia.com` on those Pages.
 
 ## Contact notification verification (2026-09-23)
 
@@ -51,4 +51,8 @@ Contact uses the shared Gmail transport and existing site recipient. A browser-s
 
 `tests/contact-mail-runtime.php` first failed for missing duplicate protection, then passed private storage, duplicate/concurrent submission, complete mail body, failure, accepted suppression and confirmed retry checks with intercepted transport and fixture cleanup. The existing request-mail runtime and settings tests still pass. `tests/utility-form-http.py` passed with forced mail failure and with `--send-real-mail`: invalid fields/nonce rejected, receipt remained generic, repeat POST sent no duplicate, guest retry was blocked. Gmail accepted the single real Contact notification #352 with one attempt; the user confirmed receipt of that message. Both HTTP records (#348, #352) were removed with their submission claims. Utility HTTP/SEO/404, browser-bound receipt, import edit-preservation and PHP lint checks passed. Independent review found no Critical/Important issues.
 
-EN/MS Privacy and Cookie seeds now disclose Contact notification, Gmail processing, independent email retention and server-side duplicate prevention. `scripts/update-contact-mail-policy.php` updated three owned local Pages; a repeat run changed zero. It preserves other content and refuses changed target passages. The database was backed up locally before migration. Existing GA4 seed text and contact address were preserved; the separate GA4 policy migration has not yet been applied to the main local database.
+EN/MS Privacy and Cookie seeds now disclose Contact notification, Gmail processing, independent email retention and server-side duplicate prevention. `scripts/update-contact-mail-policy.php` updated three owned local Pages; a repeat run changed zero. It preserves other content and refuses changed target passages. The database was backed up locally before migration. The separate GA4 policy migration was applied to the main local database during nine-page acceptance; it updated three owned Pages and changed zero on repeat.
+
+## Integrated local acceptance (2026-09-23)
+
+The main local WordPress page passed 1440/768/390 browser review, keyboard menu and Cookie Settings focus, SEO and internal-link checks. `tests/utility-form-http.py` passed invalid input and nonce rejection, saved receipt despite simulated mail failure, duplicate submission without resend, and guest retry rejection; fixture #360 and its claim were removed. Earlier real Contact notification #352 was accepted once by Gmail and the user confirmed receipt. The private backend record, administrator-only mail state and Core ownership were checked. The current Contact Page is accepted for the local build; publication still needs its own release approval.

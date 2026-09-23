@@ -35,7 +35,7 @@ Keyword boundary: Cookie Policy owns storage and consent transparency only; Cook
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
-Release: requires explicit user authorization. Sending form notifications by email remains a later task. Runtime does not consult this specification or planning source hashes.
+Release: requires explicit user authorization. Local Contact and request notifications are implemented; production storage inventory and legal review remain open. Runtime does not consult this specification or planning source hashes.
 
 ## WordPress implementation (2026-09-23)
 
@@ -43,6 +43,8 @@ Native page seed: `data/utility/LEGAL-COOKIE-EN.json`. The initial local review 
 
 Local review 2026-09-23: `/cookie-policy/` returns HTTP 200 with expected SEO and one H1. A clean browser retained no Cookie or Local Storage on the privacy page; visiting Contact set only the HttpOnly browser-session `tio2_flow` Cookie, with Local Storage still empty and network requests confined to localhost. Browser review at 1440/768/390 verified the mobile inventory cards and Cookie Settings focus; screenshots are in `.local/utility-http/`. Production inventory and legal review remain open.
 
-Domain audit 2026-09-23: the cookie contact address is updated to `info@tio2products.com` in the seed and the isolated 18080 preview.
+Domain audit 2026-09-23: the cookie contact address is updated to `info@tio2products.com` in the seed and main local WordPress Page; a repeat exact migration changed zero Pages.
 
-GA4 review 2026-09-23: the seed now describes the confirmed `G-SY6PZPX0VR` stream, optional GA4 Cookies and Local Storage choice. The theme only renders consent controls on the indexable HTTPS production host; no Google tag is requested before consent or after rejection. A scoped Page migration passed dry-run preflight on the isolated 18080 preview without changing its database. Production publication, clean-browser inventory, and legal review remain open.
+GA4 review 2026-09-23: the seed now describes the confirmed `G-SY6PZPX0VR` stream, optional GA4 Cookies and Local Storage choice. The theme only renders consent controls on the indexable HTTPS production host; no Google tag is requested before consent or after rejection. The scoped migration updated three owned main local policy Pages and changed zero on repeat. Production publication, clean-browser inventory, and legal review remain open.
+
+Integrated local review 2026-09-23: main WordPress ownership, SEO, internal links, 1440/768/390 layout, mobile inventory cards and Cookie Settings focus passed. A clean browser retained no Cookie or Local Storage on Privacy; Contact set only HttpOnly `tio2_flow`, and local requests stayed on localhost. Consent browser tests passed opt-in, rejection, withdrawal and URL sanitization under a production-host simulation; no production Cookie inventory was claimed. Contact duplicate-prevention and email-notification disclosures are present in the rendered policy, with no legacy contact email. Status remains REVIEW pending real production inventory and legal approval.

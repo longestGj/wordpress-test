@@ -1,6 +1,6 @@
 # CONV-THANK — Thank You
 
-Status: REVIEW
+Status: ACCEPTED
 
 URL: `/thank-you/`
 Family: Shared form-result utility page · EN
@@ -35,10 +35,10 @@ Keyword boundary: No search ownership; RFQ Documents and Sample source pages ret
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
-Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+Release: requires explicit user authorization. The three request receivers and their staff notifications are locally verified; production deployment is separate. Runtime does not consult this specification or planning source hashes.
 
 ## WordPress implementation (2026-09-23)
 
-Native page seed: `data/utility/CONV-THANK.json`. Default and forged-parameter visits show only request choices. A Quote, Documents or Sample receiver must explicitly call `tio2_issue_request_receipt()` after positive acknowledgement; a ten-minute opaque token bound to the `tio2_flow` browser session selects its success text. No active receiver calls this yet, so no current request can show a false success state. Keep `noindex,nofollow` and sitemap exclusion. Runtime receiver integration remains dependent on the separate request-page work.
+Native page seed: `data/utility/CONV-THANK.json`. Default and forged-parameter visits show only request choices. Each Quote, Documents and Sample receiver calls `tio2_issue_request_receipt()` after saving its private record; a ten-minute opaque token bound to the `tio2_flow` browser session selects its success text. Keep `noindex,nofollow` and sitemap exclusion.
 
-Local review 2026-09-23: direct and forged-parameter HTTP visits returned the neutral H1 with no success text; `tests/utility-receipt-runtime.php` verified a short-lived test token worked only in its issuing browser session and deleted the transient fixture. The page is `noindex,nofollow` and excluded from the sitemap query. Browser review at 1440/768/390 saved screenshots in `.local/utility-http/`. The three request receivers remain unavailable; the page labels their choices as unavailable and links to Contact for a general inquiry. Success states cannot be fully accepted until real receivers provide positive acknowledgement.
+Local review 2026-09-23: direct and forged-parameter HTTP visits returned the neutral H1 with no success text; `tests/utility-receipt-runtime.php` verified a short-lived test token worked only in its issuing browser session and deleted the transient fixture. Three real local HTTP request submissions separately reached the correct browser-bound success state, and duplicate posts reused their receipt URLs. Their synthetic records and claims were removed. The page is `noindex,nofollow` and excluded from the sitemap query. Browser review at 1440/768/390 saved screenshots in `.local/utility-http/`. Local Page accepted; publication needs separate authorization.

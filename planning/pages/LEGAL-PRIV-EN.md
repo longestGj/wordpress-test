@@ -35,7 +35,7 @@ Keyword boundary: Privacy owns legal transparency only and must not compete with
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
-Release: requires explicit user authorization. Sending form notifications by email remains a later task. Runtime does not consult this specification or planning source hashes.
+Release: requires explicit user authorization. Local Contact and request notifications are implemented; legal and production data-processing review remain open. Runtime does not consult this specification or planning source hashes.
 
 ## WordPress implementation (2026-09-23)
 
@@ -45,6 +45,8 @@ Local integration found the untouched WordPress Core starter privacy draft at `/
 
 Local review 2026-09-23: `/privacy-policy/` returns HTTP 200 with the expected SEO and one H1. The WordPress starter draft remains unpublished; the owned page is selected as the Core privacy page. Browser review at 1440/768/390 and screenshots are in `.local/utility-http/`. Fresh browser inspection found no Cookie or Local Storage item on this page and no non-local requests. Production host/provider disclosures and legal approval remain open; local review is not publication approval.
 
-Domain audit 2026-09-23: the privacy contact address is updated to `info@tio2products.com` in the seed and the isolated 18080 preview.
+Domain audit 2026-09-23: the privacy contact address is updated to `info@tio2products.com` in the seed and main local WordPress Page; a repeat exact migration changed zero Pages.
 
-GA4 review 2026-09-23: the seed now discloses optional GA4 page and usage measurement only after explicit consent, the stored choice, and withdrawal. The policy migration passed read-only preflight on the isolated preview; production content is unchanged. Legal and production data-processing review remain open before release.
+GA4 review 2026-09-23: the seed now discloses optional GA4 page and usage measurement only after explicit consent, the stored choice, and withdrawal. The policy migration updated the three owned main local policy Pages and changed zero on repeat; Contact/Gmail disclosures and other editor text were preserved. Browser tests confirmed no Google request before consent or after rejection and a sanitized page URL after opt-in. Production content is unchanged. Legal and production data-processing review remain open before release.
+
+Integrated local review 2026-09-23: main WordPress SEO, ownership, Core privacy selection, links, 1440/768/390 layout, keyboard focus and local storage checks passed. Contact/Gmail and GA4 passages are present in the rendered Page, with no legacy contact email. Current production-host metadata was reported as Oracle `phx` (Phoenix, US), but the final deployed site's processor locations, log and email retention, transfer map and policy wording still need confirmation and qualified legal review. Status remains REVIEW; no publication approval is implied.
