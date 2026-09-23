@@ -42,7 +42,6 @@ if ! wp core is-installed >/dev/null 2>&1; then
   if ! wp core install --url="$PUBLIC_URL" --title='TiO2 Products Stage' \
     --admin_user="$WP_ADMIN_USER" --admin_email="$WP_ADMIN_EMAIL" \
     --skip-email --quiet >/dev/null 2>&1; then
-    "${compose[@]}" exec -T wordpress rm -f -- "$pending_marker"
     echo 'WordPress core installation failed' >&2
     exit 1
   fi

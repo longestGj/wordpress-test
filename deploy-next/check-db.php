@@ -18,9 +18,9 @@ if (!$connection) {
 }
 
 if (in_array('--require-empty', $argv, true)) {
-    $tables = $connection->query("SHOW TABLES LIKE 'wp_options'");
+    $tables = $connection->query('SHOW TABLES');
     if (!$tables || $tables->num_rows !== 0) {
-        fwrite(STDERR, "WordPress tables already exist; refusing fresh installation.\n");
+        fwrite(STDERR, "Database is not empty; refusing fresh installation.\n");
         exit(1);
     }
 }
