@@ -101,6 +101,18 @@ class AtlasHomeHttpTest(unittest.TestCase):
                             ),
                             "rgb(156, 61, 34)",
                         )
+                        for label, dark_link in (
+                            ("grade", page.locator("#atlas-grade-index a[data-grade]").first),
+                            ("footer", page.locator(".footer nav a").first),
+                        ):
+                            with self.subTest(focus=label):
+                                dark_link.focus()
+                                self.assertEqual(
+                                    dark_link.evaluate(
+                                        "(el) => getComputedStyle(el).outlineColor"
+                                    ),
+                                    "rgb(217, 154, 113)",
+                                )
                     hero_link = page.locator("#atlas-hero a").first
                     hero_link.focus()
                     self.assertNotEqual(

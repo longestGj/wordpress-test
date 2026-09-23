@@ -9,7 +9,8 @@
 .atlas-home h3{color:inherit;font-size:1.35rem;line-height:1.25;letter-spacing:-.025em}
 .atlas-home p{max-width:65ch}
 .atlas-home a{color:inherit;text-decoration:none}
-.atlas-home :is(a,button,summary):focus-visible,body.home :is(.header a,.header button,.footer a,.footer button,#site-menu a,#site-menu button):focus-visible{outline:3px solid var(--atlas-action,#9c3d22);outline-offset:4px}
+.atlas-home :is(a,button,summary):focus-visible,body.home .header :is(a,button):focus-visible,body.home .footer :is(a,button):focus-visible,body.home #site-menu :is(a,button):focus-visible{outline:3px solid var(--atlas-action,#9c3d22);outline-offset:4px}
+.atlas-home .atlas-grades a:focus-visible,body.home .footer :is(a,button):focus-visible{outline-color:#d99a71}
 .atlas-home .atlas-kicker,.atlas-home .atlas-index{font:700 .72rem/1.4 ui-monospace,"SFMono-Regular",Consolas,monospace;letter-spacing:.105em}
 .atlas-home .atlas-kicker{color:var(--atlas-action)}
 .atlas-home .atlas-section{padding:clamp(4.5rem,7vw,7.5rem) 0}

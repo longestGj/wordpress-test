@@ -30,7 +30,7 @@ Shared grade names, official company identity and buyer routes are intentional f
 - `python tests/home-product-cards.py`: 3 passed; six sections, new brand/SEO seed, 14 correct grade URLs and buyer/company routes.
 - `python tests/atlas-home-browser.py`: 2 passed; standalone visual and responsive checks.
 - `python tests/planning-integrity.py`: passed; 59 unique specs and all references resolve.
-- `python tests/atlas-home-http.py`: 4 passed against real WordPress HTTP; title, description, H1, canonical, logo, favicon, noindex, 14 grade destinations and every in-main link returned 200; About retains the prior logo; no horizontal overflow at 1440/768/390; visible keyboard focus and mobile menu Enter/Escape behavior. Also checks the Home navigation indicator uses oxide red.
+- `python tests/atlas-home-http.py`: 4 passed against real WordPress HTTP; title, description, H1, canonical, logo, favicon, noindex, 14 grade destinations and every in-main link returned 200; About retains the prior logo; no horizontal overflow at 1440/768/390; visible keyboard focus on light hero and pale-orange focus on dark grade/footer links; mobile menu Enter/Escape behavior. Also checks the Home navigation indicator uses oxide red.
 - `tests/atlas-home-import.php` through the local CLI, twice: passed; both known old bodies migrate, repeat is a no-op, edited body/SEO/ownerless/nonlocal cases refuse writes, and test fixtures are restored.
 - PHP lint: `scripts/migrate-atlas-home.php`, `tests/atlas-home-import.php`, theme `functions.php`, `header.php`, `footer.php` all passed.
 - Contrast ratios checked during visual implementation: white on oxide red 6.77:1; warm paper on graphite 13.25:1; pale orange on graphite 6.11:1.
