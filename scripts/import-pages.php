@@ -19,7 +19,7 @@ foreach($seeds as $s){
 }
 if(!get_option('tio2_product_hub'))update_option('tio2_product_hub',$ids['products']);
 if(!get_option('tio2_product_discovery'))update_option('tio2_product_discovery',json_decode(file_get_contents('/workspace/data/product-discovery.json'),true));
-if(!get_post_meta($ids['products'],'_tio2_discovery',true)){$d=get_option('tio2_product_discovery');$d['not_sure']=['Start with the full grade directory and open model pages for further technical evaluation.','You can also share your formulation, process, destination and document requirements for review.'];update_post_meta($ids['products'],'_tio2_discovery',$d);}
+if(!get_post_meta($ids['products'],'_tio2_discovery',true)){$d=get_option('tio2_product_discovery');$d['not_sure']=$d['not_sure']??tio2_discovery_guidance();update_post_meta($ids['products'],'_tio2_discovery',$d);}
 if(get_option('show_on_front')!=='page'){update_option('show_on_front','page');update_option('page_on_front',$ids['home']);}
 if(!has_nav_menu('primary')){
  $menu=wp_create_nav_menu('Main navigation');if(is_wp_error($menu))WP_CLI::error($menu->get_error_message());

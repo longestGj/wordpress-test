@@ -37,7 +37,14 @@ add_shortcode('tio2_grade_results',function(){
  $html.='<div data-result-app="Not Sure" hidden><div class="resultMessage">';foreach($d['not_sure']??[] as $p)$html.='<p>'.esc_html($p).'</p>';
  return $html.'<a href="#all-grades">View All Grades</a><a href="'.esc_url(home_url('/request-a-quote/')).'">Request a Quote</a></div></div>';
 });
-function tio2_discovery_data(){return get_post_meta((int)get_option('tio2_product_hub'),'_tio2_discovery',true)?:get_option('tio2_product_discovery',[]);}
+function tio2_discovery_guidance(){return ['Start with the full grade directory and open model pages for further technical evaluation.','You can also share your formulation, process, destination and document requirements for review.'];}
+function tio2_discovery_data(){
+ $d=get_post_meta((int)get_option('tio2_product_hub'),'_tio2_discovery',true)?:get_option('tio2_product_discovery',[]);
+ if(!is_array($d))$d=[];
+ $guidance=is_array($d['not_sure']??null)?array_values(array_filter($d['not_sure'],static fn($text)=>is_string($text)&&trim($text)!=='')):[];
+ $d['not_sure']=$guidance?:tio2_discovery_guidance();
+ return $d;
+}
 function tio2_validate_discovery($d){
  if(!is_array($d)||empty($d['rows'])||!is_array($d['rows'])||!isset($d['applications'],$d['not_sure'])||!is_array($d['applications'])||!is_array($d['not_sure']))return new WP_Error('discovery_shape','Discovery rows, applications and guidance are required.');
  $grades=[];
@@ -50,12 +57,34 @@ function tio2_validate_discovery($d){
  $allowed=['Coatings','Plastics','Masterbatch','Printing Inks','Paper','Specialty Materials'];
  if(array_diff($allowed,array_keys($d['applications']))||array_diff(array_keys($d['applications']),$allowed))return new WP_Error('discovery_applications','Keep the six named discovery application groups.');
  foreach($d['applications'] as $list){if(!is_array($list))return new WP_Error('discovery_list','Application grades must be a list.');foreach($list as $grade)if(!is_string($grade)||!in_array($grade,$grades,true))return new WP_Error('discovery_grade','Application lists must use a grade in the directory.');if(count($list)!==count(array_unique($list)))return new WP_Error('discovery_duplicate','Application lists must not repeat a grade.');}
- foreach($d['not_sure'] as $text)if(!is_string($text))return new WP_Error('discovery_guidance','Guidance must be text.');
+ if(!$d['not_sure'])return new WP_Error('discovery_guidance','Keep at least one helpful Not Sure guidance paragraph.');
+ foreach($d['not_sure'] as $text)if(!is_string($text)||trim($text)==='')return new WP_Error('discovery_guidance','Guidance must be non-empty text.');
  return $d;
+}
+function tio2_grade_comparison($id){
+ $applications=wp_get_object_terms($id,'product_application',['fields'=>'names']);
+ $processes=wp_get_object_terms($id,'product_process',['fields'=>'names']);
+ $data=tio2_product_data($id);
+ return ['applications'=>is_wp_error($applications)?[]:$applications,
+  'process_label'=>!is_wp_error($processes)&&$processes?'Production process':'Process descriptor',
+  'process'=>!is_wp_error($processes)&&$processes?implode(' / ',$processes):($data['process_label']??'')];
 }
 add_shortcode('tio2_grade_directory',function(){
  $groups=[];foreach(tio2_discovery_data()['rows']??[] as $row)$groups[$row['group']][]=$row;$html='';
- foreach($groups as $group=>$rows){$html.='<article class="group"><h3>'.esc_html($group).'</h3>';foreach($rows as $r){$html.='<div class="gradeRow" data-grade="'.esc_attr($r['grade']).'"><strong>'.esc_html($r['grade']).'</strong><p>'.esc_html($r['summary']).'</p>';if(tio2_route_ready($r['url']))$html.='<a aria-label="View '.esc_attr($r['grade']).' grade" href="'.esc_url(home_url($r['url'])).'">View Grade <span aria-hidden="true">→</span></a>';$html.='</div>';}$html.='</article>';}
+ foreach($groups as $group=>$rows){
+  $html.='<article class="group"><h3>'.esc_html($group).'</h3>';
+  foreach($rows as $r){
+   $post=get_page_by_path(sanitize_title($r['grade']),OBJECT,'product');
+   $visible=$post&&get_post_status($post)==='publish'&&!post_password_required($post);
+   $html.='<div class="gradeRow" data-grade="'.esc_attr($r['grade']).'"><strong>'.esc_html($r['grade']).'</strong>';
+   if($visible)$html.='<a aria-label="View '.esc_attr($r['grade']).' grade" href="'.esc_url(get_permalink($post)).'">View Grade <span aria-hidden="true">→</span></a>';
+   $facts=$visible?tio2_grade_comparison($post->ID):['applications'=>[],'process_label'=>'Production process','process'=>''];
+   // Format legacy lowercase term names without changing taxonomy membership.
+   $labels=array_map(static fn($label)=>$label==='specialty'?'Specialty Materials':ucfirst($label),$facts['applications']);
+   $html.='<dl class="gradeDetails"><div><dt>Listed applications</dt><dd>'.esc_html($labels?implode(' / ',$labels):'Not listed').'</dd></div><div><dt>'.esc_html($facts['process_label']).'</dt><dd>'.esc_html($facts['process']?ucfirst($facts['process']):'Not listed').'</dd></div><div class="gradeCharacteristics"><dt>Key characteristics</dt><dd>'.esc_html($r['summary']).'</dd></div></dl></div>';
+  }
+  $html.='</article>';
+ }
  return $html;
 });
 add_action('add_meta_boxes_page',function($post){

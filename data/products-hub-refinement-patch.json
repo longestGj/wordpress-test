@@ -1,0 +1,26 @@
+[
+  {
+    "old": "<p>Explore 14 titanium dioxide pigment grades using the application selector, production-process categories or complete grade directory, then continue to individual grade pages for technical evaluation.</p><p>The portfolio includes rutile titanium dioxide pigment grades for multiple industrial applications.</p>",
+    "new": "<p>Explore 14 rutile titanium dioxide pigment grades by application, production process and portfolio group, then continue to individual product pages for grade-specific technical evaluation.</p>"
+  },
+  {
+    "old": "Process classification does not determine application fit on its own.",
+    "new": "Process classification does not determine application suitability on its own."
+  },
+  {
+    "old": "CR-901 · Vapor-phase oxidation",
+    "new": "CR-901 — specialty grade; process descriptor: vapor-phase oxidation"
+  },
+  {
+    "old": "How do I choose a titanium dioxide pigment grade?",
+    "new": "Can one titanium dioxide grade be used in more than one application?"
+  },
+  {
+    "old": "Start with the intended application, then use production-process classification if it is a required sourcing parameter. Review the relevant grade page and confirm the available product information against the formulation, processing conditions, destination and documentation requirements. A listed result is a starting point for evaluation, not a suitability guarantee.",
+    "new": "Yes. Some listed grades have multiple application relationships. Use the listed applications to find relevant product pages, then evaluate the grade against your formulation, processing conditions and required performance."
+  },
+  {
+    "old": "<details class=\"wp-faq\"><summary>Does a listed grade guarantee suitability?</summary><div class=\"answer\" id=\"answer-4\"><p>No. A listed grade is a starting point for technical evaluation. Final suitability should be confirmed against the buyer's formulation, processing conditions, performance requirements, destination requirements and applicable documentation.</p></div></details>",
+    "new": ""
+  }
+]

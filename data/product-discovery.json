@@ -109,8 +109,8 @@
   ],
   "faq": [
     {
-      "question": "How do I choose a titanium dioxide pigment grade?",
-      "answer": "Start with the intended application, then use production-process classification if it is a required sourcing parameter. Review the relevant grade page and confirm the available product information against the formulation, processing conditions, destination and documentation requirements. A listed result is a starting point for evaluation, not a suitability guarantee."
+      "question": "Can one titanium dioxide grade be used in more than one application?",
+      "answer": "Yes. Some listed grades have multiple application relationships. Use the listed applications to find relevant product pages, then evaluate the grade against your formulation, processing conditions and required performance."
     },
     {
       "question": "Which grades are listed in this product center?",
@@ -123,10 +123,6 @@
     {
       "question": "What if no grade is shown for my application?",
       "answer": "A missing result means that the selector has no listed grade for that application. It should not automatically be interpreted as a technical rejection of every grade. Buyers can contact the team when a requirement is not represented in the selector."
-    },
-    {
-      "question": "Does a listed grade guarantee suitability?",
-      "answer": "No. A listed grade is a starting point for technical evaluation. Final suitability should be confirmed against the buyer's formulation, processing conditions, performance requirements, destination requirements and applicable documentation."
     }
   ],
   "applications": {
@@ -172,5 +168,9 @@
     "Specialty Materials": [
       "CR-901"
     ]
-  }
+  },
+  "not_sure": [
+    "Start with the full grade directory and open model pages for further technical evaluation.",
+    "You can also share your formulation, process, destination and document requirements for review."
+  ]
 }

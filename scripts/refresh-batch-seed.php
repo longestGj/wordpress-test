@@ -9,7 +9,7 @@ foreach(['about','products'] as $key){
 $id=(int)get_option('tio2_product_hub');
 if(!get_post_meta($id,'_tio2_discovery',true)){
  $d=get_option('tio2_product_discovery',[]);
- $d['not_sure']=['Start with the full grade directory and open model pages for further technical evaluation.','You can also share your formulation, process, destination and document requirements for review.'];
+ $d['not_sure']=$d['not_sure']??tio2_discovery_guidance();
  update_post_meta($id,'_tio2_discovery',$d);
 }
 WP_CLI::success('Initial-build corrections applied with content-preservation checks.');
