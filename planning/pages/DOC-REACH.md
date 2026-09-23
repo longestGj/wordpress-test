@@ -50,3 +50,9 @@ Release: requires explicit user authorization. Email remains a later task. Runti
 - 2026-09-23 本地运行态：先备份数据库，再执行显式 ownership migration（0 页需变更）与三页导入；`tests/document-import.php` 验证重复导入保留正文和 SEO、拒绝无归属页面并恢复夹具；`tests/document-http.py` 验证三页 200、标题、SEO、canonical、noindex 及展示的站内链接。
 - 真实 WordPress 浏览器检查覆盖三页 1440/768/390，无整页横向溢出及脚本错误；FAQ 可用键盘展开，TDS Grade 可选择、清空并显示对应详情链接。后台实际保存 DOC-REACH 标题、重复导入后保留编辑，再恢复原值并清理新增测试修订。截图位于忽略的 `.local/document-runtime/`。
 - Request Documents 接收页尚未实现，页面因此隐藏申请动作；与接收表单的联调属于后续转化页面任务。未执行生产发布。
+
+### 可见本地复核（2026-09-23）
+
+- 在真实 `http://localhost:8080/documents/reach/` 重新核对批准正文、11 个模块、来源日期、站内路径、SEO title/meta/local canonical/noindex，以及 1440/768/390 布局；三种宽度均无整页横向溢出、图片加载正常。全页及首屏截图保存在忽略目录 `.local/document-acceptance/`，文件前缀为 `DOC-REACH`。
+- 手机菜单的 Documents 当前态、Escape 关闭与焦点回返、FAQ 的 Enter 展开及 3px 焦点轮廓经真实浏览器验证。修复接收页不可用时最终 CTA 残留的提交说明；现在申请按钮、第四步提交面板和最终提交说明均隐藏，Document Hub 仍可访问。
+- `tests/document-render.php`、`tests/document-browser.py`、`tests/document-http.py`、`tests/document-import.php` 与规划完整性检查通过；数据库改动前确认本地 home 并保存忽略目录备份。全站 RFQ `/request-a-quote/` 当前为 404，属独立的全站依赖；本页 Request Documents `/request-documents/` 仍为 404，未做接收联调或生产发布。

@@ -17,6 +17,9 @@ with sync_playwright() as p:
         for width in (1440,768,390):
             page.set_viewport_size({'width':width,'height':1000});page.goto(target.as_uri());page.evaluate('document.fonts.ready')
             assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),(seed['identity'],width,'overflow')
+            if width==390 and seed['identity'] in ('DOC-TDS','DOC-COO'):
+                assert page.locator('main table tbody tr').first.evaluate('(e)=>getComputedStyle(e).display')=='block', (seed['identity'],'mobile comparison should stack')
+                assert page.locator('main table tbody td').first.evaluate('(e)=>getComputedStyle(e).display')=='block', (seed['identity'],'mobile comparison cells should stack')
             page.screenshot(path=str(OUT/f'{seed["identity"]}-{width}.png'),full_page=True)
             print('PASS isolated geometry:',seed['identity'],width)
         if page.locator('details').count():
@@ -24,13 +27,17 @@ with sync_playwright() as p:
             assert page.locator('details').first.get_attribute('open') is not None
             assert summary.evaluate('(e)=>parseFloat(getComputedStyle(e).outlineWidth)>=3')
         if seed['identity']=='DOC-TDS':
+            assert page.locator('#document-selection-summary').inner_text()=='No request context selected yet.'
             page.locator('input[value="safety"]').check();page.locator('input[value="quality_coa"]').check()
+            assert page.locator('#document-selection-summary').inner_text()=='Selected: SDS, COA'
             href=page.locator('[data-document-request]').first.get_attribute('href');q=parse_qs(urlparse(href).query)
             assert q['prefill.document_types[]']==['safety','quality_coa'] and 'prefill.product_grade' not in q
             page.select_option('#document-grade','M-2196');q=parse_qs(urlparse(page.locator('[data-document-request]').first.get_attribute('href')).query)
+            assert page.locator('#document-selection-summary').inner_text()=='Selected: SDS, COA · Product Grade: M-2196'
             assert q['prefill.product_grade']==['M-2196']
             assert page.locator('#document-grade-detail').is_visible()
             page.select_option('#document-grade','');assert page.locator('#document-grade-detail').is_hidden()
+            assert page.locator('#document-selection-summary').inner_text()=='Selected: SDS, COA'
             print('PASS selection: multi-document, optional grade, clear grade, detail link')
     assert not errors,errors
     browser.close()

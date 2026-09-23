@@ -31,6 +31,10 @@ foreach (glob(__DIR__.'/../data/documents/*.json') as $file) {
     check(str_contains($html,'http://localhost:8080/documents/'), 'Hub link absent');
     check(!str_contains($html,'[tio2_document_grades]'), 'Shortcode not expanded');
     check(!str_contains($html,'href="/markets/'), 'Unavailable market route linked');
+    if ($seed['identity']==='DOC-REACH') {
+        $final=substr($html,strpos($html,'id="document-11"'));
+        check(!str_contains($final,'Submission does not confirm document availability.'), 'Unavailable REACH submission note retained');
+    }
     $GLOBALS['receiver']='http://localhost:8080/request-documents/';$html=tio2_document_content(1);
     check(str_contains($html,'source_page='.$seed['identity']), 'Request attribution missing');
     $GLOBALS['protected']=true;check(tio2_document_content(1)==='<form>Password required</form>', 'Protected content leaked');$GLOBALS['protected']=false;

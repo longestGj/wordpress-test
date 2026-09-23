@@ -60,6 +60,10 @@ for identity,(slug,filename,count) in CONFIG.items():
     for h,value in zip(soup.find_all('h3')[:3], ['technical_product','safety','quality_coa']):
      label=soup.new_tag('label',attrs={'class':'document-choice'});box=soup.new_tag('input',attrs={'type':'checkbox','name':'document-types','value':value})
      label.append(box);label.append(' '+{'technical_product':'TDS','safety':'SDS','quality_coa':'COA'}[value]);h.insert_after(label)
+   if identity=='DOC-TDS' and n==4:
+    summary=soup.new_tag('p',attrs={'id':'document-selection-summary','class':'document-selection-summary','role':'status','aria-live':'polite'})
+    summary.string='No request context selected yet.'
+    soup.append(summary)
    if identity=='DOC-REACH':
     for h in list(soup.find_all('h3')):
      if h.get_text().startswith('4. Submit'):
@@ -70,6 +74,12 @@ for identity,(slug,filename,count) in CONFIG.items():
     for para in soup.find_all('p'):
      if para.get_text(strip=True)=='Submission does not confirm document availability.':
       para['data-requires-document-receiver']=''
+     elif n==11:
+      for node in list(para.find_all(string=True)):
+       if node.strip()=='Submission does not confirm document availability.':
+        note=soup.new_tag('span',attrs={'data-requires-document-receiver':''})
+        note.string=str(node)
+        node.replace_with(note)
    grouped = (identity=='DOC-REACH' and n in (3,4,7)) or (identity=='DOC-TDS' and n in (3,7,9))
    if grouped:
     headings=list(soup.find_all('h3',recursive=False))

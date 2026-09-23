@@ -4,9 +4,16 @@
   const grade = page.querySelector('#document-grade');
   const detail = page.querySelector('#document-grade-detail');
   const choices = [...page.querySelectorAll('input[name="document-types"]')];
+  const summary = page.querySelector('#document-selection-summary');
   const actions = [...page.querySelectorAll('[data-document-request]')];
   const bases = new Map(actions.map(a => [a, a.href]));
   const sync = () => {
+    if (summary) {
+      const selected = choices.filter(c => c.checked).map(c => c.closest('label')?.textContent.trim() || c.value);
+      summary.textContent = selected.length || grade?.value
+        ? `Selected: ${selected.join(', ')}${selected.length && grade?.value ? ' · ' : ''}${grade?.value ? `Product Grade: ${grade.value}` : ''}`
+        : 'No request context selected yet.';
+    }
     if (detail && grade) {
       const option = grade.selectedOptions[0];
       detail.hidden = !option?.dataset.url;
