@@ -7,6 +7,7 @@ COPY wp-content/themes/tio2 /usr/src/wordpress/wp-content/themes/tio2
 COPY wp-content/plugins/tio2-products /usr/src/wordpress/wp-content/plugins/tio2-products
 COPY data /workspace/data
 COPY scripts /workspace/scripts
+COPY deploy-next/check-db.php /workspace/deploy-next/check-db.php
 COPY deploy-next/set-admin-password.php /workspace/deploy-next/set-admin-password.php
 COPY deploy-next/entrypoint.sh /usr/local/bin/tio2-next-entrypoint
 

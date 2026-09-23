@@ -21,7 +21,7 @@ Open `http://localhost:18080/` while the tunnel is running. The stage URL is int
 
 ## Rebuild from a reviewed commit
 
-Build the stage bundle from the reviewed code, containing `.dockerignore`, `deploy-next/Dockerfile`, `entrypoint.sh`, `bootstrap-stage.sh`, `compose.stage.yaml`, `wp-content/themes/tio2`, `wp-content/plugins/tio2-products`, `data`, and `scripts`. Transfer it over verified SSH. After verifying the bundle checksum, extract each reviewed commit into a **new empty** directory such as `/home/deploy/tio2products-next/releases/<commit>`; never overlay an old release, because removed seeds would remain in the build context. Copy the existing mode-600 stage `.env` into that directory, keeping the same Compose project name and named volumes. From the new release directory run:
+Build the stage bundle from the reviewed code, containing `.dockerignore`, `deploy-next`, `wp-content/themes/tio2`, `wp-content/plugins/tio2-products`, `data`, and `scripts`. Transfer it over verified SSH. After verifying the bundle checksum, extract each reviewed commit into a **new empty** directory such as `/home/deploy/tio2products-next/releases/<commit>`; never overlay an old release, because removed seeds would remain in the build context. Copy the existing mode-600 stage `.env` into that directory, keeping the same Compose project name and named volumes. From the new release directory run:
 
 ```bash
 docker compose --env-file .env -f deploy-next/compose.stage.yaml config --quiet
@@ -31,7 +31,7 @@ docker compose --env-file .env -f deploy-next/compose.stage.yaml up -d --no-buil
 bash deploy-next/bootstrap-stage.sh
 ```
 
-On an update, `--renew-anon-volumes` gives WordPress the core files from the new image; the named database and uploads volumes remain. The entrypoint refuses to start if retained core files differ from the image. `bootstrap-stage.sh` accepts CRLF or LF environment files, requires a loopback URL on port 18080, sets the initial admin password through standard input, and preserves existing imported pages on repeat runs. It must remain a stage-only operation. Do not run database-mutating test fixtures against this server.
+On an update, `--renew-anon-volumes` gives WordPress the core files from the new image; the named database, uploads, and bootstrap-state volumes remain. The entrypoint refuses to start if retained core files differ from the image. `bootstrap-stage.sh` accepts CRLF or LF environment files, requires a loopback URL on port 18080, verifies the database connection, sets the initial admin password through standard input, and preserves existing imported pages on repeat runs. Its pending marker is in the named state volume, so an interrupted initial setup can resume from a later release. It must remain a stage-only operation. Do not run database-mutating test fixtures against this server.
 
 ## Cutover gates
 

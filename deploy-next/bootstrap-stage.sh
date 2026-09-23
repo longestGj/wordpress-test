@@ -30,17 +30,19 @@ for _ in $(seq 1 60); do
 done
 (( ready == 1 )) || { echo 'WordPress files did not become ready' >&2; exit 1; }
 
-pending_marker=.stage-admin-pending
+# Check application credentials before interpreting a failed is-installed check.
+"${compose[@]}" exec -T wordpress php /workspace/deploy-next/check-db.php
+pending_marker=/var/lib/tio2-stage/admin-pending
 if ! wp core is-installed >/dev/null 2>&1; then
-  # Persist intent before core install. If install succeeds but this script is
-  # interrupted, only this release resumes setting its new admin password.
-  touch "$pending_marker"
-  chmod 600 "$pending_marker"
+  "${compose[@]}" exec -T wordpress php /workspace/deploy-next/check-db.php --require-empty
+  # This named stage volume survives image and release-directory changes.
+  "${compose[@]}" exec -T wordpress sh -c 'umask 077; : > /var/lib/tio2-stage/admin-pending'
   # WP-CLI generates a temporary password here. Suppress its output so it
   # cannot appear in deployment logs; the next step sets our secret via stdin.
   if ! wp core install --url="$PUBLIC_URL" --title='TiO2 Products Stage' \
     --admin_user="$WP_ADMIN_USER" --admin_email="$WP_ADMIN_EMAIL" \
     --skip-email --quiet >/dev/null 2>&1; then
+    "${compose[@]}" exec -T wordpress rm -f -- "$pending_marker"
     echo 'WordPress core installation failed' >&2
     exit 1
   fi
@@ -49,14 +51,14 @@ if ! wp core is-installed >/dev/null 2>&1; then
   if [[ "$(wp post get 2 --field=post_name)" == sample-page ]]; then wp post delete 2 --force --quiet; fi
 fi
 
-# Existing sites have no local pending marker, so their admin credentials are
+# Existing sites have no pending marker, so their admin credentials are
 # never reset simply because a new bootstrap version is deployed.
-if [[ -f "$pending_marker" ]]; then
+if "${compose[@]}" exec -T wordpress test -f "$pending_marker"; then
   if ! wp option get tio2_stage_admin_ready >/dev/null 2>&1; then
     printf '%s\n' "$WP_ADMIN_PASSWORD" | wp eval-file /workspace/deploy-next/set-admin-password.php "$WP_ADMIN_USER"
     wp option add tio2_stage_admin_ready 1 --quiet
   fi
-  rm -f -- "$pending_marker"
+  "${compose[@]}" exec -T wordpress rm -f -- "$pending_marker"
 fi
 
 wp plugin activate tio2-products

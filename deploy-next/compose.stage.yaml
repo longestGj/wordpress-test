@@ -45,6 +45,7 @@ services:
       - "127.0.0.1:18080:80"
     volumes:
       - uploads:/var/www/html/wp-content/uploads
+      - state:/var/lib/tio2-stage
     networks:
       - backend
       - edge
@@ -65,3 +66,5 @@ volumes:
     name: ${VOLUME_PREFIX:-tio2products_next}_db
   uploads:
     name: ${VOLUME_PREFIX:-tio2products_next}_uploads
+  state:
+    name: ${VOLUME_PREFIX:-tio2products_next}_state
