@@ -42,7 +42,8 @@ wp option update default_comment_status closed --quiet
 wp option update default_ping_status closed --quiet
 
 for importer in import-product.php import-batch.php import-pages.php \
-  import-process-applications.php import-resources.php import-documents.php; do
+  import-process-applications.php import-resources.php import-documents.php \
+  import-markets.php relocate-core-privacy-draft.php import-utility-pages.php; do
   wp eval-file "/workspace/scripts/$importer"
 done
 wp rewrite flush --hard --quiet

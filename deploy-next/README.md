@@ -7,7 +7,7 @@ The current public site remains the old `tio2products` Compose project on ports 
 - Public server: `deploy@129.146.71.11` (ARM64). Old release: `bed69fff43a5e26b441154ffe4f4f44df11a319b`.
 - Old database, uploads, environment file, and active release were copied to ignored `D:\33wordpress\.local\production-backups\20260923T031104Z-bed69fff43a5`. SQL and uploads checksums matched the server; SQL restored into an isolated MariaDB with 12 tables.
 - The old backup timer was inactive at inspection. Take a **new** off-server backup immediately before cutover to capture later inquiries.
-- Stage bootstrap imported 14 products, seven root pages, seven process/application pages, eight resource pages, and three document guides. A second bootstrap preserved the existing content. Home, Products, M-350, Applications, Resources, Documents and REACH returned 200; RFQ returned 404 because its receiver is not built. Stage remained noindex and the public site remained 200.
+- The first stage bootstrap imported 14 products, seven root pages, seven process/application pages, eight resource pages, and three document guides. A second bootstrap preserved the existing content. Home, Products, M-350, Applications, Resources, Documents and REACH returned 200; RFQ returned 404 because its receiver is not built. Stage remained noindex and the public site remained 200. The market and utility pages were integrated into the code later and require a stage rebuild/reimport before claiming stage acceptance.
 
 ## Preview
 
