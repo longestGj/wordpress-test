@@ -104,4 +104,14 @@ for link in main.select('a[href*="request-"]'):
         assert query.get('requested_type') == ['TDS']
 assert 'Submitting a request does not confirm that every requested document is applicable or available.' in main.get_text(' ', strip=True)
 assert 'Submitting a request does not mean that a sample, quantity, freight arrangement or dispatch timing has been approved.' in main.get_text(' ', strip=True)
-print('PASS: M-350 five-line summary, complete shared entities, 15 visible/schema rows, applications, boundaries and CTAs')
+for file in sorted((root / 'data/products').glob('*.json')):
+    other_seed = json.loads(file.read_text(encoding='utf-8'))
+    other_page, other_nodes = load('/products/' + other_seed['slug'] + '/')
+    other_product = single(other_nodes, 'Product')
+    assert other_product['brand'] == product['brand']
+    assert other_product['manufacturer'] == product['manufacturer']
+    assert single(other_nodes, 'Brand') == brand
+    assert single(other_nodes, 'Organization') == organization
+    assert single(other_nodes, 'WebSite') == website
+    assert other_page.select_one('main h1')
+print('PASS: M-350 summary, 14 complete product entity graphs, 15 visible/schema rows, applications, boundaries and CTAs')

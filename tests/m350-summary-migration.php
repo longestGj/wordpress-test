@@ -6,7 +6,11 @@ if(!$post || $post->post_status!=='publish')WP_CLI::error('Published M-350 produ
 $original=tio2_product_data($post->ID);
 $revisions_before=array_keys(wp_get_post_revisions($post->ID));
 $old=['Rutile titanium dioxide pigment · Chloride process','M-350 technical data · General grade','Product identity · documentation · formulation evaluation'];
-$run=static fn($mode)=>WP_CLI::runcommand('eval-file /workspace/scripts/refine-m350-summary.php '.$mode,['return'=>'all','exit_error'=>false,'launch'=>true]);
+$run=static function($mode)use($post){
+ $result=WP_CLI::runcommand('eval-file /workspace/scripts/refine-m350-summary.php '.$mode,['return'=>'all','exit_error'=>false,'launch'=>true]);
+ wp_cache_delete($post->ID,'post_meta');
+ return $result;
+};
 $render=static function(){
  $response=wp_remote_get('http://wordpress/products/m-350/',['headers'=>['Host'=>'localhost:8080']]);
  if(is_wp_error($response) || wp_remote_retrieve_response_code($response)!==200)throw new RuntimeException('Could not render M-350 fixture.');
@@ -44,7 +48,9 @@ try{
  if(substr_count($table,'<tr')!==14 || count($schema['additionalProperty'])!==14 || str_contains($table,'TiO₂ content, %'))throw new RuntimeException('Disabled technical row remained visible or in schema.');
 }catch(Throwable $error){$failure=$error->getMessage();}
 finally{
+ wp_cache_delete($post->ID,'post_meta');
  update_post_meta($post->ID,'_tio2_product',$original);
+ wp_cache_delete($post->ID,'post_meta');
  foreach(array_diff(array_keys(wp_get_post_revisions($post->ID)),$revisions_before) as $revision_id)wp_delete_post_revision($revision_id);
  if(tio2_product_data($post->ID)!==$original)$failure=($failure??'').' Fixture restoration failed.';
 }

@@ -41,3 +41,9 @@ Review: approved content and facts; SEO; 1440/768/390; internal links; forms whe
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+## 2026-09-24 Schema / GEO 定向精修
+
+The existing hero summary now names the rutile pigment, Chloride process, Coatings / Printing Inks / Plastics evaluation directions, Paper as an additional path without TDS paper-specific performance detail, and the 15-row technical dataset. No second summary module was added. All other M-350 seed fields, including H1, SEO, excerpt, Grade-specific claims, applications, technical rows, document and sample boundaries, remain unchanged.
+
+Product Schema now references the site `#brand` and `#organization`; product pages include the same WebSite, Organization and Brand nodes as Home. The existing visible table and `additionalProperty` still use `tio2_public_rows()`. Local exact-summary migration preserves all other editor fields and refuses a changed summary. Local tests passed for 14 product entity graphs, M-350 HTTP/Schema and request context, model and relationship behavior, technical-row edit/disable parity, 58-route brand regression, and 1440/1024/768/390px layout/focus. Production publication is separate.
