@@ -12,6 +12,13 @@ if(!tio2_theme_dependencies_ready()){
 }
 add_action('after_setup_theme',function(){add_theme_support('title-tag');add_theme_support('post-thumbnails');add_theme_support('html5',['search-form','gallery','caption','style','script']);register_nav_menus(['primary'=>'Primary navigation','footer'=>'Footer navigation']);});
 add_action('wp_enqueue_scripts',function(){wp_enqueue_style('tio2',get_template_directory_uri().'/assets/site.css',[],filemtime(__DIR__.'/assets/site.css'));wp_enqueue_script('tio2',get_template_directory_uri().'/assets/site.js',[],filemtime(__DIR__.'/assets/site.js'),true);});
+add_action('wp_head',function(){
+    $assets=esc_url(get_template_directory_uri().'/assets/');
+    echo '<link rel="icon" type="image/svg+xml" href="'.$assets.'favicon.svg">';
+    echo '<link rel="icon" type="image/png" sizes="32x32" href="'.$assets.'favicon-32x32.png">';
+    echo '<link rel="icon" type="image/png" sizes="48x48" href="'.$assets.'favicon-48x48.png">';
+    echo '<link rel="apple-touch-icon" sizes="180x180" href="'.$assets.'apple-touch-icon.png">';
+},2);
 add_filter('pre_get_document_title',function($title){if(is_singular('product')&&function_exists('tio2_product_data')) return tio2_product_data(get_queried_object_id())['seo_title']??$title;return $title;});
 add_filter('wp_robots',function($robots){if(!get_option('blog_public')){$robots=['noindex'=>true,'nofollow'=>true];}return $robots;});
 add_filter('wp_sitemaps_enabled',fn($enabled)=>get_option('blog_public')?$enabled:false);

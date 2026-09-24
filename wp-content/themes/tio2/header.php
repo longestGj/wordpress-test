@@ -4,7 +4,7 @@
 <body <?php body_class(); ?>><?php wp_body_open(); ?>
 <a class="skip" href="#main">Skip to content</a>
 <header class="header"><div class="headerInner">
-<a class="logoLink" href="<?php echo esc_url(home_url('/')); ?>" aria-label="TiO2Products — Home"><img class="logo" src="<?php echo esc_url(get_template_directory_uri().'/assets/logo.svg'); ?>" alt="TiO2Products" width="180" height="60"></a>
+<a class="logoLink" href="<?php echo esc_url(home_url('/')); ?>" aria-label="TiO2Products — Home"><img class="logo" src="<?php echo esc_url(get_template_directory_uri().'/assets/logo-compact.svg'); ?>" alt="TiO2Products" width="210" height="45"></a>
 <nav class="desktopNav" aria-label="Main navigation"><?php tio2_navigation(); ?></nav>
 <a class="headerRfq" href="<?php echo esc_url(home_url('/request-a-quote/')); ?>">RFQ</a>
 <button class="menuButton" type="button" aria-haspopup="dialog" aria-controls="site-menu" aria-expanded="false">Menu</button>

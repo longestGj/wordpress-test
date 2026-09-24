@@ -15,7 +15,7 @@ paths = (
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch(headless=True)
     for path in paths:
-        for width in (1440, 768, 390):
+        for width in (1440, 1024, 768, 390, 320):
             page = browser.new_page(viewport={'width': width, 'height': 900})
             errors = []
             page.on('pageerror', lambda error: errors.append(str(error)))
@@ -28,8 +28,18 @@ with sync_playwright() as playwright:
                 assert logo.get_attribute('alt') == 'TiO2Products'
                 assert logo.evaluate('(image) => image.complete && image.naturalWidth > 0'), (path, width, selector)
                 assert logo.evaluate('(image) => image.scrollWidth <= innerWidth'), (path, width, selector)
+            logo_box = page.locator('header.header img.logo').bounding_box()
+            rfq_box = page.locator('header.header .headerRfq').bounding_box()
+            assert logo_box['x'] + logo_box['width'] + 8 <= rfq_box['x'], (path, width, 'logo overlaps RFQ')
+            if width > 1100:
+                nav_box = page.locator('header.header .desktopNav').bounding_box()
+                assert logo_box['x'] + logo_box['width'] + 8 <= nav_box['x'], (path, width, 'logo overlaps navigation')
+                assert nav_box['x'] + nav_box['width'] + 8 <= rfq_box['x'], (path, width, 'navigation overlaps RFQ')
+            else:
+                menu_box = page.locator('header.header .menuButton').bounding_box()
+                assert rfq_box['x'] + rfq_box['width'] + 8 <= menu_box['x'], (path, width, 'RFQ overlaps menu')
             assert not errors, (path, width, errors)
             page.close()
     browser.close()
 
-print('PASS: 8 page families, 1440/768/390 brand chrome, loaded logos, no overflow or JS errors')
+print('PASS: 8 page families, 1440/1024/768/390/320 brand chrome, clear navigation, loaded logos, no overflow or JS errors')

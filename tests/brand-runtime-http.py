@@ -72,14 +72,15 @@ for path in routes:
         assert product['manufacturer'] == {'@id': base + '/#organization'}
         assert product.get('brand', {}).get('name') != 'TiO2Products'
 
-for asset in ('logo.svg', 'logo-reverse.svg'):
+for asset in ('logo.svg', 'logo-compact.svg', 'logo-reverse.svg', 'logo-symbol.svg', 'favicon.svg'):
     logo = session.get(base + '/wp-content/themes/tio2/assets/' + asset, timeout=15)
     logo.raise_for_status()
-    assert '<text' in logo.text and '>TiO2Products</text>' in logo.text, asset
+    assert '<path' in logo.text and '<text' not in logo.text, asset
+    assert 'font-family' not in logo.text and '<image' not in logo.text, asset
     assert 'TiO2 Malaysia' not in logo.text and 'MALAYSIA' not in logo.text, asset
 
 missing = session.get(base + '/brand-audit-missing-route/', timeout=15)
 assert missing.status_code == 404
 assert BeautifulSoup(missing.text, 'html.parser').title.get_text(strip=True) == 'Page Not Found | TiO2Products'
 
-print(f'PASS: TiO2Products brand and legal entity across {len(routes)} active routes and both logos')
+print(f'PASS: TiO2Products brand and legal entity across {len(routes)} active routes and vector logos')
