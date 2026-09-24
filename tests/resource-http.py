@@ -57,10 +57,43 @@ def verify(slug):
     assert [n['item'] for n in crumbs] == [BASE+'/', BASE+'/resources/', BASE+path], slug
     assert not main.select('a[aria-disabled]'), slug
     if slug == 'chloride-vs-sulfate-titanium-dioxide':
-        assert len(main.select('details')) == 4, 'four buyer questions'
+        questions = main.select('#buyer-questions details')
+        assert len(questions) == 5, 'five buyer questions'
+        environmental = questions[-1]
+        assert environmental.summary.get_text(' ', strip=True) == 'Does the production route alone establish lower environmental impact?'
+        environmental_text = environmental.get_text(' ', strip=True)
+        assert 'not an environmental ranking' in environmental_text
+        assert 'system boundary' in environmental_text and 'producer, site and methodology' in environmental_text
         assert len(main.select('table tbody tr')) == 6, 'six evidence rows'
         process_links = main.select('a[href*="process-titanium-dioxide"]')
         assert len(process_links) in (0, 2), 'process pair must be atomic'
+        decisions = main.select('#workflow .proc-decision-card')
+        assert [a['href'] for card in decisions for a in card.select('a[href]')] == [
+            '/applications/', '/request-documents/'
+        ]
+        assert len(decisions) == 3 and not decisions[2].select('a[href]')
+        examples = main.select('#application-overlap .proc-external-example')
+        assert [example.get_text(' ', strip=True) for example in examples] == [
+            'External industry example — LB Group BLR-886',
+            'External industry example — LB Group LR-108',
+        ]
+        assert 'LR-108 is an LB Group external example, not a TiO2Products grade.' in main.get_text(' ', strip=True)
+        assert 'M-108' in main.get_text(' ', strip=True)
+        for target in ('/applications/', '/request-documents/'):
+            assert requests.get(BASE + target, allow_redirects=False, timeout=25).status_code == 200
+    if slug == 'chemours-titanium-dioxide-alternatives':
+        branch = main.select_one('section.chemours-r706-branch')
+        assert branch and branch.h2.get_text(' ', strip=True) == 'Is Ti-Pure R-706 Your Current Reference?'
+        assert branch.select_one('a[href="/resources/ti-pure-r-706-alternative/"]')
+        assert 'does not identify an automatic replacement or establish equivalence' in branch.get_text(' ', strip=True)
+        application = main.select_one('.chemours-app-path a[href="/applications/"]')
+        assert application and application.get_text(' ', strip=True) == 'Explore Application Evaluation'
+        assert 'IKHLAS grades' not in main.get_text(' ', strip=True)
+        assert not re.search(r'Ti-Pure R-\d+\s*(?:→|->)\s*M-\d+', main.get_text(' ', strip=True))
+        assert 'We are not affiliated with, authorized by or endorsed by Chemours.' in main.get_text(' ', strip=True)
+        assert 'TiO2 Malaysia' not in response.text
+        for target in ('/resources/ti-pure-r-706-alternative/', '/applications/', '/products/', '/request-documents/'):
+            assert requests.get(BASE + target, allow_redirects=False, timeout=25).status_code == 200
     if slug == 'non-china-titanium-dioxide':
         assert 'TiO2 Malaysia' not in response.text, 'legacy website brand'
         assert 'tio2malaysia.com' not in response.text, 'legacy domain reference'

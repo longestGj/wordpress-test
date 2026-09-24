@@ -47,6 +47,23 @@ with sync_playwright() as p:
                 first = page.locator('#origin-7 .origin-markets .origin-card a').first
                 first.focus()
                 assert first.evaluate('(e)=>parseFloat(getComputedStyle(e).outlineWidth)>=3'), 'Market link focus not visible'
+            if seed['identity'] == 'RES-PROC':
+                assert page.locator('#buyer-questions details').count() == 5
+                assert page.locator('#workflow .proc-decision-action a').count() == 2
+                action = page.locator('#workflow .proc-decision-action a').first
+                action.focus()
+                assert action.evaluate('(e)=>parseFloat(getComputedStyle(e).outlineWidth)>=3'), 'Workflow action focus not visible'
+                environmental = page.locator('#buyer-questions details').last
+                was_open = environmental.get_attribute('open') is not None
+                environmental.locator('summary').focus()
+                page.keyboard.press('Enter')
+                assert (environmental.get_attribute('open') is not None) != was_open, 'Environmental FAQ keyboard failed'
+            if seed['identity'] == 'RES-CHEMOURS':
+                assert page.locator('section.chemours-r706-branch a').is_visible()
+                assert page.locator('.chemours-app-path a').is_visible()
+                branch = page.locator('section.chemours-r706-branch a')
+                branch.focus()
+                assert branch.evaluate('(e)=>parseFloat(getComputedStyle(e).outlineWidth)>=3'), 'R-706 branch focus not visible'
         disclosures = page.locator('main details')
         if disclosures.count():
             first = disclosures.first

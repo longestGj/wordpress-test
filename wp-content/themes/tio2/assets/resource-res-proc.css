@@ -38,6 +38,9 @@
 .resource-res-proc #workflow>div>div.mt-10 article{position:relative;border:1px solid #d9e2ec;border-top:4px solid #008078;background:#f7f9fb;box-shadow:none}
 .resource-res-proc #workflow>div>div.mt-10 article span{display:inline-flex;width:2rem;height:2rem;align-items:center;justify-content:center;border-radius:50%;background:#008078;color:#fff}
 .resource-res-proc #workflow>div>div.mt-8 article{border-color:#cbd7e2;border-top:3px solid #062b5b;background:#fff}
+.resource-res-proc #workflow .proc-decision-action{display:block;margin-top:1rem}
+.resource-res-proc #workflow .proc-decision-action a{display:inline-flex;min-height:44px;max-width:100%;align-items:center;color:#008078;font-weight:700;line-height:1.4}
+.resource-res-proc #application-overlap .proc-external-example{line-height:1.5}
 .resource-res-proc #buyer-questions{background:#eef3f7}
 .resource-res-proc #buyer-questions details{background:#fff;padding-left:1rem;padding-right:1rem}
 .resource-res-proc #buyer-questions details[open]{border-left:4px solid #008078;box-shadow:0 8px 18px rgba(6,43,91,.04)}

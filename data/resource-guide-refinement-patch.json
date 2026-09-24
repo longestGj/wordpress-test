@@ -1,0 +1,76 @@
+{
+  "RES-PROC": [
+    {
+      "id": "external-blr-886",
+      "old": "<span class=\"text-xs font-extrabold text-teal\">01 · CHLORIDE EXAMPLE</span>",
+      "new": "<span class=\"text-xs font-extrabold text-teal proc-external-example\">External industry example — LB Group BLR-886</span>"
+    },
+    {
+      "id": "external-lr-108",
+      "old": "<span class=\"text-xs font-extrabold text-teal\">02 · SULFATE EXAMPLE</span>",
+      "new": "<span class=\"text-xs font-extrabold text-teal proc-external-example\">External industry example — LB Group LR-108</span>"
+    },
+    {
+      "id": "lr108-identity-boundary",
+      "old": "<p class=\"mt-2 leading-7\">LB Group describes LR-108 as a rutile titanium dioxide pigment produced by the sulfate process for masterbatch, compounding and plastics.</p>",
+      "new": "<p class=\"mt-2 leading-7\">LB Group describes LR-108 as a rutile titanium dioxide pigment produced by the sulfate process for masterbatch, compounding and plastics. LR-108 is an LB Group external example, not a TiO2Products grade. Its similar name to M-108 does not establish a relationship or equivalence.</p>"
+    },
+    {
+      "id": "decision-card-continue-to-testing",
+      "old": "<!-- wp:group {\"className\":\"rounded-lg border border-line p-5\",\"tagName\":\"article\"} -->\n<article class=\"wp-block-group rounded-lg border border-line p-5\">\n<!-- wp:heading {\"className\":\"font-extrabold text-navy\",\"level\":3} -->\n<h3 class=\"wp-block-heading font-extrabold text-navy\">Continue to testing</h3>",
+      "new": "<!-- wp:group {\"className\":\"rounded-lg border border-line p-5 proc-decision-card\",\"tagName\":\"article\"} -->\n<article class=\"wp-block-group rounded-lg border border-line p-5 proc-decision-card\">\n<!-- wp:heading {\"className\":\"font-extrabold text-navy\",\"level\":3} -->\n<h3 class=\"wp-block-heading font-extrabold text-navy\">Continue to testing</h3>"
+    },
+    {
+      "id": "decision-card-request-the-missing-evidence",
+      "old": "<!-- wp:group {\"className\":\"rounded-lg border border-line p-5\",\"tagName\":\"article\"} -->\n<article class=\"wp-block-group rounded-lg border border-line p-5\">\n<!-- wp:heading {\"className\":\"font-extrabold text-navy\",\"level\":3} -->\n<h3 class=\"wp-block-heading font-extrabold text-navy\">Request the missing evidence</h3>",
+      "new": "<!-- wp:group {\"className\":\"rounded-lg border border-line p-5 proc-decision-card\",\"tagName\":\"article\"} -->\n<article class=\"wp-block-group rounded-lg border border-line p-5 proc-decision-card\">\n<!-- wp:heading {\"className\":\"font-extrabold text-navy\",\"level\":3} -->\n<h3 class=\"wp-block-heading font-extrabold text-navy\">Request the missing evidence</h3>"
+    },
+    {
+      "id": "decision-card-hold-the-comparison",
+      "old": "<!-- wp:group {\"className\":\"rounded-lg border border-line p-5\",\"tagName\":\"article\"} -->\n<article class=\"wp-block-group rounded-lg border border-line p-5\">\n<!-- wp:heading {\"className\":\"font-extrabold text-navy\",\"level\":3} -->\n<h3 class=\"wp-block-heading font-extrabold text-navy\">Hold the comparison</h3>",
+      "new": "<!-- wp:group {\"className\":\"rounded-lg border border-line p-5 proc-decision-card\",\"tagName\":\"article\"} -->\n<article class=\"wp-block-group rounded-lg border border-line p-5 proc-decision-card\">\n<!-- wp:heading {\"className\":\"font-extrabold text-navy\",\"level\":3} -->\n<h3 class=\"wp-block-heading font-extrabold text-navy\">Hold the comparison</h3>"
+    },
+    {
+      "id": "application-action",
+      "old": "<p class=\"mt-2 text-muted\">Use this path when the grade identity and evidence are clear enough to support an application-relevant test plan.</p>\n<!-- /wp:paragraph -->",
+      "new": "<p class=\"mt-2 text-muted\">Use this path when the grade identity and evidence are clear enough to support an application-relevant test plan.</p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph {\"className\":\"mt-4 proc-decision-action\"} -->\n<p class=\"mt-4 proc-decision-action\"><a href=\"/applications/\">Explore Application Evaluation</a></p>\n<!-- /wp:paragraph -->"
+    },
+    {
+      "id": "documents-action",
+      "old": "<p class=\"mt-2 text-muted\">Use this path when a current document, test method, treatment detail, sample identity or comparison condition is missing.</p>\n<!-- /wp:paragraph -->",
+      "new": "<p class=\"mt-2 text-muted\">Use this path when a current document, test method, treatment detail, sample identity or comparison condition is missing.</p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph {\"className\":\"mt-4 proc-decision-action\"} -->\n<p class=\"mt-4 proc-decision-action\"><a href=\"/request-documents/\">Request Technical Documents</a></p>\n<!-- /wp:paragraph -->"
+    },
+    {
+      "id": "environmental-faq",
+      "old": "<p class=\"pb-6 pr-8 leading-7 text-muted\">The route label alone is insufficient to establish those grade-level conclusions. Compare current grade-specific optical and colour data, treatment information, durability evidence, methods and test conditions, then validate the properties that matter in the intended system.</p>\n<!-- /wp:paragraph -->\n</details>\n<!-- /wp:details -->",
+      "new": "<p class=\"pb-6 pr-8 leading-7 text-muted\">The route label alone is insufficient to establish those grade-level conclusions. Compare current grade-specific optical and colour data, treatment information, durability evidence, methods and test conditions, then validate the properties that matter in the intended system.</p>\n<!-- /wp:paragraph -->\n</details>\n<!-- /wp:details -->\n<!-- wp:details {\"className\":\"border-b border-line py-1\"} -->\n<details class=\"wp-block-details border-b border-line py-1\"><summary>Does the production route alone establish lower environmental impact?</summary><!-- wp:paragraph {\"className\":\"pb-6 pr-8 leading-7 text-muted\"} -->\n<p class=\"pb-6 pr-8 leading-7 text-muted\">No. A chloride or sulfate label by itself is not an environmental ranking. Environmental assessment depends on the defined system boundary and factors such as feedstock, plant configuration, energy source, emissions controls, waste or by-product management, geography and the measurement or life-cycle-assessment basis used. Compare current evidence for the relevant producer, site and methodology rather than assigning a universal environmental advantage to either route.</p>\n<!-- /wp:paragraph -->\n</details>\n<!-- /wp:details -->"
+    }
+  ],
+  "RES-CHEMOURS": [
+    {
+      "id": "r706-specific-branch",
+      "old": "<!-- wp:group {\"className\":\"article-section sectionNumber-3\",\"tagName\":\"section\"} -->",
+      "new": "<!-- wp:group {\"className\":\"article-section chemours-r706-branch\",\"tagName\":\"section\"} -->\n<section class=\"wp-block-group article-section chemours-r706-branch\">\n<!-- wp:heading -->\n<h2 class=\"wp-block-heading\">Is Ti-Pure R-706 Your Current Reference?</h2>\n<!-- /wp:heading -->\n<!-- wp:paragraph -->\n<p>If Ti-Pure R-706 is the grade currently used in your coating system, continue to the R-706-specific qualification guide for source-document, formulation and test-plan considerations.</p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph -->\n<p>The R-706 guide does not identify an automatic replacement or establish equivalence with another grade.</p>\n<!-- /wp:paragraph -->\n<!-- wp:group {\"className\":\"action\"} -->\n<div class=\"wp-block-group action\">\n<!-- wp:paragraph {\"className\":\"resource-inline\"} -->\n<p class=\"resource-inline\"><a class=\"secondary\" href=\"/resources/ti-pure-r-706-alternative/\">Review the Ti-Pure R-706 Qualification Guide</a></p>\n<!-- /wp:paragraph -->\n</div>\n<!-- /wp:group -->\n</section>\n<!-- /wp:group -->\n<!-- wp:group {\"className\":\"article-section sectionNumber-3\",\"tagName\":\"section\"} -->"
+    },
+    {
+      "id": "application-evaluation-path",
+      "old": "</ol>\n<!-- /wp:list -->\n</section>\n<!-- /wp:group -->\n<!-- wp:group {\"className\":\"article-section sectionNumber-4\",\"tagName\":\"section\"} -->",
+      "new": "</ol>\n<!-- /wp:list -->\n<!-- wp:group {\"className\":\"chemours-app-path\"} -->\n<div class=\"wp-block-group chemours-app-path\">\n<!-- wp:heading {\"level\":3} -->\n<h3 class=\"wp-block-heading\">Evaluate by Application</h3>\n<!-- /wp:heading -->\n<!-- wp:paragraph -->\n<p>Use the relevant application guide to define the formulation, processing and performance questions that should shape the qualification plan.</p>\n<!-- /wp:paragraph -->\n<!-- wp:group {\"className\":\"action\"} -->\n<div class=\"wp-block-group action\">\n<!-- wp:paragraph {\"className\":\"resource-inline\"} -->\n<p class=\"resource-inline\"><a class=\"secondary\" href=\"/applications/\">Explore Application Evaluation</a></p>\n<!-- /wp:paragraph -->\n</div>\n<!-- /wp:group -->\n</div>\n<!-- /wp:group -->\n</section>\n<!-- /wp:group -->\n<!-- wp:group {\"className\":\"article-section sectionNumber-4\",\"tagName\":\"section\"} -->"
+    },
+    {
+      "id": "product-role-copy",
+      "old": "Use the Product Hub to find IKHLAS grades listed for your application or production process. Treat those relationships as a shortlist for review, not as replacements for your current grade.",
+      "new": "Use the Product Hub to find grades presented on TiO2Products for your application or production process. Treat those relationships as a shortlist for review, not as replacements for your current grade."
+    },
+    {
+      "id": "product-action-heading",
+      "old": "<h3 class=\"wp-block-heading\">Review IKHLAS Titanium Dioxide Grades</h3>",
+      "new": "<h3 class=\"wp-block-heading\">Review Listed Titanium Dioxide Grades</h3>"
+    },
+    {
+      "id": "document-role-copy",
+      "old": "If you have selected an IKHLAS grade for review, request the TDS, SDS, COA or origin documentation you need.",
+      "new": "If you have selected a listed titanium dioxide grade for review, request the TDS, SDS, COA or origin documentation you need, subject to availability and scope."
+    }
+  ]
+}

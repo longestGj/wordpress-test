@@ -34,6 +34,8 @@ Keyword boundary: Resource owns research/comparison/update intent; Market, Produ
 当前本地实现已完成并在对应批次验收；ACCEPTED 不代表正式上线或所有外部目标已连接。
 Native WordPress Page; Products Hub renders through the Product archive.
 
+2026-09-24 定向精修：保留 SEO、The Short Answer、工艺示意、grade-level evidence 框架、五步顺序、来源说明与最终三个产品入口。为 Continue to testing 和 Request the missing evidence 分别补 `/applications/`、`/request-documents/`；Hold 不设 CTA。Buyer Questions 增加仅讨论证据边界的环境影响问题，不作路线环保排名。BLR-886、LR-108 明确标为 LB Group 外部行业示例，并说明 LR-108 与本站 M-108 的名称相似不构成关联或等效。精确迁移保留其他后台编辑；本地 HTTP、1440/768/390、键盘、移动证据卡和 Gutenberg 验证通过。未发布生产。
+
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
