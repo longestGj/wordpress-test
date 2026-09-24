@@ -14,7 +14,9 @@ check(is_wp_error(tio2_validate_product($bad)), 'Missing identity must be reject
 $bad = $data; $bad['facts'] = 'not a list';
 check(is_wp_error(tio2_validate_product($bad)), 'Wrong section shape must be rejected');
 $id = wp_insert_post(['post_type'=>'product','post_status'=>'draft','post_title'=>'Independent test product']);
+$original_targets=get_option('tio2_targets',[]);
 try {
+    update_option('tio2_targets',array_replace($original_targets,['quote'=>0,'quote_ready'=>false]));
     check(tio2_product_data($id) === [], 'A new product must not inherit M-350 defaults');
     update_post_meta($id, '_tio2_product', $data);
     wp_set_object_terms($id,['Coatings','Paper'],'product_application');
@@ -33,6 +35,8 @@ try {
     check(str_contains(tio2_product_schema($id)['additionalProperty'][0]['value'], '98.8'), 'Schema must reflect editor changes');
     check(tio2_target_url('quote') === '', 'Unconfigured RFQ must not count as ready');
     $receiver=wp_insert_post(['post_type'=>'page','post_status'=>'publish','post_title'=>'Temporary test receiver']);
+    update_post_meta($receiver,'_tio2_owner','tio2-wordpress');
+    update_post_meta($receiver,'_tio2_page_id','CONV-RFQ');
     $targets=get_option('tio2_targets',[]);
     try {
         update_option('tio2_targets',['quote'=>$receiver,'quote_ready'=>false]);
@@ -43,7 +47,7 @@ try {
         check(tio2_target_url('quote')==='', 'Unpublishing a receiver must immediately hide its actions');
     } finally { update_option('tio2_targets',$targets);wp_delete_post($receiver,true); }
     echo "PASS: product validation, independent records, row visibility and Schema editing\n";
-} finally { wp_delete_post($id, true); }
+} finally { update_option('tio2_targets',$original_targets);wp_delete_post($id, true); }
 $m350=get_page_by_path('m-350',OBJECT,'product');$original=tio2_product_data($m350->ID);
 try {
     $edited=$original;$edited['rows'][0]['typical_value']='93.6';update_post_meta($m350->ID,'_tio2_product',$edited);

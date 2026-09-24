@@ -30,12 +30,13 @@ add_action('wp_head',function(){
     echo '<meta name="twitter:title" content="'.esc_attr($title).'"><meta name="twitter:description" content="'.esc_attr($description).'">';
     $process=in_array($key,['chloride','sulfate'],true);$parent=$process?'Products':'Applications';
     $crumb=[];foreach([['Home',home_url('/')],[$parent,home_url('/'.strtolower($parent).'/')],[get_post_field('post_title',$id),$url]] as $i=>$x)$crumb[]=['@type'=>'ListItem','position'=>$i+1,'name'=>$x[0],'item'=>$x[1]];
-    $graph=[['@type'=>'WebPage','@id'=>$url.'#page','url'=>$url,'name'=>$title,'description'=>$description],['@type'=>'BreadcrumbList','itemListElement'=>$crumb]];
+    $graph=[['@type'=>$process?'CollectionPage':'WebPage','@id'=>$url.'#page','url'=>$url,'name'=>$title,'description'=>$description],['@type'=>'BreadcrumbList','itemListElement'=>$crumb]];
     if($process||in_array($key,['coatings','plastics','masterbatch','printing-inks','paper'],true)){
         $p=new WP_HTML_Tag_Processor(tio2_topic_content($id));$items=[];
         while($p->next_tag('a')){
             $href=$p->get_attribute('href');if(!is_string($href)||!preg_match('~^/products/([a-z0-9-]+)/$~',$href,$m))continue;
             $product=get_page_by_path($m[1],OBJECT,'product');if(!$product||$product->post_status!=='publish'||$product->post_password!=='')continue;
+            if($process&&!has_term($key,'product_process',$product->ID))continue;
             if(!$process&&!has_term($key,'product_application',$product->ID))continue;
             if(isset($items[$product->ID]))continue;
             $items[$product->ID]=['@type'=>'ListItem','position'=>count($items)+1,'name'=>$product->post_title,'url'=>get_permalink($product)];

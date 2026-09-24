@@ -1,0 +1,62 @@
+[
+  {
+    "id": "supply-source-entity",
+    "old": "<!-- wp:group {\"className\":\"origin-section origin-answer\",\"anchor\":\"origin-2\",\"tagName\":\"section\"} -->",
+    "new": "<!-- wp:html -->\n<section class=\"origin-section origin-entity\" aria-labelledby=\"origin-entity-title\"><div class=\"origin-wrap\"><p class=\"eyebrow\">SUPPLY SOURCE</p><h2 id=\"origin-entity-title\">About the Supply Source Presented on TiO2Products</h2><p>TiO2Products is the commercial website operated by IKHLAS TITANIUM (MALAYSIA) SDN. BHD., a Malaysia-based titanium dioxide manufacturer and supplier. <a href=\"/about/\">Learn about the operating company</a>.</p><p>Company location does not by itself establish the origin of every product, lot or shipment. Buyers should verify the applicable origin evidence for the material and transaction under review.</p></div></section>\n<!-- /wp:html -->\n<!-- wp:group {\"className\":\"origin-section origin-answer\",\"anchor\":\"origin-2\",\"tagName\":\"section\"} -->"
+  },
+  {
+    "id": "application-coatings",
+    "old": "href=\"/applications/coatings/\"",
+    "new": "href=\"/applications/titanium-dioxide-for-coatings/\""
+  },
+  {
+    "id": "application-plastics",
+    "old": "href=\"/applications/plastics/\"",
+    "new": "href=\"/applications/titanium-dioxide-for-plastics/\""
+  },
+  {
+    "id": "application-masterbatch",
+    "old": "href=\"/applications/masterbatch/\"",
+    "new": "href=\"/applications/titanium-dioxide-for-masterbatch/\""
+  },
+  {
+    "id": "application-printing-inks",
+    "old": "href=\"/applications/printing-inks/\"",
+    "new": "href=\"/applications/titanium-dioxide-for-printing-inks/\""
+  },
+  {
+    "id": "application-paper",
+    "old": "href=\"/applications/paper/\"",
+    "new": "href=\"/applications/titanium-dioxide-for-paper/\""
+  },
+  {
+    "id": "trade-eu",
+    "old": "<p class=\"resource-inline\"><a href=\"/markets/european-union/\">Review the European Union Market</a></p>\n<!-- /wp:paragraph -->",
+    "new": "<p class=\"resource-inline\"><a href=\"/markets/european-union/\">Review the European Union Market</a></p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph {\"className\":\"resource-inline origin-trade-link\"} -->\n<p class=\"resource-inline origin-trade-link\"><a href=\"/resources/eu-titanium-dioxide-anti-dumping-duty/\">Read the EU Titanium Dioxide Trade Update</a></p>\n<!-- /wp:paragraph -->"
+  },
+  {
+    "id": "trade-uk",
+    "old": "<p class=\"resource-inline\"><a href=\"/markets/united-kingdom/\">Review the United Kingdom Market</a></p>\n<!-- /wp:paragraph -->",
+    "new": "<p class=\"resource-inline\"><a href=\"/markets/united-kingdom/\">Review the United Kingdom Market</a></p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph {\"className\":\"resource-inline origin-trade-link\"} -->\n<p class=\"resource-inline origin-trade-link\"><a href=\"/resources/uk-titanium-dioxide-anti-dumping-investigation/\">Read the UK Titanium Dioxide Trade Update</a></p>\n<!-- /wp:paragraph -->"
+  },
+  {
+    "id": "trade-india",
+    "old": "<p class=\"resource-inline\"><a href=\"/markets/india/\">Review the India Market</a></p>\n<!-- /wp:paragraph -->",
+    "new": "<p class=\"resource-inline\"><a href=\"/markets/india/\">Review the India Market</a></p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph {\"className\":\"resource-inline origin-trade-link\"} -->\n<p class=\"resource-inline origin-trade-link\"><a href=\"/resources/india-titanium-dioxide-anti-dumping-duty/\">Read the India Titanium Dioxide Trade Update</a></p>\n<!-- /wp:paragraph -->"
+  },
+  {
+    "id": "trade-brazil",
+    "old": "<p class=\"resource-inline\"><a href=\"/markets/brazil/\">Review the Brazil Market</a></p>\n<!-- /wp:paragraph -->",
+    "new": "<p class=\"resource-inline\"><a href=\"/markets/brazil/\">Review the Brazil Market</a></p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph {\"className\":\"resource-inline origin-trade-link\"} -->\n<p class=\"resource-inline origin-trade-link\"><a href=\"/resources/brazil-titanium-dioxide-anti-dumping-duty/\">Read the Brazil Titanium Dioxide Trade Update</a></p>\n<!-- /wp:paragraph -->"
+  },
+  {
+    "id": "decision-products",
+    "old": "<p>Use this path when the commercial counterparty and product identity are clear, the evidence scope is understood and the application criteria are defined. Continue to Products without treating the guide as a grade recommendation.</p>\n<!-- /wp:paragraph -->",
+    "new": "<p>Use this path when the commercial counterparty and product identity are clear, the evidence scope is understood and the application criteria are defined. Continue to Products without treating the guide as a grade recommendation.</p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph {\"className\":\"resource-inline origin-decision-link\"} -->\n<p class=\"resource-inline origin-decision-link\"><a href=\"/products/\">Review Titanium Dioxide Products</a></p>\n<!-- /wp:paragraph -->"
+  },
+  {
+    "id": "decision-documents",
+    "old": "<p>Use this path when a document, revision, identifier, method or scope is missing. Ask for the specific evidence needed rather than filling the gap with an assumption.</p>\n<!-- /wp:paragraph -->",
+    "new": "<p>Use this path when a document, revision, identifier, method or scope is missing. Ask for the specific evidence needed rather than filling the gap with an assumption.</p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph {\"className\":\"resource-inline origin-decision-link\"} -->\n<p class=\"resource-inline origin-decision-link\"><a href=\"/request-documents/\">Request Technical Documents</a></p>\n<!-- /wp:paragraph -->"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "coatings-evaluation-route",
+    "old": "<p>This brief gives a selected Grade a defined test context. It does not identify a product for you or predict the result.</p>\n<!-- /wp:paragraph -->",
+    "new": "<p>This brief gives a selected Grade a defined test context. It does not identify a product for you or predict the result.</p>\n<!-- /wp:paragraph -->\n<!-- wp:group {\"className\":\"r706-coatings-path\"} -->\n<div class=\"wp-block-group r706-coatings-path\">\n<!-- wp:heading {\"level\":3} -->\n<h3 class=\"wp-block-heading\">Coatings Application Evaluation</h3>\n<!-- /wp:heading -->\n<!-- wp:paragraph -->\n<p>Use the coatings application guide to organize formulation, dispersion, optical, film and exposure questions before comparing a candidate grade with your R-706 reference.</p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph -->\n<p><a href=\"/applications/titanium-dioxide-for-coatings/\">Review the Coatings Evaluation Framework</a></p>\n<!-- /wp:paragraph -->\n</div>\n<!-- /wp:group -->"
+  },
+  {
+    "id": "listed-grades-copy",
+    "old": "Use the Product Hub to review our Grades by process and application context. The Hub does not select a Grade from the R-706 name or carry an R-706 product relationship into your evaluation.",
+    "new": "Use the Product Hub to review listed titanium dioxide grades by process and application context. The Hub does not select a Grade from the R-706 name or carry an R-706 product relationship into your evaluation."
+  },
+  {
+    "id": "documents-request-context",
+    "old": "<!-- wp:paragraph -->\n<p>After you select one IKHLAS Grade, use the document request form to request one or more document types for that Grade. If you are also considering other Grades, add them as supplementary context in Additional Requirements. The form does not assign different document types to those additional Grades; submit separate requests when each Grade needs its own document selection.</p>",
+    "new": "<!-- wp:paragraph {\"className\":\"r706-document-context\"} -->\n<p class=\"r706-document-context\">For a document request, select one primary product grade and the document types needed for that grade. If several grades are under consideration, mention the other candidates in the request context. Submit separate requests when each grade needs its own document selection.</p>"
+  },
+  {
+    "id": "sample-known-or-unknown-grade",
+    "old": "<!-- wp:paragraph -->\n<p>Request a sample only after you have selected one IKHLAS Grade and can describe the intended application, delivery destination and what you need to evaluate. Include the R-706 control, relevant test conditions and acceptance criteria as context where useful.</p>",
+    "new": "<!-- wp:paragraph {\"className\":\"r706-sample-context\"} -->\n<p class=\"r706-sample-context\">If you have selected a candidate grade, identify it in the request. If you have not selected a grade yet, describe the R-706 reference, coating system, intended application, destination and test objective so the request can be reviewed. Include relevant test conditions and acceptance criteria as context where useful.</p>"
+  },
+  {
+    "id": "sample-human-review-boundary",
+    "old": "Submitting the form starts human review. Any sample arrangement is confirmed separately. Use a separate request for another Grade so that each sample has a clear application and test objective.",
+    "new": "Submission starts a human review; it does not approve a sample or confirm any sample arrangement. Use a separate request when another candidate grade or test objective needs its own review."
+  },
+  {
+    "id": "general-chemours-guide-route",
+    "old": "<p><a href=\"/request-sample/\">Request a Sample</a></p>\n<!-- /wp:paragraph -->",
+    "new": "<p><a href=\"/request-sample/\">Request a Sample</a></p>\n<!-- /wp:paragraph -->\n<!-- wp:paragraph {\"className\":\"r706-generic-path\"} -->\n<p class=\"r706-generic-path\">If your current Ti-Pure reference is not R-706, use the general Chemours alternative evaluation guide. <a href=\"/resources/chemours-titanium-dioxide-alternatives/\">Review the General Chemours Alternative Guide</a>.</p>\n<!-- /wp:paragraph -->"
+  }
+]

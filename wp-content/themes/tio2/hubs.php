@@ -1,5 +1,13 @@
 <?php
 defined('ABSPATH') || exit;
+function tio2_site_entity_nodes(){
+ $site=home_url('/');
+ return [
+  ['@type'=>'WebSite','@id'=>$site.'#website','url'=>$site,'name'=>'TiO2Products','publisher'=>['@id'=>$site.'#organization']],
+  ['@type'=>'Organization','@id'=>$site.'#organization','name'=>'IKHLAS TITANIUM (MALAYSIA) SDN. BHD.','legalName'=>'IKHLAS TITANIUM (MALAYSIA) SDN. BHD.','url'=>$site,'brand'=>['@id'=>$site.'#brand']],
+  ['@type'=>'Brand','@id'=>$site.'#brand','name'=>'TiO2Products'],
+ ];
+}
 add_action('wp_enqueue_scripts',function(){
  $key=tio2_hub_key();if(!in_array($key,['home','products','applications','markets','documents','resources','about'],true))return;
  wp_enqueue_style('tio2-hub',get_template_directory_uri().'/assets/hub-'.$key.'.css',['tio2'],filemtime(__DIR__.'/assets/hub-'.$key.'.css'));
@@ -24,9 +32,7 @@ add_action('wp_head',function(){
   $graph[0]['inLanguage']='en';
   $graph[0]['isPartOf']=['@id'=>$site.'#website'];
   $graph[0]['publisher']=['@id'=>$site.'#organization'];
-  $graph[]=['@type'=>'WebSite','@id'=>$site.'#website','url'=>$site,'name'=>'TiO2Products','publisher'=>['@id'=>$site.'#organization']];
-  $graph[]=['@type'=>'Organization','@id'=>$site.'#organization','name'=>'IKHLAS TITANIUM (MALAYSIA) SDN. BHD.','legalName'=>'IKHLAS TITANIUM (MALAYSIA) SDN. BHD.','url'=>$site,'brand'=>['@id'=>$site.'#brand']];
-  $graph[]=['@type'=>'Brand','@id'=>$site.'#brand','name'=>'TiO2Products'];
+  array_push($graph,...tio2_site_entity_nodes());
  }
  if($key!=='home')$graph[]=['@type'=>'BreadcrumbList','itemListElement'=>[['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>home_url('/')],['@type'=>'ListItem','position'=>2,'name'=>get_the_title($id),'item'=>$url]]];
  if($key==='products'){$list=[];foreach((tio2_discovery_data()['rows']??[]) as $i=>$r){$item=['@type'=>'ListItem','position'=>$i+1,'name'=>$r['grade']];if(tio2_route_ready($r['url']))$item['url']=home_url($r['url']);$list[]=$item;}$graph[]=['@type'=>'ItemList','itemListElement'=>$list];}
@@ -37,6 +43,13 @@ add_action('wp_head',function(){
    $child=absint($targets[$topic]??0);
    if(!$child||!tio2_owns_page($child,'_tio2_page_id',$identity)||get_post_status($child)!=='publish'||post_password_required($child))continue;
    $list[]=['@type'=>'ListItem','position'=>count($list)+1,'name'=>get_the_title($child),'url'=>get_permalink($child)];
+  }
+  if($list)$graph[]=['@type'=>'ItemList','itemListElement'=>$list];
+ }
+ if($key==='resources'){
+  $list=[];
+  foreach(tio2_public_resource_children($id) as $child){
+   $list[]=['@type'=>'ListItem','position'=>count($list)+1,'name'=>$child->post_title,'url'=>get_permalink($child)];
   }
   if($list)$graph[]=['@type'=>'ItemList','itemListElement'=>$list];
  }

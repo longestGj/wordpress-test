@@ -34,6 +34,8 @@ Keyword boundary: Resource owns research/comparison/update intent; Market, Produ
 当前本地实现已完成并在对应批次验收；ACCEPTED 不代表正式上线或所有外部目标已连接。
 Native WordPress Page; Products Hub renders through the Product archive.
 
+2026-09-24 定向精修：保留 SEO、Hero 的 exact-grade 边界、四项 evaluation brief、三步 qualification、Documents 路径和 Sources and Independence。Exact Ti-Pure grade 段落后增加 R-706 specific guide 的有限分流并明确不建立自动替换或等效；evaluation brief 增加 `/applications/` hub 入口；产品路径改为 TiO2Products 上展示的已列型号，不形成第二套前台品牌。未创建竞品型号映射或复制 R-706 技术细节。精确迁移保留其他后台编辑；本地 HTTP、1440/768/390、焦点与 Gutenberg 验证通过。未发布生产。
+
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 

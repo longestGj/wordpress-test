@@ -1,6 +1,7 @@
 """Exercise real WordPress editor submission and front-end/Schema parity locally."""
 import json, re
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 import requests
 from bs4 import BeautifulSoup
 root=Path(__file__).resolve().parents[1]
@@ -9,7 +10,10 @@ base='http://localhost:8080'
 def page():
     r=requests.get(base+'/products/m-350/',timeout=20);r.raise_for_status()
     return BeautifulSoup(r.text,'html.parser')
-def schema(soup): return json.loads(soup.select_one('script[type="application/ld+json"]').string)[0]
+def schema(soup):
+    value=json.loads(soup.select_one('script[type="application/ld+json"]').string)
+    nodes=value if isinstance(value,list) else value.get('@graph',[value])
+    return next(node for node in nodes if node.get('@type')=='Product')
 soup=page()
 assert len(soup.select('h1'))==1
 assert soup.title.string==seed['data']['seo_title']
@@ -21,7 +25,9 @@ for tr,row in zip(soup.select('.techTable tbody tr'),seed['data']['rows'],strict
     for label in tr.select('.mobileLabel'):label.decompose()
     assert [x.get_text(strip=True) for x in cells]==[row['property'],row['standard'],row['typical_value']]
 assert len(schema(soup)['additionalProperty'])==15
-assert not soup.select('main a[href*="request-"]')
+for link in soup.select('main a[href*="request-"]'):
+    query=parse_qs(urlparse(link['href']).query)
+    assert query.get('grade')==['M-350'] and query.get('source_page')==['GRADE-M350']
 assert 'TDS_M-350_V3' not in str(soup) and 'V3 2023' not in str(soup)
 # Every nonconditional approved prose field should survive the import/render path.
 text=soup.select_one('main').get_text(' ',strip=True)
@@ -63,4 +69,4 @@ try:
 finally:
     response=session.post(base+'/wp-admin/post.php',data=payload,timeout=30);response.raise_for_status()
 assert '93.5' in schema(page())['additionalProperty'][0]['value']
-print('PASS: approved copy rendering, exact 15-row table, SEO, hidden unavailable actions, admin form edit -> frontend + Schema -> restored approved value.')
+print('PASS: approved copy rendering, exact 15-row table, SEO, contextual request links, admin form edit -> frontend + Schema -> restored approved value.')

@@ -38,3 +38,7 @@ Review: approved content and facts; SEO; 1440/768/390; internal links; forms whe
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.
 
 Release: requires explicit user authorization. Email remains a later task. Runtime does not consult this specification or planning source hashes.
+
+## 2026-09-24 定向精修
+
+Local implementation adds a brief at-a-glance summary and approved public technical sources, decouples RFQ prose from a form option, and uses the authoritative `product_process` taxonomy for Process ItemList entries. The shared Process schema now emits `CollectionPage`; Application detail pages retain `WebPage`. The approved H1, SEO fields, process-versus-suitability boundary, eight Grade order and Grade-specific summaries remain unchanged. Local HTTP, relationship, migration and responsive checks passed. Production publication is separate.

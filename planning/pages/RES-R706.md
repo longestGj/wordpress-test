@@ -18,12 +18,13 @@ Address R-706 comparison intent with evidence-gated, non-equivalence language.
 
 ## SEO
 
-Primary keyword: ti-pure r-706 alternative equivalent
+Primary keyword: ti-pure r-706 alternative
 Title: Ti-Pure R-706 Qualification Guide | TiO2Products
 Meta: Use Ti-Pure R-706 product facts, document labels and coating test dimensions to prepare an independent titanium dioxide qualification brief.
 H1: Qualify Another TiO2 Supply When Ti-Pure R-706 Is Your Reference
 
 Keyword boundary: Resource owns research/comparison/update intent; Market, Product, and Application pages own commercial procurement intent.
+Searches using “equivalent” intent should be answered by explaining that equivalence cannot be assumed from product descriptions or TDS similarity and requires evidence for the exact products plus validation in the buyer’s intended coating system.
 
 ## 视觉与补充资料
 
@@ -33,6 +34,8 @@ Keyword boundary: Resource owns research/comparison/update intent; Market, Produ
 
 当前本地实现已完成并在对应批次验收；ACCEPTED 不代表正式上线或所有外部目标已连接。
 Native WordPress Page; Products Hub renders through the Product archive.
+
+2026-09-24 refinement acceptance: kept SEO Title, H1, Meta, official Chemours evidence, TS-6706 scope and independence statement; added a Coatings application route and generic Chemours guide route. Document requests describe one primary grade without a field-label dependency; sample requests allow selected or unknown grade and remain subject to human review. Exact-target migration preserves unrelated editor content and is idempotent. Local R-706 HTTP, 1440/768/390 browser/focus/JS and native Gutenberg checks passed. Full resource HTTP regression remains blocked by the pre-existing RES-TRADE-EU seed/live review-date mismatch (7 vs 24 September 2026); outside this page's scope. Production release remains pending explicit authorization.
 
 Review: approved content and facts; SEO; 1440/768/390; internal links; forms when applicable; keyboard/focus; revisions; relevant regression and code review.
 Restrictions: do not invent origin, document availability, stock, certification, delivery or application claims. Research dates remain the source dates. No automatic taxonomy/copy/Discovery synchronization.

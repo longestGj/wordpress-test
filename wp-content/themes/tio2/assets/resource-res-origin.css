@@ -27,6 +27,11 @@
 .resource-res-origin .origin-answer h2,.resource-res-origin .origin-final h2{color:#fff}
 .resource-res-origin .origin-answer .origin-split>div{border-left:3px solid #008078;padding-left:26px}
 .resource-res-origin .origin-callout{background:#f5f8fb;border-left:3px solid #008078;padding:18px;margin-top:26px!important}
+.resource-res-origin .origin-entity{background:#f5f8fb;padding-block:52px}
+.resource-res-origin .origin-entity h2{max-width:900px;font-size:30px}
+.resource-res-origin .origin-entity p{max-width:960px}
+.resource-res-origin.origin-page .origin-markets .resource-inline,.resource-res-origin.origin-page .origin-decisions .origin-decision-link{display:block;margin:12px 0 0!important}
+.resource-res-origin .origin-trade-link a,.resource-res-origin .origin-decision-link a{line-height:1.4}
 .resource-res-origin .origin-markets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:30px 0}
 .resource-res-origin .origin-markets .origin-card{border-top:3px solid #062b5b;padding:22px}
 .resource-res-origin .origin-decisions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:30px 0}
@@ -46,6 +51,7 @@
 @media (max-width:600px){.resource-res-origin .origin-wrap{width:calc(100% - 40px)}
 .resource-res-origin .origin-page h1{font-size:39px}
 .resource-res-origin .origin-page h2{font-size:28px}
+.resource-res-origin .origin-entity h2{font-size:26px}
 .resource-res-origin .origin-section{padding:40px 0}
 .resource-res-origin .origin-checks,.resource-res-origin .origin-markets{grid-template-columns:1fr}
 .resource-res-origin .origin-actions a{width:100%;justify-content:center}
