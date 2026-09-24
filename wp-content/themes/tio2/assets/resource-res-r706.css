@@ -107,6 +107,9 @@
 .resource-res-r706 .module-3 li{padding-left:12px;padding-bottom:18px;border-bottom:1px solid #D9E2EC}
 .resource-res-r706 .module-3 li::marker{color:#062B5B;font-weight:700}
 .resource-res-r706 .module-3 li:last-child{padding-bottom:0;border-bottom:0}
+.resource-res-r706 .r706-coatings-path{margin-top:24px;padding:20px 24px;border-left:3px solid #008078;background:#F5F8FB}
+.resource-res-r706 .r706-coatings-path h3{margin:0 0 10px}
+.resource-res-r706 .r706-coatings-path p:last-child{margin-bottom:0}
 .resource-res-r706 .module-4 h3{padding-left:16px;border-left:3px solid #008078}
 .resource-res-r706 .module-5{background:#F5F8FB;box-shadow:0 0 0 24px #F5F8FB;margin-top:24px;margin-bottom:24px;border-bottom:0}
 .resource-res-r706 .module-6 h3:not(:first-of-type){padding-top:28px;border-color:#D9E2EC}

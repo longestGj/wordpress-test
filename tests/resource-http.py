@@ -94,6 +94,28 @@ def verify(slug):
         assert 'TiO2 Malaysia' not in response.text
         for target in ('/resources/ti-pure-r-706-alternative/', '/applications/', '/products/', '/request-documents/'):
             assert requests.get(BASE + target, allow_redirects=False, timeout=25).status_code == 200
+    if slug == 'ti-pure-r-706-alternative':
+        coatings = main.select_one('.r706-coatings-path a[href="/applications/titanium-dioxide-for-coatings/"]')
+        assert coatings and coatings.get_text(' ', strip=True) == 'Review the Coatings Evaluation Framework'
+        generic = main.select_one('.r706-generic-path a[href="/resources/chemours-titanium-dioxide-alternatives/"]')
+        assert generic and 'not R-706' in generic.parent.get_text(' ', strip=True)
+        documents = main.select_one('.r706-document-context')
+        assert documents and 'one primary product grade' in documents.get_text(' ', strip=True)
+        assert 'separate requests' in documents.get_text(' ', strip=True)
+        sample = main.select_one('.r706-sample-context')
+        assert sample and 'If you have not selected a grade yet' in sample.get_text(' ', strip=True)
+        assert 'R-706 reference' in sample.get_text(' ', strip=True)
+        assert 'Additional Requirements' not in main.get_text(' ', strip=True)
+        assert 'IKHLAS Grade' not in main.get_text(' ', strip=True)
+        assert not re.search(r'R-706\s*(?:→|->)\s*M-\d+', main.get_text(' ', strip=True))
+        assert 'This independent guide is not affiliated with or endorsed by Chemours.' in main.get_text(' ', strip=True)
+        assert 'TiO2 Malaysia' not in response.text
+        for target in ('/applications/titanium-dioxide-for-coatings/',
+                       '/resources/chemours-titanium-dioxide-alternatives/',
+                       '/products/', '/request-documents/', '/request-sample/'):
+            assert requests.get(BASE + target, allow_redirects=False, timeout=25).status_code == 200
+        sample_form = BeautifulSoup(requests.get(BASE + '/request-sample/', timeout=25).text, 'html.parser')
+        assert sample_form.select_one('select[name="product_grade"] option[value="I do not know the grade"]')
     if slug == 'non-china-titanium-dioxide':
         assert 'TiO2 Malaysia' not in response.text, 'legacy website brand'
         assert 'tio2malaysia.com' not in response.text, 'legacy domain reference'

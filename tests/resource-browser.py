@@ -64,6 +64,12 @@ with sync_playwright() as p:
                 branch = page.locator('section.chemours-r706-branch a')
                 branch.focus()
                 assert branch.evaluate('(e)=>parseFloat(getComputedStyle(e).outlineWidth)>=3'), 'R-706 branch focus not visible'
+            if seed['identity'] == 'RES-R706':
+                coatings = page.locator('.r706-coatings-path a[href="/applications/titanium-dioxide-for-coatings/"]')
+                generic = page.locator('.r706-generic-path a[href="/resources/chemours-titanium-dioxide-alternatives/"]')
+                assert coatings.is_visible() and generic.is_visible(), 'R-706 buyer routes missing'
+                coatings.focus()
+                assert coatings.evaluate('(e)=>parseFloat(getComputedStyle(e).outlineWidth)>=3'), 'Coatings route focus not visible'
         disclosures = page.locator('main details')
         if disclosures.count():
             first = disclosures.first
