@@ -1,0 +1,22 @@
+[
+  {
+    "id": "grade-faq-link",
+    "old": "grade-specific technical data and relevant technical documentation",
+    "new": "<a href=\"/products/\">grade-specific technical data</a> and relevant technical documentation"
+  },
+  {
+    "id": "application-faq-link",
+    "old": "application-specific validation rather than a generic recommendation",
+    "new": "<a href=\"/applications/\">application-specific validation</a> rather than a generic recommendation"
+  },
+  {
+    "id": "market-faq-link",
+    "old": "Use the relevant TiO2Products market page for destination-specific procurement context.",
+    "new": "Use the relevant TiO2Products <a href=\"/markets/\">market page</a> for destination-specific procurement context."
+  },
+  {
+    "id": "procurement-routes",
+    "old": "</p></article></div></section>\n<!-- /wp:html -->",
+    "new": "</p></article></div></section><section class=\"res-section res-next\" aria-labelledby=\"res-next-title\"><div class=\"res-container\"><h2 id=\"res-next-title\">Continue Your Procurement Review</h2><p class=\"section-intro\">Use the next route that matches the information needed for your purchasing review.</p><div class=\"res-next-grid\"><a class=\"res-next-link\" href=\"/products/\"><strong>Compare Product Grades</strong><span>Review listed titanium dioxide grades and their grade-specific technical information.</span></a><a class=\"res-next-link\" href=\"/applications/\"><strong>Evaluate by Application</strong><span>Continue with coatings, plastics, masterbatch, printing inks or paper evaluation guidance.</span></a><a class=\"res-next-link\" href=\"/documents/\"><strong>Review Documents</strong><span>Identify technical, safety, quality and origin documentation relevant to the purchasing decision.</span></a><a class=\"res-next-link\" href=\"/markets/\"><strong>Review Destination Markets</strong><span>Continue with destination-specific procurement and trade context.</span></a></div></div></section>\n<!-- /wp:html -->"
+  }
+]

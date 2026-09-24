@@ -2,12 +2,29 @@
 /** Presentation for the eight approved Resource Pages; content stays in post_content. */
 defined('ABSPATH') || exit;
 
+function tio2_resource_order() {
+    return ['RES-ORIGIN', 'RES-PROC', 'RES-CHEMOURS', 'RES-R706',
+        'RES-TRADE-EU', 'RES-TRADE-UK', 'RES-TRADE-IN', 'RES-TRADE-BR'];
+}
+
 function tio2_is_resource_page($id) {
     return get_post_type($id) === 'page'
-        && in_array(get_post_meta($id, '_tio2_resource_id', true), [
-            'RES-ORIGIN', 'RES-PROC', 'RES-CHEMOURS', 'RES-R706',
-            'RES-TRADE-EU', 'RES-TRADE-UK', 'RES-TRADE-IN', 'RES-TRADE-BR',
-        ], true);
+        && in_array(get_post_meta($id, '_tio2_resource_id', true), tio2_resource_order(), true);
+}
+
+/** Public, owned child pages in the approved order shared by visible links and Schema. */
+function tio2_public_resource_children($hub_id) {
+    $order = array_flip(tio2_resource_order());
+    $children = [];
+    foreach (get_posts(['post_type'=>'page', 'post_status'=>'publish', 'post_parent'=>$hub_id,
+        'numberposts'=>-1, 'meta_key'=>'_tio2_resource_id', 'orderby'=>'title', 'order'=>'ASC']) as $post) {
+        $identity = get_post_meta($post->ID, '_tio2_resource_id', true);
+        if (!isset($order[$identity]) || $post->post_password !== ''
+            || !tio2_owns_page($post->ID, '_tio2_resource_id', $identity)) continue;
+        $children[$order[$identity]] = $post;
+    }
+    ksort($children);
+    return array_values($children);
 }
 
 add_action('wp_enqueue_scripts', function () {
@@ -28,14 +45,10 @@ add_filter('render_block_core/html', function ($html) {
     $id = get_queried_object_id();
     if (!is_page() || get_post_meta($id, '_tio2_hub_key', true) !== 'resources' || !str_contains($html, 'id="research-paths"')) return $html;
     $groups = [[], [], []];
-    $order = array_flip(['RES-ORIGIN','RES-PROC','RES-CHEMOURS','RES-R706','RES-TRADE-EU','RES-TRADE-UK','RES-TRADE-IN','RES-TRADE-BR']);
-    foreach (get_posts(['post_type'=>'page', 'post_status'=>'publish', 'post_parent'=>$id,
-        'numberposts'=>-1, 'meta_key'=>'_tio2_resource_id', 'orderby'=>'title', 'order'=>'ASC']) as $post) {
-        if (!tio2_is_resource_page($post->ID) || post_password_required($post)) continue;
+    foreach (tio2_public_resource_children($id) as $post) {
         $identity = get_post_meta($post->ID, '_tio2_resource_id', true);
-        if (!tio2_owns_page($post->ID,'_tio2_resource_id',$identity)) continue;
         $group = $identity === 'RES-ORIGIN' ? 0 : (str_starts_with($identity, 'RES-TRADE-') ? 2 : 1);
-        $groups[$group][$order[$identity]] = $post;
+        $groups[$group][] = $post;
     }
     $dom = new DOMDocument('1.0', 'UTF-8');
     $previous = libxml_use_internal_errors(true);
@@ -55,7 +68,6 @@ add_filter('render_block_core/html', function ($html) {
         $card = $by_category[$index];
         foreach (iterator_to_array($xpath->query('./ul[contains(concat(" ",normalize-space(@class)," ")," resource-hub-links ")]', $card)) as $previous_list) $card->removeChild($previous_list);
         if (!$posts) continue;
-        ksort($posts);
         $list = $dom->createElement('ul');$list->setAttribute('class','resource-hub-links');
         foreach ($posts as $post) {
             $item = $dom->createElement('li');$link = $dom->createElement('a');

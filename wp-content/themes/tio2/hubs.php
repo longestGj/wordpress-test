@@ -46,5 +46,12 @@ add_action('wp_head',function(){
   }
   if($list)$graph[]=['@type'=>'ItemList','itemListElement'=>$list];
  }
+ if($key==='resources'){
+  $list=[];
+  foreach(tio2_public_resource_children($id) as $child){
+   $list[]=['@type'=>'ListItem','position'=>count($list)+1,'name'=>$child->post_title,'url'=>get_permalink($child)];
+  }
+  if($list)$graph[]=['@type'=>'ItemList','itemListElement'=>$list];
+ }
  echo '<script type="application/ld+json">'.wp_json_encode(['@context'=>'https://schema.org','@graph'=>$graph],JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE).'</script>';
 });

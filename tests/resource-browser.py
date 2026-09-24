@@ -49,10 +49,24 @@ with sync_playwright() as p:
             page.goto(BASE+'/resources/',wait_until='networkidle')
             assert page.locator('.resource-hub-links a').count() == 8
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1'), 'Resource Hub overflow'
+            assert page.locator('section.res-next h2').inner_text() == 'Continue Your Procurement Review'
+            assert page.locator('section.res-next a').count() == 4
+            for path in ('/products/', '/applications/', '/documents/', '/markets/'):
+                link = page.locator(f'section.res-next a[href="{path}"]')
+                assert link.count() == 1 and link.is_visible(), (width, path)
+                assert context.request.get(BASE+path).status == 200, path
         links = page.locator('.resource-hub-links a')
         links.nth(0).focus();page.keyboard.press('Tab')
         assert links.nth(1).evaluate('(e)=>e===document.activeElement'), 'Hub keyboard order'
         assert links.nth(1).evaluate('(e)=>parseFloat(getComputedStyle(e).outlineWidth)>=3'), 'Hub focus not visible'
+        next_links = page.locator('section.res-next a')
+        next_links.nth(0).focus();page.keyboard.press('Tab')
+        assert next_links.nth(1).evaluate('(e)=>e===document.activeElement'), 'Procurement routing keyboard order'
+        assert next_links.nth(1).evaluate('(e)=>parseFloat(getComputedStyle(e).outlineWidth)>=3'), 'Procurement routing focus not visible'
+        for path in ('/products/', '/applications/', '/documents/', '/markets/'):
+            page.locator(f'section.res-next a[href="{path}"]').click()
+            assert page.url == BASE+path, ('Procurement routing click failed', path)
+            page.go_back(wait_until='domcontentloaded')
         page.locator('#research-paths').scroll_into_view_if_needed()
         page.screenshot(path=str(OUT/'hub-mobile-final.png'))
         print('PASS: Hub 1440/768/390, eight links, keyboard order and visible focus')
@@ -70,7 +84,8 @@ with sync_playwright() as p:
     page.goto(BASE+f'/wp-admin/post.php?post={page_id}&action=edit', wait_until='domcontentloaded', timeout=60000)
     page.wait_for_function('() => Boolean(window.wp && wp.blocks && wp.blocks.parse)', timeout=30000)
     block_results = []
-    for seed in seeds:
+    editor_seeds = seeds + ([] if '--topics' in sys.argv else [json.loads((ROOT/'data/pages/resources.json').read_text(encoding='utf-8'))])
+    for seed in editor_seeds:
         validation = page.evaluate('''content => {
           const blocks=wp.blocks.parse(content), invalid=[];let total=0,editable=0;
           function walk(items){for(const b of items){total++;if(b.name!=='core/html')editable++;
@@ -78,7 +93,7 @@ with sync_playwright() as p:
             walk(b.innerBlocks||[]);}}
           walk(blocks);return {total,editable,invalid};
         }''', seed['content'])
-        identity = seed.get('identity', seed.get('page_id'))
+        identity = seed.get('identity', seed.get('page_id', seed.get('key')))
         block_results.append({'page':identity,**validation})
         print('Gutenberg:',identity,validation['total'],'blocks;',len(validation['invalid']),'invalid')
     report = 'topic-blocks.json' if '--topics' in sys.argv else 'blocks.json'
