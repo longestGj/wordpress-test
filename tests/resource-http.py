@@ -61,6 +61,38 @@ def verify(slug):
         assert len(main.select('table tbody tr')) == 6, 'six evidence rows'
         process_links = main.select('a[href*="process-titanium-dioxide"]')
         assert len(process_links) in (0, 2), 'process pair must be atomic'
+    if slug == 'non-china-titanium-dioxide':
+        assert 'TiO2 Malaysia' not in response.text, 'legacy website brand'
+        assert 'tio2malaysia.com' not in response.text, 'legacy domain reference'
+        applications = ['coatings', 'plastics', 'masterbatch', 'printing-inks', 'paper']
+        assert [a['href'] for a in main.select('#origin-5 .origin-links a[href]')] == [
+            '/applications/titanium-dioxide-for-' + application + '/' for application in applications
+        ]
+        assert not any('/applications/' + application + '/' in response.text for application in applications)
+        cards = main.select('#origin-7 .origin-markets .origin-card')
+        assert len(cards) == 4
+        expected = [
+            ('/markets/european-union/', '/resources/eu-titanium-dioxide-anti-dumping-duty/'),
+            ('/markets/united-kingdom/', '/resources/uk-titanium-dioxide-anti-dumping-investigation/'),
+            ('/markets/india/', '/resources/india-titanium-dioxide-anti-dumping-duty/'),
+            ('/markets/brazil/', '/resources/brazil-titanium-dioxide-anti-dumping-duty/'),
+        ]
+        assert [tuple(a['href'] for a in card.select('a[href]')) for card in cards] == expected
+        entity = main.select_one('section.origin-entity')
+        assert entity and entity.select_one('a[href="/about/"]')
+        assert 'Company location does not by itself establish the origin of every product, lot or shipment.' in entity.get_text(' ', strip=True)
+        decision_cards = main.select('#origin-8 .origin-decisions .origin-card')
+        assert [a['href'] for card in decision_cards for a in card.select('a[href]')] == [
+            '/products/', '/request-documents/'
+        ]
+        assert not decision_cards[2].select('a[href]'), 'hold decision must not have a CTA'
+        paths = ['/about/', '/products/', '/documents/', '/request-documents/', '/request-a-quote/']
+        paths += ['/applications/titanium-dioxide-for-' + application + '/' for application in applications]
+        paths += [path for pair in expected for path in pair]
+        for target in paths:
+            assert main.select_one(f'a[href^="{target}"]'), ('missing route', target)
+            routed = requests.get(BASE + target, allow_redirects=False, timeout=25)
+            assert routed.status_code == 200, ('redirect or broken route', target, routed.status_code)
     print('PASS:', slug)
 
 

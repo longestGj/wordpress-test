@@ -35,6 +35,18 @@ with sync_playwright() as p:
                 print('FAIL overflow:', seed['identity'], width, dimensions['overflow'])
             else:
                 print('PASS geometry:', seed['identity'], width)
+            if seed['identity'] == 'RES-ORIGIN':
+                assert page.locator('section.origin-entity').is_visible(), 'Supply Source Entity module missing'
+                assert page.locator('#origin-5 .origin-links a').count() == 5, 'Five Application links missing'
+                assert page.locator('#origin-7 .origin-markets .origin-card a').count() == 8, 'Four Market and Trade pairs missing'
+                assert page.locator('#origin-8 .origin-decisions a').count() == 2, 'Decision actions missing'
+                for card in page.locator('#origin-7 .origin-markets .origin-card').all():
+                    first_link, second_link = card.locator('a').all()
+                    first_box, second_box = first_link.bounding_box(), second_link.bounding_box()
+                    assert second_box['y'] >= first_box['y'] + first_box['height'] + 4, 'Market and Trade links overlap'
+                first = page.locator('#origin-7 .origin-markets .origin-card a').first
+                first.focus()
+                assert first.evaluate('(e)=>parseFloat(getComputedStyle(e).outlineWidth)>=3'), 'Market link focus not visible'
         disclosures = page.locator('main details')
         if disclosures.count():
             first = disclosures.first
