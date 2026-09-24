@@ -101,9 +101,23 @@ add_action('wp_head', function () {
         echo '<link rel="alternate" hreflang="en" href="'.esc_url($en).'">';
         echo '<link rel="alternate" hreflang="pt-BR" href="'.esc_url($pt).'">';
     }
-    $crumb = [['@type'=>'ListItem','position'=>1,'name'=>'Home','item'=>home_url('/')],
-              ['@type'=>'ListItem','position'=>2,'name'=>$language === 'pt-BR' ? 'Mercados' : 'Markets','item'=>home_url($language === 'pt-BR' ? '/pt-br/markets/' : '/markets/')],
-              ['@type'=>'ListItem','position'=>3,'name'=>get_the_title($id),'item'=>$url]];
+    $identity = tio2_market_id($id);
+    $names = [
+        'MARKET-EU-001'=>'European Union',
+        'MARKET-EU-DE'=>'Germany', 'MARKET-EU-IT'=>'Italy', 'MARKET-EU-ES'=>'Spain',
+        'MARKET-EU-PL'=>'Poland', 'MARKET-EU-NL'=>'Netherlands', 'MARKET-EU-BE'=>'Belgium',
+        'MARKET-UK-001'=>'United Kingdom', 'MARKET-IN-001'=>'India',
+        'MARKET-BR-EN'=>'Brazil', 'MARKET-BR-PT'=>'Brasil',
+    ];
+    $crumb = [['@type'=>'ListItem','position'=>1,'name'=>$language === 'pt-BR' ? 'Início' : 'Home','item'=>home_url('/')],
+              ['@type'=>'ListItem','position'=>2,'name'=>$language === 'pt-BR' ? 'Mercados' : 'Markets','item'=>home_url('/markets/')]];
+    if (in_array($identity, ['MARKET-EU-DE','MARKET-EU-IT','MARKET-EU-ES',
+                                      'MARKET-EU-PL','MARKET-EU-NL','MARKET-EU-BE'], true)) {
+        $crumb[] = ['@type'=>'ListItem','position'=>3,'name'=>'European Union',
+                    'item'=>home_url('/markets/european-union/')];
+    }
+    $crumb[] = ['@type'=>'ListItem','position'=>count($crumb)+1,
+                'name'=>$names[$identity] ?? get_the_title($id),'item'=>$url];
     $graph = [['@type'=>'WebPage','@id'=>$url.'#page','url'=>$url,'name'=>$title,'description'=>$description,'inLanguage'=>$language],
               ['@type'=>'BreadcrumbList','itemListElement'=>$crumb]];
     echo '<script type="application/ld+json">'.wp_json_encode(['@context'=>'https://schema.org','@graph'=>$graph],

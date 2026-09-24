@@ -51,6 +51,25 @@ assert pages['MARKET-BR-EN'][0]['path'] == '/markets/brazil/'
 assert pages['MARKET-BR-PT'][0]['path'] == '/pt-br/markets/brazil/'
 assert pages['MARKET-BR-EN'][2] != pages['MARKET-BR-PT'][2]
 assert 'Os links desta página' in pages['MARKET-BR-PT'][2]
+for identity in ('MARKET-EU-DE', 'MARKET-EU-IT'):
+    text = pages[identity][2]
+    assert 'Not sure / Need help' not in text, identity
+    assert 'Product / Grade' not in text, identity
+    assert 'checked: 7 September 2026' not in text, identity
+    assert 'checked 7 September 2026' not in text, identity
+de = pages['MARKET-EU-DE'][2]
+assert all(term in de for term in ('VdL', 'GKV', 'Hamburg Port Authority'))
+it_seed, it_soup, it_text = pages['MARKET-EU-IT']
+assert all(term not in it_text for term in ('Destination Country', 'Destination Port / City',
+                                            'Additional Requirements', 'Garzanti Specialties'))
+assert all(term in it_text for term in ('Unionplast', 'AMAPLAST',
+                                      'A Certificate of Origin is available upon request.'))
+compound_card = next(card for card in it_soup.select('.market-card')
+                     if card.h3 and card.h3.get_text(' ', strip=True) == 'Compound and Masterbatch')
+assert {a['href'] for a in compound_card.select('a[href]')} == {
+    '/applications/titanium-dioxide-for-plastics/',
+    '/applications/titanium-dioxide-for-masterbatch/',
+}
 for identity in ids:
     assert '/request-a-quote/' in {a['href'] for a in pages[identity][1].select('a[href]')},identity
 print('PASS: 11 market seeds, approved copy boundaries, H1/SEO, links, grade sets, EU/UK FAQ and Brazil languages')

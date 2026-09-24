@@ -4,23 +4,73 @@ Run after integration/import: python tests/market-http.py
 Screenshots are written under ignored .local/market-http for visual inspection.
 """
 import json
+import os
+import re
 from pathlib import Path
 from urllib.parse import urlparse
 
+import requests
+from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'http://localhost:8080'
+SCHEMA_BASE = os.environ.get('MARKET_SCHEMA_BASE', BASE)
 parsed = urlparse(BASE)
 assert parsed.hostname in ('localhost', '127.0.0.1') and parsed.scheme in ('http', 'https')
+assert urlparse(SCHEMA_BASE).hostname in ('localhost', '127.0.0.1')
 OUT = ROOT / '.local/market-http'
 OUT.mkdir(parents=True, exist_ok=True)
 seeds = [json.loads(path.read_text(encoding='utf-8')) for path in sorted((ROOT/'data/markets').glob('*.json'))]
 assert len(seeds) == 11
+schema_session = requests.Session()
+schema_session.trust_env = False
 
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch(headless=True)
     for seed in seeds:
+        schema_response = schema_session.get(SCHEMA_BASE + seed['path'],
+                                             headers={'Host':urlparse(BASE).netloc}, timeout=15)
+        assert schema_response.status_code == 200, (seed['identity'], schema_response.status_code)
+        schema_soup = BeautifulSoup(schema_response.text, 'html.parser')
+        graphs = [graph for node in schema_soup.select('script[type="application/ld+json"]')
+                  for graph in json.loads(node.string).get('@graph', [])]
+        assert {graph['@type'] for graph in graphs} == {'WebPage', 'BreadcrumbList'}, seed['identity']
+        crumbs = next(graph['itemListElement'] for graph in graphs if graph['@type'] == 'BreadcrumbList')
+        visible = re.split(r'\s*[›/]\s*', schema_soup.select_one('nav.market-breadcrumb').get_text(' ', strip=True))
+        assert [crumb['name'] for crumb in crumbs] == visible, (seed['identity'], crumbs, visible)
+        assert [crumb['position'] for crumb in crumbs] == list(range(1, len(visible)+1))
+        is_eu_country = seed['identity'] in {'MARKET-EU-DE', 'MARKET-EU-IT',
+                                              'MARKET-EU-ES', 'MARKET-EU-PL',
+                                              'MARKET-EU-NL', 'MARKET-EU-BE'}
+        assert len(crumbs) == (4 if is_eu_country else 3), seed['identity']
+        assert [crumb['item'] for crumb in crumbs[:2]] == [BASE+'/', BASE+'/markets/']
+        if is_eu_country:
+            assert crumbs[2]['item'] == BASE + '/markets/european-union/'
+        assert crumbs[-1]['item'] == BASE + seed['path']
+        if seed['identity'] in {'MARKET-EU-DE', 'MARKET-EU-IT'}:
+            main = schema_soup.select_one('main.market-page')
+            text = main.get_text(' ', strip=True)
+            assert all(term not in text for term in ('Not sure / Need help', 'Product / Grade',
+                                                     'checked 7 September 2026',
+                                                     'checked: 7 September 2026'))
+            assert 'The request does not select a Grade or confirm price, stock, supply, transport or delivery timing.' in text
+            assert 'submission does not confirm sample approval, quantity or delivery.' in text
+            if seed['identity'] == 'MARKET-EU-DE':
+                assert all(term in text for term in ('VdL', 'GKV', 'Hamburg Port Authority'))
+                assert 'does not establish a route offered by IKHLAS TITANIUM, transport mode, cost or lead time.' in text
+            else:
+                assert all(term not in text for term in ('Garzanti Specialties', 'Destination Country',
+                                                         'Destination Port / City', 'Additional Requirements'))
+                assert all(term in text for term in ('Federchimica AVISA', 'Unionplast', 'AMAPLAST',
+                                                     'A Certificate of Origin is available upon request.'))
+                assert 'does not promise that a certificate is issued for every shipment or determine customs acceptance or treatment.' in text
+                card = next(card for card in main.select('.market-card')
+                            if card.h3 and card.h3.get_text(' ', strip=True) == 'Compound and Masterbatch')
+                assert {a['href'] for a in card.select('a[href]')} == {
+                    '/applications/titanium-dioxide-for-plastics/',
+                    '/applications/titanium-dioxide-for-masterbatch/',
+                }
         for width in (1440, 768, 390):
             page = browser.new_page(viewport={'width':width,'height':900},device_scale_factor=1)
             response = page.goto(BASE + seed['path'], wait_until='networkidle')
@@ -70,5 +120,5 @@ with sync_playwright() as playwright:
     assert {seed['path'] for seed in seeds}.issubset(hub_links), 'Markets Hub is missing a live destination link'
     hub.close()
     browser.close()
-print('PASS: 11 local market Pages × 3 widths; HTTP, SEO, hreflang, language, hub links, menu and overflow')
+print('PASS: 11 local market Pages × 3 widths; HTTP, SEO, visible/JSON-LD breadcrumbs, copy, links, menu and overflow')
 print('Screenshots:', OUT)
