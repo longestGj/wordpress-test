@@ -71,6 +71,18 @@ with sync_playwright() as playwright:
                     '/applications/titanium-dioxide-for-plastics/',
                     '/applications/titanium-dioxide-for-masterbatch/',
                 }
+        if seed['identity'] == 'MARKET-EU-ES':
+            main = schema_soup.select_one('main.market-page')
+            text = main.get_text(' ', strip=True)
+            assert all(term in text for term in ('ASEFAPI', 'ANAIP',
+                                                'A Certificate of Origin is available upon request.',
+                                                'Document availability and applicable scope are confirmed'))
+            assert all(term not in text for term in ('Not sure / Need help',
+                                                    'Select the product grade and document types on the request form.'))
+            assert {a['href'] for a in main.select('a[href]')} >= {
+                'https://asefapi.es/asociados/',
+                'https://anaip.es/divisiones/industria/compuestos-y-masterbatches/grupo-sectorial-de-compuestos-y-masterbatches/',
+            }
         for width in (1440, 768, 390):
             page = browser.new_page(viewport={'width':width,'height':900},device_scale_factor=1)
             response = page.goto(BASE + seed['path'], wait_until='networkidle')

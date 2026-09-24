@@ -70,6 +70,25 @@ assert {a['href'] for a in compound_card.select('a[href]')} == {
     '/applications/titanium-dioxide-for-plastics/',
     '/applications/titanium-dioxide-for-masterbatch/',
 }
+es_seed, es_soup, es_text = pages['MARKET-EU-ES']
+assert 'ASEFAPI' in es_text and 'ANAIP' in es_text
+assert 'do not establish Grade suitability' in es_text
+assert 'Not sure / Need help' not in es_text
+assert 'Select the product grade and document types on the request form.' not in es_text
+assert 'Document availability and applicable scope are confirmed' in es_text
+assert 'A Certificate of Origin is available upon request.' in es_text
+assert 'does not promise issuance for every shipment' in es_text
+assert all(term not in es_text.lower() for term in ('spain warehouse', 'local stock',
+                                                  'spanish manufacturer', 'industry context checked'))
+assert {a['href'] for a in es_soup.select('a[href]')} >= {
+    '/markets/european-union/', '/resources/eu-titanium-dioxide-anti-dumping-duty/',
+}
+assert {a['href'] for a in es_soup.select('a[href]')} >= {
+    'https://asefapi.es/asociados/',
+    'https://anaip.es/divisiones/industria/compuestos-y-masterbatches/grupo-sectorial-de-compuestos-y-masterbatches/',
+    '/applications/titanium-dioxide-for-plastics/',
+    '/applications/titanium-dioxide-for-masterbatch/',
+}
 for identity in ids:
     assert '/request-a-quote/' in {a['href'] for a in pages[identity][1].select('a[href]')},identity
 print('PASS: 11 market seeds, approved copy boundaries, H1/SEO, links, grade sets, EU/UK FAQ and Brazil languages')
